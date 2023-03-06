@@ -1,8 +1,8 @@
 @font-face {
 	font-family: 'Roboto Flex';
 	src: local('Roboto Flex'),
-        url('fonts/robotoflex/RobotoFlex-Regular.woff2') format('woff2'),
-        url('fonts/robotoflex/RobotoFlex-Regular.woff') format('woff');
+        url('/fonts/robotoflex/RobotoFlex-Regular.woff2') format('woff2'),
+        url('/fonts/robotoflex/RobotoFlex-Regular.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
