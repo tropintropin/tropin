@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Roboto Flex';
-	src: local('Roboto'),
+	src: local('Roboto Flex'),
         url('fonts/robotoflex/RobotoFlex-Regular.woff2') format('woff2'),
         url('fonts/robotoflex/RobotoFlex-Regular.woff') format('woff');
 	font-weight: normal;
@@ -11,9 +11,9 @@ body {
     font-family: 'Roboto Flex', Arial, sans-serif;
 }
 
-h1 {
+/* h1 {
     font-family: 'Roboto Flex' Verdana, sans-serif;
-}
-h2 {
+} */
+/* h2 {
     font-family: 'Roboto Flex' Verdana, sans-serif;
-}
+} */
