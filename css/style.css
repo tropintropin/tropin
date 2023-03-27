@@ -1,19 +1,15 @@
-@font-face {
-	font-family: 'Roboto Flex';
-	src: local('Roboto Flex'),
-        url('/fonts/robotoflex/RobotoFlex-Regular.woff2') format('woff2'),
-        url('/fonts/robotoflex/RobotoFlex-Regular.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Caveat&family=Finlandica:ital@0;1&family=Jura:wght@300&family=Russo+One&display=swap');
+/* font-family: 'Amatic SC', cursive;
+font-family: 'Caveat', cursive;
+font-family: 'Finlandica', sans-serif;
+font-family: 'Jura', sans-serif;
+font-family: 'Russo One', sans-serif; */
+.article {
+    font-family: 'Finlandica', sans-serif;
 }
-
-body {
-    font-family: 'Roboto Flex', Arial, sans-serif;
+.h1 {
+    font-family: 'Amatic SC', cursive;
 }
-
-/* h1 {
-    font-family: 'Roboto Flex' Verdana, sans-serif;
-} */
-/* h2 {
-    font-family: 'Roboto Flex' Verdana, sans-serif;
-} */
+.h2 {
+    font-family: 'Amatic SC', cursive;
+}
