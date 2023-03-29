@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Finlandica:ital,wght@0,400;0,600;1,400;1,600&family=Jura:wght@300&display=swap');
+
 /* TODO: Do elastic site (flexboxes?) */
 
 body {
@@ -7,24 +9,23 @@ body {
     line-height: 1.5;
 }
 
-h1 {
+header {
     margin-top: 50px;
     margin-bottom: 10px;
+}
+
+header h1 {
+    font-family: 'Caveat', cursive;
     font-size: 60px;
     text-align: center;
 }
 
-h2 {
-    margin-top: 0;
-    padding-bottom: 30px;
-    font-size: 25px;
-    text-align: center;
-    border-bottom: 2px solid #e3e3e3;
+main {
+    margin: auto;
 }
 
-main {
-    width: 900px;
-    margin: auto;
+article {
+    font-family: 'Finlandica', sans-serif;
 }
 
 section {
@@ -47,15 +48,6 @@ section h2 {
     border: none;
 }
 
-section li {
-    margin-bottom: 10px;
-}
-
-footer {
-    text-align: center;
-    color: gray;
-}
-
 a {
     text-decoration: none;
 }
@@ -66,4 +58,15 @@ a:link {
 
 a:visited {
     color: darkgray;
+}
+
+.stack {
+    font-family: 'Jura', sans-serif;
+    font-size: 16px;
+}
+
+footer {
+    font-family: 'Jura', sans-serif;
+    text-align: center;
+    color: gray;
 }
