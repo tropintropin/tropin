@@ -70,10 +70,10 @@
         <section>
           <h2>Контакты</h2>
           <ul>
-            <li><a rel="me" href="https://t.me/ozlik">Telegram</a> — предпочтительный способ связи (UTC+03)</li>
-            <li><a rel="me" href="https://career.habr.com/tropintropin">Хабр Карьера</a></li>
-            <li><a rel="me" href="https://www.linkedin.com/in/tropin">Linkedin</a></li>
-            <li><a rel="me" href="https://github.com/tropintropin">Github</a></li>
+            <li><a itemprop="url" rel="me" href="https://t.me/ozlik">Telegram</a> — предпочтительный способ связи (UTC+03)</li>
+            <li><a itemprop="url" rel="me" href="https://career.habr.com/tropintropin">Хабр Карьера</a></li>
+            <li><a itemprop="url" rel="me" href="https://www.linkedin.com/in/tropin">Linkedin</a></li>
+            <li><a itemprop="url" rel="me" href="https://github.com/tropintropin">Github</a></li>
             <li><a itemprop="email" href="mailto:tropin.tropin@gmail.com">Mail</a></li>
           </ul>
           <figure class="qr">
@@ -81,21 +81,21 @@
             <figcaption><abbr title="Отсканируйте код камерой телефона">Scan</abbr> to address book</figcaption>
           </figure>
           <ul>
-            <li><a rel="me" title="Гуглдок, в которой я заношу вообще все свои активности" href="https://docs.google.com/document/d/1FISd5AKu95-_jTEpBsvUJPZ5lz-mK8Pjp2_Hg-6D780/edit?usp=sharing">Full CV</a></li>
-            <li><a rel="me" title="Сканы моих статей" href="https://spbu.academia.edu/ValeryTropin">PDF's on Academia.edu</a></li>
+            <li><a itemprop="url" rel="me" title="Гуглдок, в которой я заношу вообще все свои активности" href="https://docs.google.com/document/d/1FISd5AKu95-_jTEpBsvUJPZ5lz-mK8Pjp2_Hg-6D780/edit?usp=sharing">Full CV</a></li>
+            <li><a itemprop="url" rel="me" title="Сканы моих статей" href="https://spbu.academia.edu/ValeryTropin">PDF's on Academia.edu</a></li>
           </ul>
         </section>
         <section>
           <h2>Опыт работы</h2>
           <dl>
-            <dt><h3>Государственный Эрмитаж</h3></dt>
+            <dt itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><h3 itemprop="name">Государственный Эрмитаж</h3></dt>
               <dd><p>2012… Лаборант, затем <span itemprop="jobTitle">менеджер I категории</span> в отделе «Дворец Меншикова».</p>
                 <p>Веду документооборот отдела, составляю ТЗ для госзакупок (комп. техника, оборудование выставок и т.д.), ТЗ на ремонты и реставрацию фасадов и помещений дворца.</p>
                 <p>Описал коллекцию деревянной археологии XVIII в.: подготовил музейные описания, создал и провожу на собранном материале популярные лекции и экскурсии (очно и в видеоформате).</p>
                 <p>Курировал создание интерактивной 3D-модели дворца Меншикова, на которой можно ознакомиться с коллекцией деревянной археологии: с оконными и дверными проёмами, потолочными балками и т.д.</p>
                 <!-- <p>Переношу базу данных голландской расписной фаянсовой плитки </p> -->
               </dd>
-            <dt><h3>«Пешеход Тур»</h3></dt>
+            <dt itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><h3 itemprop="name">«Пешеход Тур»</h3></dt>
               <dd>2022… Пишу ботов в Telegram: бота-помощника для клиентов и бота-аудиогида по Петербургу.<br>
                 <dl class="stack">
                   <dt>Stack:</dt>
@@ -116,14 +116,18 @@
         <section>
           <h2>Образование</h2>
             <dl>
-              <dt><h3>Санкт-Петербургский институт истории Российской академии наук</h3></dt>
+              <span itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+              <dt><h3 itemprop="name">Санкт-Петербургский институт истории Российской академии наук</h3></dt>
                 <dd>
-                  <p>2012—2015  Аспирантура по специальности «Отечественная история»</p>
+                  <p>2012—2015  <span  itemprop="description">Аспирантура по специальности «Отечественная история»</span></p>
                 </dd>
-              <dt><h3>Санкт-Петербургский государственный университет</h3></dt>
+              </span>
+              <span itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+              <dt><h3 itemprop="name">Санкт-Петербургский государственный университет</h3></dt>
                 <dd>
-                  <p>2007—2012  Исторический факультет, диплом по специальности «Музеология»</p>
+                  <p>2007—2012  <span itemprop="department" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Исторический факультет</span></span>, <span  itemprop="description">диплом по специальности «Музеология»</span></p>
                 </dd>
+              </span>
             </dl>
         </section>
       </article>
