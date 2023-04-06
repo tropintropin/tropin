@@ -55,10 +55,19 @@
   <body>
     <header>
       <h1>Валерий Тропин</h1>
+      <!-- Main navigation -->
+      <!-- TODO: Применить стили, чтобы было красиво -->
+      <nav id="primary-navigation">
+        <a href="#cv">Curriculum Vitae</a>
+        <a href="#description">Обо мне</a>
+        <a href="#contacts">Контакты</a>
+        <a href="#expirience">Опыт работы</a>
+        <a href="#education">Образование</a>
+      </nav>
     </header>
     <main itemscope itemtype="https://schema.org/Person">
       <article>
-        <section>
+        <section id="cv">
           <h2>Curriculum Vitae</h2>
           <p>
             <span itemprop="givenName">Валерий</span> <span itemprop="additionalName">Васильевич</span> <span itemprop="familyName">Тропин</span>
@@ -68,11 +77,11 @@
           </p>
         </section>
         
-        <section>
+        <section id="description">
           <h3>Обо мне</h3>
           <p itemprop="description">Музейный работник, гид по Петербургу на русском языке, начинающий разработчик на Python.</p>
         </section>
-        <section>
+        <section id="contacts">
           <h3>Контакты</h3>
           <ul>
             <li><a itemprop="url" rel="me" href="https://t.me/ozlik">Telegram</a> — предпочтительный способ связи (UTC+03)</li>
@@ -90,7 +99,7 @@
             <li><a itemprop="url" rel="me" title="Сканы моих статей" href="https://spbu.academia.edu/ValeryTropin">PDF's on Academia.edu</a></li>
           </ul>
         </section>
-        <section>
+        <section id="expirience">
           <h3>Опыт работы</h3>
           <dl>
             <dt itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><h3 itemprop="name">Государственный Эрмитаж</h3></dt>
@@ -118,7 +127,7 @@
               <dd>2013  Корректировал книги на русском языке.</dd>
           </dl>
         </section>
-        <section>
+        <section id="education">
           <h3>Образование</h3>
             <dl>
               <span itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
