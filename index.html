@@ -55,30 +55,31 @@
   <body>
     <header>
       <h1>Валерий Тропин</h1>
-      <!-- Main navigation -->
-      <!-- TODO: Применить стили, чтобы было красиво -->
-      <nav id="primary-navigation">
-        <ul>
-          <li><a href="#cv">Curriculum Vitae</a></li>
-          <li><a href="#description">Обо мне</a></li>
-          <li><a href="#contacts">Контакты</a></li>
-          <li><a href="#expirience">Опыт работы</a></li>
-          <li><a href="#education">Образование</a></li>
-        </ul>
-      </nav>
+      <hr>
+      <!-- TODO: Main navigation -->
     </header>
     <main itemscope itemtype="https://schema.org/Person">
       <article>
-        <section id="cv">
+        <section>
           <h2>Curriculum Vitae</h2>
+          <h3>Оглавление</h3>
+          <!-- TODO: Move to Sidebar -->
+          <nav id="table-of-content">
+            <ul>
+              <li><a href="#description">Обо мне</a></li>
+              <li><a href="#contacts">Контакты</a></li>
+              <li><a href="#expirience">Опыт работы</a></li>
+              <li><a href="#education">Образование</a></li>
+            </ul>
+          </nav>
           <p>
             <span itemprop="givenName">Валерий</span> <span itemprop="additionalName">Васильевич</span> <span itemprop="familyName">Тропин</span>
           </p>
           <p itemprop="homeLocation" itemscope itemtype="https://schema.org/PostalAddress">
-            <span itemprop="addressRegion">Санкт-Петербург</span>, <span itemprop="addressCountry">Россия</span>
+            <span itemprop="addressRegion">Санкт-Петербург</span>, <span itemprop="addressCountry">Россия</span>, UTC+03
           </p>
           <p><span itemprop="knowsLanguage">Русский</span> — родной</p>
-          <p><span itemprop="knowsLanguage">Английский</span> — C1</p>
+          <p><span itemprop="knowsLanguage">Английский</span> — <a rel="me" title="EF Standard English Test Result (PDF, 452 KB)" href="https://github.com/tropintropin/tropintropin/blob/main/portfolio/EF_SET_Certificate_2022.03.18.pdf">C1</a></p>
         </section>
         
         <section id="description">
@@ -101,7 +102,7 @@
           <ul>
             <li><a itemprop="url" rel="me" title="Гуглдок, в которой я заношу вообще все свои активности" href="https://docs.google.com/document/d/1FISd5AKu95-_jTEpBsvUJPZ5lz-mK8Pjp2_Hg-6D780/edit?usp=sharing">Full CV</a></li>
             <li><a itemprop="url" rel="me" title="Сканы моих статей" href="https://spbu.academia.edu/ValeryTropin">PDF's on Academia.edu</a></li>
-            <li><a itemprop="url" rel="me" title="Директория с дипломами и сертификатами с различных курсов" href="https://github.com/tropintropin/tropintropin/tree/main/portfolio">Дипломы и сертификаты</a></li>
+            <li><a itemprop="url" rel="me" title="Директория с дипломами и сертификатами с различных курсов (PDF's & JPEG's)" href="https://github.com/tropintropin/tropintropin/tree/main/portfolio">Дипломы и сертификаты</a></li>
           </ul>
         </section>
         <section id="expirience">
