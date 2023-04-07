@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Finlandica:ital,wght@0,400;0,600;1,400;1,600&family=Jura:wght@300&display=swap');
 
 /* TODO: Do elastic site (flexboxes?) */
+/* TODO: Do print styles */
+/* TODO: Do QRs for printing pages with chart.googleapis.com */
 
 body {
     margin: 0;

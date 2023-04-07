@@ -55,22 +55,39 @@
   <body>
     <header>
       <h1>Валерий Тропин</h1>
+      <hr>
+      <!-- TODO: Main navigation -->
     </header>
-    <main>
-      <article itemscope itemtype="https://schema.org/Person">
-        <h1>Curriculum Vitae</h1>
-        <p>
-          <span itemprop="givenName">Валерий</span> <span itemprop="additionalName">Васильевич</span> <span itemprop="familyName">Тропин</span>
-        </p>
-        <p itemprop="homeLocation" itemscope itemtype="https://schema.org/PostalAddress">
-          <span itemprop="addressRegion">Санкт-Петербург</span>, <span itemprop="addressCountry">Россия</span>
-        </p>
+    <main itemscope itemtype="https://schema.org/Person">
+      <article>
         <section>
-          <h2>Обо мне</h2>
+          <h2>Curriculum Vitae</h2>
+          <h3>Оглавление</h3>
+          <!-- TODO: Move to Sidebar -->
+          <nav id="table-of-content">
+            <ul>
+              <li><a href="#description">Обо мне</a></li>
+              <li><a href="#contacts">Контакты</a></li>
+              <li><a href="#expirience">Опыт работы</a></li>
+              <li><a href="#education">Образование</a></li>
+            </ul>
+          </nav>
+          <p>
+            <span itemprop="givenName">Валерий</span> <span itemprop="additionalName">Васильевич</span> <span itemprop="familyName">Тропин</span>
+          </p>
+          <p itemprop="homeLocation" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="addressRegion">Санкт-Петербург</span>, <span itemprop="addressCountry">Россия</span>, UTC+03
+          </p>
+          <p><span itemprop="knowsLanguage">Русский</span> — родной</p>
+          <p><span itemprop="knowsLanguage">Английский</span> — <a rel="me" title="EF Standard English Test Result (PDF, 452 KB)" href="https://github.com/tropintropin/tropintropin/blob/main/portfolio/EF_SET_Certificate_2022.03.18.pdf">C1</a></p>
+        </section>
+        
+        <section id="description">
+          <h3>Обо мне</h3>
           <p itemprop="description">Музейный работник, гид по Петербургу на русском языке, начинающий разработчик на Python.</p>
         </section>
-        <section>
-          <h2>Контакты</h2>
+        <section id="contacts">
+          <h3>Контакты</h3>
           <ul>
             <li><a itemprop="url" rel="me" href="https://t.me/ozlik">Telegram</a> — предпочтительный способ связи (UTC+03)</li>
             <li><a itemprop="url" rel="me" href="https://career.habr.com/tropintropin">Хабр Карьера</a></li>
@@ -85,51 +102,71 @@
           <ul>
             <li><a itemprop="url" rel="me" title="Гуглдок, в которой я заношу вообще все свои активности" href="https://docs.google.com/document/d/1FISd5AKu95-_jTEpBsvUJPZ5lz-mK8Pjp2_Hg-6D780/edit?usp=sharing">Full CV</a></li>
             <li><a itemprop="url" rel="me" title="Сканы моих статей" href="https://spbu.academia.edu/ValeryTropin">PDF's on Academia.edu</a></li>
+            <li><a itemprop="url" rel="me" title="Директория с дипломами и сертификатами с различных курсов (PDF's & JPEG's)" href="https://github.com/tropintropin/tropintropin/tree/main/portfolio">Дипломы и сертификаты</a></li>
           </ul>
         </section>
-        <section>
-          <h2>Опыт работы</h2>
+        <section id="expirience">
+          <h3>Опыт работы</h3>
           <dl>
-            <dt itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><h3 itemprop="name">Государственный Эрмитаж</h3></dt>
-              <dd><p>2012… Лаборант, затем <span itemprop="jobTitle">менеджер I категории</span> в отделе «Дворец Меншикова».</p>
-                <p>Веду документооборот отдела, составляю ТЗ для госзакупок (комп. техника, оборудование выставок и т.д.), ТЗ на ремонты и реставрацию фасадов и помещений дворца.</p>
-                <p>Описал коллекцию деревянной археологии XVIII в.: подготовил музейные описания, создал и провожу на собранном материале популярные лекции и экскурсии (очно и в видеоформате).</p>
-                <p>Курировал создание интерактивной 3D-модели дворца Меншикова, на которой можно ознакомиться с коллекцией деревянной археологии: с оконными и дверными проёмами, потолочными балками и т.д.</p>
+            <dt itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><h4 itemprop="name">Государственный Эрмитаж</h4></dt>
+              <dd>
+                <p>
+                  2012… Лаборант, затем <span itemprop="jobTitle">менеджер I категории</span> в отделе «Дворец Меншикова».</p>
+                <p>
+                  Веду документооборот отдела, составляю ТЗ для госзакупок (комп. техника, оборудование выставок и т.д.), ТЗ на ремонты и реставрацию фасадов и помещений дворца.
+                </p>
+                <p>
+                  Описал коллекцию деревянной археологии XVIII в.: подготовил музейные описания, создал и провожу на собранном материале популярные лекции и экскурсии (очно и в видеоформате).
+                </p>
+                <p>
+                  Курировал создание интерактивной 3D-модели дворца Меншикова, на которой можно ознакомиться с коллекцией деревянной археологии: с оконными и дверными проёмами, потолочными балками и т.д.
+                </p>
                 <!-- <p>Переношу базу данных голландской расписной фаянсовой плитки </p> -->
               </dd>
-            <dt itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><h3 itemprop="name">«Пешеход Тур»</h3></dt>
-              <dd>2022… Пишу ботов в Telegram: бота-помощника для клиентов и бота-аудиогида по Петербургу.<br>
+            <dt itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><h4 itemprop="name">«Пешеход Тур»</h4></dt>
+              <dd>
+                <p>
+                  2022… Пишу ботов в Telegram: бота-помощника для клиентов и бота-аудиогида по Петербургу.
+                </p>
                 <dl class="stack">
                   <dt>Stack:</dt>
                     <dd>Python, aiogram v3, Redis;</dd>
                     <dd>Bukza API (payments), Telegram Bot API (frontend)</dd>
                 </dl>
+                <p>
+                  2018—2021 Написал первые экскурсии для компании, обучил первых гидов, сам водил частные и групповые экскурсии по Санкт-Петербургу на русском языке.
+                </p>
               </dd>
-              <dd><p>2018—2021 Написал первые экскурсии для компании, обучил первых гидов, сам водил частные и групповые экскурсии по Санкт-Петербургу на русском языке.</p></dd>
-            <dt><h3>Самозанятый</h3></dt>
-              <dd><p>2017… Пишу экскурсии по Санкт-Петербургу (для себя и на заказ), вожу авторские туры по городу.</p></dd>
-              <dd><p>2018—2020 Писал исторические справки для архитектурных объектов Санкт-Петербурга.</p></dd>
-            <dt><h3>Museum On Line, Inc.</h3></dt>
-              <dd><p>2015  Редакторовал и самостоятельно писал тексты для аудиогидов по экспозициям Государственного Эрмитажа в Главном музейном комплексе (Зимний дворец, Эрмитажи) и Главном штабе</p></dd>
-            <dt><h3>Издательство «Историческая иллюстрация»</h3></dt>
-              <dd>2013  Корректировал книги на русском языке.</dd>
+            <dt><h4>Самозанятый</h4></dt>
+              <dd>
+                <p>
+                  2017… Пишу экскурсии по Санкт-Петербургу (для себя и на заказ), вожу авторские туры по городу.
+                </p>
+                <p>
+                  2018—2020 Писал исторические справки для архитектурных объектов Санкт-Петербурга.
+                </p>
+              </dd>
+            <dt><h4>Museum On Line, Inc.</h4></dt>
+              <dd>
+                2015  Редакторовал и самостоятельно писал тексты для аудиогидов по экспозициям Государственного Эрмитажа в Главном музейном комплексе (Зимний дворец, Эрмитажи) и Главном штабе.
+              </dd>
+            <dt><h4>Издательство «Историческая иллюстрация»</h4></dt>
+              <dd>
+                2013  Корректировал книги на русском языке.
+              </dd>
           </dl>
         </section>
-        <section>
-          <h2>Образование</h2>
-            <dl>
-              <span itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
-              <dt><h3 itemprop="name">Санкт-Петербургский институт истории Российской академии наук</h3></dt>
+        <section id="education">
+          <h3>Образование</h3>
+            <dl itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+              <dt><h4 itemprop="name">Санкт-Петербургский институт истории Российской академии наук</h4></dt>
                 <dd>
-                  <p>2012—2015  <span  itemprop="description">Аспирантура по специальности «Отечественная история»</span></p>
+                  2012—2015  <span  itemprop="description">Аспирантура по специальности «Отечественная история»</span>
                 </dd>
-              </span>
-              <span itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
-              <dt><h3 itemprop="name">Санкт-Петербургский государственный университет</h3></dt>
+              <dt><h4 itemprop="name">Санкт-Петербургский государственный университет</h4></dt>
                 <dd>
-                  <p>2007—2012  <span itemprop="department" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Исторический факультет</span></span>, <span  itemprop="description">диплом по специальности «Музеология»</span></p>
+                  2007—2012  <span itemprop="department" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Исторический факультет</span></span>, <span  itemprop="description">диплом по специальности «Музеология»</span>
                 </dd>
-              </span>
             </dl>
         </section>
       </article>
