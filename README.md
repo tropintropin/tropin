@@ -2,6 +2,14 @@
 
 Код моего сайта-визитки [tropin.one](https://tropin.one). Пока что на чистом HTML + CSS. Пишу его по мере изучения этих самых HTML и CSS.
 
+<!-- vim-markdown-toc GFM -->
+
+* [To-Do](#to-do)
+* [График работы над сайтом](#График-работы-над-сайтом)
+* [Sitemap](#sitemap)
+
+<!-- vim-markdown-toc -->
+
 ## To-Do
 
 - [ ] Сделать скроллинг для `<article>`
@@ -12,13 +20,16 @@
 
 ```mermaid
 gantt
-title       График работы
+title       Project Timeline
 dateFormat  YYYY.MM.DD
 axisFormat  %Y.%m.%d
 excludes    
 section     Development
+Start the project			:mileston,      2023.02.28,
+Add index.html				:mileston,		2023.03.05,
 section     Production
-Начало работы над проектом :mileston,      2023.04.03, ```
+Upload index.html to server	:done,
+```
 
 ## Sitemap
 
