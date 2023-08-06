@@ -18,7 +18,7 @@ axisFormat  %Y.%m.%d
 excludes    
 section     Development
 section     Production
-```
+Начало работы над проектом :mileston,      2023.04.03, ```
 
 ## Sitemap
 
