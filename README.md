@@ -14,7 +14,7 @@
 
 - [ ] Сделать скроллинг для `<article>`
 - [ ] Переместить оглавление страницы в правый сайдбар и сделать его видимым во время прокрутки `<article>`
-- [ ] Сделать адаптивную вёрстку
+- [x] Сделать адаптивную вёрстку
 
 ## График работы над сайтом
 
@@ -27,6 +27,7 @@ excludes
 section     Development
 Start the project			:mileston,      2023.02.28,
 Add index.html				:mileston,		2023.03.05,
+Add CSS-rules for sreen width   :done,  css0,   2023.08.13, 1d
 section     Production
 Upload index.html to server	:done,
 ```
