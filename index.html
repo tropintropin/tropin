@@ -37,7 +37,7 @@
   <meta property="og:title" content="Valery Tropin">
   <meta property="og:type" content="article">
   <meta property="og:description" content="Python developer, museum employee, guide to St. Petersburg">
-  <meta property="og:image" content="img/Visit_Card_QR.png">
+  <meta property="og:image" content="img/Visit_Card_QR.webp">
   <meta property="og:image:width" content="200">
   <meta property="og:image:height" content="200">
   <meta property="og:image:alt" content="QR-Code with contacts data">
@@ -50,7 +50,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Valery Tropin">
   <meta name="twitter:description" content="Python developer, museum employee, guide to St. Petersburg">
-  <meta name="twitter:image" content="img/Visit_Card_QR.png">
+  <meta name="twitter:image" content="img/Visit_Card_QR.webp">
   <meta name="twitter:image:alt" content="QR-Code with contacts data">
 </head>
 
@@ -121,7 +121,7 @@
           <li><a itemprop="email" href="mailto:tropin.tropin@gmail.com">Mail</a></li>
         </ul>
         <figure class="qr">
-          <img src="img/Visit_Card_QR.png" height="150" alt="QR-Code for Business Card">
+          <img src="img/Visit_Card_QR.webp" height="150" alt="QR-Code for Business Card">
           <figcaption><abbr title="Отсканируйте код камерой телефона">Scan</abbr> to address book</figcaption>
         </figure>
         <ul>
@@ -156,19 +156,37 @@
               Курировал создание интерактивной 3D-модели дворца Меншикова, на которой можно ознакомиться с коллекцией
               деревянной археологии: с оконными и дверными проёмами, потолочными балками и т.д.
             </p>
-            <!-- <p>Переношу базу данных голландской расписной фаянсовой плитки </p> -->
+            <!-- TODO: <p>Переношу базу данных голландской расписной фаянсовой плитки </p> -->
           </dd>
           <dt itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><strong class="organization-name"
-              itemprop="name">«Пешеход Тур»</strong></dt>
+              itemprop="name">Туристическая компания «Пешеход Тур»</strong></dt>
           <dd>
             <p>
-              2022… Пишу ботов в Telegram: бота-помощника для клиентов и бота-аудиогида по Петербургу.
+              2022… Написал <a href="https://t.me/peshehod_help_bot">бота-помощника в Telegram</a>, в котором есть
+              разделы с ЧАВо, списком туров и лекций компании, анкета «Подбери себе тур», раздел с подарками от компании
+              и набором стикеров от «Пешехода».
+              <!-- TODO: Ссылку на стикерпак! -->
             </p>
-            <dl class="stack">
-              <dt>Stack:</dt>
-              <dd>Python, aiogram v3, Redis;</dd>
-              <dd>Bukza API (payments), Telegram Bot API (frontend)</dd>
-            </dl>
+            <blockquote>
+              <dl class="stack">
+                <dt>Stack:</dt>
+                <dd>Python 3.12, aiogram 3.3.0</dd>
+                <dd>Telegram Bot API 7.0</dd>
+                <dd>Redis, SQLite</dd>
+              </dl>
+              <p>
+                Код проекта на <a href="https://github.com/tropintropin/telegram_bot_peshehod_chat">Github</a>.
+              </p>
+              <p>
+                Логика работы бота внутри сложных анкет реализована с помощью фабрик коллбэков и машины состояний (на
+                базе Redis).
+              </p>
+              <p>
+                В планах: интегрировать бэкенд бота с API <i>amoCRM</i>. В этом случае получится уйти от ручного
+                редактирования информации об экскурсиях, лекциях и пр. в пользу синхронизации с данными из
+                <i>amoCRM</i>.
+              </p>
+            </blockquote>
             <p>
               2018—2021 Написал первые экскурсии для компании, обучил первых гидов, сам водил частные и групповые
               экскурсии по Санкт-Петербургу на русском языке.
@@ -189,11 +207,17 @@
               2015 Редакторовал и самостоятельно писал тексты для аудиогидов по экспозициям Государственного Эрмитажа в
               Главном музейном комплексе (Зимний дворец, Эрмитажи) и Главном штабе.
             </p>
+            <blockquote>
+              <p>
+                Аудиогиды доступны в <a href="http://www.hermitageapp.com/audioguide/index.html">мобильном
+                  приложении</a> музея для iOS.
+              </p>
+            </blockquote>
           </dd>
           <dt><strong class="organization-name">Издательство «Историческая иллюстрация»</strong></dt>
           <dd>
             <p>
-              2013 Корректировал книги на русском языке.
+              2013 Корректировал исторические и художественные книги на русском языке.
             </p>
           </dd>
         </dl>
