@@ -17,7 +17,7 @@ header {
 }
 
 header h1 {
-    font-family: 'Caveat', cursive;
+    font-family: 'Caveat', 'Ubuntu', 'Roboto', 'Helvetica', 'Tahoma', serif;
     font-size: 60px;
     text-align: center;
 }
@@ -27,7 +27,7 @@ main {
 }
 
 article {
-    font-family: 'Finlandica', sans-serif;
+    font-family: 'Finlandica', 'Ubuntu', 'Roboto', 'Cambria', 'Tahoma', sans-serif;
 }
 
 section {
@@ -63,12 +63,12 @@ a:visited {
 }
 
 .stack {
-    font-family: 'Jura', sans-serif;
+    font-family: 'Jura', 'Monaco', 'Courier New', monospace;
     font-size: 16px;
 }
 
 footer {
-    font-family: 'Jura', sans-serif;
+    font-family: 'Jura', 'Monaco', 'Courier New', monospace;
     text-align: center;
     color: gray;
 }
