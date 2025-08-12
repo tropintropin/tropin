@@ -1,0 +1,10 @@
+{
+  "favicon": "/assets/images/favicon.ico",
+  "favicon_16": "/assets/images/favicon-16x16.png",
+  "favicon_32": "/assets/images/favicon-32x32.png",
+  "apple_touch_icon": "/assets/images/apple-touch-icon.png",
+  "android_chrome_192": "/assets/images/android-chrome-192x192.png",
+  "android_chrome_512": "/assets/images/android-chrome-512x512.png",
+  "manifest": "/assets/manifest.json",
+  "robots": "/assets/robots.txt"
+}

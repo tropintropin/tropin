@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru-RU" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="https://tropin.one">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-title" content="Valery Tropin">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta name="author" content="Valery Tropin">
+  <meta name="description" content="{{ description | default('Python developer, museum employee, guide to St. Petersburg') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <title>{{ title | default('Valery Tropin') }}</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  {% include "partials/og-meta.njk" %}
+  {% include "partials/twitter-meta.njk" %}
+</head>
+<body>
+  {% include "partials/header.njk" %}
+  <main>
+    {{ content | safe }}
+  </main>
+  {% include "partials/footer.njk" %}
+</body>
+</html>
