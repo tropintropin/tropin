@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy",
+    "build": "eleventy && npx pagefind --site _site",
     "clean": "rimraf _site",
     "build:css": "sass src/assets/css/main.scss src/assets/css/style.css --no-source-map --style=compressed",
     "dev": "npm-run-all -p start build:css"

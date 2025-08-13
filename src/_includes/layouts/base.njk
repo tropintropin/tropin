@@ -23,10 +23,7 @@
     />
     <link rel="manifest" href="{{ meta.manifest }}" />
     <meta name="apple-mobile-web-app-title" content="{{ meta.appleTitle }}" />
-    <meta
-      name="apple-mobile-web-app-capable"
-      content="{{ meta.appleCapable }}"
-    />
+    <meta name="mobile-web-app-capable" content="{{ meta.appleCapable }}" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
       content="{{ meta.appleStatusBarStyle }}"
@@ -39,21 +36,27 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <title>{{ title | default(site.title) }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <title>{{ title | default(site.title) }}</title>
-
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
 
     {% include "partials/og-meta.njk" %} {% include "partials/twitter-meta.njk"
     %}
   </head>
-  <body>
+  <body data-pagefind-body>
     {% include "partials/header.njk" %}
-    <main>
-      {{ content | safe }}
-    </main>
+    <main>{% block content %}{% endblock %}</main>
     {% include "partials/footer.njk" %}
+    <!-- Pagefind JS -->
+    <script src="/pagefind/pagefind-ui.js"></script>
+    <div id="search"></div>
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        new PagefindUI({ element: "#search", showSubResults: true });
+      });
+    </script>
   </body>
 </html>
