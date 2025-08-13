@@ -1,10 +1,14 @@
 {
   "name": "tropin",
   "version": "1.0.0",
-  "description": "Код моего сайта-визитки [tropin.one](https://tropin.one). Пока что на чистом HTML + CSS. Пишу его по мере изучения этих самых HTML и CSS.",
+  "description": "Код моего сайта-визитки [tropin.one](https://tropin.one)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rimraf _site",
+    "build:css": "sass src/assets/css/main.scss src/assets/css/style.css --no-source-map --style=compressed",
+    "dev": "npm-run-all -p start build:css"
   },
   "keywords": [],
   "author": "",

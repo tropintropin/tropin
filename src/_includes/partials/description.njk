@@ -1,0 +1,48 @@
+<section id="description">
+  <h3>Обо мне</h3>
+
+  <!-- ФИО -->
+  <ul>
+    <li>{{ author.fullName }}</li>
+
+    <!-- Локация и часовой пояс -->
+    <li>
+      {{ author.location.city }}, {{ author.location.country }} {% if
+      author.location.timezone %} ,
+      <a
+        href="https://commons.wikimedia.org/wiki/File:World_Time_Zones_Map.png"
+        >{{ author.location.timezone }}</a
+      >
+      {% endif %}
+    </li>
+
+    <!-- Языки -->
+    {% if author.languages %} {% for lang in author.languages %}
+    <li>
+      {{ lang.name }} — {{ lang.level }} {% if lang.certificate %} (<a
+        href="{{ lang.certificate }}"
+        target="_blank"
+        rel="noopener"
+        >сертификат</a
+      >) {% endif %}
+    </li>
+    {% endfor %} {% endif %}
+  </ul>
+
+  <!-- CV ссылки -->
+  {% if author.cvLinks %}
+  <p>Резюме и документы:</p>
+  <ul>
+    {% for cv in author.cvLinks %}
+    <li>
+      <a href="{{ cv.url }}" target="_blank" rel="noopener">{{ cv.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  <!-- Bio -->
+  {% if author.bio %}
+  <p itemprop="description">{{ author.bio }}</p>
+  {% endif %}
+</section>

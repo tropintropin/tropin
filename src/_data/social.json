@@ -1,6 +1,9 @@
 {
-  "github": "",
-  "telegram": "",
-  "linkedin": "",
-  "instagram": ""
+  "telegram": "https://t.me/ozlik",
+  "linkedin": "https://www.linkedin.com/in/tropin",
+  "github": "https://github.com/tropintropin",
+  "habrCareer": "https://career.habr.com/tropintropin",
+  "calCom": "https://cal.com/tropin",
+  "email": "tropin.tropin@gmail.com",
+  "pgpKey": "/pgp-public-key.asc"
 }
