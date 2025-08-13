@@ -1,5 +1,7 @@
 # tropin.one
 
+[![wakatime](https://wakatime.com/badge/github/tropintropin/tropin.svg)](https://wakatime.com/badge/github/tropintropin/tropin)
+
 ## Рабочая хрень для миграции на Eleventy
 
 ### Project Structure
