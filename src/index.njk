@@ -6,13 +6,13 @@ description: Main page with contacts & CV
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-    <article class="cv" itemscope itemtype="https://schema.org/Person">
+<article class="cv" itemscope itemtype="https://schema.org/Person">
 
-        <h2>Curriculum Vitae</h2>
+    <h2>Curriculum Vitae</h2>
 
-        {% include "partials/description.njk" %}
+    {% include "partials/description.njk" %}
 
-        {% include "partials/contacts.njk" %}
+    {% include "partials/contacts.njk" %}
 
-    </article>
+</article>
 {% endblock %}
