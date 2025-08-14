@@ -11,9 +11,8 @@ module.exports = function (eleventyConfig) {
   // Passthrough for static assets
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({
-  "node_modules/@pagefind/pagefind/dist": "pagefind"
-});
-
+    "node_modules/@pagefind/pagefind/dist": "pagefind",
+  });
 
   // Collections
   eleventyConfig.addCollection("posts", function (collectionApi) {

@@ -2,7 +2,7 @@
 
 [![wakatime](https://wakatime.com/badge/github/tropintropin/tropin.svg)](https://wakatime.com/badge/github/tropintropin/tropin)
 
-## Рабочая хрень для миграции на Eleventy
+## Eleventy Migration
 
 ### Project Structure
 
@@ -10,9 +10,9 @@
 .
 ├── src/
 │   ├── blog/				# Markdown-посты
-│	├──	projects/
-│	├──	publications/
-│	├──	videos/
+│	  ├──	projects/
+│	  ├──	publications/
+│	  ├──	videos/
 │   ├── pages/             # Статические страницы (about, contact)
 │   ├── _includes/         # layouts и partials
 │   │   ├── layouts/
@@ -75,7 +75,7 @@ gantt
 title       Project Timeline
 dateFormat  YYYY.MM.DD
 axisFormat  %Y.%m
-excludes    
+excludes
 
 section     DEVELOPMENT
 Start the project						:milestone, crit,	done,	2023.02.28,

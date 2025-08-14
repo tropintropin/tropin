@@ -10,11 +10,13 @@
     <!-- Main Navigation -->
     <nav class="main-nav" aria-label="Главное меню">
       {% if menu and menu.length %}
-      <ul>
-        {% for item in menu %}
-        <li><a href="{{ item.url | url }}">{{ item.title }}</a></li>
-        {% endfor %}
-      </ul>
+        <ul>
+          {% for item in menu %}
+            <li>
+              <a href="{{ item.url | url }}">{{ item.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
       {% endif %}
     </nav>
   </div>

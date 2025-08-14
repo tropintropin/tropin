@@ -1,22 +1,22 @@
 <section id="contacts">
   <h3>Контакты</h3>
-  
+
   <ul>
     {% for contact in social.contacts %}
-    <li>
-      <a
+      <li>
+        <a
         href="{{ contact.url }}"
         {% if contact.itemprop %}itemprop="{{ contact.itemprop }}"{% endif %}
         {% if contact.rel %}rel="{{ contact.rel }}"{% endif %}
         {% if contact.download %}download{% endif %}
         {% if contact.titleAttr %}title="{{ contact.titleAttr }}"{% endif %}
       >
-        {{ contact.title }}
-      </a>
-      {% if contact.note %}
+          {{ contact.title }}
+        </a>
+        {% if contact.note %}
         — {{ contact.note }}
-      {% endif %}
-    </li>
+        {% endif %}
+      </li>
     {% endfor %}
   </ul>
 
