@@ -16,5 +16,6 @@
   "android_chrome_192": "/assets/images/android-chrome-192x192.png",
   "android_chrome_512": "/assets/images/android-chrome-512x512.png",
   "manifest": "/assets/manifest.json",
-  "robots": "/assets/robots.txt"
+  "robots": "/assets/robots.txt",
+  "printQrCode": "/assets/images/print_QR.svg"
 }
