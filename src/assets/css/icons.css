@@ -1,0 +1,10 @@
+.icon-link svg {
+  width: 24px;
+  height: 24px;
+  fill: gray;
+  transition: fill 0.2s;
+}
+
+.icon-link:hover svg {
+  fill: #000;
+}

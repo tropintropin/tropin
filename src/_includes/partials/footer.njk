@@ -1,5 +1,10 @@
 <footer>
   <div class="footer-inner">
+
+    {% for icon in social_icons.icons %}
+      <a href="{{ icon.url }}" target="_blank" aria-label="{{ icon.name }}" class="icon-link" data-svg="{{ icon.svg }}"></a>
+    {% endfor %}
+
     <p>
       <i>
         <a
@@ -16,6 +21,5 @@
     <p>&copy; MMXXIII&mdash;MMXXV {{ author.fullName }}</p>
 
     <div id="wcb" class="carbonbadge wcb-d"></div>
-    <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
   </div>
 </footer>

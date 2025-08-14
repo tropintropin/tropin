@@ -40,8 +40,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 
+    {# CSS #}
     <link rel="stylesheet" href="/assets/css/style.css"/>
     <link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/assets/css/icons.css" />
 
     {% include "partials/og-meta.njk" %}
     {% include "partials/twitter-meta.njk"
@@ -53,12 +55,14 @@
       {% block content %}{% endblock %}
     </main>
     {% include "partials/footer.njk" %}
-    <!-- Pagefind JS -->
+    {# JS Scripts #}
     <script src="/pagefind/pagefind-ui.js"></script>
     <script>
       window.addEventListener("DOMContentLoaded", (event) => {
         new PagefindUI({element: "#search", showSubResults: true});
       });
     </script>
+    <script src="/assets/js/icons.js" defer></script>
+    <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
   </body>
 </html>
