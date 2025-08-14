@@ -1,0 +1,36 @@
+<section id="contacts">
+  <h3>Контакты</h3>
+  
+  <ul>
+    {% for contact in social.contacts %}
+    <li>
+      <a
+        href="{{ contact.url }}"
+        {% if contact.itemprop %}itemprop="{{ contact.itemprop }}"{% endif %}
+        {% if contact.rel %}rel="{{ contact.rel }}"{% endif %}
+        {% if contact.download %}download{% endif %}
+        {% if contact.titleAttr %}title="{{ contact.titleAttr }}"{% endif %}
+      >
+        {{ contact.title }}
+      </a>
+      {% if contact.note %}
+        — {{ contact.note }}
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+
+  <figure class="qr">
+    <img
+      src="{{ social.qr.image }}"
+      height="100"
+      alt="{{ social.qr.alt }}"
+    >
+    <figcaption>
+      <abbr title="{{ social.qr.abbr }}">Scan</abbr>
+      to address book or
+      <a href="{{ social.qr.vcard }}" title="{{ social.qr.titleAttr }}">download</a>
+      the contact to your phone
+    </figcaption>
+  </figure>
+</section>

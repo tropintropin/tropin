@@ -1,41 +1,49 @@
-<section id="description">
+<section id="description" itemscope itemtype="https://schema.org/Person">
   <h3>Обо мне</h3>
 
-  <!-- ФИО -->
-  <ul>
-    <li>{{ author.fullName }}</li>
-
-    <!-- Локация и часовой пояс -->
+  <!-- Basic Data -->
+  <ul class="person-details">
     <li>
-      {{ author.location.city }}, {{ author.location.country }} {% if
-      author.location.timezone %} ,
-      <a
-        href="https://commons.wikimedia.org/wiki/File:World_Time_Zones_Map.png"
-        >{{ author.location.timezone }}</a
-      >
-      {% endif %}
+      <span itemprop="givenName">{{ author.firstName }}</span>
+      <span itemprop="additionalName">{{ author.middleName }}</span>
+      <span itemprop="familyName">{{ author.lastName }}</span>
     </li>
-
-    <!-- Языки -->
-    {% if author.languages %} {% for lang in author.languages %}
-    <li>
-      {{ lang.name }} — {{ lang.level }} {% if lang.certificate %} (<a
-        href="{{ lang.certificate }}"
-        target="_blank"
-        rel="noopener"
-        >сертификат</a
-      >) {% endif %}
+    <li itemprop="homeLocation" itemscope itemtype="https://schema.org/PostalAddress">
+      <span itemprop="addressRegion">{{ author.location.city }}</span>,
+      <span itemprop="addressCountry">{{ author.location.country }}</span>,
+      <a href="https://commons.wikimedia.org/wiki/File:World_Time_Zones_Map.png">{{ author.location.timezone }}</a>
     </li>
-    {% endfor %} {% endif %}
   </ul>
 
-  <!-- CV ссылки -->
+  <!-- Languages -->
+  {% if author.languages %}
+  <ul class="languages">
+    {% for lang in author.languages %}
+    <li itemscope itemtype="https://schema.org/Language">
+      <span itemprop="name">{{ lang.name }}</span> —
+      {% if lang.certificate_url %}
+      <a href="{{ lang.certificate_url }}" target="_blank" rel="me noopener" title="{{ lang.certificate_title }}">
+        {{ lang.level }}
+      </a>
+      {% else %}
+      {{ lang.level }}
+      {% endif %}
+      {% if lang.iso %}
+      <meta itemprop="alternateName" content="{{ lang.iso }}">
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  <!-- CV & Portfolio -->
   {% if author.cvLinks %}
-  <p>Резюме и документы:</p>
-  <ul>
+  <ul class="cv-links">
     {% for cv in author.cvLinks %}
     <li>
-      <a href="{{ cv.url }}" target="_blank" rel="noopener">{{ cv.title }}</a>
+      <a href="{{ cv.url }}" target="_blank" rel="me noopener" title="{{ cv.url_title }}">
+        {{ cv.title }}
+      </a>
     </li>
     {% endfor %}
   </ul>

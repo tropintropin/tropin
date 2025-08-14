@@ -1,11 +1,18 @@
 ---
-title: Главная
-description: Главная страница сайта Валерия Тропина
+title: Valery Tropin
+description: Main page with contacts & CV
 ---
 
-{% extends "layouts/base.njk" %} {% block content %}
+{% extends "layouts/base.njk" %}
 
-<!-- Блок «Обо мне» -->
+{% block content %}
+<article class="cv" itemscope itemtype="https://schema.org/Person">
+
+<h2>Curriculum Vitae</h2>
+
 {% include "partials/description.njk" %}
 
+{% include "partials/contacts.njk" %}
+
+</article>
 {% endblock %}

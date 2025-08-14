@@ -1,5 +1,5 @@
 {
-  "defaultImage": "/img/Visit_Card_QR.webp",
+  "defaultImage": "/assets/images/Visit_Card_QR.webp",
   "defaultImageAlt": "QR-Code with contacts data",
   "twitterCardType": "summary_large_image",
   "defaultOgType": "article",

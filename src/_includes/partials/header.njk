@@ -4,59 +4,18 @@
       <a href="{{ site.url }}">{{ site.title }}</a>
     </h1>
 
-    <!-- Поле поиска -->
+    <!-- Pagefind JS: Search -->
     <div id="search"></div>
 
-    <nav class="main-nav">
+    <!-- Main Navigation -->
+    <nav class="main-nav" aria-label="Главное меню">
+      {% if menu and menu.length %}
       <ul>
-        <li><a href="#description">Обо мне</a></li>
-        <li><a href="#contacts">Контакты</a></li>
-        {% if author.cvLinks %} {% for cv in author.cvLinks %}
-        <li>
-          <a href="{{ cv.url }}" target="_blank" rel="noopener">
-            {{ cv.title }}
-          </a>
-        </li>
-        {% endfor %} {% endif %}
+        {% for item in menu %}
+        <li><a href="{{ item.url | url }}">{{ item.title }}</a></li>
+        {% endfor %}
       </ul>
-    </nav>
-
-    <ul class="social-links">
-      {% if social.telegram %}
-      <li>
-        <a href="{{ social.telegram }}" target="_blank" rel="me noopener"
-          >Telegram</a
-        >
-      </li>
-      {% endif %} {% if social.linkedin %}
-      <li>
-        <a href="{{ social.linkedin }}" target="_blank" rel="me noopener"
-          >LinkedIn</a
-        >
-      </li>
-      {% endif %} {% if social.github %}
-      <li>
-        <a href="{{ social.github }}" target="_blank" rel="me noopener"
-          >GitHub</a
-        >
-      </li>
-      {% endif %} {% if social.habrCareer %}
-      <li>
-        <a href="{{ social.habrCareer }}" target="_blank" rel="me noopener"
-          >Хабр Карьера</a
-        >
-      </li>
-      {% endif %} {% if social.calCom %}
-      <li>
-        <a href="{{ social.calCom }}" target="_blank" rel="me noopener"
-          >Записаться</a
-        >
-      </li>
-      {% endif %} {% if social.email %}
-      <li><a href="mailto:{{ social.email }}">Email</a></li>
-      {% endif %} {% if social.gpgKey %}
-      <li><a href="{{ social.gpgKey }}" download>GPG Key</a></li>
       {% endif %}
-    </ul>
+    </nav>
   </div>
 </header>
