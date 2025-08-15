@@ -10,24 +10,23 @@
   </div>
 
   <div class="header-inner">
-    <h1 class="site-title">
-      <a href="{{ site.url }}">{{ site.title }}</a>
-    </h1>
+    <div class="title-row">
+      <button class="nav-toggle" aria-label="Открыть меню"></button>
+      <h1 class="site-title"><a href="{{ site.url }}">{{ site.title }}</a></h1>
+    </div>
 
-    <!-- Pagefind JS: Search -->
-    <div id="search"></div>
-
-    <!-- Main Navigation -->
-    <nav class="main-nav" aria-label="Главное меню">
-      {% if menu and menu.length %}
-        <ul>
+    <div class="nav-wrapper">
+      <nav class="main-nav" aria-label="Главное меню">
+        {% if menu and menu.length %}
+        <ul class="nav-list">
           {% for item in menu %}
-            <li>
-              <a href="{{ item.url | url }}">{{ item.title }}</a>
-            </li>
+            <li><a href="{{ item.url | url }}">{{ item.title }}</a></li>
           {% endfor %}
         </ul>
-      {% endif %}
-    </nav>
+        {% endif %}
+      </nav>
+
+      <div id="search"></div>
+    </div>
   </div>
 </header>
