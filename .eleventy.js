@@ -9,6 +9,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
 
   // Passthrough for static assets
+  eleventyConfig.addPassthroughCopy({ "src/root": "/" });
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({
     "node_modules/@pagefind/pagefind/dist": "pagefind",
