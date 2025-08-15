@@ -44,6 +44,8 @@
     <link rel="stylesheet" href="/assets/css/style.css"/>
     <link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="/assets/css/icons.css" />
+    <link rel="stylesheet" href="/assets/css/scroll-top.css" />
+
 
     {% include "partials/og-meta.njk" %}
     {% include "partials/twitter-meta.njk"
@@ -55,6 +57,14 @@
       {% block content %}{% endblock %}
     </main>
     {% include "partials/footer.njk" %}
+
+    <button id="scrollTop" class="scroll-top" aria-label="Наверх">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </svg>
+    </button>
+
     {# JS Scripts #}
     <script src="/pagefind/pagefind-ui.js"></script>
     <script>
@@ -64,6 +74,7 @@
     </script>
     <script src="{{ '/assets/js/nav-toggle.js' | url }}"></script>
     <script src="/assets/js/icons.js" defer></script>
+    <script src="/assets/js/scrolltop.js" defer></script>
     <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
   </body>
 </html>
