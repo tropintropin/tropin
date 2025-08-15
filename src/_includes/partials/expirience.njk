@@ -1,0 +1,148 @@
+<section id="expirience">
+<h3>Опыт работы</h3>
+<dl>
+    <dt itemscope itemtype="http://schema.org/Role">
+        <div itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+            <strong class="organization-name" itemprop="name">
+            <cite>Государственный Эрмитаж</cite>
+            </strong>
+        </div>
+    </dt>
+    <dd>
+    <p>
+        2012… Лаборант, затем <span itemprop="jobTitle" itemscope itemtype="http://schema.org/Role">менеджер I категории</span> в отделе <cite>«Дворец Меншикова»</cite>.
+    </p>
+    <p>
+        Веду документооборот отдела, составляю ТЗ для госзакупок (компьютерная техника, оборудование выставок и т.д.), ТЗ
+        на ремонты и реставрацию фасадов и помещений дворца.
+    </p>
+    <p>
+        Описал коллекцию деревянной археологии XVIII в.: подготовил музейные описания, создал и провожу на
+        собранном материале популярные лекции для Эрмитажного Лектория и экскурсии (очно и в <a href="https://www.youtube.com/live/8p6_HIRi0Og">видеоформате</a>).
+    </p>
+    <p>
+        Курировал создание интерактивной 3D-модели <cite>Дворца Меншикова</cite>, на которой можно ознакомиться с коллекцией
+        деревянной археологии: с оконными и дверными проёмами, потолочными балками и иными экспонатами.
+    </p>
+    </dd>
+    <dt itemscope itemtype="http://schema.org/Role">
+        <div itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+            <strong class="organization-name" itemprop="name">
+            <cite>Дом культуры Льва Лурье</cite>
+            </strong>
+        </div>
+    </dt>
+    <dd>
+    <p>
+        2024… Вожу авторскую семейную экскурсию <a href="https://dklurie.ru/excursions/detail/206796/"><cite>Тайные места Меншиковского дворца</cite></a> для детей и их взрослых.
+    </p>
+    </dd>
+    <dt itemscope itemtype="http://schema.org/Role">
+        <div itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+            <strong class="organization-name" itemprop="name">
+            <cite>Туристическая компания «Пешеход Тур»</cite>
+            </strong>
+        </div>
+    </dt>
+    <p>
+        2024–2025 Написал
+        <a href="https://t.me/moncha_tour_bot"><cite>телеграм-бота с аудиоэкскурсиями по Мончегорску</cite></a>
+        для <cite>Агентства развития Мончегорска</cite>. Бот умеет запоминать маршрут и точку, на которой
+        остановился пользователь, с помощью миниаппа показывать маршрут на карте с возможностью
+        перехода к прослушиванию выбранной точки, показывает список рекомендаций для гостей
+        Мончегорска с ресурса
+        <a href="https://visit-imandra.ru/"><cite>Визит.Имандра</cite></a>.
+    </p>
+
+    <div class="project-details">
+        <dl class="stack">
+            <dt>Stack:</dt>
+            <dd>Python 3.13, aiogram 3.16</dd>
+            <dd>Telegram Bot API 8.3</dd>
+            <dd>FastAPI, Leaflet JS (for Telegram Miniapp)</dd>
+            <dd>Redis</dd>
+        </dl>
+
+        <p>
+            Развёртывание автоматизировано через команды <code>make</code>: с их помощью
+            настраивается <code>nginx</code>, запускаются <code>systemd</code>-юниты для бота и
+            миниаппа (на <code>gunicorn</code>), устанавливается <code>Redis</code> и
+            конфигурируется окружение. <code>nginx</code> проксирует миниапп, бот работает как
+            отдельный сервис, а <code>Redis</code> живёт как системный демон и хранит прогресс
+            пользователей.
+        </p>
+
+        <p>
+            Реализована простая, но полезная админка: в ней можно отслеживать статистику
+            использования — количество уникальных пользователей, процент тех, кто начал и
+            завершил маршрут. Также через неё можно скрывать и открывать точки маршрутов,
+            добавлять и удалять админов бота. Всё — прямо в Telegram, без лишних вмешательств в
+            код проекта.
+        </p>
+    </div>
+    <p>
+        2022–2023 Написал <a href="https://t.me/peshehod_help_bot"><cite>бота-помощника в Telegram</cite></a>, в котором есть
+        разделы с ЧАВо, списком туров и лекций компании, анкета <cite>Подбери себе тур</cite>, раздел с подарками от компании
+        и набором стикеров от <cite>Пешехода</cite>.
+    </p>
+    <div class="project-details">
+        <dl class="stack">
+        <dt>Stack:</dt>
+        <dd>Python 3.12, aiogram 3.3.0</dd>
+        <dd>Telegram Bot API 7.0</dd>
+        <dd>Redis, SQLite</dd>
+        </dl>
+        <p>
+        Код проекта на <a href="https://github.com/tropintropin/telegram_bot_peshehod_chat"><cite>GitHub</cite></a>.
+        </p>
+        <p>
+        Логика работы бота внутри сложных анкет реализована с помощью фабрик коллбэков и машины состояний на
+        базе <cite>Redis</cite>.
+        </p>
+    </div>
+    <p>
+        2018–2021 Написал первые экскурсии для компании, обучил первых гидов, сам водил частные и групповые
+        экскурсии по Санкт-Петербургу на русском языке.
+    </p>
+    </dd>
+    <dt><strong class="organization-name"><cite>Самозанятый</cite></strong></dt>
+    <dd>
+    <p>
+        2017… Пишу экскурсии (для себя и на заказ), вожу авторские туры по Петербургу.
+    </p>
+    <p>
+        2018–2020 Писал исторические справки для архитектурных объектов Санкт-Петербурга.
+    </p>
+    </dd>
+    <dt itemscope itemtype="http://schema.org/Role">
+        <div itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+            <strong class="organization-name" itemprop="name">
+            <cite>Museum On Line, Inc.</cite>
+            </strong>
+        </div>
+    </dt>
+    <dd>
+    <p>
+        2015 Редактировал и самостоятельно писал тексты для аудиогидов по экспозициям <cite>Государственного Эрмитажа</cite> в
+        Главном музейном комплексе (<cite>Зимний дворец</cite>, <cite>Эрмитажи</cite>) и Главном штабе.
+    </p>
+    <blockquote>
+        <p>
+        Аудиогиды доступны в <a href="http://www.hermitageapp.com/audioguide/index.html"><cite>мобильном приложении</cite></a> музея для iOS.
+        </p>
+    </blockquote>
+    </dd>
+    <dt itemscope itemtype="http://schema.org/Role">
+        <div itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+            <strong class="organization-name" itemprop="name">
+            <cite>Издательство «Историческая иллюстрация»</cite>
+            </strong>
+        </div>
+    </dt>
+    <dd>
+    <p>
+        2013 Корректировал исторические и художественные книги на русском языке.
+    </p>
+    </dd>
+</dl>
+</section>

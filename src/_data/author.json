@@ -1,0 +1,21 @@
+{
+  "firstName": "Валерий",
+  "middleName": "Васильевич",
+  "lastName": "Тропин",
+  "fullName": "Валерий Тропин",
+  "location": {
+    "city": "Санкт-Петербург",
+    "country": "Россия",
+    "timezone": "UTC+03"
+  },
+  "languages": [
+  { "name": "Русский", "level": "родной", "iso": "ru" },
+  { "name": "Английский", "level": "C1", "iso": "en", "certificate_title": "EF Standard English Test Result (PDF, 452 KB)", "certificate_url": "https://github.com/tropintropin/tropintropin/blob/main/portfolio/EF_SET_Certificate_2022.03.18.pdf" }
+  ],
+  "bio": "Музейный работник, гид по Петербургу на русском языке, создатель туристических маршрутов и программ, разработчик сложных туристических телеграм-ботов.",
+  "cvLinks": [
+    { "title": "Full CV", "url_title": "Гуглдок, в которой я заношу вообще все свои активности", "url": "https://docs.google.com/document/d/1FISd5AKu95-_jTEpBsvUJPZ5lz-mK8Pjp2_Hg-6D780/edit?usp=sharing" },
+    { "title": "PDF's on Academia.edu", "url_title": "Сканы моих статей", "url": "https://spbu.academia.edu/ValeryTropin" },
+    { "title": "Дипломы и сертификаты", "url_title": "Директория с дипломами и сертификатами с различных курсов (PDF's & JPEG's)", "url": "https://github.com/tropintropin/tropintropin/tree/main/portfolio" }
+  ]
+}

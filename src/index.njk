@@ -1,0 +1,22 @@
+---
+title: Valery Tropin
+description: Main page with contacts & CV
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<article class="cv" itemscope itemtype="https://schema.org/Person">
+
+    <h2>Curriculum Vitae</h2>
+
+    {% include "partials/description.njk" %}
+
+    {% include "partials/contacts.njk" %}
+
+    {% include "partials/expirience.njk" %}
+
+    {% include "partials/education.njk" %}
+
+</article>
+{% endblock %}

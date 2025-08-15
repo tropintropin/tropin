@@ -1,0 +1,33 @@
+<header>
+  <div class="print-info">
+    <img src="{{ meta.printQrCode }}" alt="QR для печати">
+    <div class="print-text">
+      <p>Версия для печати</p>
+      <p>Контакты:</p>
+      <p>tropin.tropin@gmail.com</p>
+      <p>+7 999 215-10-69</p>
+    </div>
+  </div>
+
+  <div class="header-inner">
+    <h1 class="site-title">
+      <a href="{{ site.url }}">{{ site.title }}</a>
+    </h1>
+
+    <!-- Pagefind JS: Search -->
+    <div id="search"></div>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav" aria-label="Главное меню">
+      {% if menu and menu.length %}
+        <ul>
+          {% for item in menu %}
+            <li>
+              <a href="{{ item.url | url }}">{{ item.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </nav>
+  </div>
+</header>

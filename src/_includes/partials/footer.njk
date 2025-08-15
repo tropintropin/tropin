@@ -1,0 +1,25 @@
+<footer>
+  <div class="footer-inner">
+
+    {% for icon in social_icons.icons %}
+      <a href="{{ icon.url }}" target="_blank" aria-label="{{ icon.name }}" class="icon-link" data-svg="{{ icon.svg }}"></a>
+    {% endfor %}
+
+    <p>
+      <i>
+        <a
+          rel="me"
+          href="https://ozlik.notion.site/Valera-s-Wish-List-487d6d07f26d4edcb2f240459513b9ab"
+          title="Notion официально не работает в РФ, используйте ВПН"
+        >
+          Вишлист
+        </a>
+        в Ноушене, если вы ищете, что мне подарить на Новый год или днюху.
+      </i>
+    </p>
+
+    <p>&copy; MMXXIII&mdash;MMXXV {{ author.fullName }}</p>
+
+    <div id="wcb" class="carbonbadge wcb-d"></div>
+  </div>
+</footer>

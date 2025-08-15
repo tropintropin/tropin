@@ -1,0 +1,24 @@
+{
+  "icons": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/tropintropin",
+      "svg": "https://cdn.jsdelivr.net/npm/simple-icons@9.21.0/icons/github.svg"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/ozlik",
+      "svg": "https://cdn.jsdelivr.net/npm/simple-icons@9.21.0/icons/telegram.svg"
+    },
+    {
+      "name": "Bluesky",
+      "url": "https://bsky.app/profile/tropin.one",
+      "svg": "https://raw.githubusercontent.com/simple-icons/simple-icons/refs/heads/develop/icons/bluesky.svg"
+    },
+    {
+      "name": "Mastodon",
+      "url": "https://tech.lgbt/@GuyFromUberwald",
+      "svg": "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mastodon.svg"
+    }
+  ]
+}

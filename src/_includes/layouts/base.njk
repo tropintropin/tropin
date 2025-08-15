@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="canonical" href="{{ site.url }}"/>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ meta.apple_touch_icon }}"
+/>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ meta.favicon_32 }}"
+/>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ meta.favicon_16 }}"
+/>
+    <link rel="manifest" href="{{ meta.manifest }}"/>
+    <meta name="apple-mobile-web-app-title" content="{{ meta.appleTitle }}"/>
+    <meta name="mobile-web-app-capable" content="{{ meta.appleCapable }}"/>
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="{{ meta.appleStatusBarStyle }}"
+/>
+
+    <meta name="author" content="{{ author.fullName }}"/>
+    <meta
+      name="description"
+      content="{{ description | default(site.description) }}"
+/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>{{ title | default(site.title) }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
+    {# CSS #}
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/assets/css/icons.css" />
+
+    {% include "partials/og-meta.njk" %}
+    {% include "partials/twitter-meta.njk"
+    %}
+  </head>
+  <body data-pagefind-body>
+    {% include "partials/header.njk" %}
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    {% include "partials/footer.njk" %}
+    {# JS Scripts #}
+    <script src="/pagefind/pagefind-ui.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        new PagefindUI({element: "#search", showSubResults: true});
+      });
+    </script>
+    <script src="/assets/js/icons.js" defer></script>
+    <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
+  </body>
+</html>

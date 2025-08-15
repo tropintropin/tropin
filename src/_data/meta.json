@@ -1,0 +1,21 @@
+{
+  "defaultImage": "/assets/images/Visit_Card_QR.webp",
+  "defaultImageAlt": "QR-Code with contacts data",
+  "twitterCardType": "summary_large_image",
+  "defaultOgType": "article",
+  "defaultOgImageWidth": 200,
+  "defaultOgImageHeight": 200,
+  "alternateLocales": ["en_US", "en_GB"],
+  "appleTitle": "Valery Tropin",
+  "appleCapable": "yes",
+  "appleStatusBarStyle": "black",
+  "favicon": "/assets/images/favicon.ico",
+  "favicon_16": "/assets/images/favicon-16x16.png",
+  "favicon_32": "/assets/images/favicon-32x32.png",
+  "apple_touch_icon": "/assets/images/apple-touch-icon.png",
+  "android_chrome_192": "/assets/images/android-chrome-192x192.png",
+  "android_chrome_512": "/assets/images/android-chrome-512x512.png",
+  "manifest": "/manifest.json",
+  "robots": "/robots.txt",
+  "printQrCode": "/assets/images/print_QR.svg"
+}

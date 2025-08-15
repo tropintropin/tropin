@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Finlandica:ital,wght@0,400;0,600;1,400;1,600&family=Jura:wght@300&display=swap");
+
+/* ===== Переменные ===== */
+:root {
+  --font-body: "Finlandica", "Ubuntu", "Roboto", "Cambria", "Tahoma", sans-serif;
+  --font-header: "Caveat", "Ubuntu", "Roboto", "Helvetica", "Tahoma", serif;
+  --font-mono: "Jura", "Monaco", "Courier New", monospace;
+
+  --color-text: #333;
+  --color-link: gray;
+  --color-link-visited: #777;
+  --color-link-hover: #f4b943;
+  --color-link-hover-visited: #d49a2d;
+
+  --spacing-section: 50px;
+  --spacing-container: 50px;
+}
+
+/* ===== Базовые стили ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  max-width: 360px;
+}
+
+header {
+  margin: var(--spacing-section) 0 10px;
+}
+
+header h1 {
+  font-family: var(--font-header);
+  font-size: 60px;
+  text-align: center;
+}
+
+/* ===== Контент ===== */
+main,
+article,
+section {
+  margin: var(--spacing-section) 0;
+  padding: 0 var(--spacing-container);
+  font-family: inherit;
+}
+
+section h2 {
+  padding: 0;
+  text-align: left;
+  border: none;
+}
+
+/* ===== Ссылки ===== */
+a {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-link);
+  transition: color 0.3s ease, transform 0.15s ease;
+}
+
+a:visited {
+  color: var(--color-link-visited);
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+a:hover {
+  transform: scale(1.05);
+}
+
+a:link:hover,
+a:visited:hover {
+  color: var(--color-link-hover);
+}
+
+a:visited:hover {
+  color: var(--color-link-hover-visited);
+}
+
+a:hover::after {
+  width: 100%;
+  background-color: currentColor;
+}
+
+a:active {
+  transform: scale(0.97);
+  transition: transform 0.05s ease;
+}
+
+/* ===== Код и футер ===== */
+.stack,
+footer {
+  font-family: var(--font-mono);
+}
+
+.stack {
+  font-size: 16px;
+}
+
+footer {
+  text-align: center;
+  color: gray;
+}
+
+/* ===== Медиа-запросы ===== */
+@media (min-width: 768px) {
+  body {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    max-width: 1023px;
+  }
+}
+
+/* ===== Блок печати ===== */
+.print-info {
+  display: none;
+}
+
+@media print {
+  .print-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #bbb;
+    padding: 8px 12px;
+    font-style: italic;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .print-info img {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+  }
+
+  .print-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    line-height: 1.3;
+  }
+
+  .print-text p {
+    margin: 0 0 4px 0;
+  }
+
+  body,
+  main,
+  article,
+  section {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+  }
+
+  section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  a[href]:after {
+    content: " [" attr(href) "]";
+    font-size: 35%;
+    white-space: nowrap;
+  }
+  li a {
+    display: inline;
+  }
+  li a[href^="https://"]:after, p a[href^="https://"]:after, a[href^="http://"]:after
+  {
+    content: " [" attr(href) "]";
+    font-size: 35%;
+  }
+  p,
+  li {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  footer,
+  header hr {
+    display: none;
+  }
+}
