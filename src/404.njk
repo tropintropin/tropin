@@ -1,0 +1,35 @@
+---
+title: 404 — Page Not Found
+permalink: /404.html
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block head %}
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="/assets/css/not-found.css">
+{% endblock %}
+
+{% block content %}
+    <section class="not-found" data-pagefind-ignore="all">
+        <h1>Ошибка 404: нет такой страницы</h1>
+
+        <pre class="not-found__code">
+░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░ 
+       ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░ 
+       ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░ 
+       ░▒▓█▓▒░▒▓████████▓▒░      ░▒▓█▓▒░ 
+        </pre>
+
+        <p>Упс! Такой страницы не существует. Возможно, она ещё появится, а может и нет.</p>
+        <p>Вы можете вернуться на <a href="{{ "/" }}">главную</a> или воспользоваться поиском вверху страницы.</p>
+
+        <footer class="not-found__footer">
+            <small>ASCII-art by Aiden Neuding, created with <a href="https://patorjk.com/software/taag/#p=display&f=BlurVision%20ASCII&t=404">patorjk.com/TAAG</a>.</small>
+        </footer>
+
+    </section>
+{% endblock %}

@@ -1,0 +1,15 @@
+/* Блок 404 */
+.not-found {
+  text-align: center;
+}
+
+/* ASCII-арт */
+.not-found__code {
+  line-height: 1.1;
+  margin: 1.5rem 0;
+  white-space: pre;
+  font-family: monospace;
+  overflow-x: auto;
+  display: block;
+  max-width: 100%;
+}
