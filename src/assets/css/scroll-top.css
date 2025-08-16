@@ -2,7 +2,6 @@
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  display: none;
   background-color: #a0a0a0;
   border: none;
   border-radius: 50%;
@@ -12,15 +11,20 @@
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   z-index: 1000;
-  transition: opacity 0.3s, transform 0.3s;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .scroll-top.show {
-  display: block;
+  opacity: 0.35;
+  pointer-events: auto;
   transform: translateY(0);
 }
 
 .scroll-top:hover {
   background-color: #e0a800;
+  opacity: 1;
   transform: translateY(-2px);
 }
