@@ -46,10 +46,11 @@
     <link rel="stylesheet" href="/assets/css/icons.css" />
     <link rel="stylesheet" href="/assets/css/scroll-top.css" />
 
-
     {% include "partials/og-meta.njk" %}
     {% include "partials/twitter-meta.njk"
     %}
+
+    {% block head %}{% endblock %}
   </head>
   <body data-pagefind-body>
     {% include "partials/header.njk" %}
