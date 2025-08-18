@@ -6,6 +6,7 @@
   --font-header: "Caveat", "Ubuntu", "Roboto", "Helvetica", "Tahoma", serif;
   --font-mono: "Jura", "Monaco", "Courier New", monospace;
 
+  --progress-bar-color: gray;
   --color-text: #333;
   --color-link: gray;
   --color-link-visited: #777;
@@ -363,6 +364,24 @@ footer {
     margin-top: 25px;
     width: 100%;
   }
+}
+
+/* ===== Прогресс-бар скролла ===== */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: color-mix(in srgb, var(--progress-bar-color) 70%, transparent);
+  transform-origin: left;
+  animation: grow linear;
+  animation-timeline: scroll();
+}
+
+@keyframes grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
 }
 
 /* ===== Блок печати ===== */

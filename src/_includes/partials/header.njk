@@ -12,21 +12,25 @@
   <div class="header-inner">
     <div class="title-row">
       <button class="nav-toggle" aria-label="Открыть меню"></button>
-      <h1 class="site-title"><a href="{{ site.url }}">{{ site.title }}</a></h1>
+      <h1 class="site-title">
+        <a href="{{ site.url }}">{{ site.title }}</a>
+      </h1>
     </div>
 
     <div class="nav-wrapper">
       <nav class="main-nav" aria-label="Главное меню">
         {% if menu and menu.length %}
-        <ul class="nav-list">
-          {% for item in menu %}
-            {% if item.url == page.url %}
-              <li>{{ item.title }}</li>
-            {% else %}
-              <li><a href="{{ item.url | url }}">{{ item.title }}</a></li>
-            {% endif %}
-          {% endfor %}
-        </ul>
+          <ul class="nav-list">
+            {% for item in menu %}
+              {% if item.url == page.url %}
+                <li>{{ item.title }}</li>
+              {% else %}
+                <li>
+                  <a href="{{ item.url | url }}">{{ item.title }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
         {% endif %}
       </nav>
 
