@@ -1,0 +1,12 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+    {% include "partials/under-construction.njk" %}
+
+    <div class="blog-posts-list">
+        {% for post in collections.blog %}
+            {% include "partials/card.njk" %}
+        {% endfor %}
+    </div>
+{% endblock %}

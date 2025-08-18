@@ -1,8 +1,9 @@
 {
   "name": "tropin",
   "version": "1.0.0",
-  "description": "Код моего сайта-визитки [tropin.one](https://tropin.one)",
+  "description": "Код моего сайта [tropin.one](https://tropin.one)",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy && npx pagefind --site _site",
@@ -27,5 +28,8 @@
     "postcss-cli": "^11.0.1",
     "rimraf": "^6.0.1",
     "sass": "^1.90.0"
+  },
+  "dependencies": {
+    "@codegouvfr/eleventy-plugin-calendar": "^3.0.6"
   }
 }
