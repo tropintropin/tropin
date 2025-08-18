@@ -3,11 +3,18 @@
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import calendarPlugin from "@codegouvfr/eleventy-plugin-calendar";
 
 export default async function (eleventyConfig) {
   // Plugins
   await eleventyConfig.addPlugin(pluginRss);
   await eleventyConfig.addPlugin(syntaxHighlight);
+  await eleventyConfig.addPlugin(calendarPlugin, {
+    defaultLocation: "online",
+    defaultOrganizer: {
+      name: "Valery Tropin",
+    },
+  });
   await eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["webp", "jpeg"],
     widths: [300, 600, 1200, "auto"],
@@ -28,17 +35,17 @@ export default async function (eleventyConfig) {
   });
 
   // Collections
-  eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/blog/*.md").reverse();
+  eleventyConfig.addCollection("blog", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/blog/*.md").toReversed();
   });
   eleventyConfig.addCollection("projects", (collectionApi) =>
-    collectionApi.getFilteredByGlob("src/projects/*.md").reverse()
+    collectionApi.getFilteredByGlob("src/projects/*.md").toReversed()
   );
-  eleventyConfig.addCollection("publications", (collectionApi) =>
-    collectionApi.getFilteredByGlob("src/publications/*.md").reverse()
+  eleventyConfig.addCollection("research", (collectionApi) =>
+    collectionApi.getFilteredByGlob("src/research/*.md").toReversed()
   );
-  eleventyConfig.addCollection("videos", (collectionApi) =>
-    collectionApi.getFilteredByGlob("src/videos/*.md").reverse()
+  eleventyConfig.addCollection("events", (collectionApi) =>
+    collectionApi.getFilteredByGlob("src/events/*.md").toReversed()
   );
 
   // Filters
@@ -47,6 +54,7 @@ export default async function (eleventyConfig) {
   });
 
   // Directory options
+  eleventyConfig.ignores.add("src/_templates/**");
   return {
     dir: { input: "src", output: "_site" },
   };

@@ -2,5 +2,6 @@
   { "title": "Обо мне", "url": "/" },
   { "title": "Блог", "url": "/blog/" },
   { "title": "Проекты", "url": "/projects/" },
-  { "title": "Публикации и выступления", "url": "/research/" }
+  { "title": "Публикации и выступления", "url": "/research/" },
+  { "title": "События", "url": "/events/" }
 ]
