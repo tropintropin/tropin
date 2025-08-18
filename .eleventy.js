@@ -1,12 +1,24 @@
-// .eleventy.js
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const Image = require("@11ty/eleventy-img");
+// @ts-check
 
-module.exports = function (eleventyConfig) {
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+
+export default async function (eleventyConfig) {
   // Plugins
-  eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(syntaxHighlight);
+  await eleventyConfig.addPlugin(pluginRss);
+  await eleventyConfig.addPlugin(syntaxHighlight);
+  await eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["webp", "jpeg"],
+    widths: [300, 600, 1200, "auto"],
+    // optional, attributes assigned on <img> nodes override these values
+    htmlOptions: {
+      imgAttributes: {
+        loading: "lazy",
+        decoding: "async",
+      },
+    },
+  });
 
   // Passthrough for static assets
   eleventyConfig.addPassthroughCopy({ "src/root": "/" });
@@ -34,25 +46,8 @@ module.exports = function (eleventyConfig) {
     return new Date(dateObj).toLocaleDateString("ru-RU");
   });
 
-  // Shortcode: responsive image (example)
-  async function imageShortcode(src, alt, sizes = "100vw") {
-    if (!alt) throw new Error("Missing `alt` on image.");
-    let metadata = await Image(src, {
-      widths: [300, 600, 1200],
-      formats: ["webp", "jpeg"],
-      outputDir: "_site/assets/images/",
-    });
-    return Image.generateHTML(metadata, {
-      alt,
-      sizes,
-      loading: "lazy",
-      decoding: "async",
-    });
-  }
-  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
-
   // Directory options
   return {
     dir: { input: "src", output: "_site" },
   };
-};
+}

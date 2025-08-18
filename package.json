@@ -1,8 +1,9 @@
 {
   "name": "tropin",
   "version": "1.0.0",
-  "description": "Код моего сайта-визитки [tropin.one](https://tropin.one)",
+  "description": "Код моего сайта [tropin.one](https://tropin.one)",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy && npx pagefind --site _site",
