@@ -1,6 +1,6 @@
 {
-  "defaultImage": "/assets/images/Visit_Card_QR.webp",
-  "defaultImageAlt": "QR-Code with contacts data",
+  "defaultImage": "/assets/images/default-image.jpg",
+  "defaultImageAlt": "Valery Tropin",
   "twitterCardType": "summary_large_image",
   "defaultOgType": "article",
   "defaultOgImageWidth": 200,
