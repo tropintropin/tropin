@@ -9,22 +9,22 @@
   height: 3rem;
   font-size: 1.5rem;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   z-index: 1000;
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px);
   transition: opacity 0.4s ease, transform 0.4s ease;
-}
 
-.scroll-top.show {
-  opacity: 0.35;
-  pointer-events: auto;
-  transform: translateY(0);
-}
+  &.show {
+    opacity: 0.35;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
 
-.scroll-top:hover {
-  background-color: #e0a800;
-  opacity: 1;
-  transform: translateY(-2px);
+  &:hover {
+    background-color: #e0a800;
+    opacity: 1;
+    transform: translateY(-2px);
+  }
 }

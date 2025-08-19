@@ -3,8 +3,8 @@
 [![wakatime](https://wakatime.com/badge/github/tropintropin/tropin.svg)](https://wakatime.com/badge/github/tropintropin/tropin)
 ![Deploy Status](https://github.com/tropintropin/tropin/actions/workflows/deploy.yml/badge.svg?branch=main)
 
-
 ## About
+
 This is my personal website where I share projects, experience, and blog posts. In 2025, I migrated it to Eleventy to make building and updating faster and simpler.
 
 ## Project Timeline
@@ -27,17 +27,70 @@ Upload MVP site during migration      :milestone,                   done, 2025.0
 ```
 
 ## Tech Stack
-- Eleventy (static site generator)
-- Nunjucks templates
-- CSS, JS
-- Pagefind for search
-- GitHub Actions for CI/CD
+
+- **Eleventy** – static site generator
+- **Nunjucks** – templating engine
+- **SCSS → CSS** – styles preprocessor
+- **JavaScript** – client-side interactivity
+- **Pagefind** – search indexing for static sites
+- **GitHub Actions** – CI/CD automation
 
 ## Deployment
+
 - Automatically deployed via GitHub Actions to GitHub Pages
 - Eleventy builds output to `_site` folder
 
+## NPM Scripts Overview
 
+- **build:css** – Compile SCSS to CSS (compressed, no source maps):
+
+  ```bash
+  npm run build:css
+  ```
+
+- **watch:css** – Watch SCSS files for changes and recompile automatically:
+
+  ```bash
+  npm run watch:css
+  ```
+
+- **start** – Start Eleventy dev server with live reload:
+
+  ```bash
+  npm run start
+  ```
+
+- **pagefind** – Build Pagefind search index from `_site`:
+
+  ```bash
+  npm run pagefind
+  ```
+
+- **watch:pagefind** – Watch HTML files in \_site and rebuild search index on changes:
+
+  ```bash
+  npm run watch:pagefind
+  ```
+
+- **dev** – Development mode: watch SCSS, run Eleventy server, and auto-rebuild search index:
+
+  ```bash
+  npm run dev
+  ```
+
+  _Note_: On the first run, `_site` is empty. Run `npm run pagefind` once before starting `dev` for search to work.
+
+- **build** – Full production build: CSS + Eleventy + Pagefind:
+
+  ```bash
+  npm run build
+  ```
+
+- **clean** – Remove the `_site` folder:
+
+  ```bash
+  npm run clean
+  ```
 
 ## Project Structure
 

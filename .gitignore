@@ -31,3 +31,7 @@ Thumbs.db
 
 # Misc
 *.log
+
+# SCSS build artifacts
+/src/assets/css/main.css.map
+/src/assets/css/main.css
