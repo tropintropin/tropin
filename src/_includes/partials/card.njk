@@ -1,7 +1,9 @@
 <article class="card {% if "events" in post.data.tags %}event-card{% else %}blog-card{% endif %}">
     {% if post.data.image %}
         <div class="card-image">
-        <img src="{{ post.data.image }}" alt="{{ post.data.title }}">
+            <a href="{{ post.url }}">
+                <img src="{{ post.data.image }}" alt="{{ post.data.title }}">
+            </a>
         </div>
     {% endif %}
 
@@ -22,12 +24,19 @@
         {% endif %}
 
         {% if post.data.location and post.data.location.name %}
-            <p class="event-location">{{ post.data.location.name }}</p>
+            <p class="event-location">Место: {{ post.data.location.name }}</p>
         {% endif %}
 
         {% if post.data.organizer and post.data.organizer.name %}
             <p class="event-organizer">
-            Организатор: {{ post.data.organizer.name }}
+            Организатор и подробности: 
+            {% if post.data.organizer.url %}
+                <a href="{{ post.data.organizer.url }}" target="_blank" rel="noopener">
+                    {{ post.data.organizer.name }}
+                </a>
+                {% else %}
+                {{ post.data.organizer.name }}
+                {% endif %}
             </p>
         {% endif %}
 
