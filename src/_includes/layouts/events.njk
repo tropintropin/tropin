@@ -1,0 +1,14 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+    {% include "partials/under-construction.njk" %}
+
+    <div id="progress-bar"></div>
+
+    <div class="events-posts-list">
+        {% for post in collections.events %}
+            {% include "partials/card.njk" %}
+        {% endfor %}
+    </div>
+{% endblock %}

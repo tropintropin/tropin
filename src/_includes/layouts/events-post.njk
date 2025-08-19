@@ -1,0 +1,24 @@
+{% extends "layouts/base.njk" %} {% block content %}
+
+<div id="progress-bar"></div>
+
+<article class="event-post">
+    {% if image %}
+    <div class="post-cover">
+        <img src="{{ image }}" alt="{{ title }}" />
+    </div>
+    {% endif %}
+
+    <h1>{{ title }}</h1>
+
+    <p class="post-date">
+        {{ date | date("dd.MM.yyyy HH:mm") }} {% if end %} →
+        {{ end | date("HH:mm") }}
+        {% endif %}
+    </p>
+
+
+    {{ content | safe }}
+</article>
+
+{% endblock %}

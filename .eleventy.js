@@ -4,6 +4,7 @@ import pluginRss from "@11ty/eleventy-plugin-rss";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import calendarPlugin from "@codegouvfr/eleventy-plugin-calendar";
+import { DateTime } from "luxon";
 
 export default async function (eleventyConfig) {
   // Plugins
@@ -54,6 +55,18 @@ export default async function (eleventyConfig) {
   // Filters
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return new Date(dateObj).toLocaleDateString("ru-RU");
+  });
+
+  eleventyConfig.addFilter("date", (dateInput, format = "dd.MM.yyyy HH:mm") => {
+    let dt;
+
+    if (typeof dateInput === "string") {
+      dt = DateTime.fromISO(dateInput, { setZone: true });
+    } else {
+      dt = DateTime.fromJSDate(dateInput, { zone: "Europe/Moscow" });
+    }
+
+    return dt.setLocale("ru").toFormat(format);
   });
 
   // Directory options
