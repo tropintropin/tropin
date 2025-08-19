@@ -1,0 +1,20 @@
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: color-mix(in srgb, var(--progress-bar-color) 70%, transparent);
+  transform-origin: left;
+  animation: grow linear;
+  animation-timeline: scroll();
+}
+
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
