@@ -9,9 +9,9 @@
     "watch:css": "sass --watch src/assets/scss/main.scss:src/assets/css/main.css --style=compressed",
     "start": "eleventy --serve",
     "pagefind": "npx pagefind --site _site",
-    "watch:pagefind": "chokidar '_site/**/*.html' -c 'npm run pagefind'",
+    "watch:pagefind": "chokidar '_site/**/*.html' -d 200 -c 'npm run pagefind'",
     "dev": "npm-run-all -p watch:css start watch:pagefind",
-    "build": "npm run build:css && eleventy && pagefind",
+    "build": "npm run build:css && eleventy && npm run pagefind",
     "clean": "rimraf _site"
   },
   "keywords": [],
