@@ -1,0 +1,45 @@
+{% extends "layouts/base.njk" %} {% block content %}
+
+<div id="progress-bar"></div>
+
+<article class="event-post">
+    {% if image %}
+    <div class="post-cover">
+        <img src="{{ image }}" alt="{{ title }}" />
+    </div>
+    {% endif %}
+
+    <h1 id="event-title">{{ title }}</h1>
+
+    {% if excerpt %}
+        <p class="event-excerpt">{{ excerpt }}</p>
+    {% endif %}
+
+    {% if organizer and organizer.name %}
+    <p class="event-organizer">
+        Организатор и подробности: <a href="{{ organizer.url }}">{{ organizer.name }}</a>
+    </p>
+    {% endif %}
+
+    <p class="post-date">Когда:
+        <span class="event-date">{{ date | date("dd.MM.yyyy") }}</span>
+        <span class="event-time">{{ date | date("HH:mm") }}</span>
+        {% if end %}
+            &rarr;
+            <span class="event-end-time">{{ end | date("HH:mm") }}</span>
+        {% endif %}
+    </p>
+
+    {% if location and location.name %}
+    <p class="event-location">Место: {{ location.name }}</p>
+    {% endif %}
+    {% if location and location.address %}
+    <p class="event-address">Адрес: {{ location.address }}</p>
+    {% endif %}
+
+    {% include "partials/map.njk" %}
+
+    {{ content | safe }}
+</article>
+
+{% endblock %}

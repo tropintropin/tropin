@@ -1,0 +1,74 @@
+// === Cards (blog / event list) ===
+.card {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  &-image {
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;     // растягиваем по ширине карточки
+      height: auto;    // сохраняем пропорции
+      object-fit: cover;
+      opacity: 0.85;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    &:hover img {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+
+  .card-content {
+    padding: 1rem; // внутренние отступы только для текста, картинка сверху не тронута
+  }
+}
+
+// === Event posts (full page) ===
+.event-post {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2rem;
+
+  .post-cover {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px; // чуть больше скругление
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // лёгкая тень
+    transition: box-shadow 0.3s ease;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.4s ease; // плавный зум
+
+      &:hover {
+        transform: scale(1.03); // лёгкий зум при наведении
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); // тень усиливается при hover
+    }
+  }
+
+  h1,
+  p {
+    margin-bottom: 0.5rem;
+  }
+}
+

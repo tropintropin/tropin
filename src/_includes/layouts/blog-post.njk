@@ -1,0 +1,36 @@
+{% extends "layouts/base.njk" %} {% block content %}
+
+<div id="progress-bar"></div>
+
+<article class="blog-post">
+  {% if image %}
+  <div class="post-cover">
+    <img src="{{ image }}" alt="{{ title }}" />
+  </div>
+  {% endif %}
+
+  <h1 id="post-title">{{ title }}</h1>
+
+  <p class="post-date">{{ date | date("dd.MM.yyyy HH:mm") }}</p>
+
+  {% if repost and repost != false %} {% set has_source = repost.source and
+  repost.source != "" %} {% set has_url = repost.url and repost.url != "" %} {%
+  set has_date = repost.date and repost.date != "" %} {% if has_source or
+  has_url or has_date %}
+  <p class="post-repost">
+    Этот пост впервые был опубликован {% if has_url and has_source %} в
+    <a href="{{ repost.url }}">{{ repost.source }}</a> {% elif has_source %} в
+    {{ repost.source }}
+    {% elif has_url %}
+    <a href="{{ repost.url }}">{{ repost.url }}</a>
+    {% endif %} {% if has_date %} {{ repost.date | date("dd.MM.yyyy") }}
+    {% endif %}
+  </p>
+  {% endif %} {% endif %}
+
+  {% include "partials/map.njk" %}
+
+  {{ content | safe }}
+</article>
+
+{% endblock %}

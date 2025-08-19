@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      THUNDERFOREST_KEY: ${{ secrets.THUNDERFOREST_KEY }}
 
     steps:
       - name: Checkout repository
