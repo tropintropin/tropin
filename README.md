@@ -78,7 +78,7 @@ Upload MVP site during migration      :milestone,                   done, 2025.0
   npm run dev
   ```
 
-  _Note_: On the first run, `_site` is empty. Run `npm run pagefind` once before starting `dev` for search to work.
+  _Note_: On the first run, `_site` is empty. Run `npm run pagefind` once before starting `dev` for search to work or just repeat `npm run dev` again.
 
 - **build** – Full production build: CSS + Eleventy + Pagefind:
 
