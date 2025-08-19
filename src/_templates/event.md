@@ -16,6 +16,5 @@ organizer:
 speaker:
   name: "Валерий Тропин"
   url: "/"
-status: # ["отменено", "регистрация закрыта"]
 ics: true
 ---
