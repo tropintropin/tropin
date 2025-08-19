@@ -7,12 +7,14 @@ layout: layouts/events-post
 excerpt: "Краткая аннотация"
 image:
 location:
-  name:
-  address:
-  map:
+  name: ""
+  address: ""
+  coordinates:
+    lat: 0
+    lon: 0
 organizer:
-  name:
-  url:
+  name: ""
+  url: ""
 speaker:
   name: "Валерий Тропин"
   url: "/"

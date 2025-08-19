@@ -1,0 +1,91 @@
+{% set map_id = "map-" ~ (map_id or title | slug) %}
+
+{% if location and location.coordinates and location.coordinates.lat is defined and location.coordinates.lon is defined %}
+<div id="{{ map_id }}" class="map-container"></div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const lat = {{ location.coordinates.lat }};
+    const lon = {{ location.coordinates.lon }};
+
+    if (lat != null && lon != null) {
+        const map = L.map("{{ map_id }}", { attributionControl: false }).setView([lat, lon], 16);
+
+        const Thunderforest_Transport = L.tileLayer('https://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}{r}.png?apikey={{ thunderforestKey }}', {
+            attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+            maxZoom: 22
+        });
+
+        Thunderforest_Transport.addTo(map);
+
+        L.control.attribution({ prefix: '&copy; <a href="https://leafletjs.com/">Leaflet</a>' }).addTo(map);
+
+        L.marker([lat, lon])
+            .addTo(map)
+            .bindPopup(
+                "{{ location.name | escape }}" +
+                {% if location.address %} ", {{ location.address | escape }}" {% else %} "" {% endif %}
+            )
+            .openPopup();
+    } else {
+        console.warn("Invalid location coordinates for map:", "{{ map_id }}");
+    }
+});
+</script>
+{% endif %}
+
+{% if map and (map.points or map.route) %}
+<div id="{{ map_id }}" class="map-container"></div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const map = L.map("{{ map_id }}", { attributionControl: false });
+
+    const Thunderforest_Outdoors = L.tileLayer('https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}{r}.png?apikey={{ thunderforestKey }}', {
+        attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 22
+    });
+
+    Thunderforest_Outdoors.addTo(map);
+
+    L.control.attribution({ prefix: '&copy; <a href="https://leafletjs.com/">Leaflet</a>' }).addTo(map);
+
+    const latlngs = [];
+
+    // === МАРКЕРЫ ===
+    {% if map.points %}
+    {% for point in map.points %}
+    {% if point.lat is defined and point.lon is defined %}
+    const ptLat{{ loop.index0 }} = {{ point.lat }};
+    const ptLon{{ loop.index0 }} = {{ point.lon }};
+    if (ptLat{{ loop.index0 }} != null && ptLon{{ loop.index0 }} != null) {
+        latlngs.push([ptLat{{ loop.index0 }}, ptLon{{ loop.index0 }}]);
+        L.marker([ptLat{{ loop.index0 }}, ptLon{{ loop.index0 }}])
+            .addTo(map)
+            .bindPopup("{{ point.name | escape }}");
+    }
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    // === ЛИНИЯ ИЗ ROUTE ===
+    {% if map.route %}
+    const routePoints = [
+        {% for r in map.route %}
+        {% if r.lat is defined and r.lon is defined %}
+        [{{ r.lat }}, {{ r.lon }}]{{ "," if not loop.last }}
+        {% endif %}
+        {% endfor %}
+    ];
+    if (routePoints.length > 0) {
+        L.polyline(routePoints, { color: "blue" }).addTo(map);
+        routePoints.forEach(p => latlngs.push(p));
+    }
+    {% endif %}
+
+    if (latlngs.length > 0) {
+        map.fitBounds(latlngs);
+    } else {
+        console.warn("No valid points to display on map:", "{{ map_id }}");
+    }
+});
+</script>
+{% endif %}

@@ -5,6 +5,9 @@ import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import calendarPlugin from "@codegouvfr/eleventy-plugin-calendar";
 import { DateTime } from "luxon";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export default async function (eleventyConfig) {
   // Plugins
@@ -68,6 +71,11 @@ export default async function (eleventyConfig) {
 
     return dt.setLocale("ru").toFormat(format);
   });
+
+  eleventyConfig.addGlobalData(
+    "thunderforestKey",
+    process.env.THUNDERFOREST_KEY
+  );
 
   // Directory options
   eleventyConfig.ignores.add("src/_templates/**");
