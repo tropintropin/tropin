@@ -1,6 +1,6 @@
 // @ts-check
 
-import pluginRss from "@11ty/eleventy-plugin-rss";
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import timeToRead from "eleventy-plugin-time-to-read";
@@ -10,11 +10,16 @@ import { DateTime } from "luxon";
 import dotenv from "dotenv";
 import fetch from "node-fetch";
 
+import fs from "fs";
+import path from "path";
+
+const feedDataPath = path.resolve("./src/_data/feed.json");
+const feedData = JSON.parse(fs.readFileSync(feedDataPath, "utf-8"));
+
 dotenv.config();
 
 export default async function (eleventyConfig) {
   // Plugins
-  await eleventyConfig.addPlugin(pluginRss);
   await eleventyConfig.addPlugin(syntaxHighlight);
   await eleventyConfig.addPlugin(calendarPlugin, {
     defaultLocation: "online",
@@ -81,6 +86,36 @@ export default async function (eleventyConfig) {
       return !item.data.eleventyExcludeFromCollections;
     });
   });
+  eleventyConfig.addCollection("allPosts", function (collectionApi) {
+    const blog = collectionApi.getFilteredByGlob("src/blog/*.md");
+    const projects = collectionApi.getFilteredByGlob("src/projects/*.md");
+    const research = collectionApi.getFilteredByGlob("src/research/*.md");
+    const events = collectionApi.getFilteredByGlob("src/events/*.md");
+
+    // Объединяем все массивы и сортируем по дате, newest first
+    return [...blog, ...projects, ...research, ...events].sort(
+      (a, b) => b.date - a.date
+    );
+  });
+
+  eleventyConfig.addPlugin(feedPlugin, {
+		type: "atom",
+		outputPath: "/feed.atom.xml",
+		collection: {
+			name: "allPosts",
+			limit: 0,
+		},
+		metadata: {
+			language: feedData.language || "ru",
+			title: feedData.title,
+			subtitle: feedData.descriptions.all,
+			base: feedData.url,
+			author: {
+				name: feedData.author,
+				email: "",
+			}
+		}
+	});
 
   // Filters
   eleventyConfig.addFilter("readableDate", (dateObj) => {

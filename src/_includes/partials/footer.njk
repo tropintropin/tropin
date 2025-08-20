@@ -1,24 +1,40 @@
 <footer>
   <div class="footer-inner">
+    <div>
+      {% for icon in social_icons.icons %}
+      <a
+        href="{{ icon.url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="{{ icon.name }}"
+        class="icon-link"
+        data-svg="{{ icon.svg }}"
+      ></a>
+      {% endfor %}
+    </div>
 
-    {% for icon in social_icons.icons %}
-      <a href="{{ icon.url }}" target="_blank" aria-label="{{ icon.name }}" class="icon-link" data-svg="{{ icon.svg }}"></a>
-    {% endfor %}
+    <small>
+      <a
+        href="https://ozlik.notion.site/Valera-s-Wish-List-487d6d07f26d4edcb2f240459513b9ab"
+        target="_blank"
+        rel="me noopener noreferrer"
+        title="Notion официально не работает в РФ, используйте ВПН"
+      >
+        Notion Wish List
+      </a>
+      <span class="separator">·</span>
+      <a
+        href="{{ site.feed.url }}"
+        target="_blank"
+        rel="me noopener noreferrer"
+        title="{{ site.feed.title }}"
+        >Atom Feed</a
+      >
+    </small>
 
     <p>
-      <i>
-        <a
-          rel="me"
-          href="https://ozlik.notion.site/Valera-s-Wish-List-487d6d07f26d4edcb2f240459513b9ab"
-          title="Notion официально не работает в РФ, используйте ВПН"
-        >
-          Вишлист
-        </a>
-        в Ноушене, если вы ищете, что мне подарить на Новый год или днюху.
-      </i>
+      <time datetime="2023-2025">MMXXIII&mdash;MMXXV</time>
+      {{ author.fullName }}
     </p>
-
-    <p>&copy; MMXXIII&mdash;MMXXV {{ author.fullName }}</p>
-
   </div>
 </footer>
