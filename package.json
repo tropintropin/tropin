@@ -11,7 +11,8 @@
     "pagefind": "npx pagefind --site _site",
     "watch:pagefind": "chokidar '_site/**/*.html' -d 200 -c 'npm run pagefind'",
     "dev": "npm-run-all -p watch:css start watch:pagefind",
-    "build": "npm run build:css && eleventy && npm run pagefind",
+    "send-webmentions": "node scripts/send-webmentions.js",
+    "build": "npm run build:css && eleventy && npm run pagefind && npm run send-webmentions",
     "clean": "rimraf _site"
   },
   "keywords": [],
@@ -35,7 +36,11 @@
   },
   "dependencies": {
     "@codegouvfr/eleventy-plugin-calendar": "^3.0.6",
+    "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
     "dotenv": "^17.2.1",
-    "luxon": "^3.7.1"
+    "eleventy-plugin-time-to-read": "^1.3.0",
+    "luxon": "^3.7.1",
+    "node-fetch": "^3.3.2",
+    "xml2js": "^0.6.2"
   }
 }

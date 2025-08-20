@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       THUNDERFOREST_KEY: ${{ secrets.THUNDERFOREST_KEY }}
+      WEBMENTION_DOMAIN: ${{ secrets.WEBMENTION_DOMAIN }}
+      WEBMENTION_TOKEN: ${{ secrets.WEBMENTION_TOKEN }}
+      WEBMENTION_APP_TOKEN: ${{ secrets.WEBMENTION_APP_TOKEN }}
 
     steps:
       - name: Checkout repository
