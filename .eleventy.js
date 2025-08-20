@@ -4,9 +4,11 @@ import pluginRss from "@11ty/eleventy-plugin-rss";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import timeToRead from "eleventy-plugin-time-to-read";
+import sitemap from "@quasibit/eleventy-plugin-sitemap";
 import calendarPlugin from "@codegouvfr/eleventy-plugin-calendar";
 import { DateTime } from "luxon";
 import dotenv from "dotenv";
+import fetch from "node-fetch";
 
 dotenv.config();
 
@@ -44,6 +46,12 @@ export default async function (eleventyConfig) {
       return data.timing;
     } 
   });
+  eleventyConfig.addPlugin(sitemap, {
+    lastModifiedProperty: "modified",
+    sitemap: {
+      hostname: "https://tropin.one",
+    },
+  });
 
   // Passthrough for static assets
   eleventyConfig.addPassthroughCopy({ "src/root": "/" });
@@ -68,6 +76,11 @@ export default async function (eleventyConfig) {
   eleventyConfig.addCollection("events", (collectionApi) =>
     collectionApi.getFilteredByGlob("src/events/*.md").toReversed()
   );
+  eleventyConfig.addCollection("sitemap", function (collectionApi) {
+    return collectionApi.getAll().filter((item) => {
+      return !item.data.eleventyExcludeFromCollections;
+    });
+  });
 
   // Filters
   eleventyConfig.addFilter("readableDate", (dateObj) => {
@@ -90,6 +103,27 @@ export default async function (eleventyConfig) {
     "thunderforestKey",
     process.env.THUNDERFOREST_KEY
   );
+
+  eleventyConfig.addGlobalData("webmentions", async () => {
+    const domain = process.env.WEBMENTION_DOMAIN;
+    const token = process.env.WEBMENTION_TOKEN;
+
+    if (!domain || !token) {
+      console.warn("WEBMENTION_DOMAIN or WEBMENTION_TOKEN is missing!");
+      return [];
+    }
+
+    try {
+      const res = await fetch(
+        `https://webmention.io/api/mentions.jf2?domain=${domain}&token=${token}`
+      );
+      const data = await res.json();
+      return data.children || [];
+    } catch (err) {
+      console.error("Failed to fetch webmentions:", err);
+      return [];
+    }
+  });
 
   // Directory options
   eleventyConfig.ignores.add("src/_templates/**");

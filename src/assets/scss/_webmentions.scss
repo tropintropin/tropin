@@ -1,0 +1,84 @@
+// This file contains styles for webmentions and their display on the site.
+// It includes styles for the webmentions section, individual mentions, and the all mentions page.
+
+.webmentions {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  border-left: 4px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.webmentions h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.webmentions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.webmention {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.webmention:last-child {
+  border-bottom: none;
+}
+
+.webmention .owi {
+  font-size: 1rem;
+  flex-shrink: 0;
+  color: #555;
+}
+
+.webmention .wm-author a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #0366d6;
+}
+
+.webmention .wm-content {
+  margin-top: 0.25rem;
+  color: #555;
+}
+
+// Стили для страницы всех упоминаний
+.webmentions-all {
+  padding: 2rem;
+  background: #f7f7f7;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.webmentions-all ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.webmentions-all li.webmention {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+}
+
+.webmentions-all li.webmention:last-child {
+  border-bottom: none;
+}
+
+.webmention .wm-author a {
+  font-weight: bold;
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.webmention .wm-content {
+  margin-top: 0.25rem;
+}
