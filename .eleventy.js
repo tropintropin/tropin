@@ -3,6 +3,7 @@
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import timeToRead from "eleventy-plugin-time-to-read";
 import calendarPlugin from "@codegouvfr/eleventy-plugin-calendar";
 import { DateTime } from "luxon";
 import dotenv from "dotenv";
@@ -29,6 +30,19 @@ export default async function (eleventyConfig) {
         decoding: "async",
       },
     },
+  });
+  await eleventyConfig.addPlugin(timeToRead, {
+    speed: '1000 characters per minute',
+    language: 'ru',
+    style: 'long',
+    type: 'unit',
+    hours: 'auto',
+    minutes: true,
+    seconds: false,
+    digits: 1,
+    output: function(data) {
+      return data.timing;
+    } 
   });
 
   // Passthrough for static assets

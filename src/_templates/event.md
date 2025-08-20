@@ -6,6 +6,8 @@ tags: events
 layout: layouts/events-post
 excerpt: "Краткая аннотация"
 image:
+  src: ""
+  caption: ""
 location:
   name: ""
   address: ""

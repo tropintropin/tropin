@@ -18,8 +18,8 @@
 
     img {
       display: block;
-      width: 100%;     // растягиваем по ширине карточки
-      height: auto;    // сохраняем пропорции
+      width: 100%;
+      height: auto;
       object-fit: cover;
       opacity: 0.85;
       transition: opacity 0.3s ease, transform 0.3s ease;
@@ -32,7 +32,35 @@
   }
 
   .card-content {
-    padding: 1rem; // внутренние отступы только для текста, картинка сверху не тронута
+    padding: 1rem;
+  }
+
+  .card-meta {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.75rem;
+
+    p {
+      margin: 0.25rem 0;
+      line-height: 1.4;
+    }
+
+    .separator {
+      margin: 0 0.25rem;
+      color: #999;
+    }
+
+    .event-date,
+    .event-time,
+    .event-end-time,
+    .card-date {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .event-location,
+    .event-organizer {
+      font-style: italic;
+    }
   }
 }
 
@@ -43,26 +71,36 @@
   margin-bottom: 2rem;
 
   .post-cover {
+    margin: 0;
     width: 100%;
     overflow: hidden;
-    border-radius: 8px; // чуть больше скругление
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // лёгкая тень
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
+
+    figcaption {
+      text-align: center;
+      font-size: 0.875rem;
+      color: #666;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
 
     img {
       display: block;
       width: 100%;
       height: auto;
       object-fit: cover;
-      transition: transform 0.4s ease; // плавный зум
+      transition: transform 0.4s ease;
 
       &:hover {
-        transform: scale(1.03); // лёгкий зум при наведении
+        transform: scale(1.03);
       }
     }
 
     &:hover {
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); // тень усиливается при hover
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     }
   }
 
@@ -70,5 +108,29 @@
   p {
     margin-bottom: 0.5rem;
   }
+
+  .post-meta-top {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+
+    .separator {
+      margin: 0 0.5rem;
+      color: #aaa;
+    }
+  }
+
+  .post-meta-bottom {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    font-size: 0.875rem;
+    color: #444;
+
+    p {
+      margin: 0.25rem 0;
+    }
+  }
+
 }
 

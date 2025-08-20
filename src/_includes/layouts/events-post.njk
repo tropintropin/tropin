@@ -3,39 +3,53 @@
 <div id="progress-bar"></div>
 
 <article class="event-post">
-    {% if image %}
-    <div class="post-cover">
-        <img src="{{ image }}" alt="{{ title }}" />
-    </div>
+    {% if image and image.src %}
+    <figure class="post-cover">
+        <img src="{{ image.src }}" alt="{{ title }}" />
+        {% if image.caption %}
+        <figcaption>
+            {{ image.caption | safe }}
+        </figcaption>
+        {% endif %}
+    </figure>
     {% endif %}
 
     <h1 id="event-title">{{ title }}</h1>
+
+    <div class="post-meta-top">
+        <small class="reading-time">
+            {{ content | timeToRead }} чтения
+        </small>
+    </div>
 
     {% if excerpt %}
         <p class="event-excerpt">{{ excerpt }}</p>
     {% endif %}
 
-    {% if organizer and organizer.name %}
-    <p class="event-organizer">
-        Организатор и подробности: <a href="{{ organizer.url }}">{{ organizer.name }}</a>
-    </p>
-    {% endif %}
-
-    <p class="post-date">Когда:
-        <span class="event-date">{{ date | date("dd.MM.yyyy") }}</span>
-        <span class="event-time">{{ date | date("HH:mm") }}</span>
-        {% if end %}
-            &rarr;
-            <span class="event-end-time">{{ end | date("HH:mm") }}</span>
+    <div class="post-meta-bottom">
+        {% if organizer and organizer.name %}
+        <p class="event-organizer">
+            Организатор и подробности: <a href="{{ organizer.url }}">{{ organizer.name }}</a>
+        </p>
         {% endif %}
-    </p>
 
-    {% if location and location.name %}
-    <p class="event-location">Место: {{ location.name }}</p>
-    {% endif %}
-    {% if location and location.address %}
-    <p class="event-address">Адрес: {{ location.address }}</p>
-    {% endif %}
+        <p class="post-date">Когда:
+            <span class="event-date">{{ date | date("dd.MM.yyyy") }}</span>
+            <span class="separator">·</span>
+            <span class="event-time">{{ date | date("HH:mm") }}</span>
+            {% if end %}
+                →
+                <span class="event-end-time">{{ end | date("HH:mm") }}</span>
+            {% endif %}
+        </p>
+
+        {% if location and location.name %}
+        <p class="event-location">Место: {{ location.name }}</p>
+        {% endif %}
+        {% if location and location.address %}
+        <p class="event-address">Адрес: {{ location.address }}</p>
+        {% endif %}
+    </div>
 
     {% include "partials/map.njk" %}
 
