@@ -22,7 +22,7 @@
     },
     {
       "name": "RSS",
-      "url": "/feed.atom",
+      "url": "/feed.atom.xml",
       "svg": "https://cdn.jsdelivr.net/npm/simple-icons@9.21.0/icons/rss.svg"
     }
   ]

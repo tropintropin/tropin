@@ -4,7 +4,7 @@
   "lang": "ru-RU",
   "url": "https://tropin.one",
   "feed": {
-    "url": "/feed.atom",
+    "url": "/feed.atom.xml",
     "title": "Фид всех записей на сайте"
   }
 }
