@@ -19,6 +19,11 @@
       "name": "Mastodon",
       "url": "https://tech.lgbt/@GuyFromUberwald",
       "svg": "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mastodon.svg"
+    },
+    {
+      "name": "RSS",
+      "url": "/feed.atom",
+      "svg": "https://cdn.jsdelivr.net/npm/simple-icons@9.21.0/icons/rss.svg"
     }
   ]
 }
