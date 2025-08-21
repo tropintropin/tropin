@@ -1,6 +1,6 @@
 ---
 title: "Экскурсия «Тайные места Меншиковского дворца»"
-date: "2025-08-31T14:15:00+03:00"
+start: "2025-08-31T14:15:00+03:00"
 end: "2025-08-31T15:45:00+03:00"
 tags: events
 layout: layouts/events-post
@@ -16,6 +16,7 @@ location:
     lon: 30.295782
 organizer:
   name: "Дом культуры Льва Лурье"
+  email: ""
   url: "https://dklurie.ru/vmestoshkola/events/detail/206796/"
 speaker:
   name: "Валерий Тропин"

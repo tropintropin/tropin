@@ -16,11 +16,11 @@
         {# === EVENTS === #}
         {% if "events" in post.data.tags %}
         <div class="card-meta">
-        {% if post.date %}
+        {% if post.data.start %}
             <p class="post-date">
-            <span class="event-date">{{ post.date | date("dd.MM.yyyy") }}</span>
+            <span class="event-date">{{ post.data.start | date("dd.MM.yyyy") }}</span>
             <span class="separator">·</span>
-            <span class="event-time">{{ post.date | date("HH:mm") }}</span>
+            <span class="event-time">{{ post.data.start | date("HH:mm") }}</span>
             {% if post.data.end %}
                 →
                 <span class="event-end-time">{{ post.data.end | date("HH:mm") }}</span>
