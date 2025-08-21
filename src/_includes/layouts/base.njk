@@ -30,9 +30,10 @@
     />
 
     <meta name="author" content="{{ author.fullName }}" />
+    {% set metaDescription = description or excerpt or site.description %}
     <meta
       name="description"
-      content="{{ description | default(site.description) }}"
+      content="{{ metaDescription | striptags | truncate(160, true, '…') }}"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
