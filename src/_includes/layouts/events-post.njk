@@ -2,7 +2,7 @@
 
 <div id="progress-bar"></div>
 
-<article class="event-post">
+<article class="post-page">
     {% if image and image.src %}
     <figure class="post-cover">
         <img src="{{ image.src }}" alt="{{ title }}" />
@@ -14,7 +14,7 @@
     </figure>
     {% endif %}
 
-    <h1 id="event-title">{{ title }}</h1>
+    <h1 id="post-title">{{ title }}</h1>
 
     <div class="post-meta-top">
         <small class="reading-time">
@@ -23,7 +23,7 @@
     </div>
 
     {% if excerpt %}
-        <p class="event-excerpt">{{ excerpt }}</p>
+        <p class="post-excerpt">{{ excerpt }}</p>
     {% endif %}
 
     <div class="post-meta-bottom">
@@ -34,9 +34,9 @@
         {% endif %}
 
         <p class="post-date">Когда:
-            <span class="event-date">{{ date | date("dd.MM.yyyy") }}</span>
+            <span class="event-date">{{ start | date("dd.MM.yyyy") }}</span>
             <span class="separator">·</span>
-            <span class="event-time">{{ date | date("HH:mm") }}</span>
+            <span class="event-time">{{ start | date("HH:mm") }}</span>
             {% if end %}
                 →
                 <span class="event-end-time">{{ end | date("HH:mm") }}</span>

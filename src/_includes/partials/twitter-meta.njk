@@ -4,7 +4,7 @@
   name="twitter:description"
   content="{{ description | default(site.description) }}"
 />
-<meta name="twitter:image" content="{{ image | default(meta.defaultImage) }}"/>
+<meta name="twitter:image" content="{{ image | default(meta.defaultImage) }}?v={{ build.timestamp }}"/>
 <meta
   name="twitter:image:alt"
   content="{{ imageAlt | default(meta.defaultImageAlt) }}"
