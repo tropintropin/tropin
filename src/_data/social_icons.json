@@ -21,6 +21,11 @@
       "svg": "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mastodon.svg"
     },
     {
+      "name": "Calendar",
+      "url": "/calendar.ics",
+      "svg": "https://unpkg.com/tabler-icons@1.35.0/icons/calendar.svg"
+    },
+    {
       "name": "RSS",
       "url": "/feed.atom.xml",
       "svg": "https://cdn.jsdelivr.net/npm/simple-icons@9.21.0/icons/rss.svg"

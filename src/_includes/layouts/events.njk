@@ -1,23 +1,37 @@
-{% extends "layouts/base.njk" %}
+{% extends "layouts/base.njk" %} {% block content %}
+<div id="progress-bar"></div>
 
-{% block content %}
-    <div id="progress-bar"></div>
+<h1 class="page-title">События</h1>
 
-    <h1 class="page-title">События</h1>
+<p class="page-description">
+  Здесь собраны мероприятия, в которых я участвую или которые организую. В
+  основном это лекции и экскурсии.
+</p>
 
-    {% if collections.events | length == 0 %}
-        <p>Нет предстоящих событий.</p>
-    {% endif %}
+<p>
+  Вы можете добавить календарь событий к себе на устройство по
+  <a href="{{ site.calendar.url }}" title="{{ site.calendar.title }}">ссылке</a
+  >. Обратите внимание: это статический файл ICS, новые события не будут
+  добавляться автоматически — для обновлений нужно скачать файл снова.
+</p>
 
-    {% if collections.events | length > 0 %}
-        <p class="events-count">
-            Всего событий: {{ collections.events | length }}
-        </p>
-    {% endif %}
+<p>
+  Если хотите подписаться на обновления автоматически, вставьте этот URL в
+  Google Calendar:
+</p>
 
-    <div class="events-posts-list">
-        {% for post in collections.events %}
-            {% include "partials/card.njk" %}
-        {% endfor %}
-    </div>
+{% highlight "http" %}
+{{ site.url + site.calendar.url }}
+{% endhighlight %}
+
+{% if collections.events | length == 0 %}
+<p>Нет предстоящих событий.</p>
+{% endif %} {% if collections.events | length > 0 %}
+<p class="events-count">Всего событий: {{ collections.events | length }}</p>
+{% endif %}
+
+<div class="events-posts-list">
+  {% for post in collections.events %} {% include "partials/card.njk" %} {%
+  endfor %}
+</div>
 {% endblock %}

@@ -1,0 +1,39 @@
+pre[class*='language-'] {
+  position: relative;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  padding: 0.25em 0.5em;
+  font-size: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.25em;
+  background: #b57614;
+  color: #f9f5d7;
+  transition: opacity 0.2s, transform 0.2s;
+  
+  opacity: 0;
+  pointer-events: none;
+
+  &:hover {
+    background: #9d0006;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #797403;
+  }
+}
+
+pre[class*='language-']:hover .copy-btn {
+  opacity: 1;
+  pointer-events: auto;
+}

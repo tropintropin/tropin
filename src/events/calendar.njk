@@ -1,0 +1,5 @@
+---
+eleventyExcludeFromCollections: true
+permalink: /calendar.ics
+---
+{{ collections.events | mapEventForCalendar | toCalendar }}

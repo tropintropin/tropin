@@ -6,5 +6,9 @@
   "feed": {
     "url": "/feed.atom.xml",
     "title": "Фид всех записей на сайте"
+  },
+  "calendar": {
+    "url": "/calendar.ics",
+    "title": "Календарь событий"
   }
 }

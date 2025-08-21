@@ -1,6 +1,6 @@
 ---
 title: "Заголовок события"
-date: "2025-01-01T00:00:00+03:00"
+start: "2025-01-01T00:00:00+03:00"
 end: "2025-01-01T21:00:00+03:00"
 tags: events
 layout: layouts/events-post
@@ -16,6 +16,7 @@ location:
     lon: 0
 organizer:
   name: ""
+  email: ""
   url: ""
 speaker:
   name: "Валерий Тропин"
