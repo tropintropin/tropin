@@ -3,6 +3,7 @@
 
 <h1 class="page-title">События</h1>
 
+<small>
 <p class="page-description">
   Здесь собраны мероприятия, в которых я участвую или которые организую. В
   основном это лекции и экскурсии.
@@ -23,6 +24,7 @@
 {% highlight "http" %}
 {{ site.url + site.calendar.url }}
 {% endhighlight %}
+</small>
 
 {% if collections.events | length == 0 %}
 <p>Нет предстоящих событий.</p>

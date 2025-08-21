@@ -2,7 +2,7 @@
 
 <div id="progress-bar"></div>
 
-<article class="blog-post">
+<article class="post-page">
   {% if image and image.src %}
     <figure class="post-cover">
         <img src="{{ image.src }}" alt="{{ title }}" />
@@ -20,11 +20,11 @@
       <small class="reading-time">
           {{ content | timeToRead }} чтения
       </small>
-      <span class="separator">·</span>
       {% if repost and repost != false %} {% set has_source = repost.source and
       repost.source != "" %} {% set has_url = repost.url and repost.url != "" %} {%
       set has_date = repost.date and repost.date != "" %} {% if has_source or
       has_url or has_date %}
+      <span class="separator">·</span>
       <small class="post-repost">
         Этот пост впервые был опубликован {% if has_url and has_source %} в
         <a href="{{ repost.url }}">{{ repost.source }}</a> {% elif has_source %} в

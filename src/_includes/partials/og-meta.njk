@@ -4,7 +4,7 @@
   property="og:description"
   content="{{ description | default(site.description) }}"
 />
-<meta property="og:image" content="{{ image | default(meta.defaultImage) }}"/>
+<meta property="og:image" content="{{ image | default(meta.defaultImage) }}?v={{ build.timestamp }}"/>
 <meta
   property="og:image:width"
   content="{{ imageWidth | default(meta.defaultOgImageWidth) }}"
