@@ -35,8 +35,38 @@ export default async function (eleventyConfig) {
   });
 
   // Collections
-  eleventyConfig.addCollection("blog", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/blog/*.md").toReversed();
+  // eleventyConfig.addCollection("blog", function (collectionApi) {
+  //   return collectionApi.getFilteredByGlob("src/blog/*.md").toReversed();
+  // });
+  eleventyConfig.addCollection("blog", (collectionApi) => {
+    // Забираем посты по тегу, убираем черновики (если используешь flag draft)
+    const posts = collectionApi
+      .getFilteredByTag("blog")
+      .filter((item) => !item.data.draft);
+
+    // Гарантируем порядок «новые → старые»
+    posts.sort((a, b) => b.date - a.date);
+
+    // Проставляем соседей для каждого поста
+    for (let i = 0; i < posts.length; i += 1) {
+      const newer = i > 0 ? posts[i - 1] : null; // сосед новее
+      const older = i < posts.length - 1 ? posts[i + 1] : null; // сосед старее
+
+      // Сохраняем компактно, чтобы в шаблоне не тащить весь объект
+      posts[i].data.nav = {
+        // «prev» слева: в твоей логике это пост СТАРЕЕ текущего,
+        // потому что коллекция отсортирована от новых к старым.
+        prev: older
+          ? { url: older.url, title: older.data.title }
+          : null,
+        // «next» справа: пост НОВЕЕ текущего
+        next: newer
+          ? { url: newer.url, title: newer.data.title }
+          : null,
+      };
+    }
+
+    return posts;
   });
   eleventyConfig.addCollection("projects", (collectionApi) =>
     collectionApi.getFilteredByGlob("src/projects/*.md").toReversed()
