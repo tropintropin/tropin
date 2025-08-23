@@ -33,7 +33,16 @@
 {% endif %}
 
 <div class="events-posts-list">
-  {% for post in collections.events %} {% include "partials/card.njk" %} {%
-  endfor %}
+    {% set currentYear = "" %}
+    {% for post in collections.events %}
+        {% set postYear = post.date | date("yyyy") %}
+        
+        {% if postYear != currentYear %}
+            <h2 class="blog-year">{{ postYear }}</h2>
+            {% set currentYear = postYear %}
+        {% endif %}
+
+        {% include "partials/card.njk" %}
+    {% endfor %}
 </div>
 {% endblock %}
