@@ -23,7 +23,15 @@
     {% endif %}
 
     <div class="blog-posts-list">
+        {% set currentYear = "" %}
         {% for post in collections.blog %}
+            {% set postYear = post.date | date("yyyy") %}
+            
+            {% if postYear != currentYear %}
+                <h2 class="blog-year">{{ postYear }}</h2>
+                {% set currentYear = postYear %}
+            {% endif %}
+
             {% include "partials/card.njk" %}
         {% endfor %}
     </div>
