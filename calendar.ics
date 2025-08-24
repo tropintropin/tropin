@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:adamgibbons/ics
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:UCUAOQNNbCJQr0txKDWJS
+SUMMARY:Лекция «Борьба за сушу» в Эрмитажном Лектории
+DTSTAMP:20250824T173323Z
+DTSTART:20260123T160000Z
+DTEND:20260123T173000Z
+LOCATION:Главный штаб&#92;, Санкт-Петербург&#92;, Дворцовая пл.&#92;, 6/8
+ORGANIZER;CN=&quot;Лекторий Государственного Эрмитажа&quot;:MAILTO:noreply@example.co
+	m
+END:VEVENT
+BEGIN:VEVENT
+UID:0-wqM4yGYB883D-9whu2Q
+SUMMARY:Экскурсия «Тайные места Меншиковского дворца»
+DTSTAMP:20250824T173323Z
+DTSTART:20250920T131500Z
+DTEND:20250920T144500Z
+LOCATION:Дворец Меншикова&#92;, Санкт-Петербург&#92;, Университетская наб.&#92;, 15
+ORGANIZER;CN=&quot;Дом культуры Льва Лурье&quot;:MAILTO:noreply@example.com
+END:VEVENT
+BEGIN:VEVENT
+UID:9m1KNeOK8C4ja5LQv0uGA
+SUMMARY:Экскурсия «Тайные места Меншиковского дворца»
+DTSTAMP:20250824T173323Z
+DTSTART:20250831T111500Z
+DTEND:20250831T124500Z
+LOCATION:Дворец Меншикова&#92;, Санкт-Петербург&#92;, Университетская наб.&#92;, 15
+ORGANIZER;CN=&quot;Дом культуры Льва Лурье&quot;:MAILTO:noreply@example.com
+END:VEVENT
+END:VCALENDAR
+
