@@ -1,20 +1,6 @@
-// @import url("https://fonts.googleapis.com/css2?family=Caveat&family=Finlandica:ital,wght@0,400;0,600;1,400;1,600&family=Jura:wght@300&display=swap");
-
-// :root {
-//   --font-body: "Finlandica", "Ubuntu", "Roboto", "Cambria", "Tahoma", sans-serif;
-//   --font-header: "Caveat", "Ubuntu", "Roboto", "Helvetica", "Tahoma", serif;
-//   --font-mono: "Jura", "Monaco", "Courier New", monospace;
-
-//   --color-progress-bar: gray;
-//   --color-text: #333;
-//   --color-link: gray;
-//   --color-link-visited: #777;
-//   --color-link-hover: #f4b943;
-//   --color-link-hover-visited: #d49a2d;
-
-//   --spacing-section: 50px;
-//   --spacing-container: 50px;
-// }
+@import url('https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
 // ==============================
 // Variables
@@ -22,9 +8,9 @@
 // ==============================
 
 // ---- Fonts ----
-$font-body: "Finlandica", "Ubuntu", "Roboto", "Cambria", "Tahoma", sans-serif;
-$font-header: "Caveat", "Ubuntu", "Roboto", "Helvetica", "Tahoma", serif;
-$font-mono: "Jura", "Monaco", "Courier New", monospace;
+$font-body: "Finlandica", "Ubuntu", "Roboto", "Segoe UI", "Helvetica Neue", sans-serif;
+$font-header: "Caveat", "Segoe Script", cursive;
+$font-mono: "Fira Code", "Menlo", "Monaco", "Consolas", "Courier New", monospace;
 
 // ---- Colors ----
 $color-text: #333;
