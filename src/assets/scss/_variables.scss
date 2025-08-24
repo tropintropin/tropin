@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 // ==============================
 // Variables
@@ -11,24 +12,29 @@
 // ---- Fonts ----
 $font-body: "Finlandica", "Ubuntu", "Roboto", "Segoe UI", "Helvetica Neue", sans-serif;
 $font-header: "Caveat", "Segoe Script", cursive;
+$font-heading: "Playfair Display", serif;
 $font-mono: "Fira Code", "Menlo", "Monaco", "Consolas", "Courier New", monospace;
 $font-drop-cap: "Playfair Display SC", serif;
+$font-quote: "Playfair Display SC", serif;
+$font-quote-caption: "Playfair Display", serif;
 
-// ---- Colors ----
-$color-text: #333;
-$color-text-inverse: #fff;
-$color-text-aside: #666;
-$color-text-quote-caption: #999;
-$color-text-quote: #666;
-$color-text-drop-cap: #333;
-$color-link: gray;
-$color-link-visited: #777;
-$color-link-hover: #f4b943;
-$color-link-hover-visited: #d49a2d;
+// // ---- Colors ----
+$color-text: oklch(35% 0 0);
+$color-text-aside: oklch(40% 0 0);
+$color-text-quote: oklch(50% 0 0);
+$color-text-quote-caption: oklch(70% 0 0);
+$color-text-meta: oklch(70% 0 0);
+$color-text-inverse: oklch(1 0 0);
+$color-text-drop-cap: oklch(25% 0 0);
 
-$color-focus: #93c5fd;
+$color-link: oklch(55% 0 0);
+$color-link-visited: oklch(65% 0 0);
+$color-link-hover: oklch(0.7967 0.1505 79.18);
+$color-link-hover-visited: oklch(0.78 0.11 262);
 
-$color-progress-bar: gray;
+$color-focus: oklch(0.78 0.11 262);
+$color-progress-bar: oklch(70% 0 0);
+$color-separator: oklch(80% 0 0);
 
 // ---- Spacing ----
 $spacing-section: 50px;

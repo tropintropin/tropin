@@ -46,3 +46,8 @@ map:
   <img src="" alt="">
   <figcaption></figcaption>
 </figure>
+
+{# Обёртка для встраеваемых карт #}
+<div class="map-frame">
+
+</div>

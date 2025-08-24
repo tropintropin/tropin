@@ -1,7 +1,9 @@
 @use "mixins" as m;
+@use "variables" as v;
 
 // === Cards (blog / event list) ===
 .card {
+  @include m.headings();
   width: 100%;
   max-width: 100%;
   margin-bottom: 2rem;
@@ -39,7 +41,7 @@
 
   .card-meta {
     font-size: 0.875rem;
-    color: #666;
+    color: v.$color-text-meta;
     margin-bottom: 0.75rem;
 
     p {
@@ -49,7 +51,7 @@
 
     .separator {
       margin: 0 0.25rem;
-      color: #999;
+      color: v.$color-separator;
     }
 
     .event-location,
@@ -137,7 +139,8 @@
     }
   }
 
-  h1,
+  @include m.headings();
+
   p {
     margin-bottom: 0.5rem;
   }
@@ -148,12 +151,12 @@
 
   .post-meta-top {
   font-size: 0.875rem;
-  color: #666;
+  color: v.$color-text-meta;
   margin-bottom: 1.5rem;
 
     .separator {
       margin: 0 0.5rem;
-      color: #aaa;
+      color: v.$color-separator;
     }
   }
 
@@ -162,7 +165,7 @@
     padding-top: 1rem;
     border-top: 1px solid #eee;
     font-size: 0.875rem;
-    color: #444;
+    color: v.$color-text-meta;
 
     p {
       margin: 0.25rem 0;

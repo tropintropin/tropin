@@ -42,4 +42,6 @@ map: false
 
 **P.S.:** Небольшая [карта мест](https://yandex.ru/maps/?um=mymaps%3AUhGXSO935hOITbmHZQdbrwNAmVRVC7Tt&source=constructorLink), которые Дмитрий Емец упоминает в сериях про Гроттершу и Мефа. На данный момент (апрель 2011) карта только-только начата, поэтому мест на ней ещё мало. По мере перечитывания книг количество локаций будет увеличиваться.
 
+<div class="map-frame">
 <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=mymaps%3AUhGXSO935hOITbmHZQdbrwNAmVRVC7Tt&amp;width=100%25&amp;height=480&amp;lang=ru_RU&amp;scroll=true"></script>
+</div>
