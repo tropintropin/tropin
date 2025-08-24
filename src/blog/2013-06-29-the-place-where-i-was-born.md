@@ -20,7 +20,9 @@ map:
       lon: 40.080243
 ---
 
+<p class="drop-cap">
 Здесь жарко, пыльно и никак. Как нигде, ощущаю тщетность бытия.
+</p>
 
 <figure>
   <img src="/assets/images/blog/2013-06-29-the-place-where-i-was-born-01.jpg" alt="Здесь до сих пор вручную рисуют афиши">

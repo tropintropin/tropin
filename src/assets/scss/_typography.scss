@@ -1,3 +1,5 @@
+@use "variables" as v;
+
 a {
   position: relative;
   text-decoration: none;
@@ -39,16 +41,20 @@ a {
   }
 }
 
-.stack,
-footer {
-  font-family: var(--font-mono);
-}
-
 .stack {
-  font-size: 16px;
+  font-family: v.$font-mono;
+  color: v.$color-text-aside;
+  font-size: 0.9rem;
 }
 
 footer {
+  font-family: v.$font-body;
   text-align: center;
-  color: gray;
+  color: v.$color-text-aside;
+
+  .footer-inner {
+    .footer-copy {
+      font-size: 0.9rem;
+    }
+  }
 }

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
 
 // ==============================
 // Variables
@@ -11,10 +12,15 @@
 $font-body: "Finlandica", "Ubuntu", "Roboto", "Segoe UI", "Helvetica Neue", sans-serif;
 $font-header: "Caveat", "Segoe Script", cursive;
 $font-mono: "Fira Code", "Menlo", "Monaco", "Consolas", "Courier New", monospace;
+$font-drop-cap: "Playfair Display SC", serif;
 
 // ---- Colors ----
 $color-text: #333;
 $color-text-inverse: #fff;
+$color-text-aside: #666;
+$color-text-quote-caption: #999;
+$color-text-quote: #666;
+$color-text-drop-cap: #333;
 $color-link: gray;
 $color-link-visited: #777;
 $color-link-hover: #f4b943;
@@ -36,10 +42,15 @@ $spacing-container: 50px;
   --font-body: #{$font-body};
   --font-header: #{$font-header};
   --font-mono: #{$font-mono};
+  --font-drop-cap: #{$font-drop-cap};
 
   // Colors
   --color-text: #{$color-text};
   --color-text-inverse: #{$color-text-inverse};
+  --color-text-aside: #{$color-text-aside};
+  --color-text-quote-caption: #{$color-text-quote-caption};
+  --color-text-quote: #{$color-text-quote};
+  --color-text-drop-cap: #{$color-text-drop-cap};
   --color-link: #{$color-link};
   --color-link-visited: #{$color-link-visited};
   --color-link-hover: #{$color-link-hover};

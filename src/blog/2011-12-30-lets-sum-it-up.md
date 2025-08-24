@@ -20,7 +20,9 @@ map: false
 
 1. [2010](/blog/2010-12-25-lets-sum-it-up/)
 
+<p class="drop-cap">
 Попробую подвести некоторые итоги 2011 года.
+</p>
 
 1. <a href="http://valeriuus.livejournal.com/163272.html">Закрыл</a> зимнюю сессию 4-го курса.
 
