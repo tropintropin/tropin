@@ -1,0 +1,31 @@
+@use 'variables' as v;
+
+.cal-btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: v.$color-text-inverse;
+  background-color: v.$color-link;
+  opacity: 0.7;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, opacity 0.2s ease;
+}
+
+.cal-btn:hover {
+  background-color: v.$color-link-hover;
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+.cal-btn:active {
+  background-color: v.$color-link-hover-visited;
+  transform: translateY(0);
+}
+
+.cal-btn:focus {
+  outline: 2px solid v.$color-focus;
+  outline-offset: 2px;
+}

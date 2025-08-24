@@ -1,17 +1,69 @@
-@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Finlandica:ital,wght@0,400;0,600;1,400;1,600&family=Jura:wght@300&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Caveat&family=Finlandica:ital,wght@0,400;0,600;1,400;1,600&family=Jura:wght@300&display=swap");
 
+// :root {
+//   --font-body: "Finlandica", "Ubuntu", "Roboto", "Cambria", "Tahoma", sans-serif;
+//   --font-header: "Caveat", "Ubuntu", "Roboto", "Helvetica", "Tahoma", serif;
+//   --font-mono: "Jura", "Monaco", "Courier New", monospace;
+
+//   --color-progress-bar: gray;
+//   --color-text: #333;
+//   --color-link: gray;
+//   --color-link-visited: #777;
+//   --color-link-hover: #f4b943;
+//   --color-link-hover-visited: #d49a2d;
+
+//   --spacing-section: 50px;
+//   --spacing-container: 50px;
+// }
+
+// ==============================
+// Variables
+// src/assets/scss/_variables.scss
+// ==============================
+
+// ---- Fonts ----
+$font-body: "Finlandica", "Ubuntu", "Roboto", "Cambria", "Tahoma", sans-serif;
+$font-header: "Caveat", "Ubuntu", "Roboto", "Helvetica", "Tahoma", serif;
+$font-mono: "Jura", "Monaco", "Courier New", monospace;
+
+// ---- Colors ----
+$color-text: #333;
+$color-text-inverse: #fff;
+$color-link: gray;
+$color-link-visited: #777;
+$color-link-hover: #f4b943;
+$color-link-hover-visited: #d49a2d;
+
+$color-focus: #93c5fd;
+
+$color-progress-bar: gray;
+
+// ---- Spacing ----
+$spacing-section: 50px;
+$spacing-container: 50px;
+
+// ==============================
+// CSS Custom Properties (export)
+// ==============================
 :root {
-  --font-body: "Finlandica", "Ubuntu", "Roboto", "Cambria", "Tahoma", sans-serif;
-  --font-header: "Caveat", "Ubuntu", "Roboto", "Helvetica", "Tahoma", serif;
-  --font-mono: "Jura", "Monaco", "Courier New", monospace;
+  // Fonts
+  --font-body: #{$font-body};
+  --font-header: #{$font-header};
+  --font-mono: #{$font-mono};
 
-  --color-progress-bar: gray;
-  --color-text: #333;
-  --color-link: gray;
-  --color-link-visited: #777;
-  --color-link-hover: #f4b943;
-  --color-link-hover-visited: #d49a2d;
+  // Colors
+  --color-text: #{$color-text};
+  --color-text-inverse: #{$color-text-inverse};
+  --color-link: #{$color-link};
+  --color-link-visited: #{$color-link-visited};
+  --color-link-hover: #{$color-link-hover};
+  --color-link-hover-visited: #{$color-link-hover-visited};
 
-  --spacing-section: 50px;
-  --spacing-container: 50px;
+  --color-focus: #{$color-focus};
+
+  --color-progress-bar: #{$color-progress-bar};
+
+  // Spacing
+  --spacing-section: #{$spacing-section};
+  --spacing-container: #{$spacing-container};
 }
