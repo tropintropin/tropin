@@ -1,9 +1,14 @@
 // ==============================
-// Under Construction Styles
+// #UNDER-CONSTRUCTION
+// ==============================
+// Styles for sections or pages that are under construction.
 // ==============================
 
 // ==============================
-// Color Variables
+// #COLORS
+// ==============================
+// Define color variables for the under construction styles.
+// These colors can be adjusted to fit the overall site theme.
 // ==============================
 
 $background-construction: oklch(98.562% 0.02767 98.088);
@@ -17,7 +22,9 @@ $shadow-construction: oklch(0% 0 0 / 0.2);
   border-radius: 6px;
 
   // ==============================
-  // Construction Frame
+  // #CONSTRUCTION-FRAME
+  // ==============================
+  // Decorative frame with diagonal stripes.
   // ==============================
 
   .construction-frame {
@@ -39,7 +46,9 @@ $shadow-construction: oklch(0% 0 0 / 0.2);
   }
 
   // ==============================
-  // Construction Content
+  // #CONSTRUCTION-CONTENT
+  // ==============================
+  // Main content area for under construction message.
   // ==============================
 
   .construction-content {
@@ -51,7 +60,9 @@ $shadow-construction: oklch(0% 0 0 / 0.2);
     text-align: center;
 
     // ==============================
-    // Content Styles
+    // #HEADINGS-AND-TEXT
+    // ==============================
+    // Styles for headings and paragraphs within the content area.
     // ==============================
 
     h2 {

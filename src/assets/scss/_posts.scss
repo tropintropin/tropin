@@ -1,5 +1,7 @@
 // ==============================
-// Posts and Cards Styles
+// #POST-STYLES
+// ==============================
+// Styles for blog and event posts including cards, single post pages, images, and meta information.
 // ==============================
 
 @use "sass:map";
@@ -8,7 +10,9 @@
 @use "variables" as v;
 
 // ==============================
-// Cards (blog, events) (listings)
+// #CARD-STYLES
+// ==============================
+// Styles for post and event cards including hover effects and layout.
 // ==============================
 
 .card {
@@ -21,17 +25,31 @@
   box-shadow: 0 2px 6px map.get(v.$colors, "shadow");
   transition: box-shadow 0.3s ease;
 
+  // ==============================
+  // #CARD-HOVER
+  // ==============================
+  // Styles applied when hovering over the card.
+  // ==============================
+
   &:hover {
     box-shadow: 0 6px 15px map.get(v.$colors, "shadow");
   }
 
   // ==============================
-  // Card Image
+  // #CARD-IMAGE
+  // ==============================
+  // Styles for the image section of the card.
   // ==============================
 
   &-image {
     width: 100%;
     overflow: hidden;
+
+    // ==============================
+    // #CARD-IMAGE-IMG
+    // ==============================
+    // Styles for the image within the card image section.
+    // ==============================
 
     img {
       display: block;
@@ -42,6 +60,12 @@
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
+    // ==============================
+    // #CARD-IMAGE-HOVER
+    // ==============================
+    // Styles applied to the image when the card is hovered.
+    // ==============================
+
     &:hover img {
       opacity: 1;
       transform: scale(1.05);
@@ -49,7 +73,9 @@
   }
 
   // ==============================
-  // Card Content
+  // #CARD-CONTENT
+  // ==============================
+  // Styles for the content section of the card.
   // ==============================
 
   .card-content {
@@ -57,7 +83,9 @@
   }
 
   // ==============================
-  // Card Meta Information
+  // #CARD-CONTENT
+  // ==============================
+  // Styles for the meta information section of the card.
   // ==============================
 
   .card-meta {
@@ -83,7 +111,9 @@
 }
 
 // ==============================
-// Single Post Page Styles
+// #POST-PAGE-STYLES
+// ==============================
+// Styles for individual post pages including images, text content, and meta information.
 // ==============================
 
 .post-page {
@@ -92,7 +122,9 @@
   margin-bottom: 2rem;
 
   // ==============================
-  // Post Cover Image
+  // #POST-COVER
+  // ==============================
+  // Styles for the cover image at the top of a post.
   // ==============================
 
   .post-cover {
@@ -103,6 +135,12 @@
     box-shadow: 0 2px 8px map.get(v.$colors, "shadow");
     transition: box-shadow 0.3s ease;
 
+    // ==============================
+    // #POST-COVER-IMG
+    // ==============================
+    // Styles for the cover image itself.
+    // ==============================
+
     figcaption {
       text-align: center;
       font-size: 0.875rem;
@@ -112,6 +150,12 @@
       line-height: 1.4;
     }
 
+    // ==============================
+    // #POST-COVER-IMG-HOVER
+    // ==============================
+    // Styles applied when hovering over the cover image.
+    // ==============================
+
     img {
       display: block;
       width: 100%;
@@ -119,10 +163,22 @@
       object-fit: cover;
       transition: transform 0.4s ease;
 
+      // ==============================
+      // #POST-COVER-IMG-HOVER-EFFECT
+      // ==============================
+      // Scale effect on hover.
+      // ==============================
+
       &:hover {
         transform: scale(1.03);
       }
     }
+
+    // ==============================
+    // #POST-COVER-HOVER
+    // ==============================
+    // Styles applied when hovering over the cover image container.
+    // ==============================
 
     &:hover {
       box-shadow: 0 6px 20px map.get(v.$colors, "shadow");
@@ -130,11 +186,9 @@
   }
 
   // ==============================
-  // Post Content
+  // #POST-IMAGES-AND-FIGURES
   // ==============================
-
-  // ==============================
-  // Post Images and Figures
+  // Styles for images and figures within the post content.
   // ==============================
 
   figure {
@@ -176,7 +230,9 @@
   }
 
   // ==============================
-  // Post Text Content
+  // #POST-CONTENT
+  // ==============================
+  // Styles for the main content area of the post.
   // ==============================
 
   @include m.headings();
@@ -186,7 +242,9 @@
   }
 
   // ==============================
-  // Drop Cap for First Paragraph
+  // #DROP-CAP
+  // ==============================
+  // Styles for drop caps at the start of paragraphs.
   // ==============================
 
   .drop-cap::first-letter {
@@ -194,7 +252,9 @@
   }
 
   // ==============================
-  // Post Meta Information
+  // #META-INFORMATION
+  // ==============================
+  // Styles for the meta information sections above and below the post content.
   // ==============================
 
   .post-meta-top {
@@ -222,7 +282,9 @@
 }
 
 // ==============================
-// Post Navigation
+// #POST-NAVIGATION
+// ==============================
+// Styles for navigation links underneath individual posts to navigate between posts.
 // ==============================
 
 .post-navigation {

@@ -1,5 +1,7 @@
 // ==============================
-// Mixins
+// #MIXINS
+// ==============================
+// Reusable SCSS mixins for consistent styling across the site.
 // ==============================
 
 @use "sass:map";
@@ -7,7 +9,9 @@
 @use "variables" as v;
 
 // ==============================
-// Headings Mixin
+// #HEADINGS-MIXIN
+// ==============================
+// Mixin for styling headings (h1 to h6) with consistent font, size, and spacing.
 // ==============================
 
 $heading-sizes: (
@@ -39,13 +43,21 @@ $heading-sizes: (
 }
 
 // ==============================
-// Quote Mixin
+// #QUOTE-STYLE-MIXIN
+// ==============================
+// Mixin for styling blockquotes with a distinctive appearance.
 // ==============================
 
 @mixin quote-style {
   figure {
     margin: 2rem 0;
   }
+
+  // ==============================
+  // #BLOCKQUOTE
+  // ==============================
+  // Styles for blockquotes within the quote mixin.
+  // ==============================
 
   blockquote {
     position: relative;
@@ -55,6 +67,12 @@ $heading-sizes: (
     font-size: larger;
     color: map.get(map.get(v.$colors, "text"), "quote");
     line-height: 1.5;
+
+    // ==============================
+    // #BLOCKQUOTE-OPENING-QUOTE
+    // ==============================
+    // Styles for the decorative opening quote in blockquotes.
+    // ==============================
 
     &::before {
       content: "‟";
@@ -67,6 +85,12 @@ $heading-sizes: (
     }
   }
 
+  // ==============================
+  // #QUOTE-CAPTION
+  // ==============================
+  // Styles for the caption or attribution of the quote.
+  // ==============================
+
   .quote-caption {
     display: block;
     padding-left: 2em;
@@ -78,7 +102,9 @@ $heading-sizes: (
 }
 
 // ==============================
-// Drop Cap Mixin
+// #DROP-CAP-MIXIN
+// ==============================
+// Mixin for styling drop caps at the start of paragraphs.
 // ==============================
 
 @mixin drop-cap(

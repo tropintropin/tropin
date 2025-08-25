@@ -1,10 +1,18 @@
 // ==============================
-// Scroll to Top Button
+// #SCROLL-TOP-BUTTON
+// ==============================
+// Styles for the "Scroll to Top" button that appears when the user scrolls down the page.
 // ==============================
 
 @use "sass:map";
 
 @use "variables" as v;
+
+// ==============================
+// #SCROLL-TOP-BUTTON-STYLES
+// ==============================
+// Styles for the scroll-to-top button including positioning, appearance, and transitions.
+// ==============================
 
 .scroll-top {
   position: fixed;
@@ -25,7 +33,9 @@
   transition: opacity 0.4s ease, transform 0.4s ease;
 
   // ==============================
-  // Show Button When Scrolled Down
+  // #SHOW-STATE
+  // ==============================
+  // Styles applied when the button is visible.
   // ==============================
 
   &.show {
@@ -35,7 +45,9 @@
   }
 
   // ==============================
-  // Button Hover Effect
+  // #HOVER-STATE
+  // ==============================
+  // Styles for button hover state.
   // ==============================
 
   &:hover {

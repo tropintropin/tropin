@@ -1,10 +1,18 @@
 // ==============================
-// Map Styles
+// #MAP-CONTAINER-FRAME-STYLES
+// ==============================
+// Styles for map containers and iframes including size, border radius, and shadow.
 // ==============================
 
 @use "sass:map";
 
 @use "variables" as v;
+
+// ==============================
+// #MAP-CONTAINER-FRAME
+// ==============================
+// Styles for map containers and iframes including size, border radius, and shadow.
+// ==============================
 
 .map-container {
   width: 100%;
@@ -13,6 +21,12 @@
   margin: 1em 0;
   box-shadow: 0 2px 8px map.get(v.$colors, "shadow");
 }
+
+// ==============================
+// #MAP-CONTAINER-IFRAME
+// ==============================
+// Styles for iframes within map containers.
+// ==============================
 
 .map-frame {
   width: 100%;

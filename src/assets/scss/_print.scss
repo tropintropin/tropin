@@ -1,5 +1,7 @@
 // ==============================
-// Print Styles
+// #PRINT-STYLES
+// ==============================
+// Styles for print media including layout adjustments and link handling.
 // ==============================
 
 @use "sass:map";
@@ -11,7 +13,9 @@
 }
 
 // ==============================
-// Print Media Query
+// #PRINT-INFO-STYLES
+// ==============================
+// Styles for the print information section displayed at the top of printed pages.
 // ==============================
 
 @media print {
@@ -29,7 +33,9 @@
   }
 
   // ==============================
-  // Print Info Image
+  // #PRINT-INFO-IMAGE
+  // ==============================
+  // Styles for the image in the print info section.
   // ==============================
 
   .print-info img {
@@ -39,7 +45,9 @@
   }
 
   // ==============================
-  // Print Info Text
+  // #PRINT-INFO-TEXT
+  // ==============================
+  // Styles for the text in the print info section.
   // ==============================
 
   .print-text {
@@ -53,7 +61,9 @@
   }
 
   // ==============================
-  // General Print Styles
+  // #PRINT-LAYOUT-ADJUSTMENTS
+  // ==============================
+  // Layout adjustments for better print formatting.
   // ==============================
 
   body,
@@ -72,7 +82,7 @@
   }
 
   // ==============================
-  // Links in Print
+  // #PRINT-LINKS
   // ==============================
   // Show URLs in print after links
   // ==============================
@@ -102,7 +112,9 @@
   }
 
   // ==============================
-  // Images in Print
+  // #PRINT-IMAGES
+  // ==============================
+  // Ensure images scale properly in print.
   // ==============================
 
   img {
@@ -111,7 +123,9 @@
   }
 
   // ==============================
-  // Hide Non-Essential Elements in Print
+  // #PRINT-HIDE-ELEMENTS
+  // ==============================
+  // Hide non-essential elements in print.
   // ==============================
 
   footer,

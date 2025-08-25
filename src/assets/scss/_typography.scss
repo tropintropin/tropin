@@ -1,5 +1,5 @@
 // ==============================
-// Typography Styles
+// #TYPOGRAPHY
 // ==============================
 
 @use "sass:map";
@@ -7,7 +7,15 @@
 @use "variables" as v;
 
 // ==============================
-// Links
+// #BASE-TEXT-STYLES
+// ==============================
+// Base styles for body text, headings, links, code blocks, and footer.
+// ==============================
+
+// ==============================
+// #LINK-STYLES
+// ==============================
+// Styles for hyperlinks including hover and active states.
 // ==============================
 
 a {
@@ -17,7 +25,9 @@ a {
   transition: color 0.3s ease, transform 0.15s ease;
 
   // ==============================
-  // Visited Link Colors
+  // #LINK-VISITED
+  // ==============================
+  // Styles for visited links.
   // ==============================
 
   &:visited {
@@ -25,12 +35,10 @@ a {
   }
 
   // ==============================
-  // Link Hover Effects
+  // #LINK-UNDERLINE
   // ==============================
-
-  // ==============================
-  // Underline Animation
-  // ==============================
+  // Underline effect using a pseudo-element.
+  // =============================
 
   &::after {
     content: "";
@@ -44,7 +52,9 @@ a {
   }
 
   // ==============================
-  // Hover and Active States
+  // #LINK-HOVER
+  // ==============================
+  // Styles for link hover state.
   // ==============================
 
   &:hover {
@@ -53,7 +63,9 @@ a {
   }
 
   // ==============================
-  // Visited Link Hover States
+  // #LINK-HOVER-VISITED
+  // ==============================
+  // Styles for visited link hover state.
   // ==============================
 
   &:visited:hover {
@@ -61,7 +73,9 @@ a {
   }
 
   // ==============================
-  // Underline Expansion on Hover
+  // #LINK-HOVER-AFTER
+  // ==============================
+  // Expand underline on hover.
   // ==============================
 
   &:hover::after {
@@ -70,7 +84,9 @@ a {
   }
 
   // ==============================
-  // Active State
+  // #LINK-ACTIVE
+  // ==============================
+  // Styles for link active state.
   // ==============================
 
   &:active {
@@ -80,7 +96,9 @@ a {
 }
 
 // ==============================
-// Code Blocks and Inline Code
+// #STACK-STYLES
+// ==============================
+// Styles for elements using the monospace font stack.
 // ==============================
 
 .stack {
@@ -90,7 +108,9 @@ a {
 }
 
 // ==============================
-// Footer
+// #FOOTER-STYLES
+// ==============================
+// Styles for the site footer.
 // ==============================
 
 footer {
@@ -99,7 +119,9 @@ footer {
   color: map.get(map.get(v.$colors, "text"), "aside");
 
   // ==============================
-  // Footer Inner Styles
+  // #FOOTER-INNER
+  // ==============================
+  // Inner container for footer content.
   // ==============================
 
   .footer-inner {

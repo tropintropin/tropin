@@ -1,5 +1,7 @@
 // ==============================
-// Progress Bar
+// #PROGRESS-BAR
+// ==============================
+// Styles for the progress bar that indicates page scroll progress.
 // ==============================
 
 @use "sass:map";
@@ -7,7 +9,9 @@
 @use "variables" as v;
 
 // ==============================
-// Progress Bar Styles
+// #PROGRESS-BAR-STYLES
+// ==============================
+// Styles for the progress bar including positioning, appearance, and animation.
 // ==============================
 
 #progress-bar {
@@ -27,7 +31,9 @@
 }
 
 // ==============================
-// Progress Bar Animation
+// #PROGRESS-BAR-ANIMATION
+// ==============================
+// Keyframes for the progress bar growth animation.
 // ==============================
 
 @keyframes grow {

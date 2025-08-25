@@ -1,11 +1,19 @@
 // ==============================
-// Base Styles
+// #BASE-STYLES
+// ==============================
+// Base styles for body, headers, main content, and responsive design.
 // ==============================
 
 @use "sass:map";
 
 @use "variables" as v;
 @use "mixins" as m;
+
+// ==============================
+// #GLOBAL-STYLES
+// ==============================
+// Global styles applied to all elements including box-sizing and body styles.
+// ==============================
 
 * {
   box-sizing: border-box;
@@ -20,6 +28,12 @@ body {
   max-width: 360px;
 }
 
+// ==============================
+// #HEADER-STYLES
+// ==============================
+// Styles for the header section including title and layout.
+// ==============================
+
 header {
   margin: var(--spacing-section) 0 10px;
 }
@@ -30,6 +44,12 @@ header h1 {
   text-align: center;
 }
 
+// ==============================
+// #MAIN-STYLES
+// ==============================
+// Styles for the main content area including sections and articles.
+// ==============================
+
 main,
 article,
 section {
@@ -38,6 +58,10 @@ section {
   font-family: inherit;
 }
 
+// ==============================
+// #SECTION-HEADERS
+// ==============================
+
 section h2 {
   padding: 0;
   text-align: left;
@@ -45,11 +69,15 @@ section h2 {
 }
 
 // ==============================
-// Responsive Styles
+// #RESPONSIVE-STYLES
+// ==============================
+// Responsive styles for different screen sizes including mobile, tablet, and desktop.
 // ==============================
 
 // ==============================
-// Tablet Styles
+// #TABLET-STYLES
+// ==============================
+// Styles for tablet view including max-width adjustments.
 // ==============================
 
 @media (min-width: 768px) {
@@ -59,7 +87,9 @@ section h2 {
 }
 
 // ==============================
-// Desktop Styles
+// #DESKTOP-STYLES
+// ==============================
+// Styles for desktop view including max-width adjustments.
 // ==============================
 
 @media (min-width: 1024px) {
@@ -69,7 +99,9 @@ section h2 {
 }
 
 // ==============================
-// Mobile Styles
+// #MOBILE-STYLES
+// ==============================
+// Styles for mobile view including padding and margin adjustments.
 // ==============================
 
 @media (max-width: 767px) {
@@ -104,7 +136,9 @@ section h2 {
 }
 
 // ==============================
-// Small Mobile Styles
+// #SMALL-MOBILE-STYLES
+// ==============================
+// Styles for small mobile view including further padding and margin adjustments.
 // ==============================
 
 @media (max-width: 480px) {
@@ -124,8 +158,5 @@ section h2 {
     padding-right: 2px;
     font-weight: bold;
     color: map.get(map.get(v.$colors, "text"), "default");
-  }
-  blockquote {
-    border-left: 2px solid #ccc;
   }
 }

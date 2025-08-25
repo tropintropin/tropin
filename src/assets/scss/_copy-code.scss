@@ -1,14 +1,28 @@
 // ==============================
-// Code Block Copy Button Styles
+// #COPY-CODE-BUTTON
+// ==============================
+// Styles for the "Copy Code" button that appears on code blocks.
 // ==============================
 
 @use "sass:map";
 
 @use 'variables' as v;
 
+// ==============================
+// #COPY-CODE-BUTTON-STYLES
+// ==============================
+// Styles for the copy code button including positioning, appearance, and transitions.
+// ==============================
+
 pre[class*='language-'] {
   position: relative;
 }
+
+// ==============================
+// #COPY-BUTTON
+// ==============================
+// Styles for the copy button within code blocks.
+// ==============================
 
 .copy-btn {
   position: absolute;
@@ -40,6 +54,12 @@ pre[class*='language-'] {
     box-shadow: 0 0 0 2px map.get(map.get(v.$colors, 'code-copy-btn'), 'focus');
   }
 }
+
+// ==============================
+// #COPY-BUTTON-VISIBILITY
+// ==============================
+// Show the copy button when hovering over the code block.
+// ==============================
 
 pre[class*='language-']:hover .copy-btn {
   opacity: 1;

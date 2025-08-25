@@ -1,34 +1,65 @@
 @charset "utf-8";
 
 // ==============================
-// Main SCSS File
+// #MAIN-SCSS-FILE
+// ==============================
+// This file serves as the primary entry point for compiling all SCSS styles.
+// It imports variables, mixins, and component styles to create a cohesive stylesheet.
 // ==============================
 
 // ==============================
-// Import Sass Modules
+// #SASS-MODULES
+// ==============================
+// Import necessary Sass modules for advanced functionalities.
 // ==============================
 
 @use "sass:map";
 @use "sass:meta";
 
 // ==============================
-// Import Partial SCSS Files
+// #IMPORTS (optimized order)
+// ==============================
+// Import variables and mixins first, followed by base styles, components, and utilities.
+// This order ensures that variables and mixins are available throughout all styles.
 // ==============================
 
+// ==============================
+// #CORE
+// ==============================
+// Import core variables and mixins.
+// ==============================
+@use "variables";
+@use "mixins";
+
+// ==============================
+// #BASE
+// ==============================
+// Import base styles and typography.
+// ==============================
 @use "base";
+@use "typography";
+
+// ==============================
+// #COMPONENTS
+// ==============================
+// Import styles for various components.
+// ==============================
 @use "buttons";
 @use "copy-code";
 @use "header";
 @use "icons";
-@use "maps";
-@use "mixins";
-@use "not-found";
 @use "posts";
+@use "under-construction";
+@use "not-found";
+@use "maps";
+@use "webmentions";
+
+// ==============================
+// #UTILITIES / SPECIAL
+// ==============================
+// Import utility styles and special features.
+// ==============================
 @use "print";
 @use "prism";
 @use "progress-bar";
 @use "scroll-top";
-@use "typography";
-@use "under-construction";
-@use "variables";
-@use "webmentions";

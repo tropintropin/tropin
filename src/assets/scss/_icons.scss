@@ -1,21 +1,43 @@
 // ==============================
-// Social Media Icons Styles
+// #ICON-LINK-STYLES
+// ==============================
+// Styles for icon links including size, color, and hover effects.
 // ==============================
 
 @use "sass:map";
 
 @use "variables" as v;
 
+// ==============================
+// #ICON-LINK
+// ==============================
+// Styles for icon links including size, color, and hover effects.
+// ==============================
+
 .icon-link svg {
   width: 24px;
   height: 24px;
-  fill: map.get(map.get(v.$colors, 'link'), 'default');
+  fill: map.get(map.get(v.$colors, "link"), "default");
   transition: fill 0.25s ease-in-out,
     transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 
+  // ==============================
+  // #ICON-LINK-HOVER
+  // ==============================
+  // Styles for icon link hover and active states.
+  // ==============================
   &:hover,
   &:active {
-    fill: map.get(map.get(v.$colors, 'link'), 'hover');
+    fill: map.get(map.get(v.$colors, "link"), "hover");
     transform: scale(1.15);
+  }
+
+  // ==============================
+  // #ICON-LINK-VISITED
+  // ==============================
+  // Styles for visited icon links.
+  // ==============================
+  &:visited {
+    fill: map.get(map.get(v.$colors, "link"), "visited");
   }
 }

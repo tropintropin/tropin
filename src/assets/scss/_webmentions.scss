@@ -1,5 +1,7 @@
 // ==============================
-// Webmentions Styles
+// #WEBMENTIONS
+// ==============================
+// Styles for displaying webmentions on posts and pages.
 // ==============================
 
 @use "sass:map";
@@ -7,7 +9,9 @@
 @use "variables" as v;
 
 // ==============================
-// Webmentions Container
+// #WEBMENTIONS-CONTAINER
+// ==============================
+// Styles for the main webmentions container.
 // ==============================
 
 .webmentions {
@@ -32,7 +36,9 @@
 }
 
 // ==============================
-// Individual Webmention Styles
+// #WEBMENTION-ENTRY
+// ==============================
+// Styles for each individual webmention entry.
 // ==============================
 
 .webmention {
@@ -63,7 +69,9 @@
 }
 
 // ==============================
-// All Webmentions Section
+// #WEBMENTIONS-ALL
+// ==============================
+// Styles for the section displaying all webmentions.
 // ==============================
 
 .webmentions-all {
