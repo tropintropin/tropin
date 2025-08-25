@@ -1,14 +1,36 @@
+// ==============================
+// Typography Styles
+// ==============================
+
+@use "sass:map";
+
 @use "variables" as v;
+
+// ==============================
+// Links
+// ==============================
 
 a {
   position: relative;
   text-decoration: none;
-  color: var(--color-link);
+  color: map.get(map.get(v.$colors, "link"), "default");
   transition: color 0.3s ease, transform 0.15s ease;
 
+  // ==============================
+  // Visited Link Colors
+  // ==============================
+
   &:visited {
-    color: var(--color-link-visited);
+    color: map.get(map.get(v.$colors, "link"), "visited");
   }
+
+  // ==============================
+  // Link Hover Effects
+  // ==============================
+
+  // ==============================
+  // Underline Animation
+  // ==============================
 
   &::after {
     content: "";
@@ -21,19 +43,35 @@ a {
     transition: width 0.3s ease, background-color 0.3s ease;
   }
 
+  // ==============================
+  // Hover and Active States
+  // ==============================
+
   &:hover {
     transform: scale(1.05);
-    color: var(--color-link-hover);
+    color: map.get(map.get(v.$colors, "link"), "hover");
   }
 
+  // ==============================
+  // Visited Link Hover States
+  // ==============================
+
   &:visited:hover {
-    color: var(--color-link-hover-visited);
+    color: map.get(map.get(v.$colors, "link"), "hover-visited");
   }
+
+  // ==============================
+  // Underline Expansion on Hover
+  // ==============================
 
   &:hover::after {
     width: 100%;
     background-color: currentColor;
   }
+
+  // ==============================
+  // Active State
+  // ==============================
 
   &:active {
     transform: scale(0.97);
@@ -41,16 +79,28 @@ a {
   }
 }
 
+// ==============================
+// Code Blocks and Inline Code
+// ==============================
+
 .stack {
   font-family: v.$font-mono;
-  color: v.$color-text-aside;
+  color: map.get(map.get(v.$colors, "text"), "aside");
   font-size: 0.9rem;
 }
+
+// ==============================
+// Footer
+// ==============================
 
 footer {
   font-family: v.$font-body;
   text-align: center;
-  color: v.$color-text-aside;
+  color: map.get(map.get(v.$colors, "text"), "aside");
+
+  // ==============================
+  // Footer Inner Styles
+  // ==============================
 
   .footer-inner {
     .footer-copy {

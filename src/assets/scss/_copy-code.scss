@@ -1,3 +1,11 @@
+// ==============================
+// Code Block Copy Button Styles
+// ==============================
+
+@use "sass:map";
+
+@use 'variables' as v;
+
 pre[class*='language-'] {
   position: relative;
 }
@@ -12,15 +20,15 @@ pre[class*='language-'] {
   cursor: pointer;
   border: none;
   border-radius: 0.25em;
-  background: #b57614;
-  color: #f9f5d7;
+  background: map.get(map.get(v.$colors, 'code-copy-btn'), 'bg');
+  color: map.get(map.get(v.$colors, 'code-copy-btn'), 'text');
   transition: opacity 0.2s, transform 0.2s;
-  
+
   opacity: 0;
   pointer-events: none;
 
   &:hover {
-    background: #9d0006;
+    background: map.get(map.get(v.$colors, 'code-copy-btn'), 'hover');
   }
 
   &:active {
@@ -29,7 +37,7 @@ pre[class*='language-'] {
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px #797403;
+    box-shadow: 0 0 0 2px map.get(map.get(v.$colors, 'code-copy-btn'), 'focus');
   }
 }
 

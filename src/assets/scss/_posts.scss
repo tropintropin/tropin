@@ -1,7 +1,16 @@
+// ==============================
+// Posts and Cards Styles
+// ==============================
+
+@use "sass:map";
+
 @use "mixins" as m;
 @use "variables" as v;
 
-// === Cards (blog / event list) ===
+// ==============================
+// Cards (blog, events) (listings)
+// ==============================
+
 .card {
   @include m.headings();
   width: 100%;
@@ -9,12 +18,16 @@
   margin-bottom: 2rem;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px map.get(v.$colors, "shadow");
   transition: box-shadow 0.3s ease;
 
   &:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 15px map.get(v.$colors, "shadow");
   }
+
+  // ==============================
+  // Card Image
+  // ==============================
 
   &-image {
     width: 100%;
@@ -35,13 +48,21 @@
     }
   }
 
+  // ==============================
+  // Card Content
+  // ==============================
+
   .card-content {
     padding: 1rem;
   }
 
+  // ==============================
+  // Card Meta Information
+  // ==============================
+
   .card-meta {
     font-size: 0.875rem;
-    color: v.$color-text-meta;
+    color: map.get(map.get(v.$colors, "text"), "meta");
     margin-bottom: 0.75rem;
 
     p {
@@ -51,7 +72,7 @@
 
     .separator {
       margin: 0 0.25rem;
-      color: v.$color-separator;
+      color: map.get(v.$colors, "separator");
     }
 
     .event-location,
@@ -61,24 +82,31 @@
   }
 }
 
-// === Posts (blog, events) (full page) ===
+// ==============================
+// Single Post Page Styles
+// ==============================
+
 .post-page {
   width: 100%;
   max-width: 100%;
   margin-bottom: 2rem;
+
+  // ==============================
+  // Post Cover Image
+  // ==============================
 
   .post-cover {
     margin: 0;
     width: 100%;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px map.get(v.$colors, "shadow");
     transition: box-shadow 0.3s ease;
 
     figcaption {
       text-align: center;
       font-size: 0.875rem;
-      color: #666;
+      color: map.get(map.get(v.$colors, "text"), "figcaption");
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
       line-height: 1.4;
@@ -97,16 +125,24 @@
     }
 
     &:hover {
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 6px 20px map.get(v.$colors, "shadow");
     }
   }
+
+  // ==============================
+  // Post Content
+  // ==============================
+
+  // ==============================
+  // Post Images and Figures
+  // ==============================
 
   figure {
     &:not(.quote) {
       margin: 2rem 0;
       overflow: hidden;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 8px map.get(v.$colors, "shadow");
       transition: box-shadow 0.3s ease;
 
       img {
@@ -124,14 +160,14 @@
       figcaption {
         text-align: center;
         font-size: 0.875rem;
-        color: #666;
+        color: map.get(map.get(v.$colors, "text"), "figcaption");
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
         line-height: 1.4;
       }
 
       &:hover {
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 6px 20px map.get(v.$colors, "shadow");
       }
     }
     &.quote {
@@ -139,39 +175,55 @@
     }
   }
 
+  // ==============================
+  // Post Text Content
+  // ==============================
+
   @include m.headings();
 
   p {
     margin-bottom: 0.5rem;
   }
 
+  // ==============================
+  // Drop Cap for First Paragraph
+  // ==============================
+
   .drop-cap::first-letter {
     @include m.drop-cap();
   }
 
+  // ==============================
+  // Post Meta Information
+  // ==============================
+
   .post-meta-top {
-  font-size: 0.875rem;
-  color: v.$color-text-meta;
-  margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: map.get(map.get(v.$colors, "text"), "meta");
+    margin-bottom: 1.5rem;
 
     .separator {
       margin: 0 0.5rem;
-      color: v.$color-separator;
+      color: map.get(v.$colors, "separator");
     }
   }
 
   .post-meta-bottom {
     margin-top: 1.5rem;
     padding-top: 1rem;
-    border-top: 1px solid #eee;
+    border-top: 1px solid map.get(v.$colors, "border");
     font-size: 0.875rem;
-    color: v.$color-text-meta;
+    color: map.get(map.get(v.$colors, "text"), "meta");
 
     p {
       margin: 0.25rem 0;
     }
   }
 }
+
+// ==============================
+// Post Navigation
+// ==============================
 
 .post-navigation {
   margin-top: 2rem;
