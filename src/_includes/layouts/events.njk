@@ -21,9 +21,11 @@
   Google Calendar:
 </p>
 
+<div class="code-frame">
 {% highlight "http" %}
 {{ site.url + site.calendar.url }}
 {% endhighlight %}
+</div>
 </small>
 
 {% if collections.events | length == 0 %}
@@ -32,11 +34,11 @@
 <p class="events-count">Всего событий: {{ collections.events | length }}</p>
 {% endif %}
 
-<div class="events-posts-list">
+<div class="events-posts-list" data-pagefind-ignore="all">
     {% set currentYear = "" %}
     {% for post in collections.events %}
         {% set postYear = post.date | date("yyyy") %}
-        
+
         {% if postYear != currentYear %}
             <h2 class="blog-year">{{ postYear }}</h2>
             {% set currentYear = postYear %}

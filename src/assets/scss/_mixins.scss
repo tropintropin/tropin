@@ -128,3 +128,17 @@ $heading-sizes: (
   position: relative;
   top: $raise;
 }
+
+// ==============================
+// #FRAME-MIXIN
+// ==============================
+// Mixin for styling frames such as map containers, iframes, and code snippets.
+// ==============================
+
+@mixin frame($height: 100%, $margin: 1em 0) {
+  width: 100%;
+  height: $height;
+  border-radius: 8px;
+  margin: $margin;
+  box-shadow: 0 2px 8px map.get(v.$colors, "shadow");
+}

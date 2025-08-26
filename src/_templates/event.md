@@ -26,19 +26,13 @@ ics: true
 
 {# Абзац с буквицей #}
 
-<p class="drop-cap">
-
-</p>
+<p class="drop-cap"></p>
 
 {# Цитата #}
 
 <figure class="quote">
-  <blockquote>
-    
-  </blockquote>
-  <figcaption class="quote-caption">
-    
-  </figcaption>
+  <blockquote></blockquote>
+  <figcaption class="quote-caption"></figcaption>
 </figure>
 
 {# Иллюстрация #}
@@ -50,6 +44,10 @@ ics: true
 
 {# Обёртка для встраеваемых карт #}
 
-<div class="map-frame">
+<div class="map-frame"></div>
 
+{# Код #}
+
+<div class="code-frame">
+  {% highlight "txt" %}{% endhighlight %}
 </div>
