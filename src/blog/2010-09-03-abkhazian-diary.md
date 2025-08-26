@@ -11,9 +11,9 @@ image:
   src: "/assets/images/blog/2010-09-03-abkhazian-diary-00.jpg"
   caption: "Вид на горы близ Ткварчела. © Фото А. Кондрашова"
 repost:
-    source: "ЖЖ"
-    url: "https://valeriuus.livejournal.com/38327.html"
-    date: "2010-09-03T20:43:00+03:00"
+  source: "ЖЖ"
+  url: "https://valeriuus.livejournal.com/38327.html"
+  date: "2010-09-03T20:43:00+03:00"
 map:
   points:
     - name: "Кындыгская крепость — рядом с ней располагался базовый лагерь экспедиции"
@@ -59,5 +59,7 @@ map:
 
 ## Комментарии
 
-<div data-lj-comment-embed="valeriuus--38327--22455" data-domain="valeriuus.livejournal.com" data-journal="valeriuus" data-post-id="38327" data-comment-id="22455" ></div> <script async src="https://l-stat.livejournal.net/js/??sdk.js?v=2"></script> 
-<div data-lj-comment-embed="valeriuus--38327--22711" data-domain="valeriuus.livejournal.com" data-journal="valeriuus" data-post-id="38327" data-comment-id="22711" ></div> <script async src="https://l-stat.livejournal.net/js/??sdk.js?v=2"></script> 
+<div data-lj-comment-embed="valeriuus--38327--22455" data-domain="valeriuus.livejournal.com" data-journal="valeriuus" data-post-id="38327" data-comment-id="22455" ></div>
+<div data-lj-comment-embed="valeriuus--38327--22711" data-domain="valeriuus.livejournal.com" data-journal="valeriuus" data-post-id="38327" data-comment-id="22711" ></div>
+
+<script async src="https://l-stat.livejournal.net/js/??sdk.js?v=2"></script>

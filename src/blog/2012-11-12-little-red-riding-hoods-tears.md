@@ -10,9 +10,9 @@ image:
   src: ""
   caption: ""
 repost:
-    source: "LiveLib"
-    url: "https://www.livelib.ru/review/207930-skazhi-krasnaya-shapochka-beate-tereza-hanika"
-    date: "2012-11-12T23:53:00+03:00"
+  source: "LiveLib"
+  url: "https://www.livelib.ru/review/207930-skazhi-krasnaya-shapochka-beate-tereza-hanika"
+  date: "2012-11-12T23:53:00+03:00"
 map: false
 ---
 
@@ -32,6 +32,8 @@ map: false
 
 ## Комментарии из [ЖЖ](https://valeriuus.livejournal.com/300698.html)
 
- <div data-lj-comment-embed="valeriuus--300698--617370" data-domain="valeriuus.livejournal.com" data-journal="valeriuus" data-post-id="300698" data-comment-id="617370" ></div> <script async src="https://l-stat.livejournal.net/js/??sdk.js?v=2"></script> 
+<div data-lj-comment-embed="valeriuus--300698--617370" data-domain="valeriuus.livejournal.com" data-journal="valeriuus" data-post-id="300698" data-comment-id="617370" ></div>
 
- <div data-lj-comment-embed="valeriuus--300698--617882" data-domain="valeriuus.livejournal.com" data-journal="valeriuus" data-post-id="300698" data-comment-id="617882" ></div> <script async src="https://l-stat.livejournal.net/js/??sdk.js?v=2"></script> 
+<div data-lj-comment-embed="valeriuus--300698--617882" data-domain="valeriuus.livejournal.com" data-journal="valeriuus" data-post-id="300698" data-comment-id="617882" ></div>
+
+<script async src="https://l-stat.livejournal.net/js/??sdk.js?v=2"></script>

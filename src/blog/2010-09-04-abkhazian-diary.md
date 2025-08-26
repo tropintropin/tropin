@@ -11,9 +11,9 @@ image:
   src: ""
   caption: ""
 repost:
-    source: "ЖЖ"
-    url: "https://valeriuus.livejournal.com/38603.html"
-    date: "2010-09-04T23:28:00+03:00"
+  source: "ЖЖ"
+  url: "https://valeriuus.livejournal.com/38603.html"
+  date: "2010-09-04T23:28:00+03:00"
 map:
   points:
     - name: "Село Арасадзых — где-то в его окрестностях мы и копали"
@@ -39,9 +39,10 @@ map:
   <figcaption>Собственно, раскоп. © Фото В. Медянниковой</figcaption>
 </figure>
 
-
 Спал я не очень, ввиду того, что спальник постоянно соскальзывал вниз с пенки, да и она не лежала на месте. Что поделаешь - холм. Зато по моей палатке не долбили ночью перезрелые яблоки — большая часть палаток была поставлена под яблонями — это защищало их от Солнца днём, но не спасало от яблокопада и запаха гниющих яблок. Меня же, как я уже упоминал ранее, окружал аромат мелиссы.
 
 ## Комментарии
 
-<div data-lj-comment-embed="valeriuus--38603--22987" data-domain="valeriuus.livejournal.com" data-journal="valeriuus" data-post-id="38603" data-comment-id="22987" ></div> <script async src="https://l-stat.livejournal.net/js/??sdk.js?v=2"></script> 
+<div data-lj-comment-embed="valeriuus--38603--22987" data-domain="valeriuus.livejournal.com" data-journal="valeriuus" data-post-id="38603" data-comment-id="22987" ></div>
+
+<script async src="https://l-stat.livejournal.net/js/??sdk.js?v=2"></script>

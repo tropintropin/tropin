@@ -10,9 +10,9 @@ image:
   src: "/assets/images/blog/2013-06-29-the-place-where-i-was-born-00.jpg"
   caption: "Дом культуры Солдек"
 repost:
-    source: "ЖЖ"
-    url: "https://valeriuus.livejournal.com/338911.html"
-    date: "2013-06-29T21:21:00+03:00"
+  source: "ЖЖ"
+  url: "https://valeriuus.livejournal.com/338911.html"
+  date: "2013-06-29T21:21:00+03:00"
 map:
   points:
     - name: "Сокол, Дом культуры Солдек"
@@ -36,4 +36,6 @@ map:
 
 ## Комментарии
 
- <div data-lj-comment-embed="valeriuus--338911--874463" data-domain="valeriuus.livejournal.com" data-journal="valeriuus" data-post-id="338911" data-comment-id="874463" ></div> <script async src="https://l-stat.livejournal.net/js/??sdk.js?v=2"></script> 
+<div data-lj-comment-embed="valeriuus--338911--874463" data-domain="valeriuus.livejournal.com" data-journal="valeriuus" data-post-id="338911" data-comment-id="874463" ></div>
+
+<script async src="https://l-stat.livejournal.net/js/??sdk.js?v=2"></script>
