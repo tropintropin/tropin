@@ -5,6 +5,7 @@
 // ==============================
 
 @use "sass:map";
+@use "sass:color";
 
 @use "variables" as v;
 
@@ -14,21 +15,22 @@
 // Styles for icon links including size, color, and hover effects.
 // ==============================
 
+
 .icon-link {
-  color: map.get(map.get(v.$colors, "link"), "default");
+  color: var(--links-default);
 
   &:hover {
-    color: map.get(map.get(v.$colors, "link"), "hover");
+    color: var(--links-hover);
   }
 
   // NB! See that colors for visited links are the same as for normal links
   // This is to avoid color shifting when a user hovers over a visited link
   &:visited {
-    color: map.get(map.get(v.$colors, "link"), "default");
+    color: var(--links-default);
   }
 
   &:visited:hover {
-    color: map.get(map.get(v.$colors, "link"), "hover-visited");
+    color: var(--links-hover-visited);
   }
 
   svg {

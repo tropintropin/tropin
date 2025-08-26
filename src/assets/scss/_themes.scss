@@ -1,0 +1,62 @@
+@use "sass:meta";
+@use "sass:map";
+@use "palettes" as p;
+
+// ==============================
+// #HELPER FUNCTION
+@function export-vars($map, $prefix: "") {
+  $result: ();
+  @each $key, $value in $map {
+    $name: if($prefix == "", $key, "#{$prefix}-#{$key}");
+    @if meta.type-of($value) == "map" {
+      $result: map.merge($result, export-vars($value, $name));
+    } @else {
+      $result: map.set($result, $name, $value);
+    }
+  }
+  @return $result;
+}
+
+// ==============================
+// #FLATTEN PALETTES
+$light-vars: export-vars(p.$palette-light);
+$dark-vars: export-vars(p.$palette-dark);
+
+// ==============================
+// #CSS VARIABLES
+:root {
+  @each $name, $value in $light-vars {
+    --#{$name}: #{$value};
+  }
+
+  --bg-gradient: linear-gradient(
+    120deg,
+    var(--backgrounds-body),
+    var(--backgrounds-main)
+  );
+  --bg-image: url("/images/bg-light.jpg");
+
+  & * {
+    transition: background-color 0.5s ease, color 0.5s ease,
+      border-color 0.5s ease, box-shadow 0.5s ease;
+  }
+}
+
+.dark-theme {
+  @each $name, $value in $dark-vars {
+    --#{$name}: #{$value};
+  }
+
+  --bg-gradient: linear-gradient(
+    120deg,
+    var(--backgrounds-body),
+    var(--backgrounds-main)
+  );
+}
+
+// ==============================
+// #BODY BACKGROUND
+body {
+  background: var(--bg-gradient) no-repeat center/cover,
+    var(--bg-image) no-repeat center/cover;
+}

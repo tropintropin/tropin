@@ -22,7 +22,7 @@
   height: 4px;
   background: color-mix(
     in oklch,
-    #{map.get(v.$colors, "progress-bar")} 70%,
+    #{var(--neutral-200)} 70%,
     transparent
   );
   transform-origin: left;

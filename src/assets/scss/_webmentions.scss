@@ -17,8 +17,8 @@
 .webmentions {
   margin-top: 2rem;
   padding: 1rem;
-  background-color: map.get(map.get(v.$colors, "webmention"), "bg");
-  border-left: 4px solid map.get(map.get(v.$colors, "webmention"), "border");
+  background-color: var(--backgrounds-card);
+  border-left: 4px solid var(--primary);
   border-radius: 4px;
   font-size: 0.9rem;
 }
@@ -26,7 +26,7 @@
 .webmentions h3 {
   font-size: 1rem;
   margin-bottom: 0.5rem;
-  color: map.get(map.get(v.$colors, "webmention"), "text");
+  color: var(--neutral-500);
 }
 
 .webmentions ul {
@@ -44,7 +44,7 @@
 .webmention {
   margin-bottom: 0.75rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid map.get(map.get(v.$colors, "webmention"), "border");
+  border-bottom: 1px solid var(--primary);
 }
 
 .webmention:last-child {
@@ -54,18 +54,18 @@
 .webmention .owi {
   font-size: 1rem;
   flex-shrink: 0;
-  color: map.get(map.get(v.$colors, "webmention"), "text");
+  color: var(--neutral-400);
 }
 
 .webmention .wm-author a {
   font-weight: bold;
   text-decoration: none;
-  color: map.get(map.get(v.$colors, "webmention"), "meta");
+  color: var(--neutral-200);
 }
 
 .webmention .wm-content {
   margin-top: 0.25rem;
-  color: map.get(map.get(v.$colors, "webmention"), "text");
+  color: var(--neutral-300);
 }
 
 // ==============================
@@ -76,7 +76,7 @@
 
 .webmentions-all {
   padding: 2rem;
-  background: map.get(map.get(v.$colors, "webmention"), "bg");
+  background: var(--backgrounds-card);
   border-radius: 8px;
   font-size: 0.9rem;
 }
@@ -88,7 +88,7 @@
 }
 
 .webmentions-all li.webmention {
-  border-bottom: 1px solid map.get(map.get(v.$colors, "webmention"), "border");
+  border-bottom: 1px solid var(--primary);
   padding: 0.5rem 0;
   margin-bottom: 0.5rem;
 }
@@ -99,7 +99,7 @@
 
 .webmention .wm-author a {
   font-weight: bold;
-  color: map.get(map.get(v.$colors, "webmention"), "meta");
+  color: var(--neutral-200);
   text-decoration: none;
 }
 

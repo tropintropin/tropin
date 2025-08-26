@@ -22,7 +22,7 @@
   margin-bottom: 2rem;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 2px 6px map.get(v.$colors, "shadow");
+  box-shadow: 0 2px 6px var(--shadow);
   transition: box-shadow 0.3s ease;
 
   // ==============================
@@ -32,7 +32,7 @@
   // ==============================
 
   &:hover {
-    box-shadow: 0 6px 15px map.get(v.$colors, "shadow");
+    box-shadow: 0 6px 15px var(--shadow);
   }
 
   // ==============================
@@ -90,7 +90,7 @@
 
   .card-meta {
     font-size: 0.875rem;
-    color: map.get(map.get(v.$colors, "text"), "meta");
+    color: var(--neutral-200);
     margin-bottom: 0.75rem;
 
     p {
@@ -100,7 +100,7 @@
 
     .separator {
       margin: 0 0.25rem;
-      color: map.get(v.$colors, "separator");
+      color: var(--neutral-200);
     }
 
     .event-location,
@@ -132,7 +132,7 @@
     width: 100%;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 2px 8px map.get(v.$colors, "shadow");
+    box-shadow: 0 2px 8px var(--shadow);
     transition: box-shadow 0.3s ease;
 
     // ==============================
@@ -144,7 +144,7 @@
     figcaption {
       text-align: center;
       font-size: 0.875rem;
-      color: map.get(map.get(v.$colors, "text"), "figcaption");
+      color: var(--neutral-300);
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
       line-height: 1.4;
@@ -181,7 +181,7 @@
     // ==============================
 
     &:hover {
-      box-shadow: 0 6px 20px map.get(v.$colors, "shadow");
+      box-shadow: 0 6px 20px var(--shadow);
     }
   }
 
@@ -196,7 +196,7 @@
       margin: 2rem 0;
       overflow: hidden;
       border-radius: 8px;
-      box-shadow: 0 2px 8px map.get(v.$colors, "shadow");
+      box-shadow: 0 2px 8px var(--shadow);
       transition: box-shadow 0.3s ease;
 
       img {
@@ -214,14 +214,14 @@
       figcaption {
         text-align: center;
         font-size: 0.875rem;
-        color: map.get(map.get(v.$colors, "text"), "figcaption");
+        color: var(--neutral-300);
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
         line-height: 1.4;
       }
 
       &:hover {
-        box-shadow: 0 6px 20px map.get(v.$colors, "shadow");
+        box-shadow: 0 6px 20px var(--shadow);
       }
     }
     &.quote {
@@ -259,21 +259,21 @@
 
   .post-meta-top {
     font-size: 0.875rem;
-    color: map.get(map.get(v.$colors, "text"), "meta");
+    color: var(--neutral-200);
     margin-bottom: 1.5rem;
 
     .separator {
       margin: 0 0.5rem;
-      color: map.get(v.$colors, "separator");
+      color: var(--neutral-200);
     }
   }
 
   .post-meta-bottom {
     margin-top: 1.5rem;
     padding-top: 1rem;
-    border-top: 1px solid map.get(v.$colors, "border");
+    border-top: 1px solid var(--neutral-200);
     font-size: 0.875rem;
-    color: map.get(map.get(v.$colors, "text"), "meta");
+    color: var(--neutral-200);
 
     p {
       margin: 0.25rem 0;

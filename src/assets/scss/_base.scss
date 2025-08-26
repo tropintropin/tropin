@@ -20,10 +20,11 @@
 }
 
 body {
+  background-color: var(--backgrounds-body);
   margin: 0 auto;
   font-size: 18px;
   line-height: 1.5;
-  color: map.get(map.get(v.$colors, "text"), "default");
+  color: var(--neutral-400);
   font-family: var(--font-body);
   max-width: 360px;
 }
@@ -42,6 +43,7 @@ header h1 {
   font-family: var(--font-header);
   font-size: 60px;
   text-align: center;
+  color: var(--neutral-500);
 }
 
 // ==============================
@@ -56,6 +58,7 @@ section {
   margin: var(--spacing-section) 0;
   padding: 0 var(--spacing-container);
   font-family: inherit;
+  background-color: var(--backgrounds-main);
 }
 
 // ==============================
@@ -157,6 +160,6 @@ section h2 {
     margin-left: 0;
     padding-right: 2px;
     font-weight: bold;
-    color: map.get(map.get(v.$colors, "text"), "default");
+    color: var(--neutral-400);
   }
 }

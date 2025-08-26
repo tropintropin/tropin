@@ -36,6 +36,7 @@ $heading-sizes: (
       font-weight: $weight;
       font-size: $size;
       line-height: $line-height;
+      color: var(--neutral-500);
       margin-top: $margin-top;
       margin-bottom: $margin-bottom;
     }
@@ -65,7 +66,7 @@ $heading-sizes: (
     padding-left: 2.5em;
     font-family: v.$font-quote;
     font-size: larger;
-    color: map.get(map.get(v.$colors, "text"), "quote");
+    color: var(--neutral-300);
     line-height: 1.5;
 
     // ==============================
@@ -81,7 +82,7 @@ $heading-sizes: (
       top: 0;
       font-size: 4em;
       line-height: 1;
-      color: map.get(map.get(v.$colors, "text"), "quote-caption");
+      color: var(--neutral-200);
     }
   }
 
@@ -97,7 +98,7 @@ $heading-sizes: (
     margin: 0.5em 0 0 2.5em;
     font-family: v.$font-quote;
     font-size: smaller;
-    color: map.get(map.get(v.$colors, "text"), "quote-caption");
+    color: var(--neutral-200);
   }
 }
 
@@ -108,7 +109,7 @@ $heading-sizes: (
 // ==============================
 
 @mixin drop-cap(
-  $color: map.get(map.get(v.$colors, "text"), "drop-cap"),
+  $color: var(--neutral-500),
   $size: 4.5em,
   $margin-right: 0.15em,
   $margin-bottom: 0.1em,
@@ -123,7 +124,7 @@ $heading-sizes: (
   color: $color;
   margin-right: $margin-right;
   margin-bottom: $margin-bottom;
-  text-shadow: 1px 1px 0 map.get(v.$colors, "shadow");
+  text-shadow: 1px 1px 0 var(--shadow);
   vertical-align: top;
   position: relative;
   top: $raise;
@@ -140,5 +141,9 @@ $heading-sizes: (
   height: $height;
   border-radius: 8px;
   margin: $margin;
-  box-shadow: 0 2px 8px map.get(v.$colors, "shadow");
+  box-shadow: 0 2px 8px var(--shadow);
+
+  &:hover {
+    box-shadow: 0 6px 20px var(--shadow);
+  }
 }
