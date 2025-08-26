@@ -1,7 +1,31 @@
+// ==============================
+// #UNDER-CONSTRUCTION
+// ==============================
+// Styles for sections or pages that are under construction.
+// ==============================
+
+// ==============================
+// #COLORS
+// ==============================
+// Define color variables for the under construction styles.
+// These colors can be adjusted to fit the overall site theme.
+// ==============================
+
+$background-construction: oklch(98.562% 0.02767 98.088);
+$foreground-construction: oklch(32.109% 0.00004 271.152);
+$highlight-construction: oklch(82.67% 0.1689 90.464);
+$shadow-construction: oklch(0% 0 0 / 0.2);
+
 .under-construction {
   position: relative;
   margin: 2rem 0;
   border-radius: 6px;
+
+  // ==============================
+  // #CONSTRUCTION-FRAME
+  // ==============================
+  // Decorative frame with diagonal stripes.
+  // ==============================
 
   .construction-frame {
     position: absolute;
@@ -13,33 +37,45 @@
     border-radius: 6px;
     background: repeating-linear-gradient(
       45deg,
-      #f0c000,
-      #f0c000 10px,
-      #333 10px,
-      #333 20px
+      $highlight-construction,
+      $highlight-construction 10px,
+      $foreground-construction 10px,
+      $foreground-construction 20px
     );
     z-index: 0;
   }
 
+  // ==============================
+  // #CONSTRUCTION-CONTENT
+  // ==============================
+  // Main content area for under construction message.
+  // ==============================
+
   .construction-content {
     position: relative;
-    background: #fffbe6;
+    background: $background-construction;
     padding: 2rem 1rem 1rem 1rem;
     border-radius: 6px;
     z-index: 1;
     text-align: center;
 
+    // ==============================
+    // #HEADINGS-AND-TEXT
+    // ==============================
+    // Styles for headings and paragraphs within the content area.
+    // ==============================
+
     h2 {
       position: relative;
       display: inline-block;
-      background: #f0c000;
-      color: #333;
+      background: $highlight-construction;
+      color: $foreground-construction;
       font-size: 1.8rem;
       font-weight: bold;
       padding: 0.3rem 1rem;
       border-radius: 4px;
       margin: -2rem 0 1rem 0;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 6px $shadow-construction;
       z-index: 2;
     }
 
@@ -51,10 +87,10 @@
     p {
       margin: 0.5rem 0;
       font-size: 1rem;
-      color: #333;
+      color: $foreground-construction;
 
       a {
-        color: #f0c000;
+        color: $highlight-construction;
         font-weight: bold;
         text-decoration: none;
       }

@@ -1,14 +1,44 @@
+// ==============================
+// #TYPOGRAPHY
+// ==============================
+
+@use "sass:map";
+
 @use "variables" as v;
+
+// ==============================
+// #BASE-TEXT-STYLES
+// ==============================
+// Base styles for body text, headings, links, code blocks, and footer.
+// ==============================
+
+// ==============================
+// #LINK-STYLES
+// ==============================
+// Styles for hyperlinks including hover and active states.
+// ==============================
 
 a {
   position: relative;
   text-decoration: none;
-  color: var(--color-link);
+  color: map.get(map.get(v.$colors, "link"), "default");
   transition: color 0.3s ease, transform 0.15s ease;
 
+  // ==============================
+  // #LINK-VISITED
+  // ==============================
+  // Styles for visited links.
+  // ==============================
+
   &:visited {
-    color: var(--color-link-visited);
+    color: map.get(map.get(v.$colors, "link"), "visited");
   }
+
+  // ==============================
+  // #LINK-UNDERLINE
+  // ==============================
+  // Underline effect using a pseudo-element.
+  // =============================
 
   &::after {
     content: "";
@@ -21,19 +51,43 @@ a {
     transition: width 0.3s ease, background-color 0.3s ease;
   }
 
+  // ==============================
+  // #LINK-HOVER
+  // ==============================
+  // Styles for link hover state.
+  // ==============================
+
   &:hover {
     transform: scale(1.05);
-    color: var(--color-link-hover);
+    color: map.get(map.get(v.$colors, "link"), "hover");
   }
 
+  // ==============================
+  // #LINK-HOVER-VISITED
+  // ==============================
+  // Styles for visited link hover state.
+  // ==============================
+
   &:visited:hover {
-    color: var(--color-link-hover-visited);
+    color: map.get(map.get(v.$colors, "link"), "hover-visited");
   }
+
+  // ==============================
+  // #LINK-HOVER-AFTER
+  // ==============================
+  // Expand underline on hover.
+  // ==============================
 
   &:hover::after {
     width: 100%;
     background-color: currentColor;
   }
+
+  // ==============================
+  // #LINK-ACTIVE
+  // ==============================
+  // Styles for link active state.
+  // ==============================
 
   &:active {
     transform: scale(0.97);
@@ -41,16 +95,34 @@ a {
   }
 }
 
+// ==============================
+// #STACK-STYLES
+// ==============================
+// Styles for elements using the monospace font stack.
+// ==============================
+
 .stack {
   font-family: v.$font-mono;
-  color: v.$color-text-aside;
+  color: map.get(map.get(v.$colors, "text"), "aside");
   font-size: 0.9rem;
 }
+
+// ==============================
+// #FOOTER-STYLES
+// ==============================
+// Styles for the site footer.
+// ==============================
 
 footer {
   font-family: v.$font-body;
   text-align: center;
-  color: v.$color-text-aside;
+  color: map.get(map.get(v.$colors, "text"), "aside");
+
+  // ==============================
+  // #FOOTER-INNER
+  // ==============================
+  // Inner container for footer content.
+  // ==============================
 
   .footer-inner {
     .footer-copy {

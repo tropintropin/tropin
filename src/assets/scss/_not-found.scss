@@ -1,8 +1,18 @@
-// 404 Not Found Styles
+// ==============================
+// #NOT-FOUND-PAGE
+// ==============================
+// Styles for the 404 Not Found page including ASCII art and text alignment.
+// ==============================
+
 .not-found {
   text-align: center;
 
-  // ASCII Art
+  // ==============================
+  // #NOT-FOUND-CODE
+  // ==============================
+  // Styles for the ASCII art code block on the 404 Not Found page.
+  // ==============================
+
   &__code {
     line-height: 1.1;
     margin: 1.5rem 0;

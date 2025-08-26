@@ -1,14 +1,40 @@
+// ==============================
+// #PROGRESS-BAR
+// ==============================
+// Styles for the progress bar that indicates page scroll progress.
+// ==============================
+
+@use "sass:map";
+
+@use "variables" as v;
+
+// ==============================
+// #PROGRESS-BAR-STYLES
+// ==============================
+// Styles for the progress bar including positioning, appearance, and animation.
+// ==============================
+
 #progress-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 4px;
-  background: color-mix(in srgb, var(--color-progress-bar) 70%, transparent);
+  background: color-mix(
+    in oklch,
+    #{map.get(v.$colors, "progress-bar")} 70%,
+    transparent
+  );
   transform-origin: left;
   animation: grow linear;
   animation-timeline: scroll();
 }
+
+// ==============================
+// #PROGRESS-BAR-ANIMATION
+// ==============================
+// Keyframes for the progress bar growth animation.
+// ==============================
 
 @keyframes grow {
   from {

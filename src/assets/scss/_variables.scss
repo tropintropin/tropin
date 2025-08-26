@@ -1,16 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@0,400..700;1,400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
 // ==============================
-// Variables
-// src/assets/scss/_variables.scss
+// #VARIABLES
+// ==============================
+// This file contains all the SCSS variables used throughout the theme.
+// It includes font definitions, color palettes, and other design tokens.
 // ==============================
 
-// ---- Fonts ----
-$font-body: "Finlandica", "Ubuntu", "Roboto", "Segoe UI", "Helvetica Neue", sans-serif;
+@use "sass:meta";
+
+// ==============================
+// #FONT-IMPORTS
+// ==============================
+// #GOOGLE-FONTS
+// Import fonts from Google Fonts.
+// ==============================
+
+@import url("https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+// ==============================
+// #FONTS
+// ==============================
+// Define font stacks here.
+// ==============================
+
+$font-body: "Finlandica", "Ubuntu", "Roboto", "Segoe UI", "Helvetica Neue",
+  sans-serif;
 $font-header: "Caveat", "Segoe Script", cursive;
 $font-heading: "Playfair Display", serif;
 $font-mono: "Fira Code", "Menlo", "Monaco", "Consolas", "Courier New", monospace;
@@ -18,55 +35,235 @@ $font-drop-cap: "Playfair Display SC", serif;
 $font-quote: "Playfair Display SC", serif;
 $font-quote-caption: "Playfair Display", serif;
 
-// // ---- Colors ----
-$color-text: oklch(35% 0 0);
-$color-text-aside: oklch(40% 0 0);
-$color-text-quote: oklch(50% 0 0);
-$color-text-quote-caption: oklch(70% 0 0);
-$color-text-meta: oklch(70% 0 0);
-$color-text-inverse: oklch(1 0 0);
-$color-text-drop-cap: oklch(25% 0 0);
+// ==============================
+// #PALETTES
+// ==============================
+// Define color palettes here.
+// Each palette can have primary, secondary, accent, and neutral colors.
+// Neutral colors can have shades from light to dark.
+// ==============================
 
-$color-link: oklch(55% 0 0);
-$color-link-visited: oklch(65% 0 0);
-$color-link-hover: oklch(0.7967 0.1505 79.18);
-$color-link-hover-visited: oklch(0.78 0.11 262);
+// ==============================
+// #LIGHT-PALETTE
+// ==============================
 
-$color-focus: oklch(0.78 0.11 262);
-$color-progress-bar: oklch(70% 0 0);
-$color-separator: oklch(80% 0 0);
+$palette-light: (
+  "primary": (),
+  // e.g. brand color
+  "secondary": (),
+  // e.g. secondary brand color
+  "accent": (),
+  // e.g. for highlights
+  "neutral":
+    (
+      // ==============================
+      // #SHADES-LIGHT
+      // ==============================
+      // From lightest to darkest
+      // ==============================
+      0: (),
+      // most light (usually white)
+      100: (),
+      // lighter (background)
+      200: (),
+      // borders
+      300: (),
+      // text
+      400: (),
+      // headings
+      500: () // almost black,,,,,,
+    ),
+);
 
-// ---- Spacing ----
+// ==============================
+// #DARK-PALETTE
+// ==============================
+
+$palette-dark: (
+  "primary": (),
+  // e.g. brand color
+  "secondary": (),
+  // e.g. secondary brand color
+  "accent": (),
+  // e.g. for highlights
+  "neutral":
+    (
+      // ==============================
+      // #SHADES-DARK
+      // ==============================
+      // From darkest to lightest
+      // ==============================
+      0: (),
+      // most dark (usually black)
+      100: (),
+      // darker (background)
+      200: (),
+      // borders
+      300: (),
+      // text
+      400: (),
+      // headings
+      500: () // almost white,,,,,,
+    ),
+);
+
+// ==============================
+// #COLORS
+// ==============================
+// Define specific colors used in the theme.
+// These can be derived from the palettes above or defined independently.
+// Use Oklch color model for better perceptual uniformity.
+// ==============================
+
+$colors: (
+  // ==============================
+  // #TEXT-COLORS
+  // ==============================
+  "text":
+    (
+      "default": oklch(35% 0 0),
+      "aside": oklch(40% 0 0),
+      "quote": oklch(50% 0 0),
+      "quote-caption": oklch(70% 0 0),
+      "figcaption": oklch(51.028% 0.00006 271.152),
+      "meta": oklch(70% 0 0),
+      "inverse": oklch(1 0 0),
+      "drop-cap": oklch(25% 0 0),
+    ),
+
+  // ==============================
+  // #LINK-COLORS
+  // ==============================
+  "link":
+    (
+      "default": oklch(55% 0 0),
+      "visited": oklch(65% 0 0),
+      "hover": oklch(0.7967 0.1505 79.18),
+      "hover-visited": oklch(43% 0.15 30),
+    ),
+
+  // ==============================
+  // #BUTTON-COLORS
+  // ==============================
+  "button":
+    (
+      "bg": oklch(70.576% 0.00008 271.152),
+      "text": oklch(96.548% 0.03931 100.895),
+      "hover": oklch(76.309% 0.15646 84.431),
+      "focus": oklch(54.59% 0.11586 106.658),
+      "shadow": oklch(0% 0 0 / 0.3),
+    ),
+
+  // ==============================
+  // #CODE-COPY-BUTTON-COLORS
+  // ==============================
+  "code-copy-btn":
+    (
+      "bg": oklch(61.764% 0.12762 70.669),
+      "text": oklch(96.548% 0.03931 100.895),
+      "hover": oklch(43.735% 0.17892 28.249),
+      "focus": oklch(54.59% 0.11586 106.658),
+    ),
+
+  // ==============================
+  // #WEBMENTION-COLORS
+  // ==============================
+  "webmention":
+    (
+      "bg": oklch(95% 0.02 90),
+      "border": oklch(80% 0 0),
+      "text": oklch(30% 0 0),
+      "meta": oklch(60% 0 0),
+      "link": oklch(55% 0 0),
+      "link-visited": oklch(65% 0 0),
+      "link-hover": oklch(0.7967 0.1505 79.18),
+      "link-hover-visited": oklch(43% 0.15 30),
+      "shadow": oklch(0 0 0 / 0.1),
+    ),
+
+  // ==============================
+  // #OTHER-COLORS
+  // ==============================
+  "focus": oklch(0.78 0.11 262),
+  "progress-bar": oklch(70% 0 0),
+  "separator": oklch(80% 0 0),
+  "shadow": oklch(0 0 0 / 0.15),
+  "border": oklch(90% 0 0)
+);
+
+// ==============================
+// #SPACING
+// ==============================
 $spacing-section: 50px;
 $spacing-container: 50px;
 
 // ==============================
-// CSS Custom Properties (export)
+// #CSS-EXPORT-VARIABLES
 // ==============================
+// Export variables as CSS custom properties for use in the application.
+// This allows for easier theming and dynamic changes via JavaScript.
+// ==============================
+
 :root {
-  // Fonts
+  // ==============================
+  // #FONTS
+  // ==============================
   --font-body: #{$font-body};
   --font-header: #{$font-header};
+  --font-heading: #{$font-heading};
   --font-mono: #{$font-mono};
   --font-drop-cap: #{$font-drop-cap};
+  --font-quote: #{$font-quote};
+  --font-quote-caption: #{$font-quote-caption};
 
-  // Colors
-  --color-text: #{$color-text};
-  --color-text-inverse: #{$color-text-inverse};
-  --color-text-aside: #{$color-text-aside};
-  --color-text-quote-caption: #{$color-text-quote-caption};
-  --color-text-quote: #{$color-text-quote};
-  --color-text-drop-cap: #{$color-text-drop-cap};
-  --color-link: #{$color-link};
-  --color-link-visited: #{$color-link-visited};
-  --color-link-hover: #{$color-link-hover};
-  --color-link-hover-visited: #{$color-link-hover-visited};
+  // ==============================
+  // #COLORS
+  // ==============================
 
-  --color-focus: #{$color-focus};
+  @each $key, $value in $colors {
+    @if meta.type-of($value) == "map" {
+      @each $sub-key, $sub-value in $value {
+        --color-#{$key}-#{$sub-key}: #{$sub-value};
+      }
+    } @else {
+      --color-#{$key}: #{$value};
+    }
+  }
 
-  --color-progress-bar: #{$color-progress-bar};
-
-  // Spacing
+  // ==============================
+  // #SPACING
+  // ==============================
   --spacing-section: #{$spacing-section};
   --spacing-container: #{$spacing-container};
 }
+
+// ==============================
+// #BREAKPOINTS
+// ==============================
+// Define responsive breakpoints here.
+// Use it in media queries throughout the SCSS.
+// ==============================
+
+$breakpoints: (
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+  "2xl": 1536px,
+);
+
+// ==============================
+// #Z-INDEXS
+// ==============================
+// Define z-index values for layering elements.
+// ==============================
+
+$z-index: (
+  "dropdown": 1000,
+  "sticky": 1020,
+  "fixed": 1030,
+  "modal-backdrop": 1040,
+  "modal": 1050,
+  "popover": 1060,
+  "tooltip": 1070,
+);

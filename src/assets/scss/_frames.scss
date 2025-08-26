@@ -1,0 +1,40 @@
+// ==============================
+// #FRAME-STYLES
+// ==============================
+// Styles for map containers and iframes including size, border radius, and shadow.
+// ==============================
+
+@use "sass:map";
+
+@use "variables" as v;
+@use "mixins" as m;
+
+// ==============================
+// #MAP-CONTAINER-FRAME
+// ==============================
+// Styles for map containers and iframes including size, border radius, and shadow.
+// ==============================
+
+.map-container {
+  @include m.frame($height: 300px);
+}
+
+// ==============================
+// #MAP-CONTAINER-IFRAME
+// ==============================
+// Styles for iframes within map containers.
+// ==============================
+
+.map-frame {
+  @include m.frame();
+}
+
+// ==============================
+// #CODE-FRAME
+// ==============================
+// Styles for code snippet containers.
+// ==============================
+
+.code-frame {
+  @include m.frame();
+}

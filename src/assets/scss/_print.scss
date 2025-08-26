@@ -1,6 +1,22 @@
+// ==============================
+// #PRINT-STYLES
+// ==============================
+// Styles for print media including layout adjustments and link handling.
+// ==============================
+
+@use "sass:map";
+
+@use "variables" as v;
+
 .print-info {
   display: none;
 }
+
+// ==============================
+// #PRINT-INFO-STYLES
+// ==============================
+// Styles for the print information section displayed at the top of printed pages.
+// ==============================
 
 @media print {
   .print-info {
@@ -9,18 +25,30 @@
     align-items: flex-start;
     gap: 15px;
     margin-bottom: 15px;
-    border: 1px solid #bbb;
+    border: 1px solid map.get(v.$colors, "border");
     padding: 8px 12px;
     font-style: italic;
     max-width: 100%;
     box-sizing: border-box;
   }
 
+  // ==============================
+  // #PRINT-INFO-IMAGE
+  // ==============================
+  // Styles for the image in the print info section.
+  // ==============================
+
   .print-info img {
     width: 120px;
     height: 120px;
     flex-shrink: 0;
   }
+
+  // ==============================
+  // #PRINT-INFO-TEXT
+  // ==============================
+  // Styles for the text in the print info section.
+  // ==============================
 
   .print-text {
     flex: 1 1 auto;
@@ -31,6 +59,12 @@
   .print-text p {
     margin: 0 0 4px 0;
   }
+
+  // ==============================
+  // #PRINT-LAYOUT-ADJUSTMENTS
+  // ==============================
+  // Layout adjustments for better print formatting.
+  // ==============================
 
   body,
   main,
@@ -46,6 +80,12 @@
     padding-left: 0;
     padding-right: 0;
   }
+
+  // ==============================
+  // #PRINT-LINKS
+  // ==============================
+  // Show URLs in print after links
+  // ==============================
 
   a[href]:after {
     content: " [" attr(href) "]";
@@ -71,10 +111,22 @@
     overflow-wrap: break-word;
   }
 
+  // ==============================
+  // #PRINT-IMAGES
+  // ==============================
+  // Ensure images scale properly in print.
+  // ==============================
+
   img {
     max-width: 100%;
     height: auto;
   }
+
+  // ==============================
+  // #PRINT-HIDE-ELEMENTS
+  // ==============================
+  // Hide non-essential elements in print.
+  // ==============================
 
   footer,
   header hr {

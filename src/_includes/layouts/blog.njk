@@ -22,11 +22,11 @@
         </p>
     {% endif %}
 
-    <div class="blog-posts-list">
+    <div class="blog-posts-list" data-pagefind-ignore="all">
         {% set currentYear = "" %}
         {% for post in collections.blog %}
             {% set postYear = post.date | date("yyyy") %}
-            
+
             {% if postYear != currentYear %}
                 <h2 class="blog-year">{{ postYear }}</h2>
                 {% set currentYear = postYear %}

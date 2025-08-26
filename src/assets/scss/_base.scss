@@ -1,5 +1,19 @@
+// ==============================
+// #BASE-STYLES
+// ==============================
+// Base styles for body, headers, main content, and responsive design.
+// ==============================
+
+@use "sass:map";
+
 @use "variables" as v;
 @use "mixins" as m;
+
+// ==============================
+// #GLOBAL-STYLES
+// ==============================
+// Global styles applied to all elements including box-sizing and body styles.
+// ==============================
 
 * {
   box-sizing: border-box;
@@ -9,10 +23,16 @@ body {
   margin: 0 auto;
   font-size: 18px;
   line-height: 1.5;
-  color: var(--color-text);
+  color: map.get(map.get(v.$colors, "text"), "default");
   font-family: var(--font-body);
   max-width: 360px;
 }
+
+// ==============================
+// #HEADER-STYLES
+// ==============================
+// Styles for the header section including title and layout.
+// ==============================
 
 header {
   margin: var(--spacing-section) 0 10px;
@@ -24,6 +44,12 @@ header h1 {
   text-align: center;
 }
 
+// ==============================
+// #MAIN-STYLES
+// ==============================
+// Styles for the main content area including sections and articles.
+// ==============================
+
 main,
 article,
 section {
@@ -32,18 +58,39 @@ section {
   font-family: inherit;
 }
 
+// ==============================
+// #SECTION-HEADERS
+// ==============================
+
 section h2 {
   padding: 0;
   text-align: left;
   border: none;
 }
 
-/* Медиа-запросы */
+// ==============================
+// #RESPONSIVE-STYLES
+// ==============================
+// Responsive styles for different screen sizes including mobile, tablet, and desktop.
+// ==============================
+
+// ==============================
+// #TABLET-STYLES
+// ==============================
+// Styles for tablet view including max-width adjustments.
+// ==============================
+
 @media (min-width: 768px) {
   body {
     max-width: 768px;
   }
 }
+
+// ==============================
+// #DESKTOP-STYLES
+// ==============================
+// Styles for desktop view including max-width adjustments.
+// ==============================
 
 @media (min-width: 1024px) {
   body {
@@ -51,7 +98,12 @@ section h2 {
   }
 }
 
-/* Мобильная адаптация до 767px */
+// ==============================
+// #MOBILE-STYLES
+// ==============================
+// Styles for mobile view including padding and margin adjustments.
+// ==============================
+
 @media (max-width: 767px) {
   main,
   article,
@@ -83,7 +135,12 @@ section h2 {
   }
 }
 
-/* Суперузкая мобилка до 480px */
+// ==============================
+// #SMALL-MOBILE-STYLES
+// ==============================
+// Styles for small mobile view including further padding and margin adjustments.
+// ==============================
+
 @media (max-width: 480px) {
   main,
   article,
@@ -100,9 +157,6 @@ section h2 {
     margin-left: 0;
     padding-right: 2px;
     font-weight: bold;
-    color: var(--color-text);
-  }
-  blockquote {
-    border-left: 2px solid #ccc;
+    color: map.get(map.get(v.$colors, "text"), "default");
   }
 }

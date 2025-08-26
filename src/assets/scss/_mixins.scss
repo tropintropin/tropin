@@ -1,4 +1,18 @@
+// ==============================
+// #MIXINS
+// ==============================
+// Reusable SCSS mixins for consistent styling across the site.
+// ==============================
+
+@use "sass:map";
+
 @use "variables" as v;
+
+// ==============================
+// #HEADINGS-MIXIN
+// ==============================
+// Mixin for styling headings (h1 to h6) with consistent font, size, and spacing.
+// ==============================
 
 $heading-sizes: (
   h1: 2.5rem,
@@ -6,7 +20,7 @@ $heading-sizes: (
   h3: 1.75rem,
   h4: 1.5rem,
   h5: 1.25rem,
-  h6: 1rem
+  h6: 1rem,
 );
 
 @mixin headings(
@@ -28,10 +42,22 @@ $heading-sizes: (
   }
 }
 
+// ==============================
+// #QUOTE-STYLE-MIXIN
+// ==============================
+// Mixin for styling blockquotes with a distinctive appearance.
+// ==============================
+
 @mixin quote-style {
   figure {
     margin: 2rem 0;
   }
+
+  // ==============================
+  // #BLOCKQUOTE
+  // ==============================
+  // Styles for blockquotes within the quote mixin.
+  // ==============================
 
   blockquote {
     position: relative;
@@ -39,8 +65,14 @@ $heading-sizes: (
     padding-left: 2.5em;
     font-family: v.$font-quote;
     font-size: larger;
-    color: v.$color-text-quote;
+    color: map.get(map.get(v.$colors, "text"), "quote");
     line-height: 1.5;
+
+    // ==============================
+    // #BLOCKQUOTE-OPENING-QUOTE
+    // ==============================
+    // Styles for the decorative opening quote in blockquotes.
+    // ==============================
 
     &::before {
       content: "‟";
@@ -49,9 +81,15 @@ $heading-sizes: (
       top: 0;
       font-size: 4em;
       line-height: 1;
-      color: v.$color-text-quote-caption;
+      color: map.get(map.get(v.$colors, "text"), "quote-caption");
     }
   }
+
+  // ==============================
+  // #QUOTE-CAPTION
+  // ==============================
+  // Styles for the caption or attribution of the quote.
+  // ==============================
 
   .quote-caption {
     display: block;
@@ -59,16 +97,23 @@ $heading-sizes: (
     margin: 0.5em 0 0 2.5em;
     font-family: v.$font-quote;
     font-size: smaller;
-    color: v.$color-text-quote-caption;
+    color: map.get(map.get(v.$colors, "text"), "quote-caption");
   }
 }
 
+// ==============================
+// #DROP-CAP-MIXIN
+// ==============================
+// Mixin for styling drop caps at the start of paragraphs.
+// ==============================
+
 @mixin drop-cap(
-  $color: v.$color-text-drop-cap,
-  $size: 3em,
+  $color: map.get(map.get(v.$colors, "text"), "drop-cap"),
+  $size: 4.5em,
   $margin-right: 0.15em,
-  $line-height: 0.95,
-  $raise: -0.15em
+  $margin-bottom: 0.1em,
+  $line-height: 0.85,
+  $raise: -0.05em
 ) {
   float: left;
   font-family: v.$font-drop-cap;
@@ -77,8 +122,23 @@ $heading-sizes: (
   line-height: $line-height;
   color: $color;
   margin-right: $margin-right;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: $margin-bottom;
+  text-shadow: 1px 1px 0 map.get(v.$colors, "shadow");
   vertical-align: top;
   position: relative;
   top: $raise;
+}
+
+// ==============================
+// #FRAME-MIXIN
+// ==============================
+// Mixin for styling frames such as map containers, iframes, and code snippets.
+// ==============================
+
+@mixin frame($height: 100%, $margin: 1em 0) {
+  width: 100%;
+  height: $height;
+  border-radius: 8px;
+  margin: $margin;
+  box-shadow: 0 2px 8px map.get(v.$colors, "shadow");
 }

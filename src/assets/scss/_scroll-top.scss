@@ -1,20 +1,42 @@
+// ==============================
+// #SCROLL-TOP-BUTTON
+// ==============================
+// Styles for the "Scroll to Top" button that appears when the user scrolls down the page.
+// ==============================
+
+@use "sass:map";
+
+@use "variables" as v;
+
+// ==============================
+// #SCROLL-TOP-BUTTON-STYLES
+// ==============================
+// Styles for the scroll-to-top button including positioning, appearance, and transitions.
+// ==============================
+
 .scroll-top {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background-color: #a0a0a0;
+  background-color: map.get(map.get(v.$colors, "button"), "bg");
   border: none;
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
   font-size: 1.5rem;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px map.get(map.get(v.$colors, "button"), "shadow");
   z-index: 1000;
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px);
   transition: opacity 0.4s ease, transform 0.4s ease;
+
+  // ==============================
+  // #SHOW-STATE
+  // ==============================
+  // Styles applied when the button is visible.
+  // ==============================
 
   &.show {
     opacity: 0.35;
@@ -22,8 +44,14 @@
     transform: translateY(0);
   }
 
+  // ==============================
+  // #HOVER-STATE
+  // ==============================
+  // Styles for button hover state.
+  // ==============================
+
   &:hover {
-    background-color: #e0a800;
+    background-color: map.get(map.get(v.$colors, "button"), "hover");
     opacity: 1;
     transform: translateY(-2px);
   }
