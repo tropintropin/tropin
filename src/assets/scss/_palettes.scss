@@ -1,0 +1,83 @@
+// ==============================
+// #PALETTES
+// ==============================
+// Define color palettes here.
+// Each palette can have primary, secondary, accent, and neutral colors.
+// Neutral colors can have shades from light to dark.
+// ==============================
+
+// Color-samples (for dev):
+// $sample-palette: (
+//   oklch(0.4031 0.0728 240.89),
+//   oklch(0.2567 0.0301 229.96),
+//   oklch(0.7122 0.0433 81.61),
+//   oklch(0.7363 0.0587 167.17),
+//   oklch(0.8891 0.0668 121.59),
+//   oklch(0.9348 0.0337 291.24),
+//   oklch(0.8198 0.146 81.03)
+// );
+
+// ==============================
+// #LIGHT THEME
+// ==============================
+$palette-light: (
+  "primary": oklch(0.4031 0.0728 240.89),
+  "secondary": oklch(0.7363 0.0587 167.17),
+  "accent": oklch(0.8198 0.146 81.03),
+  "shadow": oklch(0% 0 0 / 0.3),
+  "neutral": (
+    0: oklch(0.99 0 0),
+    100: oklch(0.94 0.02 270),
+    200: oklch(0.7122 0.0433 81.61 / 90%),
+    300: oklch(0.7122 0.0433 81.61),
+    400: oklch(0.42 0.02 250),
+    500: oklch(0.2567 0.0301 229.96),
+  ),
+  "links": (
+    "default": oklch(0.6594 0.0377 231.92),
+    "visited": oklch(0.5694 0.0377 231.92),
+    "hover": oklch(0.8198 0.146 81.03),
+    "hover-visited": oklch(0.7098 0.146 81.03),
+  ),
+  "backgrounds": (
+    "body": oklch(0.99 0 0),
+    "header": oklch(0.94 0.02 270 / 95%),
+    "footer": oklch(0.7122 0.0433 81.61),
+    "card": oklch(0.88 0.03 180 / 97%),
+    "aside": oklch(0.94 0.02 270 / 90%),
+    "main": oklch(0.99 0 0),
+  ),
+);
+
+// ==============================
+// #DARK THEME
+// ==============================
+$palette-dark: (
+  "primary": oklch(0.65 0.0728 240.89),
+  "secondary": oklch(0.68 0.0587 167.17),
+  "accent": oklch(0.82 0.146 81.03),
+  "shadow": oklch(100% 0 0 / 0.2),
+  "neutral":
+    (
+      0: oklch(0.1 0 0),
+      100: oklch(0.18 0.02 270),
+      200: oklch(0.35 0.0433 81.61 / 90%),
+      300: oklch(0.35 0.0433 81.61),
+      400: oklch(0.55 0.02 250),
+      500: oklch(0.7 0.0301 229.96),
+    ),
+  "links": (
+    "default": oklch(0.5 0.0377 231.92),
+    "visited": oklch(0.45 0.0377 231.92),
+    "hover": oklch(0.82 0.146 81.03),
+    "hover-visited": oklch(0.72 0.146 81.03),
+  ),
+  "backgrounds": (
+    "body": oklch(0.08 0 0),
+    "header": oklch(0.12 0.02 270 / 95%),
+    "footer": oklch(0.2 0.0433 81.61),
+    "card": oklch(0.15 0.03 180 / 97%),
+    "aside": oklch(0.12 0.02 270 / 90%),
+    "main": oklch(0.08 0 0),
+  ),
+);

@@ -5,6 +5,7 @@
 @use "sass:map";
 
 @use "variables" as v;
+@use "mixins" as m;
 
 // ==============================
 // #BASE-TEXT-STYLES
@@ -21,7 +22,7 @@
 a {
   position: relative;
   text-decoration: none;
-  color: map.get(map.get(v.$colors, "link"), "default");
+  color: var(--links-default);
   transition: color 0.3s ease, transform 0.15s ease;
 
   // ==============================
@@ -31,7 +32,7 @@ a {
   // ==============================
 
   &:visited {
-    color: map.get(map.get(v.$colors, "link"), "visited");
+    color: var(--links-visited);
   }
 
   // ==============================
@@ -59,7 +60,7 @@ a {
 
   &:hover {
     transform: scale(1.05);
-    color: map.get(map.get(v.$colors, "link"), "hover");
+    color: var(--links-hover);
   }
 
   // ==============================
@@ -69,7 +70,7 @@ a {
   // ==============================
 
   &:visited:hover {
-    color: map.get(map.get(v.$colors, "link"), "hover-visited");
+    color: var(--links-hover-visited);
   }
 
   // ==============================
@@ -103,7 +104,7 @@ a {
 
 .stack {
   font-family: v.$font-mono;
-  color: map.get(map.get(v.$colors, "text"), "aside");
+  color: var(--neutral-200);
   font-size: 0.9rem;
 }
 
@@ -116,7 +117,7 @@ a {
 footer {
   font-family: v.$font-body;
   text-align: center;
-  color: map.get(map.get(v.$colors, "text"), "aside");
+  color: var(--neutral-200);
 
   // ==============================
   // #FOOTER-INNER

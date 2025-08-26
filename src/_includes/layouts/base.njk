@@ -55,7 +55,25 @@
     <link rel="me" href="https://tech.lgbt/@GuyFromUberwald" />
     <link rel="me" href="https://bsky.app/profile/tropin.one" />
     <link rel="me" href="https://www.instagram.com/tropintropin/" />
-    
+
+    <script>
+    (function() {
+    try {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = saved === "dark" || (!saved && prefersDark);
+
+        if (isDark) {
+        document.documentElement.classList.add("dark-theme");
+        } else {
+        document.documentElement.classList.remove("dark-theme");
+        }
+    } catch (e) {
+        // если localStorage недоступен, просто оставляем default
+    }
+    })();
+    </script>
+
     {# CSS #}
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
@@ -107,5 +125,6 @@
     <script src="/assets/js/icons.js" defer></script>
     <script src="/assets/js/scrolltop.js" defer></script>
     <script src="/assets/js/copy-code.js" defer></script>
+    <script src="/assets/js/theme-toggle.js" defer></script>
   </body>
 </html>

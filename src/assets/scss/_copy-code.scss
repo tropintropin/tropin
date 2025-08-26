@@ -34,15 +34,15 @@ pre[class*='language-'] {
   cursor: pointer;
   border: none;
   border-radius: 0.25em;
-  background: map.get(map.get(v.$colors, 'code-copy-btn'), 'bg');
-  color: map.get(map.get(v.$colors, 'code-copy-btn'), 'text');
+  background: var(--secondary);
+  color: var(--neutral-0);
   transition: opacity 0.2s, transform 0.2s;
 
   opacity: 0;
   pointer-events: none;
 
   &:hover {
-    background: map.get(map.get(v.$colors, 'code-copy-btn'), 'hover');
+    background: var(--accent);
   }
 
   &:active {
@@ -51,7 +51,7 @@ pre[class*='language-'] {
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px map.get(map.get(v.$colors, 'code-copy-btn'), 'focus');
+    box-shadow: 0 0 0 2px var(--neutral-100);
   }
 }
 

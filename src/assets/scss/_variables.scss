@@ -36,78 +36,6 @@ $font-quote: "Playfair Display SC", serif;
 $font-quote-caption: "Playfair Display", serif;
 
 // ==============================
-// #PALETTES
-// ==============================
-// Define color palettes here.
-// Each palette can have primary, secondary, accent, and neutral colors.
-// Neutral colors can have shades from light to dark.
-// ==============================
-
-// ==============================
-// #LIGHT-PALETTE
-// ==============================
-
-$palette-light: (
-  "primary": (),
-  // e.g. brand color
-  "secondary": (),
-  // e.g. secondary brand color
-  "accent": (),
-  // e.g. for highlights
-  "neutral":
-    (
-      // ==============================
-      // #SHADES-LIGHT
-      // ==============================
-      // From lightest to darkest
-      // ==============================
-      0: (),
-      // most light (usually white)
-      100: (),
-      // lighter (background)
-      200: (),
-      // borders
-      300: (),
-      // text
-      400: (),
-      // headings
-      500: () // almost black,,,,,,
-    ),
-);
-
-// ==============================
-// #DARK-PALETTE
-// ==============================
-
-$palette-dark: (
-  "primary": (),
-  // e.g. brand color
-  "secondary": (),
-  // e.g. secondary brand color
-  "accent": (),
-  // e.g. for highlights
-  "neutral":
-    (
-      // ==============================
-      // #SHADES-DARK
-      // ==============================
-      // From darkest to lightest
-      // ==============================
-      0: (),
-      // most dark (usually black)
-      100: (),
-      // darker (background)
-      200: (),
-      // borders
-      300: (),
-      // text
-      400: (),
-      // headings
-      500: () // almost white,,,,,,
-    ),
-);
-
-// ==============================
 // #COLORS
 // ==============================
 // Define specific colors used in the theme.
@@ -115,81 +43,81 @@ $palette-dark: (
 // Use Oklch color model for better perceptual uniformity.
 // ==============================
 
-$colors: (
-  // ==============================
-  // #TEXT-COLORS
-  // ==============================
-  "text":
-    (
-      "default": oklch(35% 0 0),
-      "aside": oklch(40% 0 0),
-      "quote": oklch(50% 0 0),
-      "quote-caption": oklch(70% 0 0),
-      "figcaption": oklch(51.028% 0.00006 271.152),
-      "meta": oklch(70% 0 0),
-      "inverse": oklch(1 0 0),
-      "drop-cap": oklch(25% 0 0),
-    ),
+// $colors: (
+//   // ==============================
+//   // #TEXT-COLORS
+//   // ==============================
+//   "text":
+//     (
+//       "default": oklch(35% 0 0),
+//       "aside": oklch(40% 0 0),
+//       "quote": oklch(50% 0 0),
+//       "quote-caption": oklch(70% 0 0),
+//       "figcaption": oklch(51.028% 0.00006 271.152),
+//       "meta": oklch(70% 0 0),
+//       "inverse": oklch(1 0 0),
+//       "drop-cap": oklch(25% 0 0),
+//     ),
 
-  // ==============================
-  // #LINK-COLORS
-  // ==============================
-  "link":
-    (
-      "default": oklch(55% 0 0),
-      "visited": oklch(65% 0 0),
-      "hover": oklch(0.7967 0.1505 79.18),
-      "hover-visited": oklch(43% 0.15 30),
-    ),
+//   // ==============================
+//   // #LINK-COLORS
+//   // ==============================
+//   "link":
+//     (
+//       "default": oklch(55% 0 0),
+//       "visited": oklch(65% 0 0),
+//       "hover": oklch(0.7967 0.1505 79.18),
+//       "hover-visited": oklch(43% 0.15 30),
+//     ),
 
-  // ==============================
-  // #BUTTON-COLORS
-  // ==============================
-  "button":
-    (
-      "bg": oklch(70.576% 0.00008 271.152),
-      "text": oklch(96.548% 0.03931 100.895),
-      "hover": oklch(76.309% 0.15646 84.431),
-      "focus": oklch(54.59% 0.11586 106.658),
-      "shadow": oklch(0% 0 0 / 0.3),
-    ),
+//   // ==============================
+//   // #BUTTON-COLORS
+//   // ==============================
+//   "button":
+//     (
+//       "bg": oklch(70.576% 0.00008 271.152),
+//       "text": oklch(96.548% 0.03931 100.895),
+//       "hover": oklch(76.309% 0.15646 84.431),
+//       "focus": oklch(54.59% 0.11586 106.658),
+//       "shadow": oklch(0% 0 0 / 0.3),
+//     ),
 
-  // ==============================
-  // #CODE-COPY-BUTTON-COLORS
-  // ==============================
-  "code-copy-btn":
-    (
-      "bg": oklch(61.764% 0.12762 70.669),
-      "text": oklch(96.548% 0.03931 100.895),
-      "hover": oklch(43.735% 0.17892 28.249),
-      "focus": oklch(54.59% 0.11586 106.658),
-    ),
+//   // ==============================
+//   // #CODE-COPY-BUTTON-COLORS
+//   // ==============================
+//   "code-copy-btn":
+//     (
+//       "bg": oklch(61.764% 0.12762 70.669),
+//       "text": oklch(96.548% 0.03931 100.895),
+//       "hover": oklch(43.735% 0.17892 28.249),
+//       "focus": oklch(54.59% 0.11586 106.658),
+//     ),
 
-  // ==============================
-  // #WEBMENTION-COLORS
-  // ==============================
-  "webmention":
-    (
-      "bg": oklch(95% 0.02 90),
-      "border": oklch(80% 0 0),
-      "text": oklch(30% 0 0),
-      "meta": oklch(60% 0 0),
-      "link": oklch(55% 0 0),
-      "link-visited": oklch(65% 0 0),
-      "link-hover": oklch(0.7967 0.1505 79.18),
-      "link-hover-visited": oklch(43% 0.15 30),
-      "shadow": oklch(0 0 0 / 0.1),
-    ),
+//   // ==============================
+//   // #WEBMENTION-COLORS
+//   // ==============================
+//   "webmention":
+//     (
+//       "bg": oklch(95% 0.02 90),
+//       "border": oklch(80% 0 0),
+//       "text": oklch(30% 0 0),
+//       "meta": oklch(60% 0 0),
+//       "link": oklch(55% 0 0),
+//       "link-visited": oklch(65% 0 0),
+//       "link-hover": oklch(0.7967 0.1505 79.18),
+//       "link-hover-visited": oklch(43% 0.15 30),
+//       "shadow": oklch(0 0 0 / 0.1),
+//     ),
 
-  // ==============================
-  // #OTHER-COLORS
-  // ==============================
-  "focus": oklch(0.78 0.11 262),
-  "progress-bar": oklch(70% 0 0),
-  "separator": oklch(80% 0 0),
-  "shadow": oklch(0 0 0 / 0.15),
-  "border": oklch(90% 0 0)
-);
+//   // ==============================
+//   // #OTHER-COLORS
+//   // ==============================
+//   "focus": oklch(0.78 0.11 262),
+//   "progress-bar": oklch(70% 0 0),
+//   "separator": oklch(80% 0 0),
+//   "shadow": oklch(0 0 0 / 0.15),
+//   "border": oklch(90% 0 0)
+// );
 
 // ==============================
 // #SPACING
@@ -215,20 +143,6 @@ $spacing-container: 50px;
   --font-drop-cap: #{$font-drop-cap};
   --font-quote: #{$font-quote};
   --font-quote-caption: #{$font-quote-caption};
-
-  // ==============================
-  // #COLORS
-  // ==============================
-
-  @each $key, $value in $colors {
-    @if meta.type-of($value) == "map" {
-      @each $sub-key, $sub-value in $value {
-        --color-#{$key}-#{$sub-key}: #{$sub-value};
-      }
-    } @else {
-      --color-#{$key}: #{$value};
-    }
-  }
 
   // ==============================
   // #SPACING
