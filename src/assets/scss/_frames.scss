@@ -38,3 +38,12 @@
 .code-frame {
   @include m.frame();
 }
+
+.dark-theme .qr img {
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 6px 15px var(--shadow);
+  }
+}
