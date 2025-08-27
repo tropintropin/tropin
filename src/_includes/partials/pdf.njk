@@ -1,0 +1,10 @@
+{% if pdf and pdf.src %}
+<div class="pdf-frame">
+    <iframe
+    src="{{ pdf.src }}#zoom=page-fit&page=1"
+    title="{{ title | default('PDF Viewer') }}"
+    loading="lazy"
+    frameborder="0"
+    ></iframe>
+</div>
+{% endif %}

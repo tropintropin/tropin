@@ -136,8 +136,8 @@ $heading-sizes: (
 // Mixin for styling frames such as map containers, iframes, and code snippets.
 // ==============================
 
-@mixin frame($height: 100%, $margin: 1em 0) {
-  width: 100%;
+@mixin frame($width: 100%, $height: 100%, $margin: 1em 0) {
+  width: $width;
   height: $height;
   border-radius: 8px;
   margin: $margin;

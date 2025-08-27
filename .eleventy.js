@@ -29,54 +29,76 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/css": "assets/css" });
   eleventyConfig.addPassthroughCopy({ "src/assets/images": "assets/images" });
   eleventyConfig.addPassthroughCopy({ "src/assets/js": "assets/js" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/pdf": "assets/pdf" });
   // Passthrough for Pagefind assets
   eleventyConfig.addPassthroughCopy({
     "node_modules/@pagefind/pagefind/dist": "pagefind",
   });
 
-  // Collections
-  // eleventyConfig.addCollection("blog", function (collectionApi) {
-  //   return collectionApi.getFilteredByGlob("src/blog/*.md").toReversed();
-  // });
   eleventyConfig.addCollection("blog", (collectionApi) => {
-    // Забираем посты по тегу, убираем черновики (если используешь flag draft)
     const posts = collectionApi
       .getFilteredByTag("blog")
       .filter((item) => !item.data.draft);
-
-    // Гарантируем порядок «новые → старые»
     posts.sort((a, b) => b.date - a.date);
-
-    // Проставляем соседей для каждого поста
     for (let i = 0; i < posts.length; i += 1) {
-      const newer = i > 0 ? posts[i - 1] : null; // сосед новее
-      const older = i < posts.length - 1 ? posts[i + 1] : null; // сосед старее
-
-      // Сохраняем компактно, чтобы в шаблоне не тащить весь объект
+      const newer = i > 0 ? posts[i - 1] : null;
+      const older = i < posts.length - 1 ? posts[i + 1] : null;
       posts[i].data.nav = {
-        // «prev» слева: в твоей логике это пост СТАРЕЕ текущего,
-        // потому что коллекция отсортирована от новых к старым.
-        prev: older
-          ? { url: older.url, title: older.data.title }
-          : null,
-        // «next» справа: пост НОВЕЕ текущего
-        next: newer
-          ? { url: newer.url, title: newer.data.title }
-          : null,
+        prev: older ? { url: older.url, title: older.data.title } : null,
+        next: newer ? { url: newer.url, title: newer.data.title } : null,
       };
     }
-
     return posts;
   });
-  eleventyConfig.addCollection("projects", (collectionApi) =>
-    collectionApi.getFilteredByGlob("src/projects/*.md").toReversed()
-  );
-  eleventyConfig.addCollection("research", (collectionApi) =>
-    collectionApi.getFilteredByGlob("src/research/*.md").toReversed()
-  );
-  eleventyConfig.addCollection("events", (collectionApi) =>
-    collectionApi.getFilteredByGlob("src/events/*.md").toReversed()
-  );
+
+  eleventyConfig.addCollection("research", (collectionApi) => {
+    const posts = collectionApi
+      .getFilteredByTag("research")
+      .filter((item) => !item.data.draft);
+    posts.sort((a, b) => b.date - a.date);
+    for (let i = 0; i < posts.length; i += 1) {
+      const newer = i > 0 ? posts[i - 1] : null;
+      const older = i < posts.length - 1 ? posts[i + 1] : null;
+      posts[i].data.nav = {
+        prev: older ? { url: older.url, title: older.data.title } : null,
+        next: newer ? { url: newer.url, title: newer.data.title } : null,
+      };
+    }
+    return posts;
+  });
+
+  eleventyConfig.addCollection("projects", (collectionApi) => {
+    const posts = collectionApi
+      .getFilteredByTag("projects")
+      .filter((item) => !item.data.draft);
+    posts.sort((a, b) => b.date - a.date);
+    for (let i = 0; i < posts.length; i += 1) {
+      const newer = i > 0 ? posts[i - 1] : null;
+      const older = i < posts.length - 1 ? posts[i + 1] : null;
+      posts[i].data.nav = {
+        prev: older ? { url: older.url, title: older.data.title } : null,
+        next: newer ? { url: newer.url, title: newer.data.title } : null,
+      };
+    }
+    return posts;
+  });
+
+  eleventyConfig.addCollection("events", (collectionApi) => {
+    const posts = collectionApi
+      .getFilteredByTag("events")
+      .filter((item) => !item.data.draft);
+    posts.sort((a, b) => b.date - a.date);
+    for (let i = 0; i < posts.length; i += 1) {
+      const newer = i > 0 ? posts[i - 1] : null;
+      const older = i < posts.length - 1 ? posts[i + 1] : null;
+      posts[i].data.nav = {
+        prev: older ? { url: older.url, title: older.data.title } : null,
+        next: newer ? { url: newer.url, title: newer.data.title } : null,
+      };
+    }
+    return posts;
+  });
+
   eleventyConfig.addCollection("allPosts", function (collectionApi) {
     const blog = collectionApi.getFilteredByGlob("src/blog/*.md");
     const projects = collectionApi.getFilteredByGlob("src/projects/*.md");
@@ -164,8 +186,8 @@ export default async function (eleventyConfig) {
   });
   eleventyConfig.addFilter("mapEventForCalendar", function (events) {
     return events
-      .filter(ev => ev.data?.start)
-      .map(ev => {
+      .filter((ev) => ev.data?.start)
+      .map((ev) => {
         let start = ev.data.start;
         let end = ev.data.end;
 
@@ -180,16 +202,17 @@ export default async function (eleventyConfig) {
             ...ev.data,
             start,
             end,
-            location: `${ev.data.location?.name || ""}, ${ev.data.location?.address || ""}`.trim(),
+            location: `${ev.data.location?.name || ""}, ${
+              ev.data.location?.address || ""
+            }`.trim(),
             organizer: {
               name: ev.data.organizer?.name || "",
-              email: ev.data.organizer?.email || "noreply@example.com"
-            }
-          }
+              email: ev.data.organizer?.email || "noreply@example.com",
+            },
+          },
         };
       });
   });
-
 
   // Shortcodes
   eleventyConfig.addGlobalData(

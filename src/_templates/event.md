@@ -1,26 +1,32 @@
 ---
-title: "Заголовок события"
+title: ""
 start: "2025-01-01T00:00:00+03:00"
 end: "2025-01-01T21:00:00+03:00"
 tags: events
 layout: layouts/events-post
-excerpt: "Краткая аннотация"
+
+excerpt: ""
+
 image:
   src: ""
   caption: ""
+
 location:
   name: ""
   address: ""
   coordinates:
     lat: 0
     lon: 0
+
 organizer:
   name: ""
   email: ""
   url: ""
+
 speaker:
   name: "Валерий Тропин"
   url: "/"
+
 ics: true
 ---
 
@@ -50,4 +56,15 @@ ics: true
 
 <div class="code-frame">
   {% highlight "txt" %}{% endhighlight %}
+</div>
+
+{# PDF #}
+
+<div class="pdf-frame">
+  <iframe
+    src="#zoom=page-fit&page=1"
+    title="PDF Viewer"
+    loading="lazy"
+    frameborder="0"
+  ></iframe>
 </div>

@@ -1,0 +1,114 @@
+{% extends "layouts/base.njk" %}
+{% block content %}
+
+<div id="progress-bar"></div>
+
+<article class="post-page">
+    {% if image and image.src %}
+        <figure class="post-cover">
+            <img src="{{ image.src }}" alt="{{ title }}"/>
+            {% if image.caption %}
+                <figcaption>
+                    {{ image.caption | safe }}
+                </figcaption>
+            {% endif %}
+        </figure>
+    {% endif %}
+
+    <h1 id="post-title">{{ title }}</h1>
+
+    <div class="post-meta-top">
+        <small class="reading-time">
+            {{ content | timeToRead }} чтения
+        </small>
+    </div>
+
+    <div class="post-meta-cite">
+        {% if source and source != false %}
+            {% set has_source = source.title and
+            source.title != "" %}
+            {% set has_url = source.url and source.url != "" %}
+            {% set has_date = source.date and source.date != "" %}
+            {% if has_source or
+            has_url or has_date %}
+                <small class="post-repost">
+    Источник:{% if has_url and has_source %}
+    <a href="{{ source.url }}">{{ source.title }}</a>
+                    {% elif has_source %}
+                    {# TODO: Make cite code block for meta #}
+        {{ source.title | safe }}
+                    {% elif has_url %}
+                        <a href="{{ source.url }}">{{ source.url }}</a>
+                    {% endif %}
+                    {% if has_date %}
+                        {{ source.date | date("dd.MM.yyyy") }}
+                    {% endif %}
+                </small>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <div class="post-meta-pdf-link">
+        {% if pdf and pdf.src != "" %}
+            <small class="post-repost">
+                <a href="{{ pdf.src }}">PDF{% if pdf.size != "" %}, {{ pdf.size }}</a>{% endif %}
+            </small>
+        {% endif %}
+    </div>
+
+    <div class="post-meta-repository">
+        {% if repository and repository.url %}
+        <small class="post-repost">
+            <a href="{{ repository.url }}">Репозиторий проекта</a>
+        </small>
+        {% endif %}
+    </div>
+
+    <div class="post-meta-notes">
+        {% if notes %}
+            <small class="post-repost">
+                {{notes | safe }}
+            </small>
+        {% endif %}
+    </div>
+
+    <div class="post-meta-bottom">
+        <p class="post-date">{{ date | date("dd.MM.yyyy") }}</p>
+    </div>
+
+    {{ content | safe }}
+
+    {% include "partials/pdf.njk" %}
+
+    {% include "partials/webmentions.njk" %}
+
+</article>
+
+<nav class="post-navigation">
+    <div class="nav-grid">
+        <div class="nav-item nav-next">
+            {% if nav and nav.next %}
+                <a href="{{ nav.next.url }}">
+                    <span class="arrow">←</span>
+                    <span>{{ nav.next.title }}</span>
+                </a>
+            {% endif %}
+        </div>
+
+        <div class="nav-item nav-all">
+            <a href="/research/">
+                <span>Все записи</span></a>
+        </div>
+
+        <div class="nav-item nav-prev">
+            {% if nav and nav.prev %}
+                <a href="{{ nav.prev.url }}">
+                    <span>{{ nav.prev.title }}</span>
+                    <span class="arrow">→</span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+{% endblock %}
