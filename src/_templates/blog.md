@@ -3,16 +3,21 @@ title: ""
 date: "2025-01-01T00:00:00+03:00"
 tags: blog
 layout: layouts/blog-post
+
 excerpt: ""
+
 topics:
   - lytdybr
+
 image:
   src: ""
   caption: ""
+
 repost:
   source: ""
   url: ""
   date: ""
+
 map:
   points:
     - name: ""
@@ -52,4 +57,15 @@ map:
 
 <div class="code-frame">
   {% highlight "txt" %}{% endhighlight %}
+</div>
+
+{# PDF #}
+
+<div class="pdf-frame">
+  <iframe
+    src="#zoom=page-fit&page=1"
+    title="PDF Viewer"
+    loading="lazy"
+    frameborder="0"
+  ></iframe>
 </div>

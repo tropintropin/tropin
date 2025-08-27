@@ -59,4 +59,31 @@
 
 </article>
 
+<nav class="post-navigation">
+    <div class="nav-grid">
+        <div class="nav-item nav-next">
+            {% if nav and nav.next %}
+                <a href="{{ nav.next.url }}">
+                    <span class="arrow">←</span>
+                    <span>{{ nav.next.title }}</span>
+                </a>
+            {% endif %}
+        </div>
+
+        <div class="nav-item nav-all">
+            <a href="/events/">
+                <span>Все события</span></a>
+        </div>
+
+        <div class="nav-item nav-prev">
+            {% if nav and nav.prev %}
+                <a href="{{ nav.prev.url }}">
+                    <span>{{ nav.prev.title }}</span>
+                    <span class="arrow">→</span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
 {% endblock %}
