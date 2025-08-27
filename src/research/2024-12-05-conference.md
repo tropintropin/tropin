@@ -15,8 +15,8 @@ authors:
     url: "/"
 
 source:
-  title: "III Всероссийская (с международным участием) научная конференция «Современный музей городской археологии: перспективы развития новой региональности». 5—6 декабря 2024 г. Конференц-зал Музея археологии ГМИ СПб в Петропавловской крепости [полная запись первого дня работы конференции]"
-  url: "https://vkvideo.ru/video-221974248_456239045"
+  title: "III Всероссийская (с международным участием) научная конференция «Современный музей городской археологии: перспективы развития новой региональности». 5—6 декабря 2024 г. Конференц-зал Музея археологии ГМИ СПб в Петропавловской крепости"
+  url: "https://vkvideo.ru/video-221974248_456239045?t=6h8m3s"
   date: ""
 
 image:
@@ -36,8 +36,10 @@ notes: ""
 Запись моего выступления на III Всероссийской научной конференции «Современный музей городской археологии: перспективы развития новой региональности» на тему «Окна и двери Меншиковского дворца : Музеефикация. Исследование. Показ». 5 декабря 2024 г. Музей археологии ГМИ СПб, Санкт-Петербург
 
 <div class="video-frame">
-<iframe src="https://vkvideo.ru/video_ext.php?oid=713829927&id=456239018&hd=2&hash=f361a4bb484997ec" width="853" height="480" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://vkvideo.ru/video_ext.php?oid=-221974248&id=456239045&hd=2" width="853" height="480" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
 </div>
+
+<small>Доклад начинается с: <a href="https://vkvideo.ru/video-221974248_456239045?t=6h8m3s">06:08:03</a></small>
 
 ## Тезисы доклада
 
