@@ -22,12 +22,20 @@
   height: 4px;
   background: color-mix(
     in oklch,
-    #{var(--neutral-200)} 70%,
+    #{currentColor} 30%,
     transparent
   );
   transform-origin: left;
   animation: grow linear;
   animation-timeline: scroll();
+}
+
+.dark-theme #progress-bar {
+  background: color-mix(
+    in oklch,
+    #{var(--accent)} 60%,
+    transparent
+  );
 }
 
 // ==============================

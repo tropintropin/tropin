@@ -34,7 +34,6 @@ $dark-vars: export-vars(p.$palette-dark);
     var(--backgrounds-body),
     var(--backgrounds-main)
   );
-  --bg-image: url("/images/bg-light.jpg");
 
   & * {
     transition: background-color 0.5s ease, color 0.5s ease,
