@@ -1,10 +1,10 @@
 ---
-title: "Видеоэкскурсия «Эрмитаж — Меншиковский дворец. Окна и двери». YouTube, 2021"
+title: "Прямой эфир «Эрмитаж — Меншиковский дворец. Окна и двери». YouTube, 2021"
 date: "2021-11-15T00:00:00+03:00"
 tags: research
 layout: layouts/research-post
 
-excerpt: "Экскурсия-прогулка по экспозициям и хранению деревянной археологии Дворца Меншикова в видеоформате"
+excerpt: "Прямой эфир с прогулкой по экспозициям и хранению деревянной археологии Дворца Меншикова для соцсетей Государственного Эрмитажа"
 
 topics:
   - video
@@ -41,3 +41,17 @@ notes: ""
 <div class="video-frame">
 <iframe src="https://www.youtube-nocookie.com/embed/8p6_HIRi0Og?si=uZDdX1-YcSfBcEeW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
+
+Экскурсия по дворцу транслировалась одновременно на нескольких площадках:
+
+- [YouTube](https://youtu.be/8p6_HIRi0Og)
+- [ВКонтакте](https://vk.com/video-67940544_456241276)
+- [Facebook](https://www.facebook.com/state.hermitage/videos/602677137650839)\*
+- [Одноклассники](https://ok.ru/live/3117195730521)
+
+<figure class="quote">
+  <blockquote>
+    * <cite>Facebook</cite> принадлежит компании <cite>Meta</cite>, которая с 21 марта 2022 г. признана в России экстремистской организацией.
+</blockquote>
+  <figcaption class="quote-caption"></figcaption>
+</figure>
