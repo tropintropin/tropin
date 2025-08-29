@@ -11,24 +11,9 @@
       "svg": "https://cdn.jsdelivr.net/npm/simple-icons@9.21.0/icons/telegram.svg"
     },
     {
-      "name": "Instagram",
-      "url": "https://www.instagram.com/tropintropin/",
-      "svg": "https://cdn.jsdelivr.net/npm/simple-icons@9.21.0/icons/instagram.svg"
-    },
-    {
       "name": "LiveLib",
       "url": "https://www.livelib.ru/reader/valeriuus",
       "svg": "https://unpkg.com/tabler-icons@1.35.0/icons/book.svg"
-    },
-    {
-      "name": "Bluesky",
-      "url": "https://bsky.app/profile/tropin.one",
-      "svg": "https://raw.githubusercontent.com/simple-icons/simple-icons/refs/heads/develop/icons/bluesky.svg"
-    },
-    {
-      "name": "Mastodon",
-      "url": "https://tech.lgbt/@GuyFromUberwald",
-      "svg": "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mastodon.svg"
     },
     {
       "name": "Calendar",

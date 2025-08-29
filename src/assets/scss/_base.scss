@@ -71,6 +71,21 @@ section h2 {
   border: none;
 }
 
+.cv {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 6px 15px var(--shadow);
+  }
+}
+
 // ==============================
 // #RESPONSIVE-STYLES
 // ==============================

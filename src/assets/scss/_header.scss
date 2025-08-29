@@ -23,6 +23,15 @@
   box-shadow: 0 4px 12px var(--shadow);
   transition: box-shadow 0.3s ease;
 
+  .site-title a {
+    color: var(--neutral-400);
+    text-decoration: none;
+  }
+
+  .main-nav {
+    color: var(--accent);
+  }
+
   &:hover {
     box-shadow: 0 6px 15px var(--shadow);
   }
