@@ -20,8 +20,16 @@
         </p>
     {% endif %}
 
-    <div class="research-posts-list">
+    <div class="research-posts-list" data-pagefind-ignore="all">
+        {% set currentYear = "" %}
         {% for post in collections.research %}
+            {% set postYear = post.date | date("yyyy") %}
+
+            {% if postYear != currentYear %}
+                <h2 class="blog-year">{{ postYear }}</h2>
+                {% set currentYear = postYear %}
+            {% endif %}
+
             {% include "partials/card.njk" %}
         {% endfor %}
     </div>
