@@ -222,6 +222,12 @@ export default async function (eleventyConfig) {
   eleventyConfig.addGlobalData("webmentions", async () => {
     const domain = process.env.WEBMENTION_DOMAIN;
     const token = process.env.WEBMENTION_TOKEN;
+
+    // NB! For dev:
+    if (process.env.NODE_ENV === "development") {
+      return [];
+    }
+
     if (!domain || !token) {
       console.warn("WEBMENTION_DOMAIN or WEBMENTION_TOKEN is missing!");
       return [];
