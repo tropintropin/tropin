@@ -1,96 +1,108 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang }}" prefix="og: https://ogp.me/ns#">
   <head>
-    <meta charset="utf-8" />
-    <link rel="canonical" href="{{ site.url }}" />
+    <meta charset="utf-8"/>
+    <link rel="canonical" href="{{ site.url }}"/>
 
     <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="{{ meta.apple_touch_icon }}"
-    />
+/>
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="{{ meta.favicon_32 }}"
-    />
+/>
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
       href="{{ meta.favicon_16 }}"
-    />
-    <link rel="manifest" href="{{ meta.manifest }}" />
-    <meta name="apple-mobile-web-app-title" content="{{ meta.appleTitle }}" />
-    <meta name="mobile-web-app-capable" content="{{ meta.appleCapable }}" />
+/>
+    <link rel="manifest" href="{{ meta.manifest }}"/>
+    <meta name="apple-mobile-web-app-title" content="{{ meta.appleTitle }}"/>
+    <meta name="mobile-web-app-capable" content="{{ meta.appleCapable }}"/>
     <meta
       name="apple-mobile-web-app-status-bar-style"
       content="{{ meta.appleStatusBarStyle }}"
-    />
+/>
 
-    <meta name="author" content="{{ author.fullName }}" />
+    <meta name="author" content="{{ author.fullName }}"/>
     {% set metaDescription = description or excerpt or site.description %}
     <meta
       name="description"
       content="{{ metaDescription | striptags | truncate(160, true, '…') }}"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <title>
       {% if page.url != "/" and title %}
-      {{ title }} | {{ site.title }}
+        {{ title }} | {{ site.title }}
       {% else %}
-      {{ site.title }}
+        {{ site.title }}
       {% endif %}
     </title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 
-    <link rel="webmention" href="https://webmention.io/tropin.one/webmention" />
-    <link rel="pingback" href="https://webmention.io/tropin.one/xmlrpc" />
+    <link rel="webmention" href="https://webmention.io/tropin.one/webmention"/>
+    <link rel="pingback" href="https://webmention.io/tropin.one/xmlrpc"/>
 
-    <link rel="me" href="https://web.brid.gy/r/https://tropin.one/" />
-    <link rel="me" href="https://tech.lgbt/@GuyFromUberwald" />
-    <link rel="me" href="https://bsky.app/profile/tropin.one" />
-    <link rel="me" href="https://www.instagram.com/tropintropin/" />
+    <link rel="me" href="https://web.brid.gy/r/https://tropin.one/"/>
+    <link rel="me" href="https://tech.lgbt/@GuyFromUberwald"/>
+    <link rel="me" href="https://bsky.app/profile/tropin.one"/>
+    <link rel="me" href="https://www.instagram.com/tropintropin/"/>
 
     <script>
-    (function() {
-    try {
-        const saved = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const isDark = saved === "dark" || (!saved && prefersDark);
+      (function () {
+        try {
+          const saved = localStorage.getItem("theme");
+          const prefersDark = window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .matches;
+          const isDark = saved === "dark" || (!saved && prefersDark);
 
-        if (isDark) {
-        document.documentElement.classList.add("dark-theme");
-        } else {
-        document.documentElement.classList.remove("dark-theme");
+          if (isDark) {
+            document
+              .documentElement
+              .classList
+              .add("dark-theme");
+          } else {
+            document
+              .documentElement
+              .classList
+              .remove("dark-theme");
+          }
+        } catch (e) {
+          // если localStorage недоступен, просто оставляем default
         }
-    } catch (e) {
-        // если localStorage недоступен, просто оставляем default
-    }
-    })();
+      })();
     </script>
 
     {# CSS #}
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
-    />
+/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/openwebicons@1.0.0/dist/openwebicons.min.css">
 
-    {% include "partials/og-meta.njk" %} {% include "partials/twitter-meta.njk"
-    %} {% block head %}{% endblock %}
+    {% include "partials/og-meta.njk" %}
+    {% include "partials/twitter-meta.njk"
+    %}
+    {% block head %}{% endblock %}
   </head>
   <body data-pagefind-body>
     {% include "partials/header.njk" %}
-    <main>{% block content %}{% endblock %}</main>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
     {% include "partials/footer.njk" %}
 
     <button id="scrollTop" class="scroll-top" aria-label="Наверх">
@@ -113,7 +125,7 @@
     <script src="/pagefind/pagefind-ui.js"></script>
     <script>
       window.addEventListener("DOMContentLoaded", (event) => {
-        new PagefindUI({ element: "#search", showSubResults: true });
+        new PagefindUI({element: "#search", showSubResults: true});
       });
     </script>
     <script
