@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+FN;CHARSET=UTF-8:Valery Tropin
+N;CHARSET=UTF-8:Tropin;Valery;;;
+GENDER:M
+EMAIL;CHARSET=UTF-8;type=HOME,INTERNET:tropin.tropin@gmail.com
+TEL;TYPE=CELL:+79992151069
+TITLE;CHARSET=UTF-8:Assistant Department Manager
+ORG;CHARSET=UTF-8:The State Hermitage Museum
+URL;CHARSET=UTF-8:https://tropin.one
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/tropin
+REV:2024-01-01T15:22:46.873Z
+END:VCARD
