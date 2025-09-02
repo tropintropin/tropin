@@ -84,18 +84,46 @@ export default async function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection("events", (collectionApi) => {
+    const now = new Date();
+
     const posts = collectionApi
       .getFilteredByTag("events")
-      .filter((item) => !item.data.draft);
-    posts.sort((a, b) => b.date - a.date);
+      .filter((item) => !item.data.draft)
+      .filter((item) => item.date >= now);
+
+    posts.sort((a, b) => a.date - b.date);
+
     for (let i = 0; i < posts.length; i += 1) {
       const newer = i > 0 ? posts[i - 1] : null;
       const older = i < posts.length - 1 ? posts[i + 1] : null;
       posts[i].data.nav = {
-        prev: older ? { url: older.url, title: older.data.title } : null,
-        next: newer ? { url: newer.url, title: newer.data.title } : null,
+        prev: newer ? { url: newer.url, title: newer.data.title } : null,
+        next: older ? { url: older.url, title: older.data.title } : null,
       };
     }
+
+    return posts;
+  });
+
+  eleventyConfig.addCollection("pastEvents", (collectionApi) => {
+    const now = new Date();
+
+    const posts = collectionApi
+      .getFilteredByTag("events")
+      .filter((item) => !item.data.draft)
+      .filter((item) => item.date < now);
+
+    posts.sort((a, b) => b.date - a.date);
+
+    for (let i = 0; i < posts.length; i += 1) {
+      const newer = i > 0 ? posts[i - 1] : null;
+      const older = i < posts.length - 1 ? posts[i + 1] : null;
+      posts[i].data.nav = {
+        prev: newer ? { url: newer.url, title: newer.data.title } : null,
+        next: older ? { url: older.url, title: older.data.title } : null,
+      };
+    }
+
     return posts;
   });
 
@@ -222,6 +250,12 @@ export default async function (eleventyConfig) {
   eleventyConfig.addGlobalData("webmentions", async () => {
     const domain = process.env.WEBMENTION_DOMAIN;
     const token = process.env.WEBMENTION_TOKEN;
+
+    // NB! For dev:
+    if (process.env.NODE_ENV === "development") {
+      return [];
+    }
+
     if (!domain || !token) {
       console.warn("WEBMENTION_DOMAIN or WEBMENTION_TOKEN is missing!");
       return [];

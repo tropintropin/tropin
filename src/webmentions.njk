@@ -1,7 +1,7 @@
 ---
 title: Упоминания в сети
 description: Все упоминания в сети, которые были сделаны на эту страницу
-permalink: /webmentions/
+permalink: /webmentions/index.html
 ---
 
 {% extends "layouts/base.njk" %}
@@ -13,18 +13,15 @@ permalink: /webmentions/
 <h1>Упоминания в сети</h1>
 
 <small class="page-description">
-    <p>Здесь собираются <site>webmentions</site> — упоминания этого сайта в сети.  
-    Если кто-то написал о нём в блоге, на форуме или в соцсетях (поддерживающих <site>webmentions</site>) и добавил ссылку на сайт, 
+    <p>Здесь собираются <site>webmentions</site> — упоминания этого сайта в сети.
+    Если кто-то написал о нём в блоге, на форуме или в соцсетях (поддерживающих <site>webmentions</site>) и добавил ссылку на сайт,
     ниже появится отметка об этом.</p>
 
     <p>Сообщить об упоминании можно и вручную через <a href="https://webmention.io/tropin.one/webmention" target="_blank" rel="noopener">эту форму</a>.</p>
 
-    <p><a href="https://www.w3.org/TR/webmention/" target="_blank" rel="noopener">Webmention</a> — это открытый веб-стандарт.  
+    <p><a href="https://www.w3.org/TR/webmention/" target="_blank" rel="noopener">Webmention</a> — это открытый веб-стандарт.
     Их можно встроить и на свой сайт — например, через сервис <a href="https://webmention.io" target="_blank" rel="noopener">webmention.io</a>.</p>
 </small>
-
-
-
 
 {% set mentions = webmentions.children or [] %}
 
