@@ -8,45 +8,46 @@ permalink: /webmentions/index.html
 
 {% block content %}
 
-<div id="progress-bar"></div>
+  <div id="progress-bar"></div>
 
-<h1>Упоминания в сети</h1>
+  <h1>Упоминания в сети</h1>
 
-<small class="page-description">
+  <small class="page-description">
     <p>Здесь собираются <site>webmentions</site> — упоминания этого сайта в сети.
     Если кто-то написал о нём в блоге, на форуме или в соцсетях (поддерживающих <site>webmentions</site>) и добавил ссылку на сайт,
     ниже появится отметка об этом.</p>
 
     <p>Сообщить об упоминании можно и вручную через <a href="https://webmention.io/tropin.one/webmention" target="_blank" rel="noopener">эту форму</a>.</p>
 
-    <p><a href="https://www.w3.org/TR/webmention/" target="_blank" rel="noopener">Webmention</a> — это открытый веб-стандарт.
+    <p>
+      <a href="https://www.w3.org/TR/webmention/" target="_blank" rel="noopener">Webmention</a> — это открытый веб-стандарт.
     Их можно встроить и на свой сайт — например, через сервис <a href="https://webmention.io" target="_blank" rel="noopener">webmention.io</a>.</p>
-</small>
+  </small>
 
-{% set mentions = webmentions.children or [] %}
+  {% set mentions = webmentions.children or[] %}
 
-{% if mentions | length > 0 %}
+  {% if mentions | length > 0 %}
     <ul>
-        {% for mention in mentions %}
+      {% for mention in mentions %}
         <li class="webmention {{ mention['wm-property'] }}">
-            <span class="owi {% if mention['wm-property'] == 'like-of' %}owi-heart{% elif mention['wm-property'] == 'repost-of' %}owi-repost{% else %}owi-comment{% endif %}"></span>
-            <div class="wm-author">
+          <span class="owi {% if mention['wm-property'] == 'like-of' %}owi-heart{% elif mention['wm-property'] == 'repost-of' %}owi-repost{% else %}owi-comment{% endif %}"></span>
+          <div class="wm-author">
             <a href="{{ mention.author.url or mention.url }}" target="_blank" rel="noopener">
-                {{ mention.author.name or mention.url }}
+              {{ mention.author.name or mention.url }}
             </a>
-            </div>
-            <div class="wm-target">
+          </div>
+          <div class="wm-target">
             Ссылка на страницу:
             <a href="{{ mention['wm-target'] }}">{{ mention["wm-target"] }}</a>
-            </div>
-            {% if mention.content and (mention.content.text or mention.content) %}
+          </div>
+          {% if mention.content and(mention.content.text or mention.content) %}
             <div class="wm-content">{{ mention.content.text or mention.content | safe }}</div>
-            {% endif %}
+          {% endif %}
         </li>
-        {% endfor %}
+      {% endfor %}
     </ul>
-{% else %}
+  {% else %}
     <p>Пока нет упоминаний.</p>
-{% endif %}
+  {% endif %}
 
 {% endblock %}

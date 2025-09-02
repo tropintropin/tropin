@@ -2,37 +2,37 @@
 
 {% block content %}
 
-    <div id="progress-bar"></div>
+  <div id="progress-bar"></div>
 
-    <h1 class="page-title">Блог</h1>
+  <h1 class="page-title">Блог</h1>
 
-    <small>
+  <small>
     <p class="page-description">Привет! Я Валера. Пишу о разном: дыбры о работе, программировании и личном. Планирую также перенести сюда некоторые архивные посты из <cite>ЖЖ</cite> и других сервисов, которыми когда-либо пользовался.</p>
 
     <p>На сайте настроены <cite>webmentions</cite>, которые — в теории — должны стекаться в раздел <a href="/webmentions/">«Упоминания»</a>. Но, кажется, эта балалайка не особенно взлетела :-)</p>
-    </small>
+  </small>
 
-    {% if collections.blog | length == 0 %}
-        <p>Постов пока нет. Или они есть, но не видны. Когда-нибудь появятся.</p>
-    {% endif %}
+  {% if collections.blog | length == 0 %}
+    <p>Постов пока нет. Или они есть, но не видны. Когда-нибудь появятся.</p>
+  {% endif %}
 
-    {% if collections.blog | length > 0 %}
-        <p class="blog-count">
+  {% if collections.blog | length > 0 %}
+    <p class="blog-count">
             Всего записей: {{ collections.blog | length }}
-        </p>
-    {% endif %}
+    </p>
+  {% endif %}
 
-    <div class="blog-posts-list" data-pagefind-ignore="all">
-        {% set currentYear = "" %}
-        {% for post in collections.blog %}
-            {% set postYear = post.date | date("yyyy") %}
+  <div class="blog-posts-list" data-pagefind-ignore="all">
+    {% set currentYear = "" %}
+    {% for post in collections.blog %}
+      {% set postYear = post.date | date("yyyy") %}
 
-            {% if postYear != currentYear %}
-                <h2 class="blog-year">{{ postYear }}</h2>
-                {% set currentYear = postYear %}
-            {% endif %}
+      {% if postYear != currentYear %}
+        <h2 class="blog-year">{{ postYear }}</h2>
+        {% set currentYear = postYear %}
+      {% endif %}
 
-            {% include "partials/card.njk" %}
-        {% endfor %}
-    </div>
+      {% include "partials/card.njk" %}
+    {% endfor %}
+  </div>
 {% endblock %}

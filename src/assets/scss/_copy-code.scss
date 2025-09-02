@@ -6,7 +6,7 @@
 
 @use "sass:map";
 
-@use 'variables' as v;
+@use "variables" as v;
 
 // ==============================
 // #COPY-CODE-BUTTON-STYLES
@@ -14,7 +14,7 @@
 // Styles for the copy code button including positioning, appearance, and transitions.
 // ==============================
 
-pre[class*='language-'] {
+pre[class*="language-"] {
   position: relative;
 }
 
@@ -61,7 +61,7 @@ pre[class*='language-'] {
 // Show the copy button when hovering over the code block.
 // ==============================
 
-pre[class*='language-']:hover .copy-btn {
+pre[class*="language-"]:hover .copy-btn {
   opacity: 1;
   pointer-events: auto;
 }

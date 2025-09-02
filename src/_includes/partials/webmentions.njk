@@ -1,23 +1,23 @@
 {% set mentionsForPage = webmentions | selectattr("wm-target", "equalto", page.url) | list %}
 
 {% if mentionsForPage | length != 0 %}
-    <section class="webmentions">
-        <h3>Упоминания в сети</h3>
-        <ul>
-        {% for mention in mentionsForPage %}
-            {% set type = mention["wm-property"] or "mention-of" %}
-            <li class="webmention {{ type }}">
-                <span class="owi {% if type == 'like-of' %}owi-heart{% elif type == 'repost-of' %}owi-repost{% elif type == 'in-reply-to' %}owi-comment{% else %}owi-pin{% endif %}"></span>
-                <div class="wm-author">
-                    <a href="{{ mention.url }}" target="_blank" rel="noopener">
-                        {{ mention.author.name or mention.url }}
-                    </a>
-                </div>
-                {% if mention.content.text %}
-                    <div class="wm-content">{{ mention.content.text | safe }}</div>
-                {% endif %}
-            </li>
-        {% endfor %}
-        </ul>
-    </section>
+  <section class="webmentions">
+    <h3>Упоминания в сети</h3>
+    <ul>
+      {% for mention in mentionsForPage %}
+        {% set type = mention["wm-property"] or "mention-of" %}
+        <li class="webmention {{ type }}">
+          <span class="owi {% if type == 'like-of' %}owi-heart{% elif type == 'repost-of' %}owi-repost{% elif type == 'in-reply-to' %}owi-comment{% else %}owi-pin{% endif %}"></span>
+          <div class="wm-author">
+            <a href="{{ mention.url }}" target="_blank" rel="noopener">
+              {{ mention.author.name or mention.url }}
+            </a>
+          </div>
+          {% if mention.content.text %}
+            <div class="wm-content">{{ mention.content.text | safe }}</div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
 {% endif %}

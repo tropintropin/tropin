@@ -1,23 +1,23 @@
 <article class="card {% if "events" in post.data.tags %}event-card{% else %}blog-card{% endif %}">
-    {% if post.data.image.src %}
-        <div class="card-image">
-            <a href="{{ post.url }}">
-                <img src="{{ post.data.image.src }}" alt="{{ post.data.title }}">
-            </a>
-        </div>
-    {% endif %}
+  {% if post.data.image.src %}
+    <div class="card-image">
+      <a href="{{ post.url }}">
+        <img src="{{ post.data.image.src }}" alt="{{ post.data.title }}">
+      </a>
+    </div>
+  {% endif %}
 
-    <div class="card-content">
-        {# === TITLE === #}
-        <h2 class="card-title">
-        <a href="{{ post.url }}">{{ post.data.title }}</a>
-        </h2>
+  <div class="card-content">
+    {# === TITLE === #}
+    <h2 class="card-title">
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+    </h2>
 
-        {# === EVENTS === #}
-        {% if "events" in post.data.tags %}
-        <div class="card-meta">
+    {# === EVENTS === #}
+    {% if "events" in post.data.tags %}
+      <div class="card-meta">
         {% if post.data.start %}
-            <p class="post-date">
+          <p class="post-date">
             <span class="event-date">{{ post.data.start | date("dd.MM.yyyy") }}</span>
             <span class="separator">·</span>
             <span class="event-time">{{ post.data.start | date("HH:mm") }}</span>
@@ -25,43 +25,43 @@
                 →
                 <span class="event-end-time">{{ post.data.end | date("HH:mm") }}</span>
             {% endif %}
-        </p>
+          </p>
         {% endif %}
 
         {% if post.data.location and post.data.location.name %}
-            <p class="event-location">{{ post.data.location.name }}</p>
+          <p class="event-location">{{ post.data.location.name }}</p>
         {% endif %}
 
         {% if post.data.organizer and post.data.organizer.name %}
-            <p class="event-organizer">
+          <p class="event-organizer">
             {% if post.data.organizer.url %}
-                <a href="{{ post.data.organizer.url }}" target="_blank" rel="noopener">
-                    {{ post.data.organizer.name }}
-                </a>
-                {% else %}
+              <a href="{{ post.data.organizer.url }}" target="_blank" rel="noopener">
                 {{ post.data.organizer.name }}
-                {% endif %}
-            </p>
+              </a>
+            {% else %}
+              {{ post.data.organizer.name }}
+            {% endif %}
+          </p>
         {% endif %}
-        </div>
+      </div>
 
-        {# === BLOG === #}
-        {% else %}
-        <div class="card-meta">
+      {# === BLOG === #}
+    {% else %}
+      <div class="card-meta">
         {% if post.date %}
-            <p class="card-date">
+          <p class="card-date">
             {{ post.date | date("dd.MM.yyyy") }}
-            </p>
+          </p>
         {% endif %}
-        {% endif %}
-        </div>
-
-        {# === ANNOTATION === #}
-        <div class="card-body">
-        {% set annotation = post.data.excerpt or post.templateContent | striptags | truncate(150, true) %}
-        {% if annotation %}
-        <p class="card-annotation">{{ annotation }}</p>
-        {% endif %}
-        </div>
+      {% endif %}
     </div>
+
+    {# === ANNOTATION === #}
+    <div class="card-body">
+      {% set annotation = post.data.excerpt or post.templateContent | striptags | truncate(150, true) %}
+      {% if annotation %}
+        <p class="card-annotation">{{ annotation }}</p>
+      {% endif %}
+    </div>
+  </div>
 </article>
