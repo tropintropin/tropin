@@ -68,3 +68,7 @@ ics: true
     frameborder="0"
   ></iframe>
 </div>
+
+{# Обёртка для встраиваемого видео #}
+
+<div class="video-frame"></div>
