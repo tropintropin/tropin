@@ -18,12 +18,12 @@ axisFormat  %Y.%m
 section DEVELOPMENT
 Start the project                     :milestone,             crit, done, 2023.02.28, 0d
 Add index.html                        :done,          html0,              2023.03.05, 1d
-Add CSS for screen width              :done,          css0,               2023.08.13, 1d
-Start Migration to Eleventy           :milestone,             crit, done, 2025.08.12, 0d
+Add first CSS                         :done,          css0,               2023.08.13, 1d
+Migration to Eleventy                 :done,                  crit,       2025.08.12, 2025.09.02
 
 section PRODUCTION
 Upload site to server                 :milestone,             crit, done, 2023.04.04, 0d
-Upload MVP site during migration      :milestone,                   done, 2025.08.15, 0d
+Upload MVP site on Eleventy           :milestone,                   done, 2025.08.15, 0d
 ```
 
 ## Tech Stack
@@ -78,7 +78,7 @@ Upload MVP site during migration      :milestone,                   done, 2025.0
   npm run dev
   ```
 
-  _Note_: On the first run, `_site` is empty. Run `npm run pagefind` once before starting `dev` for search to work or just repeat `npm run dev` again.
+  _Note_: On the first run, `_site` is empty. Run `npm run pagefind` once before starting `dev` for search to work or just repeat `npm run dev` again (useful on WSL).
 
 - **build** – Full production build: CSS + Eleventy + Pagefind:
 
