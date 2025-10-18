@@ -6,7 +6,7 @@ tags: events
 layout: layouts/events-post
 excerpt: "В старейшем дворце Петербурга мы увидим не только экспонат, который занимает два этажа дворца, и не только заглянем в кухонную вытяжку, в которой может спрятаться небольшой автобус. Мы ещё ответим на вопрос, почему во дворце второго человека в империи десятки замурованных окон, зачем здесь дверь, заложенная кирпичом, и крошечная дверка, ведущая в никуда..."
 image:
-  src: "https://dklurie.ru/upload/iblock/0b3/dp7ryreveddd2ztv3vo7goouhyk2rb4w.jpg"
+  src: "/assets/images/events/dclurie_excursion_banner.jpg"
   caption: 'Фотоколлаж <a href="https://dklurie.ru/">ДК Лурье</a>. Создан с использованием фотографий экспонатов <a href="https://www.hermitagemuseum.org/">Государственного Эрмитажа</a>'
 location:
   name: "Дворец Меншикова"
