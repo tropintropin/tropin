@@ -1,0 +1,45 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:adamgibbons/ics
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:dMR3B2vFlN2dPfeA_OIcO
+SUMMARY:Экскурсия «Тайные места Меншиковского дворца». 23 ноября 2025 г.
+DTSTAMP:20251105T133637Z
+DTSTART:20251123T111000Z
+DTEND:20251123T124000Z
+LOCATION:Дворец Меншикова&#92;, Санкт-Петербург&#92;, Университетская наб.&#92;, 15
+ORGANIZER;CN=&quot;Дом культуры Льва Лурье&quot;:MAILTO:noreply@example.com
+END:VEVENT
+BEGIN:VEVENT
+UID:K8RRR12K3sbV-Xp6cEE7b
+SUMMARY:Экскурсия «Тайные места Меншиковского дворца». 6 декабря 2025 г.
+DTSTAMP:20251105T133637Z
+DTSTART:20251206T121500Z
+DTEND:20251206T134500Z
+LOCATION:Дворец Меншикова&#92;, Санкт-Петербург&#92;, Университетская наб.&#92;, 15
+ORGANIZER;CN=&quot;Дом культуры Льва Лурье&quot;:MAILTO:noreply@example.com
+END:VEVENT
+BEGIN:VEVENT
+UID:M98xBYUgwI92joYdZAr6-
+SUMMARY:Экскурсия «Тайные места Меншиковского дворца». 21 декабря 2025 г.
+DTSTAMP:20251105T133637Z
+DTSTART:20251221T111500Z
+DTEND:20251221T124500Z
+LOCATION:Дворец Меншикова&#92;, Санкт-Петербург&#92;, Университетская наб.&#92;, 15
+ORGANIZER;CN=&quot;Дом культуры Льва Лурье&quot;:MAILTO:noreply@example.com
+END:VEVENT
+BEGIN:VEVENT
+UID:zQCVPnxo0scThe1YW6RR5
+SUMMARY:Лекция «Борьба за сушу» в Эрмитажном Лектории. 23 января 2026 г.
+DTSTAMP:20251105T133637Z
+DTSTART:20260123T160000Z
+DTEND:20260123T173000Z
+LOCATION:Главный штаб&#92;, Санкт-Петербург&#92;, Дворцовая пл.&#92;, 6/8
+ORGANIZER;CN=&quot;Лекторий Государственного Эрмитажа&quot;:MAILTO:noreply@example.co
+	m
+END:VEVENT
+END:VCALENDAR
+

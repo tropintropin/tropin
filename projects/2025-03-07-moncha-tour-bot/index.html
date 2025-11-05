@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ru-RU" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://tropin.one">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-title" content="Valery Tropin">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="author" content="Валерий Тропин">
+    
+    <meta name="description" content="Телеграм-бот с двумя аудиомаршрутами по истории и стрит-арту Мончегорска для АНО «Агентство развития Мончегорска» (Мурманская область, Россия)">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      
+        Телеграм-бот «АудиоИмандра» с аудиогидами по Мончегорску | Valerio Tropin
+      
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+    <link rel="webmention" href="https://webmention.io/tropin.one/webmention">
+    <link rel="pingback" href="https://webmention.io/tropin.one/xmlrpc">
+
+    <link rel="me" href="https://web.brid.gy/r/https://tropin.one/">
+    <link rel="me" href="https://tech.lgbt/@GuyFromUberwald">
+    <link rel="me" href="https://bsky.app/profile/tropin.one">
+    <link rel="me" href="https://www.instagram.com/tropintropin/">
+
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("theme");
+          const prefersDark = window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .matches;
+          const isDark = saved === "dark" || (!saved && prefersDark);
+
+          if (isDark) {
+            document
+              .documentElement
+              .classList
+              .add("dark-theme");
+          } else {
+            document
+              .documentElement
+              .classList
+              .remove("dark-theme");
+          }
+        } catch (e) {
+          // если localStorage недоступен, просто оставляем default
+        }
+      })();
+    </script>
+
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/openwebicons@1.0.0/dist/openwebicons.min.css">
+
+    <meta property="og:title" content="Телеграм-бот «АудиоИмандра» с аудиогидами по Мончегорску">
+<meta property="og:type" content="article">
+<meta property="og:description" content="Музейный исследователь, автор туров по Петербургу и не только, разработчик телеграм-ботов">
+<meta property="og:image" content="[object Object]?v=">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+<meta property="og:image:alt" content="Valery Tropin">
+<meta property="og:url" content="/projects/2025-03-07-moncha-tour-bot/">
+<meta property="og:site_name" content="Valerio Tropin">
+<meta property="og:locale" content="">
+
+  <meta property="og:locale:alternate" content="en_US">
+
+  <meta property="og:locale:alternate" content="en_GB">
+
+
+    <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Телеграм-бот «АудиоИмандра» с аудиогидами по Мончегорску">
+<meta name="twitter:description" content="Музейный исследователь, автор туров по Петербургу и не только, разработчик телеграм-ботов">
+<meta name="twitter:image" content="[object Object]?v=">
+<meta name="twitter:image:alt" content="Valery Tropin">
+
+    
+  </head>
+  <body data-pagefind-body="">
+    <header>
+  <div class="print-info">
+    <picture><source type="image/webp" srcset="/img/hY-hPg7_9I-300.webp 300w, /img/hY-hPg7_9I-600.webp 600w, /img/hY-hPg7_9I-812.webp 812w, /img/hY-hPg7_9I-1200.webp 1200w" sizes="auto"><img loading="lazy" decoding="async" src="/img/hY-hPg7_9I-300.jpeg" alt="QR для печати" width="1200" height="1200" srcset="/img/hY-hPg7_9I-300.jpeg 300w, /img/hY-hPg7_9I-600.jpeg 600w, /img/hY-hPg7_9I-812.jpeg 812w, /img/hY-hPg7_9I-1200.jpeg 1200w" sizes="auto"></picture>
+    <div class="print-text">
+      <p>Версия для печати</p>
+      <p>Контакты:</p>
+      <p>tropin.tropin@gmail.com</p>
+      <p>+7 999 215-10-69</p>
+    </div>
+  </div>
+
+  <div class="header-inner">
+    <div class="title-row">
+      <button class="nav-toggle" aria-label="Открыть меню"></button>
+      <h1 class="site-title">
+        <a href="https://tropin.one">Valerio Tropin</a>
+      </h1>
+    </div>
+
+    <div class="nav-wrapper">
+      <nav class="main-nav" aria-label="Главное меню">
+        
+          <ul class="nav-list">
+            
+              
+                <li>
+                  <a href="/">Обо мне</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/blog/">Блог</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/projects/">Проекты</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/research/">Публикации и выступления</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/events/">События</a>
+                </li>
+              
+            
+          </ul>
+        
+      </nav>
+
+      <div id="search"></div>
+    </div>
+  </div>
+</header>
+
+    <main>
+      
+  <div id="progress-bar"></div>
+
+  <article class="post-page">
+
+    
+
+    <h1 id="post-title">Телеграм-бот «АудиоИмандра» с аудиогидами по Мончегорску</h1>
+
+    <div class="post-meta-top">
+
+      <small class="reading-time">
+        2 минуты чтения
+      </small>
+
+    </div>
+
+    
+      <p class="post-excerpt">Телеграм-бот с двумя аудиомаршрутами по истории и стрит-арту Мончегорска для АНО «Агентство развития Мончегорска» (Мурманская область, Россия)</p>
+    
+
+    <div class="post-meta-bottom">
+
+      
+        <p class="project-team">
+          Команда:
+          
+            <span class="team-member">Валерий Тропин (developer)</span>, 
+          
+            <span class="team-member">Анастасия Комина (project lead)</span>, 
+          
+            <span class="team-member">АНО «Агентство развития Мончегорска» (client)</span>
+          
+        </p>
+      
+
+      
+        <p class="project-date">
+          Период: <time datetime="2024-11-19T00:00:00+03:00">19.11.2024</time>
+          
+            → <time datetime="2025-03-07T00:00:00+03:00">07.03.2025</time>
+          
+        </p>
+      
+
+      
+        <p>
+          Статус:
+          <span class="project-status status-completed">
+            completed
+          </span>
+        </p>
+      
+
+      
+        <p>
+          Тип:
+          
+          <span class="project-type">
+            bot
+          </span> 
+          
+          <span class="project-type">
+            audio-guide
+          </span> 
+          
+          <span class="project-type">
+            tour
+          </span>
+          
+        </p>
+      
+
+      
+        <p class="project-technologies">
+          Стек:
+          
+            <span class="tech-tag">python</span> 
+          
+            <span class="tech-tag">fastapi</span> 
+          
+            <span class="tech-tag">redis</span> 
+          
+            <span class="tech-tag">leaflet</span>
+          
+        </p>
+      
+
+      <div class="project-links">
+        
+
+        
+          <a href="https://t.me/moncha_tour_bot" class="project-link" target="_blank" rel="noopener noreferrer">
+            <span>Посмотреть проект</span>
+          </a>
+        
+
+      </div>
+    </div>
+
+    
+
+
+
+
+  <div id="map-telegram-bot-audioimandra-s-audiogidami-po-monchegorsku" class="map-container"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const map = L.map("map-telegram-bot-audioimandra-s-audiogidami-po-monchegorsku", { attributionControl: false });
+
+      const Thunderforest_Outdoors = L.tileLayer(
+        "https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}{r}.png?apikey=03e4e07b59214040bba9d8ea477d1b46",
+        {
+          attribution:
+            '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          maxZoom: 22,
+        }
+      );
+
+      Thunderforest_Outdoors.addTo(map);
+
+      L.control
+        .attribution({ prefix: '&copy; <a href="https://leafletjs.com/">Leaflet</a>' })
+        .addTo(map);
+
+      const latlngs = [];
+      const defaultZoom = 14;
+
+      // === МАРКЕРЫ ===
+      
+        
+          
+            latlngs.push([67.938902, 32.937476]);
+            L.marker([67.938902, 32.937476])
+              .addTo(map)
+              .bindPopup("Мончегорск, Мурманская область, Россия");
+          
+        
+      
+
+      // === ЛИНИЯ ИЗ ROUTE ===
+      
+
+      if (latlngs.length === 1) {
+        map.setView(latlngs[0], defaultZoom);
+      } else if (latlngs.length > 1) {
+        map.fitBounds(latlngs);
+      } else {
+        console.warn("No valid points to display on map:", "map-telegram-bot-audioimandra-s-audiogidami-po-monchegorsku");
+      }
+    });
+  </script>
+
+
+
+    <h2>Задача</h2>
+<p class="drop-cap">В Мончегорске — множество арт-объектов: от советской монументальной скульптуры до современных муралов и инсталляций. <a href="https://armonchegorsk.ru/"><cite>Агентство развития Мончегорска</cite></a> поручило нам — команде <a href="https://peshehodtour.ru/"><cite>«Пешеход Тура»</cite></a> — собрать сведения обо всех этих объектах, объединить их в аудиогид и сделать удобным инструментом для жителей и гостей города.</p>
+<h2>Концепция проекта</h2>
+<p>Мы с Настей Коминой из <cite>«Пешеход Тура»</cite> предложили создать два маршрута: комфортный и короткий зимний и длинный и подробный летний. Тексты гидов озвучили мончегорские школьники, победившие в городском конкурсе чтецов.</p>
+<p>Аудиогиды доступны в Telegram-боте, в котором также есть справочная информация о городе, магазинах и достопримечательностях.</p>
+<p>Бот запоминает место, на котором пользователь остановился, и позволяет продолжить прослушивание позже. Встроенная миниапп-карта показывает оба маршрута и даёт возможность перейти к прослушиванию точек прямо с карты.</p>
+<h2>Реализация</h2>
+<p>Разработка велась поэтапно — от создания маршрутов до финального релиза бота в марте 2025 года. Полный цикл активной работы занял чуть больше четырёх месяцев.</p>
+<p>В конце ноября мы приехали в Мончегорск, прошли оба будущих маршрута пешком и пообщались с местными гидами — это помогло уточнить локации и добавить в тексты живые детали.</p>
+<p>В декабре 2024 года мы составили маршруты и написали тексты.</p>
+<p>В январе 2025 года мончегорские школьники озвучили аудиогид.</p>
+<p>К февралю был готов MVP-бот.</p>
+<p>В марте проект
+<a href="https://t.me/moncha_tour_bot"><cite>«АудиоИмандра»</cite></a> был запущен в продакшен и интегрирован с туристическим ресурсом <a href="https://visit-imandra.ru/"><cite>Визит.Имандра</cite></a>.</p>
+<figure>
+  <picture><source type="image/webp" srcset="/img/wI2POrjugi-300.webp 300w, /img/wI2POrjugi-600.webp 600w, /img/wI2POrjugi-961.webp 961w" sizes="auto"><img loading="lazy" decoding="async" src="/img/wI2POrjugi-300.jpeg" alt="" width="961" height="1280" srcset="/img/wI2POrjugi-300.jpeg 300w, /img/wI2POrjugi-600.jpeg 600w, /img/wI2POrjugi-961.jpeg 961w" sizes="auto"></picture>
+  <figcaption>Главная улица Мончегорска — проспект Металлургов — после метели. Полярная ночь вот-вот начнётся, солнце появляется лишь на короткое время. Это не помешало нам обойти весь город в поисках локаций для будущего аудиогида.</figcaption>
+</figure>
+<h2>Технологии и инфраструктура</h2>
+<div class="project-details">
+<dl class="stack">
+  <dt>Stack:</dt>
+  <dd>Python 3.13, aiogram 3.16</dd>
+  <dd>Telegram Bot API 8.3</dd>
+  <dd>FastAPI, Leaflet JS (for Telegram Miniapp)</dd>
+  <dd>Redis</dd>
+</dl>
+</div>
+<p>Автоматизированный деплой выполнен через Makefile: устанавливаются Nginx, Redis, настраивается Systemd, запускается Gunicorn, необходимый для работы миниаппа. Redis хранит прогресс пользователей и данные маршрутов.</p>
+<h2>Администрирование и аналитика</h2>
+<p>В админке реализованы инструменты для управления ботом и анализа активности пользователей:</p>
+<ul>
+<li>добавление и удаление администраторов;</li>
+<li>скрытие и отображение точек маршрутов;</li>
+<li>просмотр статистики: количество уникальных пользователей, процент начавших и завершивших маршрут.</li>
+</ul>
+<p>Вся работа ведётся прямо в Telegram, без вмешательств в код или сервер.</p>
+
+
+    
+      <aside class="project-notes">
+        Проект создан АНО «Агентство развития Мончегорска» и компанией «Пешеход Тур» при поддержке компании «Норникель», администрации города и Центральной детской библиотеки Мончегорска.
+      </aside>
+    
+
+    
+
+
+
+
+  </article>
+
+  <nav class="post-navigation">
+    <div class="nav-grid">
+      <div class="nav-item nav-prev">
+        
+      </div>
+
+      <div class="nav-item nav-all">
+        <a href="/projects/">
+          <span>Все проекты</span>
+        </a>
+      </div>
+
+      <div class="nav-item nav-next">
+        
+      </div>
+    </div>
+  </nav>
+
+    </main>
+    <footer>
+  <p>
+    <button id="theme-toggle" class="theme-toggle">
+      <span class="icon">🌓</span>
+      <span class="label">Тема</span>
+    </button>
+  </p>
+
+  <div class="footer-inner">
+    <div>
+      
+        <a href="https://github.com/tropintropin" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="icon-link" data-svg="https://cdn.jsdelivr.net/npm/simple-icons@9.21.0/icons/github.svg"></a>
+      
+        <a href="https://t.me/ozlik" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="icon-link" data-svg="https://cdn.jsdelivr.net/npm/simple-icons@9.21.0/icons/telegram.svg"></a>
+      
+        <a href="https://www.livelib.ru/reader/valeriuus" target="_blank" rel="noopener noreferrer" aria-label="LiveLib" class="icon-link" data-svg="https://unpkg.com/tabler-icons@1.35.0/icons/book.svg"></a>
+      
+        <a href="/calendar.ics" target="_blank" rel="noopener noreferrer" aria-label="Calendar" class="icon-link" data-svg="https://unpkg.com/tabler-icons@1.35.0/icons/calendar.svg"></a>
+      
+        <a href="/feed.atom.xml" target="_blank" rel="noopener noreferrer" aria-label="RSS" class="icon-link" data-svg="https://cdn.jsdelivr.net/npm/simple-icons@9.21.0/icons/rss.svg"></a>
+      
+    </div>
+
+    <small>
+      <a href="https://ozlik.notion.site/Valera-s-Wish-List-487d6d07f26d4edcb2f240459513b9ab" target="_blank" rel="me noopener noreferrer" title="Notion официально не работает в РФ, используйте ВПН">
+        Notion Wish List
+      </a>
+      <span class="separator">·</span>
+      <a href="/calendar.ics" target="_blank" rel="me noopener noreferrer" title="Календарь событий">Events Calendar</a>
+      <span class="separator">·</span>
+      <a href="/feed.atom.xml" target="_blank" rel="me noopener noreferrer" title="Фид всех записей на сайте">Atom Feed (RSS)</a>
+    </small>
+
+    <p class="footer-copy">
+      &copy;&nbsp;<time datetime="2023-2025">MMXXIII&nbsp;→&nbsp;MMXXV</time>&nbsp;<a href="https://tropin.one">Valery Tropin</a>. This website is made with <a href="https://www.11ty.dev/">11ty</a> & hosted on <a href="https://docs.github.com/en/pages">GitHub Pages</a>.
+    </p>
+  </div>
+</footer>
+
+
+    <button id="scrollTop" class="scroll-top" aria-label="Наверх">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </svg>
+    </button>
+
+    
+    <script src="/pagefind/pagefind-ui.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        new PagefindUI({element: "#search", showSubResults: true});
+      });
+    </script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="/assets/js/nav-toggle.js"></script>
+    <script src="/assets/js/icons.js" defer=""></script>
+    <script src="/assets/js/scrolltop.js" defer=""></script>
+    <script src="/assets/js/copy-code.js" defer=""></script>
+    <script src="/assets/js/theme-toggle.js" defer=""></script>
+  </body>
+</html>
