@@ -350,3 +350,206 @@
     }
   }
 }
+
+// ==============================
+// #PROJECT-SPECIFIC-STYLES
+// ==============================
+// Styles specific to project pages including status badges, technologies, and team information.
+// ==============================
+
+.post-page {
+  // ==============================
+  // #PROJECT-STATUS
+  // ==============================
+  // Status badge styles for different project states.
+  // ==============================
+
+  .project-status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    &.status-active {
+    background: var(--accent);
+    color: var(--neutral-500);
+    }
+
+    &.status-completed {
+      background: var(--secondary);
+      color: var(--neutral-500);
+    }
+
+    &.status-prototype {
+      background: var(--primary);
+      color: var(--neutral-0);
+    }
+
+    &.status-archived {
+      background: var(--neutral-300);
+      color: var(--neutral-0);
+    }
+
+    &.status-paused {
+      background: var(--neutral-200);
+      color: var(--neutral-500);
+    }
+
+    &:hover {
+        transform: translateY(-1px);
+      }
+  }
+
+  // ==============================
+  // #PROJECT-TYPE
+  // ==============================
+  // Project type badge styles.
+  // ==============================
+
+  .project-type {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--primary);
+    color: var(--neutral-0);
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    &:hover {
+        transform: translateY(-1px);
+      }
+  }
+
+  // ==============================
+  // #PROJECT-DATE
+  // ==============================
+  // Project timeline display.
+  // ==============================
+
+  .project-date {
+    time {
+      color: var(--neutral-400);
+    }
+    margin-bottom: 1rem;
+  }
+
+  // ==============================
+  // #PROJECT-TECHNOLOGIES
+  // ==============================
+  // Technology stack display with tags.
+  // ==============================
+
+  .project-technologies {
+    .tech-tag {
+      display: inline-block;
+      background: var(--bg-aside);
+      color: var(--neutral-500);
+      padding: 0.25rem 0.625rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      margin-right: 0.25rem;
+      margin-bottom: 0.25rem;
+      border: 1px solid var(--neutral-200);
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: var(--bg-card);
+        transform: translateY(-1px);
+      }
+    }
+  }
+
+  // ==============================
+  // #PROJECT-TEAM
+  // ==============================
+  // Team member display.
+  // ==============================
+
+  .project-team {
+    .team-member {
+      display: inline;
+      color: var(--neutral-400);
+    }
+  }
+
+  // ==============================
+  // #PROJECT-LINKS
+  // ==============================
+  // Links to repository and demo.
+  // ==============================
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      background: var(--primary);
+      color: var(--neutral-0);
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px var(--shadow);
+
+      &:hover {
+        background: var(--links-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px var(--shadow);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 1px 3px var(--shadow);
+      }
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+
+      .project-link {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+
+  // ==============================
+  // #PROJECT-NOTES
+  // ==============================
+  // Additional notes section at the end of project.
+  // ==============================
+
+  .project-notes {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: var(--bg-aside);
+    border-left: 4px solid var(--primary);
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 1px 3px var(--shadow);
+    font-size: 0.875rem;
+
+    p {
+      margin-bottom: 0.75rem;
+      color: var(--neutral-400);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      padding: 1rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
+      border-radius: 0;
+    }
+  }
+}
