@@ -1,0 +1,139 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <div id="progress-bar"></div>
+
+  <article class="post-page">
+
+    {% if image and image.src %}
+      <figure class="post-cover">
+        <img src="{{ image.src }}" alt="{{ title }}"/>
+        {% if image.caption %}
+          <figcaption>
+            {{ image.caption | safe }}
+          </figcaption>
+        {% endif %}
+      </figure>
+    {% endif %}
+
+    <h1 id="post-title">{{ title }}</h1>
+
+    <div class="post-meta-top">
+
+      <small class="reading-time">
+        {{ content | timeToRead }} чтения
+      </small>
+
+    </div>
+
+    {% if excerpt %}
+      <p class="post-excerpt">{{ excerpt }}</p>
+    {% endif %}
+
+    <div class="post-meta-bottom">
+
+      {% if team and team.length > 0 %}
+        <p class="project-team">
+          Команда:
+          {% for member in team %}
+            <span class="team-member">{{ member.name }}{% if member.role %} ({{ member.role }}){% endif %}</span>{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </p>
+      {% endif %}
+
+      {% if start %}
+        <p class="project-date">
+          Период: <time datetime="{{ start }}">{{ start | date("dd.MM.yyyy") }}</time>
+          {% if end and (end | date("dd.MM.yyyy")) != (start | date("dd.MM.yyyy")) %}
+            → <time datetime="{{ end }}">{{ end | date("dd.MM.yyyy") }}</time>
+          {% endif %}
+        </p>
+      {% endif %}
+
+      {% if status %}
+        <p>
+          Статус:
+          <span class="project-status status-{{ status[0] }}">
+            {{ status[0] }}
+          </span>
+        </p>
+      {% endif %}
+
+      {% if type and type.length > 0 %}
+        <p>
+          Тип:
+          {% for t in type %}
+          <span class="project-type">
+            {{ t }}
+          </span>{% if not loop.last %} {% endif %}
+          {% endfor %}
+        </p>
+      {% endif %}
+
+      {% if technologies and technologies.length > 0 %}
+        <p class="project-technologies">
+          Стек:
+          {% for tech in technologies %}
+            <span class="tech-tag">{{ tech }}</span>{% if not loop.last %} {% endif %}
+          {% endfor %}
+        </p>
+      {% endif %}
+
+      <div class="project-links">
+        {% if repository and repository.url %}
+          <a href="{{ repository.url }}" class="project-link" target="_blank" rel="noopener noreferrer">
+            <span>Исходники</span>
+          </a>
+        {% endif %}
+
+        {% if demo and demo.url %}
+          <a href="{{ demo.url }}" class="project-link" target="_blank" rel="noopener noreferrer">
+            <span>Посмотреть проект</span>
+          </a>
+        {% endif %}
+
+      </div>
+    </div>
+
+    {% include "partials/map.njk" %}
+
+    {{ content | safe }}
+
+    {% if notes %}
+      <aside class="project-notes">
+        {{ notes | safe }}
+      </aside>
+    {% endif %}
+
+    {% include "partials/webmentions.njk" %}
+
+  </article>
+
+  <nav class="post-navigation">
+    <div class="nav-grid">
+      <div class="nav-item nav-prev">
+        {% if nav and nav.prev %}
+          <a href="{{ nav.prev.url }}">
+            <span class="arrow">←</span>
+            <span>{{ nav.prev.title }}</span>
+          </a>
+        {% endif %}
+      </div>
+
+      <div class="nav-item nav-all">
+        <a href="/projects/">
+          <span>Все проекты</span>
+        </a>
+      </div>
+
+      <div class="nav-item nav-next">
+        {% if nav and nav.next %}
+          <a href="{{ nav.next.url }}">
+            <span>{{ nav.next.title }}</span>
+            <span class="arrow">→</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+{% endblock %}
