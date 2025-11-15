@@ -11,9 +11,9 @@ image:
   src: "/assets/images/blog/2010-09-01-abkhazian-diary-02.jpg"
   caption: "Лесные пожары лета 2010-го. © Фото Н. Радого"
 repost:
-    source: "ЖЖ"
-    url: "https://valeriuus.livejournal.com/36968.html"
-    date: "2010-09-01T22:41:00+03:00"
+  source: "ЖЖ"
+  url: "https://valeriuus.livejournal.com/36968.html"
+  date: "2010-09-01T22:41:00+03:00"
 map:
   points:
     - name: "Сокол, станция Сухона"
@@ -24,6 +24,15 @@ map:
       lon: 39.904351
   route:
     - { lat: 59.456635, lon: 40.090444 }
+    - { lat: 59.206796, lon: 39.883310 }
+    - { lat: 57.625827, lon: 39.835687 }
+    - { lat: 55.776346, lon: 37.657902 }
+    - { lat: 54.633324, lon: 39.713028 }
+    - { lat: 52.901416, lon: 40.450257 }
+    - { lat: 51.679587, lon: 39.206316 }
+    - { lat: 47.217099, lon: 39.694258 }
+    - { lat: 45.018359, lon: 38.988864 }
+    - { lat: 44.097572, lon: 39.083212 }
     - { lat: 43.447784, lon: 39.904351 }
 ---
 
