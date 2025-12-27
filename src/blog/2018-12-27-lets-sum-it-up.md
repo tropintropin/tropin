@@ -10,17 +10,17 @@ image:
   src: ""
   caption: ""
 repost:
-    source: "личном дневнике"
-    url: ""
-    date: ""
+  source: "личном дневнике"
+  url: ""
+  date: ""
 map: false
 ---
 
 ### Ещё итоги
 
-1. [2017](/blog/2018-12-27-lets_sum_it_up/)
-1. [2013 — 02](/blog/2014-01-15-lets_sum_it_up-02/)
-1. [2013 — 01](/blog/2013-12-12-lets_sum_it_up-01/)
+1. [2017](/blog/2018-01-08-lets-sum-it-up)
+1. [2013 — 02](/blog/2014-01-15-lets-sum-it-up-02/)
+1. [2013 — 01](/blog/2013-12-12-lets-sum-it-up-01/)
 1. [2012](/blog/2012-12-20-lets-sum-it-up/)
 1. [2011](/blog/2011-12-30-lets-sum-it-up/)
 1. [2010](/blog/2010-12-25-lets-sum-it-up/)
