@@ -10,15 +10,15 @@ image:
   src: ""
   caption: ""
 repost:
-    source: "ЖЖ"
-    url: "https://valeriuus.livejournal.com/355711.html"
-    date: "2013-12-12T20:35:00+03:00"
+  source: "ЖЖ"
+  url: "https://valeriuus.livejournal.com/355711.html"
+  date: "2013-12-12T20:35:00+03:00"
 map: false
 ---
 
 ### Ещё итоги
 
-1. [2013 — 02](/blog/2014-01-15-lets_sum_it_up-02/)
+1. [2013 — 02](/blog/2014-01-15-lets-sum-it-up-02/)
 1. [2012](/blog/2012-12-20-lets-sum-it-up/)
 1. [2011](/blog/2011-12-30-lets-sum-it-up/)
 1. [2010](/blog/2010-12-25-lets-sum-it-up/)
