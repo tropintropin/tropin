@@ -19,3 +19,36 @@
 .map-list li strong {
   min-width: 160px;
 }
+
+.figure-content {
+  margin: 2rem 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: box-shadow 0.3s ease;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+
+  //   &:hover {
+  //     transform: scale(1.03);
+  //   }
+  }
+
+  figcaption {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--neutral-300);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  &:hover {
+    box-shadow: 0 6px 20px var(--shadow);
+  }
+}
