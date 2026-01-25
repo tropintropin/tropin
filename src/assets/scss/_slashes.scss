@@ -1,0 +1,21 @@
+// ===============================
+// Slashes styles
+// ===============================
+
+.map-list {
+  padding: 0;
+  margin: 0;
+}
+
+.map-list li {
+  list-style: none;
+  padding: 0.4rem 0;
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  line-height: 1.4;
+}
+
+.map-list li strong {
+  min-width: 160px;
+}
