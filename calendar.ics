@@ -1,0 +1,44 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:adamgibbons/ics
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:mmdGjK58tyDmKLyqVwUd5
+SUMMARY:Экскурсия «Тайные места Меншиковского дворца». 1 февраля 2026 г.
+DTSTAMP:20260127T225305Z
+DTSTART:20260201T081500Z
+DTEND:20260201T100500Z
+LOCATION:Дворец Меншикова&#92;, Санкт-Петербург&#92;, Университетская наб.&#92;, 15
+ORGANIZER;CN=&quot;Дом культуры Льва Лурье&quot;:MAILTO:noreply@example.com
+END:VEVENT
+BEGIN:VEVENT
+UID:OSdWpeZGychwYHrUzgrsU
+SUMMARY:Экскурсия «Тайные места Меншиковского дворца». 14 февраля 2026 г.
+DTSTAMP:20260127T225305Z
+DTSTART:20260214T091500Z
+DTEND:20260214T110500Z
+LOCATION:Дворец Меншикова&#92;, Санкт-Петербург&#92;, Университетская наб.&#92;, 15
+ORGANIZER;CN=&quot;Дом культуры Льва Лурье&quot;:MAILTO:noreply@example.com
+END:VEVENT
+BEGIN:VEVENT
+UID:r6KgwJ1ig65i_45BXmVPK
+SUMMARY:Экскурсия «Тайные места Меншиковского дворца». 1 марта 2026 г.
+DTSTAMP:20260127T225305Z
+DTSTART:20260301T111500Z
+DTEND:20260301T130500Z
+LOCATION:Дворец Меншикова&#92;, Санкт-Петербург&#92;, Университетская наб.&#92;, 15
+ORGANIZER;CN=&quot;Дом культуры Льва Лурье&quot;:MAILTO:noreply@example.com
+END:VEVENT
+BEGIN:VEVENT
+UID:GjaL9KDyni_i27Xogewdd
+SUMMARY:Экскурсия «Тайные места Меншиковского дворца». 14 марта 2026 г.
+DTSTAMP:20260127T225305Z
+DTSTART:20260314T121500Z
+DTEND:20260314T140500Z
+LOCATION:Дворец Меншикова&#92;, Санкт-Петербург&#92;, Университетская наб.&#92;, 15
+ORGANIZER;CN=&quot;Дом культуры Льва Лурье&quot;:MAILTO:noreply@example.com
+END:VEVENT
+END:VCALENDAR
+
