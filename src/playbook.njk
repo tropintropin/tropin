@@ -42,21 +42,21 @@ sum(prop("Chest"),prop("Abdomen"),prop("Thigh"))
 
 <div class="code-frame">
 {% highlight "js" %}
-if(
-  prop("Sum") > 0,
-  round(
-    495 /
-      (
-        1.10938
-        - 0.0008267 * prop("Sum")
-        + 0.0000016 * pow(prop("Sum"), 2)
-        - 0.0002574 * prop("Age")
-      )
-      - 450,
-    1
-  ),
-  empty()
+lets(
+  sum, prop("Sum"),
+  age, prop("Age"),
+  density,
+    1.10938
+    - 0.0008267 * sum
+    + 0.0000016 * pow(sum, 2)
+    - 0.0002574 * age,
+  if(
+    sum > 0 and not empty(age),
+    round(495 / density - 450, 1),
+    empty()
+  )
 )
+
 {% endhighlight %}
 </div>
 
@@ -69,11 +69,12 @@ let(
   if(empty(prop("JP BodyFat")), prop("Body Fat"), prop("JP BodyFat")),
   ifs(
     fat <= 7, "🟠 Lean",
-    fat >= 8 and fat <= 19, "🟢 Ideal",
-    fat >= 20 and fat <= 24, "🟡 Slightly High",
+    fat <= 19, "🟢 Ideal",
+    fat <= 24, "🟡 Slightly High",
     "🔴 Obese"
   )
 )
+
   {% endhighlight %}
 </div>
 
