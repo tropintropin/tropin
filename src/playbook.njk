@@ -16,6 +16,8 @@ permalink: /playbook/index.html
 
   <p>Здесь будет микс из <a href="https://slashpages.net/#carry" target="_blank" rel="noopener">/carry</a>, <a href="https://slashpages.net/#style" target="_blank" rel="noopener">/style</a> и чего-то ещё. В общем, штуки, которые помогают мне работать, тренить, следить за здоровьем и не потеряться в лавине рабочих и личных встреч, дедлайнов и прочих «очень важных» дел.</p>
 
+  <p>Ниже рассказ про мою систему <a href="#body-fat">отслеживания процента жира</a> в организме и <a href="#calories">расчёта калорийности питания</a> на основании этих данных.</p>
+
   <figure>
   <div class="tenor-gif-embed" data-postid="15268559469355186923" data-share-method="host" data-aspect-ratio="1.66" data-width="50%"><a href="https://tenor.com/view/potter-pottah-dr5-gif-15268559469355186923">Potter Pottah GIF</a>from <a href="https://tenor.com/search/potter-gifs">Potter GIFs</a></div>
   <figcaption>ACHTUNG! UWAGA! You Are Now Entering the Nerd Zone!</figcaption>
@@ -27,7 +29,7 @@ permalink: /playbook/index.html
 
   <figure class="figure-content">
     <img src="/assets/images/playbook/notion-body-fat-caliper-00.png" alt="">
-    <figcaption>Так это выглядит в Notion</figcaption>
+    <figcaption>Так это выглядит в Notion на маке</figcaption>
   </figure>
 
   <p>Для расчётов я вношу возраст и толщину кожных складок, которые замеряю калипером на груди, животе и бедре. Затем ноушен считает их сумму:</p>
@@ -81,8 +83,76 @@ let(
 
   <p>Ранее процент жира рассчитывался по другой формуле. Отсюда два столбца: по Джексону-Поллоку и старые данные — они нужны мне для истории измерений.</p>
 
-  <p>Если будете использовать мои формулы, сначала убедитесь, что они вам подходят — хотя бы проконсультировавшись с ИИ. Я привожу пример расчётов для мужчин; в формулах для женщин используются другие коэффициенты.</p>
+  <p>Если будете использовать мои формулы, сначала убедитесь, что они вам подходят — проконсультировавшись с врачом, тренером или хотя бы с ИИ. Я привожу пример расчётов для мужчин; в формулах для женщин используются другие коэффициенты.</p>
 
+  <h2 id="calories">Calories</h2>
+
+  <p>На основе знания своего веса и процента жира в следующей табличке я рассчитываю целевой калораж на базе <abbr title="Total Daily Energy Expenditure">TDEE</abbr> с поправкой на цель: набрать, удержать или снизить вес. Расчёт веду для тренировочных дней и дней отдыха.</p>
+
+  <figure class="figure-content">
+    <img src="/assets/images/playbook/notion-target-calories-00.png" alt="">
+    <figcaption>Так это выглядит в Notion на винде</figcaption>
+  </figure>
+
+  <p>Сначала рассчитываю <a href="https://en.wikipedia.org/wiki/Lean_body_mass" target="_blank" rel="noopener"><abbr title="Lean Body Mass">LBM</abbr></a> — сухую массу тела без жира:</p>
+
+<div class="code-frame">
+{% highlight "js" %}
+round(
+  prop("Weight") * (100 - prop("Body Fat")) / 100,
+  1
+)
+
+{% endhighlight %}
+</div>
+
+  <p>На основе LBM рассчитываю базовый метаболизм (<abbr title="Basal Metabolic Rate">BMR</abbr>) по <a href="https://en.wikipedia.org/wiki/Basal_metabolic_rate#Equations_based_on_lean_body_mass" target="_blank" rel="noopener" title="См.: The Katch–McArdle formula (2006)">формуле Кетча-МакАрдла</a>. Округляю результат до целого числа:</p>
+
+<div class="code-frame">
+{% highlight "js" %}
+round(370 + (21.6 * prop("LBM")))
+
+{% endhighlight %}
+</div>
+
+  <p>И, наконец, рассчитываю <a href="https://en.wikipedia.org/wiki/Energy_expenditure" target="_blank" rel="noopener" title="Total Daily Energy Expenditure">TDEE</a> для дней отдыха, умножая BMR на коэффициент активности и прибавляя калорийный профицит. Обратите внимание, что я считаю не чистый TDEE, а, скорее, Target Calories с учётом профицита, поскольку моя цель — набирать мышечную массу, а не просто поддерживать текущий вес.</p>
+
+<div class="code-frame">
+{% highlight "js" %}
+lets(
+	activity, 1.3,
+	calorieSurplus, 350,
+	round(prop("BMR") * activity + calorieSurplus)
+)
+{% endhighlight %}
+</div>
+
+  <p>После этого я могу рассчитать целевые значения <abbr title="калории-белки-жиры-углеводы">КБЖУ</abbr> на день. Задаю норму белка в зависимости от сухой массы тела и жира — от своего общего веса:</p>
+
+<div class="code-frame">
+{% highlight "js" %}
+lets(
+  proteinPerKg, 2.0,
+  fatPerKg, 1.0,
+  calPerGramProtein, 4,
+  calPerGramFat, 9,
+  calPerGramCarb, 4,
+  protein, round(prop("LBM") * proteinPerKg),
+  fat, round(prop("Weight") * fatPerKg),
+  carbs, round(
+	(prop("TDEE Rest") - (protein * calPerGramProtein + fat * calPerGramFat)) / calPerGramCarb
+	),
+  join([protein, fat, carbs], ":")
+)
+
+{% endhighlight %}
+</div>
+
+  <p>Для тренировочных дней формулы те же, но коэффициент активности выше: 1.5, профицит калорий равен 450; белков на килограмм тела я беру 2.2 г, а жиров — 0.8.</p>
+
+  <p>Все эти коэффициенты подобраны конкретно под меня, вам придётся самим вникать в тонкости их расчёта в зависимости от того, хотите вы набрать мышцы, снизить жир или просто поддерживать текущий вес. <a href="https://examine.com/guides/protein-intake/" target="_blank" rel="noopener">Здесь</a> можно посмотреть рекомендации по норме белка. <a href="https://fitstars.ru/blog/nutrition/sutochnaya-norma-belkov-zhirov-i-uglevodov-kak-pravilno-rasschitat-i-pochemu-eto-vazhno" target="_blank" rel="noopener">Вот тут</a> есть неплохой разбор пропорций БЖУ в зависимости от цели диеты. Ну а <a href="https://www.tdee-calculation.com/blog/tdee-muscle-gain" target="_blank" rel="noopener">в этом гайде</a> есть неплохой разбор того, насколько увеличивать общий калораж продуктов, если цель — набор массы.</p>
+
+  <p>Система получается несколько усложнённой, но я, во-первых, люблю сложные расчёты, а во-вторых, я однажды записал все эти формулы, наладил личную систему еженедельных (ну, почти) наблюдений и теперь могу спокойно корректировать своё питание, отталкиваясь от полученных данных.</p>
 
   <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
