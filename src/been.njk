@@ -1,0 +1,75 @@
+---
+title: /been
+description: Where I've been
+permalink: /been/index.html
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+  <div id="progress-bar"></div>
+
+  <h1><code>/been</code></h1>
+
+  <p>Список мест, где я был. Актуален на февраль 2026 года. Идея взята у <a href="https://niqwithq.com/been" target="_blank" rel="noopener">niqwithq</a>.</p>
+
+  <figure class="figure-content">
+    <img src="/assets/images/been/my.flightradar24-00.webp" alt="" loading="lazy">
+    <figcaption>Карта моих полётов с <a href="https://my.flightradar24.com/tropin">my.flightradar24</a></figcaption>
+  </figure>
+
+  {% macro render_trip(trip, date, places, description) %}
+    <div class="been-item">
+      <div class="been-trip">{{ trip }}</div>
+      <div class="been-meta">
+        <span class="been-date">{{ date }}</span>
+        <span class="been-separator"></span>
+        <span class="been-places">{{ places }}</span>
+      </div>
+      {% if description %}
+        <div class="been-description">{{ description }}</div>
+      {% endif %}
+    </div>
+  {% endmacro %}
+
+  <h2 id="2023">2023</h2>
+  {{ render_trip("Kazakhstan → Uzbekistan", "April–May", "Petropavlovsk, Astana, Almaty, Samarkand, Bukhara") }}
+
+  <h2 id="2020">2020</h2>
+  {{ render_trip("Finland", "January", "Imatra") }}
+
+  <h2 id="2019">2019</h2>
+  {{ render_trip("Latvia → Spain → Portugal → France", "September–October", "Riga, Barcelona, Porto, Braga, Aveiro, Coimbra, Figueira da Foz, Fatima, Sintra, Lisbon, Paris") }}
+  {{ render_trip("Estonia", "July 12th", "Narva, Narva-Jõesuu", "Поездка на День рождения в ближайшую заграницу: пили пиво на берегу Балтики и гуляли по Нарве.") }}
+  {{ render_trip("Finland", "June", "Savonlinna") }}
+  {{ render_trip("Latvia → Israel", "January–February", "Riga, Tel Aviv-Yafo, Haifa, Jerusalem, Jurmala") }}
+
+  <h2 id="2018">2018</h2>
+  {{ render_trip("Finland → Greece", "August", "Lappeenranta, Athens, Aegina") }}
+  {{ render_trip("Finland", "July", "Lappeenranta") }}
+  {{ render_trip("Hungary → Germany → Poland", "May", "Budapest, Berlin, Potsdam, Gdansk") }}
+  {{ render_trip("Estonia", "April, May", "Narva, Tallinn") }}
+  {{ render_trip("Finland → Poland → Italy → Spain", "February–March", "Helsinki, Turku, Gdansk, Warsaw, Rome, Barcelona, Bergamo, Malbork") }}
+
+  <h2 id="2017">2017</h2>
+  {{ render_trip("Finland", "January, October, November", "Helsinki, Lappeenranta, Kotka, Hamina") }}
+  {{ render_trip("Estonia", "February, November", "Narva, Tallinn, Tartu") }}
+  {{ render_trip("Turkey → Netherlands → Germany → Poland", "July", "Istanbul, Amsterdam, Haarlem, Berlin, Gdansk", "Моё первое большое европейское турне: попал в потоп в Стамбуле и познакомился с будущим другом в Амстердаме.") }}
+
+  <h2 id="2016">2016</h2>
+  {{ render_trip("Abkhazia", "January", "Гагры") }}
+
+  <h2 id="2015">2015</h2>
+  {{ render_trip("Finland", "January", "Helsinki") }}
+
+  <h2 id="2014">2014</h2>
+  {{ render_trip("Finland", "November 8th", "Imatra", "Мой первый шенген.") }}
+
+  <h2 id="2011">2011</h2>
+  {{ render_trip("Abkhazia", "August", "Сухум, Кындыг", "Археологическая экспедиция истфака СПбГУ.") }}
+
+  <h2 id="2010">2010</h2>
+  {{ render_trip("Abkhazia", "July–August", "Сухум, Кындыг, Чандрыпш", "Археологическая экспедиция истфака СПбГУ. Мне 20 лет, я едва закончил третий курс, и это моя первая поездка за границу.") }}
+
+{% endblock %}
