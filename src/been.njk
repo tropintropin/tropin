@@ -14,10 +14,11 @@ permalink: /been/index.html
 
   <p>Список мест, где я был. Актуален на февраль 2026 года. Идея взята у <a href="https://niqwithq.com/been" target="_blank" rel="noopener">niqwithq</a>.</p>
 
-  <figure class="figure-content">
-    <img src="/assets/images/been/my.flightradar24-00.webp" alt="" loading="lazy">
-    <figcaption>Карта моих полётов с <a href="https://my.flightradar24.com/tropin">my.flightradar24</a></figcaption>
-  </figure>
+  {% img {
+    url: "/assets/images/been/my.flightradar24-00.webp",
+    alt: "",
+    caption: "Карта моих полётов с <a href='https://my.flightradar24.com/tropin'>my.flightradar24</a>"
+  } %}
 
   {% macro render_trip(trip, date, places, description) %}
     <div class="been-item">
@@ -34,98 +35,77 @@ permalink: /been/index.html
   {% endmacro %}
 
   <h2 id="2023">2023</h2>
+
   {{ render_trip("Kazakhstan → Uzbekistan", "April–May", "Petropavlovsk, Astana, Almaty, Samarkand, Bukhara", "Закрыл один свой гиковский гештальт: пересёк границу на электричке. А после были встречи с друзьями в Астане и Алма-Ате и путешествие в Самарканд и Бухару.") }}
-  <div class="map-frame map-frame--google-embed">
-    <iframe src="https://www.google.com/maps/d/embed?mid=1jEDl-GZUCZROO3HbOJQbldZXrk1RQAE&hl=ru&ehbc=2E312F"
-    loading="lazy"
-    fetchpriority="low"
-    title="Trip to Kazakstan & Uzbekistan 2023">
-    </iframe>
-  </div>
+
+  {% googleMap "https://www.google.com/maps/d/embed?mid=1jEDl-GZUCZROO3HbOJQbldZXrk1RQAE&hl=ru&ehbc=2E312F", "Trip to Kazakstan & Uzbekistan 2023" %}
 
   <h2 id="2020">2020</h2>
+
   {{ render_trip("Finland", "January", "Imatra") }}
 
   <h2 id="2019">2019</h2>
+
   {{ render_trip("Latvia → Spain → Portugal → France", "September–October", "Riga, Barcelona, Porto, Braga, Aveiro, Coimbra, Figueira da Foz, Fatima, Sintra, Lisbon, Paris", "Проехали с друзьями Португалию с севера на юг на машине. Пили портвейн в Порту, гуляли по университетам в Браге и Коимбре, срывали грецкие орехи близ римских терм в Коимбриге, смотрели на запад с Мыса Рока.") }}
-  <div class="map-frame map-frame--google-embed">
-    <iframe src="https://www.google.com/maps/d/embed?mid=1nbsOzTvdC5_AaQmlYs7fmB_dmvPVg6Q&hl=ru&ehbc=2E312F"
-    loading="lazy"
-    fetchpriority="low"
-    title="valera's trip sep–oct 2019">
-    </iframe>
-  </div>
+
+  {% googleMap "https://www.google.com/maps/d/embed?mid=1nbsOzTvdC5_AaQmlYs7fmB_dmvPVg6Q&hl=ru&ehbc=2E312F", "valera's trip sep–oct 2019" %}
+
   {{ render_trip("Estonia", "July 12th", "Narva, Narva-Jõesuu", "Поездка на День рождения в ближайшую заграницу: пили пиво на берегу Балтики и гуляли по Нарве.") }}
+
   {{ render_trip("Finland", "June", "Savonlinna") }}
+
   {{ render_trip("Latvia → Israel", "January–February", "Riga, Tel Aviv-Yafo, Haifa, Jerusalem, Jurmala, Sigulda", "Недельный трип в Израиль. Жил в Тель-Авиве, ездил электричками в Иерусалим и Хайфу, а на обратном пути гулял по занесённому снегом берегу Балтики в Юрмале и пил рижский бальзам в Сигулдском замке.") }}
-  <div class="map-frame map-frame--google-embed">
-    <iframe src="https://www.google.com/maps/d/embed?mid=1jfHbf4qRBLsPZN9rG2uFbmfZWXnOeJTO&hl=ru&ehbc=2E312F"
-    loading="lazy"
-    fetchpriority="low"
-    title="valera's trip feb 2019">
-    </iframe>
-  </div>
+
+  {% googleMap "https://www.google.com/maps/d/embed?mid=1jfHbf4qRBLsPZN9rG2uFbmfZWXnOeJTO&hl=ru&ehbc=2E312F", "valera's trip feb 2019" %}
 
   <h2 id="2018">2018</h2>
+
   {{ render_trip("Finland → Greece", "August", "Lappeenranta, Athens, Aegina", "Неделя в Афинах. Жил в когда-то престижном, а ныне районе беженцев из Сирии, катался на пароме до Эгины, чтобы купаться на диком пляже под пение сверчков и бродить по храму Аполлона.") }}
-  <div class="map-frame map-frame--google-embed">
-    <iframe src="https://www.google.com/maps/d/embed?mid=1NsLFnGMviK9fNkVCygUxDXL8Tno7DWMu&hl=ru&ehbc=2E312F"
-    loading="lazy"
-    fetchpriority="low"
-    title="valera's trip aug 2018">
-    </iframe>
-  </div>
+
+  {% googleMap "https://www.google.com/maps/d/embed?mid=1NsLFnGMviK9fNkVCygUxDXL8Tno7DWMu&hl=ru&ehbc=2E312F", "valera's trip aug 2018" %}
+
   {{ render_trip("Finland", "July", "Lappeenranta") }}
+
   {{ render_trip("Hungary → Germany → Poland", "May", "Budapest, Berlin, Potsdam, Gdansk", "Wizz Air открыл тогда рейс из Питера в Будапешт — я не мог не воспользоваться шансом побывать ещё и в Венгрии.") }}
-  <div class="map-frame map-frame--google-embed">
-    <iframe src="https://www.google.com/maps/d/embed?mid=11akhhQCvhkgOID5xnWTW7NJXG1iX-RlK&hl=ru&ehbc=2E312F"
-    loading="lazy"
-    fetchpriority="low"
-    title="valera's trip may 2018">
-    </iframe>
-  </div>
+
+  {% googleMap "https://www.google.com/maps/d/embed?mid=11akhhQCvhkgOID5xnWTW7NJXG1iX-RlK&hl=ru&ehbc=2E312F", "valera's trip may 2018" %}
+
   {{ render_trip("Estonia", "April, May", "Narva, Tallinn") }}
+
   {{ render_trip("Finland → Poland → Italy → Spain", "February–March", "Helsinki, Turku, Gdansk, Warsaw, Rome, Barcelona, Bergamo, Malbork", "Моё второе большое европейское турне: влюбился в Турку и Гданьск, скользил по февральской брусчатке в Риме, кормил зелёных попугаев в Барселоне и дивился динозаврам в Бергамо.") }}
-  <div class="map-frame map-frame--google-embed">
-    <iframe src="https://www.google.com/maps/d/embed?mid=1L5YhUXqHcC2rzzUBQeobRyjyXXV03H_d&ehbc=2E312F"
-    loading="lazy"
-    fetchpriority="low"
-    title="valera's trip feb 2018">
-    </iframe>
-  </div>
+
+  {% googleMap "https://www.google.com/maps/d/embed?mid=1L5YhUXqHcC2rzzUBQeobRyjyXXV03H_d&ehbc=2E312F", "valera's trip feb 2018" %}
 
   <h2 id="2017">2017</h2>
+
   {{ render_trip("Finland", "January, October, November", "Helsinki, Lappeenranta, Kotka, Hamina") }}
+
   {{ render_trip("Estonia", "February, November", "Narva, Tallinn, Tartu", "Очень смешной трип на автобусе до Хельсинки, чтобы встретить маму в аэропорту, возвращение в Петербург и — на следующий же день — поездка в Эстонию (или всё было ровно наоборот?).") }}
-  <div class="map-frame map-frame--google-embed">
-    <iframe src="https://www.google.com/maps/d/embed?mid=1Ioyk0WwW8mJFuNI98edc4jqIGFufcicW&hl=ru&ehbc=2E312F"
-    loading="lazy"
-    fetchpriority="low"
-    title="valera's trip oct—nov 2017">
-    </iframe>
-  </div>
+
+  {% googleMap "https://www.google.com/maps/d/embed?mid=1Ioyk0WwW8mJFuNI98edc4jqIGFufcicW&hl=ru&ehbc=2E312F", "valera's trip oct—nov 2017" %}
+
   {{ render_trip("Turkey → Netherlands → Germany → Poland", "July", "Istanbul, Amsterdam, Haarlem, Berlin, Gdansk", "Моё первое большое европейское турне: попал в потоп в Стамбуле и познакомился с будущим другом в Амстердаме.") }}
-  <div class="map-frame map-frame--google-embed">
-    <iframe src="https://www.google.com/maps/d/embed?mid=17Db33Sps6ZwiTMKqoraV4t31hUEUveaR&hl=ru&ehbc=2E312F"
-    loading="lazy"
-    fetchpriority="low"
-    title="valera's trip jul 2017">
-    </iframe>
-  </div>
+
+  {% googleMap "https://www.google.com/maps/d/embed?mid=17Db33Sps6ZwiTMKqoraV4t31hUEUveaR&hl=ru&ehbc=2E312F", "valera's trip jul 2017" %}
 
   <h2 id="2016">2016</h2>
+
   {{ render_trip("Abkhazia", "January", "Гагры") }}
 
   <h2 id="2015">2015</h2>
+
   {{ render_trip("Finland", "January", "Helsinki") }}
 
   <h2 id="2014">2014</h2>
+
   {{ render_trip("Finland", "November 8th", "Imatra", "Мой первый шенген.") }}
 
   <h2 id="2011">2011</h2>
+
   {{ render_trip("Abkhazia", "August", "Сухум, Кындыг", "Археологическая экспедиция истфака СПбГУ.") }}
 
   <h2 id="2010">2010</h2>
+
   {{ render_trip("Abkhazia", "July–August", "Сухум, Кындыг, Чандрыпш", "Археологическая экспедиция истфака СПбГУ. Мне 20 лет, я едва закончил третий курс, и это моя первая поездка за границу.") }}
 
 {% endblock %}
