@@ -8,23 +8,17 @@ topics:
   - txt
 image:
   src: "/assets/images/blog/2011-03-23-tanya-grotter-00.webp"
-  caption: "Новая обложка книги с <a href=\"https://grotter-buslaev.fandom.com/ru/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%A2%D0%B0%D0%BD%D1%8F_%D0%93%D1%80%D0%BE%D1%82%D1%82%D0%B5%D1%80_%D0%B8_%D1%82%D1%80%D0%BE%D0%BD_%D0%94%D1%80%D0%B5%D0%B2%D0%BD%D0%B8%D1%80%D0%B0.jpg\">«Таня Гроттер Вики»</a>"
+  caption: 'Новая обложка книги с <a href="https://grotter-buslaev.fandom.com/ru/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%A2%D0%B0%D0%BD%D1%8F_%D0%93%D1%80%D0%BE%D1%82%D1%82%D0%B5%D1%80_%D0%B8_%D1%82%D1%80%D0%BE%D0%BD_%D0%94%D1%80%D0%B5%D0%B2%D0%BD%D0%B8%D1%80%D0%B0.jpg">«Таня Гроттер Вики»</a>'
 repost:
-    source: "LiveLib"
-    url: "https://www.livelib.ru/review/95035-tanya-grotter-i-tron-drevnira-dmitrij-emets"
-    date: "2011-03-23T00:21:37+03:00"
+  source: "LiveLib"
+  url: "https://www.livelib.ru/review/95035-tanya-grotter-i-tron-drevnira-dmitrij-emets"
+  date: "2011-03-23T00:21:37+03:00"
 map: false
 ---
 
-<figure class="quote">
-  <blockquote>
-    Мне оранжево всё, что не фиолетово.
-  </blockquote>
-
-  <figcaption class="quote-caption">
-    — Гробыня Склепова
-  </figcaption>
-</figure>
+{% quote "— Гробыня Склепова" %}
+Мне оранжево всё, что не фиолетово.
+{% endquote %}
 
 <p class="drop-cap">
 Это была моя первая книжка из серии про <cite>Таню Гроттер</cite>. Тогда, в 6 классе, я прочёл её даже раньше, чем первый том <cite>Гарри Поттера</cite>. И полюбил всей душой.

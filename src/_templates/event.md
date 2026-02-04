@@ -1,4 +1,6 @@
 ---
+templateEngineOverride: njk, md
+
 title: ""
 start: "2025-01-01T00:00:00+03:00"
 end: "2025-01-01T21:00:00+03:00"

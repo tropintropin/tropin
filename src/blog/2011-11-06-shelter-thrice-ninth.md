@@ -10,9 +10,9 @@ image:
   src: ""
   caption: ""
 repost:
-    source: "LiveLib"
-    url: "https://www.livelib.ru/review/126070-ubezhische-39-anna-starobinets"
-    date: "2011-11-06T13:04:00+03:00"
+  source: "LiveLib"
+  url: "https://www.livelib.ru/review/126070-ubezhische-39-anna-starobinets"
+  date: "2011-11-06T13:04:00+03:00"
 map: false
 ---
 
@@ -38,14 +38,13 @@ map: false
 
 Кстати, о мире. Он ждёт Апокалипсис. И Апокалипсис наступит. И конечно, никто живой не спасётся: у этой сказки нет счастливого конца.
 
-<figure class="quote">
-  <blockquote>
-    Тот выпивает весь бокал. Потом снова смешивает пиво с мёдом и снова присасывается к коктейлю, жмурясь от удовольствия.
+{% quote "" %}
+Тот выпивает весь бокал. Потом снова смешивает пиво с мёдом и снова присасывается к коктейлю, жмурясь от удовольствия.
 
-    Маша молча наблюдает за ним. Потом примирительно спрашивает:
-    
-    — Ну что, вкусно?
-  </blockquote>
-</figure>
+Маша молча наблюдает за ним. Потом примирительно спрашивает:
+
+— Ну что, вкусно?
+
+{% endquote %}
 
 За наводку на книгу спасибо [Mavka_lisova](http://www.livelib.ru/reader/Mavka_lisova). Её прекрасная [рецензия](https://www.livelib.ru/review/125254-ubezhische-39-anna-starobinets) и подвигла к прочтению.

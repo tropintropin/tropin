@@ -40,20 +40,21 @@ permalink: /playbook/index.html
   <p>У меня есть <a href="https://github.com/tropintropin/sash_windows" target="_blank" rel="noopener">репозиторий</a> с материалами, необходимыми для научной работы по исследованию подъёмных окон эпохи Петра Великого в Меншиковском дворце на Васильевском острове. Поскольку это git, я всегда могу вставить ссылку на диаграмму или иные данные, указав дату доступа и номер коммита, когда пишу статью или выступаю на конференции.</p>
 
   <a href="https://github.com/tropintropin/sash_windows/blob/main/TIMELINE_EARLY_SASH_WINDOWS.md" target="_blank" rel="noopener" title="См. актуальную версию на GitHub. Откроется в новом окне">
-  <figure class="figure-content">
-    <img src="https://raw.githubusercontent.com/tropintropin/sash_windows/refs/heads/main/TIMELINE_EARLY_SASH_WINDOWS.svg" alt="">
-    <figcaption>Репа нужна, в том числе, для таких вот визуализаций. Я пишу диаграмму в виде Mermaid-кода, который затем транслирую в SVG для публикаций.</figcaption>
-  </figure>
+  {% img {
+    url: "https://raw.githubusercontent.com/tropintropin/sash_windows/refs/heads/main/TIMELINE_EARLY_SASH_WINDOWS.svg",
+    caption: "Репа нужна, в том числе, для таких вот визуализаций. Я пишу диаграмму в виде Mermaid-кода, который затем транслирую в SVG для публикаций."
+  } %}
   </a>
 
   <h2 id="body-fat">Body Fat</h2>
 
   <p>Каждое воскресенье (ну, почти) я делаю замеры тела, чтобы отслеживать, как меняются процент жира и масса тела в зависимости от диеты и тренировок. Все данные вношу в табличку в Ноушене.</p>
 
-  <figure class="figure-content">
-    <img src="/assets/images/playbook/notion-body-fat-caliper-00.png" alt="">
-    <figcaption>Так это выглядит в Notion на маке</figcaption>
-  </figure>
+  {% img {
+    url: "/assets/images/playbook/notion-body-fat-caliper-00.png",
+    alt: "",
+    caption: "Так это выглядит в Notion на маке"
+  } %}
 
   <p>Для расчётов я вношу возраст и толщину кожных складок, которые замеряю калипером на груди, животе и бедре. Затем ноушен считает их сумму:</p>
 
@@ -112,10 +113,11 @@ let(
 
   <p>На основе знания своего веса и процента жира в следующей табличке я рассчитываю целевой калораж на базе <abbr title="Total Daily Energy Expenditure">TDEE</abbr> с поправкой на цель: набрать, удержать или снизить вес. Расчёт веду для тренировочных дней и дней отдыха.</p>
 
-  <figure class="figure-content">
-    <img src="/assets/images/playbook/notion-target-calories-00.png" alt="">
-    <figcaption>Так это выглядит в Notion на винде</figcaption>
-  </figure>
+  {% img {
+    url: "/assets/images/playbook/notion-target-calories-00.png",
+    alt: "",
+    caption: "Так это выглядит в Notion на винде"
+  } %}
 
   <p>Сначала рассчитываю <a href="https://en.wikipedia.org/wiki/Lean_body_mass" target="_blank" rel="noopener"><abbr title="Lean Body Mass">LBM</abbr></a> — сухую массу тела без жира:</p>
 
@@ -209,10 +211,11 @@ round(prop("1RM 100%") * 0.5)
 
   <p>Такие расчёты слишком часто делать бессмысленно, поэтому я обновляю данные в табличке где-то раз в месяц. Я ретроспективно пробегаю глазами записи тренировок в <a href="/setup#hevy">Hevy</a>, выбираю лучший результат и фиксирую его как новую точку отсчета.</p>
 
-  <figure class="figure-content">
-    <img src="/assets/images/playbook/notion-1rm-log-00.png" alt="">
-    <figcaption>Так это выглядит в Notion на винде: упражнения я выбираю из выпадающего списка в колонке Exercise, чтобы не вводить их каждый раз вручную.</figcaption>
-  </figure>
+  {% img {
+    url: "/assets/images/playbook/notion-1rm-log-00.png",
+    alt: "",
+    caption: "Так это выглядит в Notion на винде: упражнения я выбираю из выпадающего списка в колонке Exercise, чтобы не вводить их каждый раз вручную."
+  } %}
 
   <p>В целом, многие фитнес-трекеры и так умеют рассчитывать 1RM, но мне нравится считать его вручную + так я сразу получаю все данные в упорядоченном виде в одном месте. Остаётся лишь не забывать делать бекап самого Ноушена, чтобы их не потерять.</p>
 
@@ -222,26 +225,12 @@ round(prop("1RM 100%") * 0.5)
 
   <p>Сейчас у меня есть два скрипта, которыми я пользуюсь регулярно. Один деплоит этот сайт на GitHub Pages, а второй убивает процессы, заставляющие идти мой древний MacBook Air на интеле на взлёт (насколько я понял, это типичная проблема с маками на интеле, и ничего принципиально иного кроме покупки нового лэптопа тут не поможет). Запускаются они через <a href="https://github.com/raycast/script-commands" target="_blank" rel="noopener">Raycast Script Commands:</a></p>
 
-  <div class="figure-content carousel-container">
-    <div class="carousel-counter">1 / 2</div>
+  {% set raycastScripts = [
+    { url: "/assets/images/playbook/raycast-script-deploy-00.png", alt: "Вызов команды в Raycast", caption: "Вызов команды в Raycast" },
+    { url: "/assets/images/playbook/raycast-script-deploy-01.png", alt: "Результат деплоя", caption: "Результат: PR создан и замержен, дальше в дело вступают GitHub Actions" }
+  ] %}
 
-    <button class="carousel-btn prev" aria-label="Назад">‹</button>
-    <button class="carousel-btn next" aria-label="Вперед">›</button>
-
-    <div class="carousel-track">
-      <figure class="carousel-item">
-        <img src="/assets/images/playbook/raycast-script-deploy-00.png"
-        alt="">
-        <figcaption>1. Вызов команды в Raycast</figcaption>
-      </figure>
-      <figure class="carousel-item">
-        <img src="/assets/images/playbook/raycast-script-deploy-01.png"
-        alt=""
-        loading="lazy">
-        <figcaption>2. Результат: PR создан и замержен, дальше в дело вступают GitHub Actions</figcaption>
-      </figure>
-    </div>
-  </div>
+  {% carousel raycastScripts %}
 
   <p>Скрипт позволяет задеплоить текущую версию этого сайта одной командой прямо из поисковой строки рейкаста. Он сам переключает ветки, подтягивает изменения, создает PR через GitHub CLI и мержит его в main. Единственное неудобство — Raycast не умеет показывать реальный прогресс выполнения команды, поэтому чтобы следить за ходом деплоя через <code>gh run watch</code> приходится всё-таки из терминала.</p>
 
