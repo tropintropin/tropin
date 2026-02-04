@@ -18,10 +18,46 @@
 
 {# Иллюстрация для одной из slashpages #}
 
+<figure class="figure-content">
+  <img src="" alt="">
+  <figcaption></figcaption>
+</figure>
+
+{# Сетка из двух изображений в ряд #}
+
+<div class="image-grid">
   <figure class="figure-content">
     <img src="" alt="">
     <figcaption></figcaption>
   </figure>
+  <figure class="figure-content">
+    <img src="" alt="">
+    <figcaption></figcaption>
+  </figure>
+</div>
+
+{# Карусель из изображений #}
+
+<div class="figure-content carousel-container">
+  <div class="carousel-counter">1 / 2</div>
+
+  <button class="carousel-btn prev" aria-label="Назад">‹</button>
+  <button class="carousel-btn next" aria-label="Вперед">›</button>
+
+  <div class="carousel-track">
+    <figure class="carousel-item">
+      <img src=""
+      alt="">
+      <figcaption>1. </figcaption>
+    </figure>
+    <figure class="carousel-item">
+      <img src=""
+      alt=""
+      loading="lazy">
+      <figcaption>2. </figcaption>
+    </figure>
+  </div>
+</div>
 
 {# Обёртка для встраеваемых карт Leaflet #}
 
