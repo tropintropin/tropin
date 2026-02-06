@@ -98,6 +98,7 @@
     {% block head %}{% endblock %}
   </head>
   <body data-pagefind-body>
+    {% include "partials/svg-sprite.njk" %}
     {% include "partials/header.njk" %}
     <main>
       {% block content %}{% endblock %}
@@ -133,7 +134,6 @@
       crossorigin=""
     ></script>
     <script src="{{ '/assets/js/nav-toggle.js' | url }}"></script>
-    <script src="/assets/js/icons.js" defer></script>
     <script src="/assets/js/scrolltop.js" defer></script>
     <script src="/assets/js/copy-code.js" defer></script>
     <script src="/assets/js/theme-toggle.js" defer></script>
