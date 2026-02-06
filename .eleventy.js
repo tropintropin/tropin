@@ -367,6 +367,29 @@ export default async function (eleventyConfig) {
   `;
   });
 
+  eleventyConfig.addShortcode("gif", function (name, alt, width) {
+    const gifAlt = alt || "";
+    const gifWidth = width || "480";
+    const finalWidth = /[%|px|em|rem|vw]/.test(gifWidth)
+      ? gifWidth
+      : `${gifWidth}px`;
+    const basePath = "/assets/images/gifs/";
+
+    return `
+<figure class="gif-frame" style="max-width: ${finalWidth};">
+  <video
+    autoplay loop muted playsinline
+    poster="${basePath}${name}-poster.webp"
+    preload="none"
+    style="width: 100%; height: auto; display: block; border-radius: inherit;"
+    aria-label="${gifAlt}">
+      <source src="${basePath}${name}.webm" type="video/webm">
+      <source src="${basePath}${name}.mp4" type="video/mp4">
+  </video>
+  ${gifAlt ? `<figcaption>${gifAlt}</figcaption>` : ""}
+</figure>`.trim();
+  });
+
   // Directory options
   eleventyConfig.ignores.add("src/_templates/**");
   return {
