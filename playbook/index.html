@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ru-RU" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://tropin.one">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-title" content="Valery Tropin">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="author" content="Валерий Тропин">
+    
+    <meta name="description" content="Yet another /carry or /style page">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      
+        /playbook | Valerio Tropin
+      
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+    <link rel="webmention" href="https://webmention.io/tropin.one/webmention">
+    <link rel="pingback" href="https://webmention.io/tropin.one/xmlrpc">
+
+    <link rel="me" href="https://web.brid.gy/r/https://tropin.one/">
+    <link rel="me" href="https://tech.lgbt/@GuyFromUberwald">
+    <link rel="me" href="https://bsky.app/profile/tropin.one">
+    <link rel="me" href="https://www.instagram.com/tropintropin/">
+
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("theme");
+          const prefersDark = window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .matches;
+          const isDark = saved === "dark" || (!saved && prefersDark);
+
+          if (isDark) {
+            document
+              .documentElement
+              .classList
+              .add("dark-theme");
+          } else {
+            document
+              .documentElement
+              .classList
+              .remove("dark-theme");
+          }
+        } catch (e) {
+          // если localStorage недоступен, просто оставляем default
+        }
+      })();
+    </script>
+
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <meta property="og:title" content="/playbook">
+<meta property="og:type" content="article">
+<meta property="og:description" content="Yet another /carry or /style page">
+<meta property="og:image" content="/assets/images/default-image.jpg?v=">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+<meta property="og:image:alt" content="Valery Tropin">
+<meta property="og:url" content="/playbook/">
+<meta property="og:site_name" content="Valerio Tropin">
+<meta property="og:locale" content="">
+
+  <meta property="og:locale:alternate" content="en_US">
+
+  <meta property="og:locale:alternate" content="en_GB">
+
+
+    <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="/playbook">
+<meta name="twitter:description" content="Yet another /carry or /style page">
+<meta name="twitter:image" content="/assets/images/default-image.jpg?v=">
+<meta name="twitter:image:alt" content="Valery Tropin">
+
+    
+  </head>
+  <body data-pagefind-body="">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.28 1.15-.28 2.35 0 3.5-.73 1.02-1.08 2.25-1 3.5 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+  </symbol>
+
+  <symbol id="icon-telegram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path>
+  </symbol>
+
+  <symbol id="icon-livelib" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
+    <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
+    <line x1="3" y1="6" x2="3" y2="19"></line>
+    <line x1="12" y1="6" x2="12" y2="19"></line>
+    <line x1="21" y1="6" x2="21" y2="19"></line>
+  </symbol>
+
+  <symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+    <line x1="16" y1="2" x2="16" y2="6"></line>
+    <line x1="8" y1="2" x2="8" y2="6"></line>
+    <line x1="3" y1="10" x2="21" y2="10"></line>
+  </symbol>
+
+  <symbol id="icon-rss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9"></path>
+    <path d="M4 4a16 16 0 0 1 16 16"></path>
+    <circle cx="5" cy="19" r="1"></circle>
+  </symbol>
+</svg>
+
+    <header>
+  <div class="print-info">
+    <picture><source type="image/webp" srcset="/img/hY-hPg7_9I-300.webp 300w, /img/hY-hPg7_9I-600.webp 600w, /img/hY-hPg7_9I-812.webp 812w, /img/hY-hPg7_9I-1200.webp 1200w" sizes="auto"><img loading="lazy" decoding="async" src="/img/hY-hPg7_9I-300.jpeg" alt="QR для печати" width="1200" height="1200" srcset="/img/hY-hPg7_9I-300.jpeg 300w, /img/hY-hPg7_9I-600.jpeg 600w, /img/hY-hPg7_9I-812.jpeg 812w, /img/hY-hPg7_9I-1200.jpeg 1200w" sizes="auto"></picture>
+    <div class="print-text">
+      <p>Версия для печати</p>
+      <p>Контакты:</p>
+      <p>tropin.tropin@gmail.com</p>
+      <p>+7 999 215-10-69</p>
+    </div>
+  </div>
+
+  <div class="header-inner">
+    <div class="title-row">
+      <button class="nav-toggle" aria-label="Открыть меню"></button>
+      <h1 class="site-title">
+        <a href="https://tropin.one">Valerio Tropin</a>
+      </h1>
+    </div>
+
+    <div class="nav-wrapper">
+      <nav class="main-nav" aria-label="Главное меню">
+        
+          <ul class="nav-list">
+            
+              
+                <li>
+                  <a href="/">Обо мне</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/blog/">Блог</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/projects/">Проекты</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/research/">Публикации и выступления</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/events/">События</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/map/">•</a>
+                </li>
+              
+            
+          </ul>
+        
+      </nav>
+
+      <div id="search"></div>
+    </div>
+  </div>
+</header>
+
+    <main>
+      
+
+  <div id="progress-bar"></div>
+
+  <h1><code>/playbook</code></h1>
+
+  <p>Здесь будет микс из <a href="https://slashpages.net/#carry" target="_blank" rel="noopener">/carry</a>, <a href="https://slashpages.net/#style" target="_blank" rel="noopener">/style</a> и чего-то ещё. В общем, штуки, которые помогают мне работать, тренить, следить за здоровьем и не потеряться в лавине рабочих и личных встреч, дедлайнов и прочих «очень важных» дел.</p>
+
+  <p>Ниже рассказ про мою систему <a href="#body-fat">отслеживания процента жира</a> в организме и <a href="#calories">расчёта калорийности питания</a> на основании этих данных, вычисления <a href="#one-rep-max">One-Rep Max</a> для тренировок, а ещё <a href="#guide-spb">карта любопытных мест</a> в Петербурге и окрестностях, <a href="#sash-windows-repo">гит-репозиторий</a> про деревянную археологию дворца, в котором я работаю и <a href="#raycast">способы автоматизировать работу</a> на маке и ПК.</p>
+
+  <figure class="gif-frame" style="max-width: 480px;">
+  <video autoplay="" loop="" muted="" playsinline="" poster="/assets/images/gifs/potter-pottah-poster.webp" preload="none" style="width: 100%; height: auto; display: block; border-radius: inherit;" aria-label="ACHTUNG! UWAGA! You Are Now Entering the Nerd Zone!">
+      <source src="/assets/images/gifs/potter-pottah.webm" type="video/webm">
+      <source src="/assets/images/gifs/potter-pottah.mp4" type="video/mp4">
+  </video>
+  <figcaption>ACHTUNG! UWAGA! You Are Now Entering the Nerd Zone!</figcaption>
+</figure>
+
+  <h2 id="guide-spb">Путеводитель по Петербургу</h2>
+
+  <p>Когда-то давно я составил очень субъективный список мест, в которые стоит сходить в Петербурге, чтобы знать, где вкусно есть, пьяно пить и делать селфи. Я тогда вёл телеграм-канал о культуре, водил экскурсии по городу и очень устал от запросов посоветовать то или иное место, в которое стоит сходить. Поэтому сделал эту карту.</p>
+
+  <p>За всё время путеводитель просмотрели чуть больше 4,5 тысяч уникальных пользователей. Обновлял я его в последний раз в 2021 году, на второй год пандемии. Затем началась война, и стало как-то не до красот и не до веселья. Многие бары и рестораны из списка успели закрыться или испортиться, но архитектуру — всю — ещё не успели уничтожить. Так что пусть ещё здесь повисит.</p>
+
+  <div class="map-frame map-frame--google-embed">
+    <iframe src="https://www.google.com/maps/d/embed?mid=12t75FBqOmMNPImsFDv6s9FBMURk&hl=ru&ehbc=2E312F" loading="lazy" fetchpriority="low" title="Путеводитель по Петербургу от Валеры">
+    </iframe>
+  </div>
+
+  <h2 id="sash-windows-repo">Sash Windows from the Menshikov Palace in St. Petersburg, Russia</h2>
+
+  <p>У меня есть <a href="https://github.com/tropintropin/sash_windows" target="_blank" rel="noopener">репозиторий</a> с материалами, необходимыми для научной работы по исследованию подъёмных окон эпохи Петра Великого в Меншиковском дворце на Васильевском острове. Поскольку это git, я всегда могу вставить ссылку на диаграмму или иные данные, указав дату доступа и номер коммита, когда пишу статью или выступаю на конференции.</p>
+
+  <a href="https://github.com/tropintropin/sash_windows/blob/main/TIMELINE_EARLY_SASH_WINDOWS.md" target="_blank" rel="noopener" title="См. актуальную версию на GitHub. Откроется в новом окне">
+  
+    <figure class="figure-content">
+      <picture><source type="image/webp" srcset="/playbook/YPZ5vydrtq-300.webp 300w, /playbook/YPZ5vydrtq-600.webp 600w, /playbook/YPZ5vydrtq-1200.webp 1200w, /playbook/YPZ5vydrtq-2099.webp 2099w" sizes="auto"><img loading="lazy" decoding="async" src="/playbook/YPZ5vydrtq-300.jpeg" alt="Репа нужна, в том числе, для таких вот визуализаций. Я пишу диаграмму в виде Mermaid-кода, который затем транслирую в SVG для публикаций." width="2099" height="604" srcset="/playbook/YPZ5vydrtq-300.jpeg 300w, /playbook/YPZ5vydrtq-600.jpeg 600w, /playbook/YPZ5vydrtq-1200.jpeg 1200w, /playbook/YPZ5vydrtq-2099.jpeg 2099w" sizes="auto"></picture>
+      <figcaption>Репа нужна, в том числе, для таких вот визуализаций. Я пишу диаграмму в виде Mermaid-кода, который затем транслирую в SVG для публикаций.</figcaption>
+    </figure>
+  
+  </a>
+
+  <h2 id="body-fat">Body Fat</h2>
+
+  <p>Каждое воскресенье (ну, почти) я делаю замеры тела, чтобы отслеживать, как меняются процент жира и масса тела в зависимости от диеты и тренировок. Все данные вношу в табличку в Ноушене.</p>
+
+  
+    <figure class="figure-content">
+      <picture><source type="image/webp" srcset="/img/Lk_KcIGO8Y-300.webp 300w, /img/Lk_KcIGO8Y-600.webp 600w, /img/Lk_KcIGO8Y-1200.webp 1200w, /img/Lk_KcIGO8Y-2864.webp 2864w" sizes="auto"><img loading="lazy" decoding="async" src="/img/Lk_KcIGO8Y-300.jpeg" alt="Так это выглядит в Notion на маке" width="2864" height="1822" srcset="/img/Lk_KcIGO8Y-300.jpeg 300w, /img/Lk_KcIGO8Y-600.jpeg 600w, /img/Lk_KcIGO8Y-1200.jpeg 1200w, /img/Lk_KcIGO8Y-2864.jpeg 2864w" sizes="auto"></picture>
+      <figcaption>Так это выглядит в Notion на маке</figcaption>
+    </figure>
+  
+
+  <p>Для расчётов я вношу возраст и толщину кожных складок, которые замеряю калипером на груди, животе и бедре. Затем ноушен считает их сумму:</p>
+
+  <div class="code-frame">
+  <pre class="language-js"><code class="language-js"><span class="token function">sum</span><span class="token punctuation">(</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"Chest"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"Abdomen"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"Thigh"</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+  </div>
+
+  <p>На основе этой суммы вычисляется процент жира:</p>
+
+<div class="code-frame">
+<pre class="language-js"><code class="language-js"><span class="token function">lets</span><span class="token punctuation">(</span>
+  sum<span class="token punctuation">,</span> <span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"Sum"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  age<span class="token punctuation">,</span> <span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"Age"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  density<span class="token punctuation">,</span>
+    <span class="token number">1.10938</span>
+    <span class="token operator">-</span> <span class="token number">0.0008267</span> <span class="token operator">*</span> sum
+    <span class="token operator">+</span> <span class="token number">0.0000016</span> <span class="token operator">*</span> <span class="token function">pow</span><span class="token punctuation">(</span>sum<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span> <span class="token number">0.0002574</span> <span class="token operator">*</span> age<span class="token punctuation">,</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>
+    sum <span class="token operator">></span> <span class="token number">0</span> and not <span class="token function">empty</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">round</span><span class="token punctuation">(</span><span class="token number">495</span> <span class="token operator">/</span> density <span class="token operator">-</span> <span class="token number">450</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">)</span></code></pre>
+</div>
+
+  <p>Формула берёт сумму складок и возраст, вычисляет плотность тела по трёхточечной <a href="https://doi.org/10.1079/bjn19780152" target="_blank" rel="noopener" title="Полный текст статьи — по кнопке Save PDF">формуле Джексона-Поллока для мужчин</a>, переводит её в процент жира по <a href="https://en.wikipedia.org/wiki/Body_fat_percentage#Body_average_density_measurement" target="_blank" rel="noopener" title="Приведена в параграфе Body average density measurement">формуле Сири</a> и округляет результат до одного знака. Для наглядности у меня есть отдельная колонка, где этот процент переводится в одну из категорий с <a href="https://sportwiki.to/Файл:Tablica-soderzhanija-zhira-u-muzhchin-.jpg" target="_blank" rel="noopener">цветовой маркировкой:</a></p>
+
+  <div class="code-frame">
+  <pre class="language-js"><code class="language-js"><span class="token keyword">let</span><span class="token punctuation">(</span>
+  fat<span class="token punctuation">,</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"JP BodyFat"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"Body Fat"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"JP BodyFat"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token function">ifs</span><span class="token punctuation">(</span>
+    fat <span class="token operator">&lt;=</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token string">"🔵 Lean"</span><span class="token punctuation">,</span>
+    fat <span class="token operator">&lt;=</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token string">"🟢 Ideal"</span><span class="token punctuation">,</span>
+    fat <span class="token operator">&lt;=</span> <span class="token number">24</span><span class="token punctuation">,</span> <span class="token string">"🟡 High"</span><span class="token punctuation">,</span>
+    <span class="token string">"🔴 Obese"</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">)</span></code></pre>
+</div>
+
+  <p>Ранее процент жира рассчитывался по другой формуле. Отсюда два столбца: по Джексону-Поллоку и старые данные — они нужны мне для истории измерений.</p>
+
+  <p>Если будете использовать мои формулы, сначала убедитесь, что они вам подходят — проконсультировавшись с врачом, тренером или хотя бы с ИИ. Я привожу пример расчётов для мужчин; в формулах для женщин используются другие коэффициенты.</p>
+
+  <h2 id="calories">Calories</h2>
+
+  <p>На основе знания своего веса и процента жира в следующей табличке я рассчитываю целевой калораж на базе <abbr title="Total Daily Energy Expenditure">TDEE</abbr> с поправкой на цель: набрать, удержать или снизить вес. Расчёт веду для тренировочных дней и дней отдыха.</p>
+
+  
+    <figure class="figure-content">
+      <picture><source type="image/webp" srcset="/img/ZWq-VQZyJv-300.webp 300w, /img/ZWq-VQZyJv-600.webp 600w, /img/ZWq-VQZyJv-1200.webp 1200w, /img/ZWq-VQZyJv-1417.webp 1417w" sizes="auto"><img loading="lazy" decoding="async" src="/img/ZWq-VQZyJv-300.jpeg" alt="Так это выглядит в Notion на винде" width="1417" height="916" srcset="/img/ZWq-VQZyJv-300.jpeg 300w, /img/ZWq-VQZyJv-600.jpeg 600w, /img/ZWq-VQZyJv-1200.jpeg 1200w, /img/ZWq-VQZyJv-1417.jpeg 1417w" sizes="auto"></picture>
+      <figcaption>Так это выглядит в Notion на винде</figcaption>
+    </figure>
+  
+
+  <p>Сначала рассчитываю <a href="https://en.wikipedia.org/wiki/Lean_body_mass" target="_blank" rel="noopener"><abbr title="Lean Body Mass">LBM</abbr></a> — сухую массу тела без жира:</p>
+
+<div class="code-frame">
+<pre class="language-js"><code class="language-js"><span class="token function">round</span><span class="token punctuation">(</span>
+  <span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"Weight"</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">100</span> <span class="token operator">-</span> <span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"Body Fat"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">,</span>
+  <span class="token number">1</span>
+<span class="token punctuation">)</span></code></pre>
+</div>
+
+  <p>На основе LBM рассчитываю базовый метаболизм (<abbr title="Basal Metabolic Rate">BMR</abbr>) по <a href="https://en.wikipedia.org/wiki/Basal_metabolic_rate#Equations_based_on_lean_body_mass" target="_blank" rel="noopener" title="См.: The Katch–McArdle formula (2006)">формуле Кетча-МакАрдла</a>. Округляю результат до целого числа:</p>
+
+<div class="code-frame">
+<pre class="language-js"><code class="language-js"><span class="token function">round</span><span class="token punctuation">(</span><span class="token number">370</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">21.6</span> <span class="token operator">*</span> <span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"LBM"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+</div>
+
+  <p>И, наконец, рассчитываю <a href="https://en.wikipedia.org/wiki/Energy_expenditure" target="_blank" rel="noopener" title="Total Daily Energy Expenditure">TDEE</a> для дней отдыха, умножая BMR на коэффициент активности и прибавляя калорийный профицит. Обратите внимание, что я считаю не чистый TDEE, а, скорее, Target Calories с учётом профицита, поскольку моя цель — набирать мышечную массу, а не просто поддерживать текущий вес.</p>
+
+<div class="code-frame">
+<pre class="language-js"><code class="language-js"><span class="token function">lets</span><span class="token punctuation">(</span>
+	activity<span class="token punctuation">,</span> <span class="token number">1.3</span><span class="token punctuation">,</span>
+	calorieSurplus<span class="token punctuation">,</span> <span class="token number">350</span><span class="token punctuation">,</span>
+	<span class="token function">round</span><span class="token punctuation">(</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"BMR"</span><span class="token punctuation">)</span> <span class="token operator">*</span> activity <span class="token operator">+</span> calorieSurplus<span class="token punctuation">)</span>
+<span class="token punctuation">)</span></code></pre>
+</div>
+
+  <p>После этого я могу рассчитать целевые значения <abbr title="калории-белки-жиры-углеводы">КБЖУ</abbr> на день. Задаю норму белка в зависимости от сухой массы тела и жира — от своего общего веса:</p>
+
+<div class="code-frame">
+<pre class="language-js"><code class="language-js"><span class="token function">lets</span><span class="token punctuation">(</span>
+  proteinPerKg<span class="token punctuation">,</span> <span class="token number">2.0</span><span class="token punctuation">,</span>
+  fatPerKg<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">,</span>
+  calPerGramProtein<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span>
+  calPerGramFat<span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span>
+  calPerGramCarb<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span>
+  protein<span class="token punctuation">,</span> <span class="token function">round</span><span class="token punctuation">(</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"LBM"</span><span class="token punctuation">)</span> <span class="token operator">*</span> proteinPerKg<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  fat<span class="token punctuation">,</span> <span class="token function">round</span><span class="token punctuation">(</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"Weight"</span><span class="token punctuation">)</span> <span class="token operator">*</span> fatPerKg<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  carbs<span class="token punctuation">,</span> <span class="token function">round</span><span class="token punctuation">(</span>
+	<span class="token punctuation">(</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"TDEE Rest"</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span>protein <span class="token operator">*</span> calPerGramProtein <span class="token operator">+</span> fat <span class="token operator">*</span> calPerGramFat<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> calPerGramCarb
+	<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">[</span>protein<span class="token punctuation">,</span> fat<span class="token punctuation">,</span> carbs<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">":"</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span></code></pre>
+</div>
+
+  <p>Для тренировочных дней формулы те же, но коэффициент активности выше: 1.5, профицит калорий равен 450; белков на килограмм тела я беру 2.2 г, а жиров — 0.8.</p>
+
+  <p>Все эти коэффициенты подобраны конкретно под меня, вам придётся самим вникать в тонкости их расчёта в зависимости от того, хотите вы набрать мышцы, снизить жир или просто поддерживать текущий вес. <a href="https://examine.com/guides/protein-intake/" target="_blank" rel="noopener">Здесь</a> можно посмотреть рекомендации по норме белка. <a href="https://fitstars.ru/blog/nutrition/sutochnaya-norma-belkov-zhirov-i-uglevodov-kak-pravilno-rasschitat-i-pochemu-eto-vazhno" target="_blank" rel="noopener">Вот тут</a> есть неплохой разбор пропорций БЖУ в зависимости от цели диеты. Ну а <a href="https://www.tdee-calculation.com/blog/tdee-muscle-gain" target="_blank" rel="noopener">в этом гайде</a> есть неплохой разбор того, насколько увеличивать общий калораж продуктов, если цель — набор массы.</p>
+
+  <p>Система получается несколько усложнённой, но я, во-первых, люблю сложные расчёты, а во-вторых, я однажды записал все эти формулы, наладил личную систему еженедельных (ну, почти) наблюдений и теперь могу спокойно корректировать своё питание, отталкиваясь от полученных данных.</p>
+
+  <h2 id="one-rep-max">One-Rep Max</h2>
+
+  <p>Я также расчитываю в Ноушене свой <a href="https://en.wikipedia.org/wiki/One-repetition_maximum" target="_blank" rel="noopener" title="One-repetition maximum">One-Rep Max (1RM)</a> — максимальную массу, которую я могу поднять один раз во время упражнения. Это позволяет мне корректно подбирать вес для тренировок и отслеживать прогресс. Хороший разбор того, что такое 1RM и как применять его на практике есть, к примеру, на сайте <a href="https://www.hprc-online.org/physical-fitness/training-performance/what-one-rep-max" target="_blank" rel="noopener">HPRC</a>.</p>
+
+  <p>Максимум я рассчитываю по формуле Эпли. Их, на самом деле, довольно много, можете <a href="https://en.wikipedia.org/wiki/One-repetition_maximum#Estimating_1RM" target="_blank" rel="noopener">глянуть на вики</a> и выбрать ту, что подойдёт для вас. Многоповторкой я не увлекаюсь, а разброс всех формул начинается как раз после десятого повторения.</p>
+
+<div class="code-frame">
+<pre class="language-js"><code class="language-js"><span class="token function">round</span><span class="token punctuation">(</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"Weight"</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"Repetitions"</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+</div>
+
+  <p>Зная свой теоретический максимум, я могу планировать нагрузку, а не гадать у стойки с гантелями при следующем походе в зал. Расчет процентов от 1RM помогает держать дисциплину и избегать недо- или перетренированности. Я разделяю нагрузку примерно так:</p>
+
+  <ul>
+    <li><strong>50–70%</strong> — разминочные сеты;</li>
+    <li><strong>70–80%</strong> — основная рабочая зона на гипертрофию;</li>
+    <li><strong>90% и выше</strong> — редкая работа на силу и уход в осознанный отказ.</li>
+  </ul>
+
+  <p>Вот пример формулы для расчёта 50% от моего 1RM. Т.к. у меня в табличке прописаны и свободные веса, и тренажёры, и шаг везде разный, никаких ухищрений не делаю — просто округляю до ближайшего целого числа.</p>
+
+<div class="code-frame">
+<pre class="language-js"><code class="language-js"><span class="token function">round</span><span class="token punctuation">(</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"1RM 100%"</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0.5</span><span class="token punctuation">)</span></code></pre>
+</div>
+
+  <p>Такие расчёты слишком часто делать бессмысленно, поэтому я обновляю данные в табличке где-то раз в месяц. Я ретроспективно пробегаю глазами записи тренировок в <a href="/setup#hevy">Hevy</a>, выбираю лучший результат и фиксирую его как новую точку отсчета.</p>
+
+  
+    <figure class="figure-content">
+      <picture><source type="image/webp" srcset="/img/66CRgt1Qd_-300.webp 300w, /img/66CRgt1Qd_-600.webp 600w, /img/66CRgt1Qd_-1200.webp 1200w, /img/66CRgt1Qd_-1533.webp 1533w" sizes="auto"><img loading="lazy" decoding="async" src="/img/66CRgt1Qd_-300.jpeg" alt="Так это выглядит в Notion на винде: упражнения я выбираю из выпадающего списка в колонке Exercise, чтобы не вводить их каждый раз вручную." width="1533" height="916" srcset="/img/66CRgt1Qd_-300.jpeg 300w, /img/66CRgt1Qd_-600.jpeg 600w, /img/66CRgt1Qd_-1200.jpeg 1200w, /img/66CRgt1Qd_-1533.jpeg 1533w" sizes="auto"></picture>
+      <figcaption>Так это выглядит в Notion на винде: упражнения я выбираю из выпадающего списка в колонке Exercise, чтобы не вводить их каждый раз вручную.</figcaption>
+    </figure>
+  
+
+  <p>В целом, многие фитнес-трекеры и так умеют рассчитывать 1RM, но мне нравится считать его вручную + так я сразу получаю все данные в упорядоченном виде в одном месте. Остаётся лишь не забывать делать бекап самого Ноушена, чтобы их не потерять.</p>
+
+  <h2 id="raycast">Raycast & dotfiles</h2>
+
+  <p>Меня бесит выполнять однотипные действия вручную, поэтому при первой же возможности я стараюсь их автоматизировать. На маке с этим здорово помогает Raycast, с помощью которого я сначала заменил Spotlight для поиска и запуска программ, а затем начал постепенно выяснять, что этот комбайн ещё умеет. Фактически, я пользуюсь минимумом его возможностей, но мне хватает.</p>
+
+  <p>Сейчас у меня есть два скрипта, которыми я пользуюсь регулярно. Один деплоит этот сайт на GitHub Pages, а второй убивает процессы, заставляющие идти мой древний MacBook Air на интеле на взлёт (насколько я понял, это типичная проблема с маками на интеле, и ничего принципиально иного кроме покупки нового лэптопа тут не поможет). Запускаются они через <a href="https://github.com/raycast/script-commands" target="_blank" rel="noopener">Raycast Script Commands:</a></p>
+
+  
+
+  
+      <div class="figure-content carousel-container">
+        <div class="carousel-counter">1 / 2</div>
+        <button class="carousel-btn prev" aria-label="Назад">‹</button>
+        <button class="carousel-btn next" aria-label="Вперед">›</button>
+        <div class="carousel-track">
+          
+      <figure class="carousel-item">
+        <picture><source type="image/webp" srcset="/img/6-kw2b9NCV-300.webp 300w, /img/6-kw2b9NCV-600.webp 600w, /img/6-kw2b9NCV-1200.webp 1200w, /img/6-kw2b9NCV-1724.webp 1724w" sizes="auto"><img loading="lazy" decoding="async" src="/img/6-kw2b9NCV-300.jpeg" alt="Вызов команды в Raycast" width="1724" height="1172" srcset="/img/6-kw2b9NCV-300.jpeg 300w, /img/6-kw2b9NCV-600.jpeg 600w, /img/6-kw2b9NCV-1200.jpeg 1200w, /img/6-kw2b9NCV-1724.jpeg 1724w" sizes="auto"></picture>
+        <figcaption>1. Вызов команды в Raycast</figcaption>
+      </figure>
+    
+      <figure class="carousel-item">
+        <picture><source type="image/webp" srcset="/img/seKGyohJB0-300.webp 300w, /img/seKGyohJB0-600.webp 600w, /img/seKGyohJB0-1200.webp 1200w, /img/seKGyohJB0-1724.webp 1724w" sizes="auto"><img loading="lazy" decoding="async" src="/img/seKGyohJB0-300.jpeg" alt="Результат деплоя" width="1724" height="1172" srcset="/img/seKGyohJB0-300.jpeg 300w, /img/seKGyohJB0-600.jpeg 600w, /img/seKGyohJB0-1200.jpeg 1200w, /img/seKGyohJB0-1724.jpeg 1724w" sizes="auto"></picture>
+        <figcaption>2. Результат: PR создан и замержен, дальше в дело вступают GitHub Actions</figcaption>
+      </figure>
+    
+        </div>
+      </div>
+    
+
+  <p>Скрипт позволяет задеплоить текущую версию этого сайта одной командой прямо из поисковой строки рейкаста. Он сам переключает ветки, подтягивает изменения, создает PR через GitHub CLI и мержит его в main. Единственное неудобство — Raycast не умеет показывать реальный прогресс выполнения команды, поэтому чтобы следить за ходом деплоя через <code>gh run watch</code> приходится всё-таки из терминала.</p>
+
+<div class="code-frame">
+<pre class="language-shell"><code class="language-shell"><span class="token shebang important">#!/bin/zsh -f</span>
+
+<span class="token comment"># Required parameters:</span>
+<span class="token comment"># @raycast.schemaVersion 1</span>
+<span class="token comment"># @raycast.title Deploy tropin.one</span>
+<span class="token comment"># @raycast.mode fullOutput</span>
+<span class="token comment"># @raycast.packageName System Tools</span>
+
+<span class="token comment"># Optional parameters:</span>
+<span class="token comment"># @raycast.icon 🌐</span>
+<span class="token comment"># @raycast.needsConfirmation false</span>
+
+<span class="token builtin class-name">set</span> <span class="token parameter variable">-eu</span>
+<span class="token builtin class-name">set</span> <span class="token parameter variable">-o</span> pipefail
+
+<span class="token builtin class-name">cd</span> ~/tropin <span class="token operator">||</span> <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+
+<span class="token function">git</span> fetch origin
+
+<span class="token function">git</span> switch dev
+<span class="token function">git</span> pull <span class="token parameter variable">--rebase</span> origin dev
+
+<span class="token keyword">if</span> <span class="token function">git</span> <span class="token function">diff</span> <span class="token parameter variable">--quiet</span> origin/main<span class="token punctuation">..</span>dev<span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"✅ Нет изменений для деплоя"</span>
+  <span class="token builtin class-name">exit</span> <span class="token number">0</span>
+<span class="token keyword">fi</span>
+
+gh <span class="token function">pr</span> create <span class="token parameter variable">--base</span> main <span class="token parameter variable">--head</span> dev <span class="token parameter variable">--fill</span>
+<span class="token function">sleep</span> <span class="token number">3</span>
+gh <span class="token function">pr</span> merge <span class="token parameter variable">--merge</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"✅ CI прошёл, за его ходом см.: gh run watch"</span></code></pre>
+</div>
+
+  <p>Все мои кастомные команды, алиасы для терминала и прочие конфиги живут в <a href="https://github.com/tropintropin/all_my_settings" target="_blank" rel="noopener">репозитории с дотфайлами</a> на гитхабе. Это позволяет не вспоминать каждый раз, как именно я настроил ту или иную утилиту, оболочку или окружение для питона.</p>
+
+  <p>На винде ситуация несколько хуже. Я пользуюсь Microsoft PowerToys, которые дают возможность искать и запускать программы по <code>Alt + Space</code>, но вот со скриптами не очень дружат. Поэтому пока что я тупо скопировал скрипт для деплоя в свою репу с дотфайлами, дал ему права и прописал для него алиас в <a href="https://github.com/tropintropin/all_my_settings/blob/main/.zshrc" target="_blank" rel="noopener">.zshrc</a> для WSL. Там он прекрасно работает, т.к. Zsh и GH CLI у меня на рабочей машине настроены аналогично маку (с учётом различий в архитектуре, из-за которых пришлось писать условие инициализации конфига оболочки при старте терминала в зависимости от ОС).</p>
+
+  <script type="text/javascript" async="" src="https://tenor.com/embed.js"></script>
+
+
+    </main>
+    <footer>
+  <p>
+    <button id="theme-toggle" class="theme-toggle">
+      <span class="icon">🌓</span>
+      <span class="label">Тема</span>
+    </button>
+  </p>
+
+  <div class="footer-inner">
+    <div>
+      
+        <a href="https://github.com/tropintropin" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-github"></use>
+          </svg>
+        </a>
+      
+        <a href="https://t.me/ozlik" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-telegram"></use>
+          </svg>
+        </a>
+      
+        <a href="https://www.livelib.ru/reader/valeriuus" target="_blank" rel="noopener noreferrer" aria-label="LiveLib" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-livelib"></use>
+          </svg>
+        </a>
+      
+        <a href="/calendar.ics" target="_blank" rel="noopener noreferrer" aria-label="Calendar" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-calendar"></use>
+          </svg>
+        </a>
+      
+        <a href="/feed.atom.xml" target="_blank" rel="noopener noreferrer" aria-label="RSS" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-rss"></use>
+          </svg>
+        </a>
+      
+    </div>
+
+    <small>
+      <a href="/wish" title="На случай, если вы думаете мне что-то подарить">Wish List
+      </a>
+      <span class="separator">·</span>
+      <a href="/calendar.ics" target="_blank" rel="me noopener noreferrer" title="Календарь событий">Events Calendar</a>
+      <span class="separator">·</span>
+      <a href="/feed.atom.xml" target="_blank" rel="me noopener noreferrer" title="Фид всех записей на сайте">RSS</a>
+      <span class="separator">·</span>
+      <a href="/legal" title="Legal notice and privacy policy">Legal & Privacy</a>
+        <span class="separator">·</span>
+      <a href="/map" title="Карта сайта">All pages</a>
+    </small>
+
+    <p class="footer-copy">
+      &copy;&nbsp;<time datetime="2023-2025">MMXXIII&nbsp;→&nbsp;MMXXVI</time>&nbsp;<a href="https://tropin.one">Valery Tropin</a>. This website is made with <a href="https://www.11ty.dev/">11ty</a> & hosted on <a href="https://docs.github.com/en/pages">GitHub Pages</a>.
+    </p>
+  </div>
+</footer>
+
+
+    <button id="scrollTop" class="scroll-top" aria-label="Наверх">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </svg>
+    </button>
+
+    
+    <script src="/pagefind/pagefind-ui.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        new PagefindUI({element: "#search", showSubResults: true});
+      });
+    </script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="/assets/js/nav-toggle.js"></script>
+    <script src="/assets/js/scrolltop.js" defer=""></script>
+    <script src="/assets/js/copy-code.js" defer=""></script>
+    <script src="/assets/js/theme-toggle.js" defer=""></script>
+    <script src="/assets/js/carousel.js" defer=""></script>
+  </body>
+</html>
