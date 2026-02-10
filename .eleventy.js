@@ -29,9 +29,8 @@ dotenv.config();
 export default async function (eleventyConfig) {
   // Passthrough for static assets
   eleventyConfig.addPassthroughCopy({ "src/root": "/" });
-  eleventyConfig.addPassthroughCopy({ "src/assets/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/assets/css": "assets/css" });
-  eleventyConfig.addPassthroughCopy({ "src/assets/images": "assets/images" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/static": "assets/static" });
   eleventyConfig.addPassthroughCopy({ "src/assets/js": "assets/js" });
   eleventyConfig.addPassthroughCopy({ "src/assets/pdf": "assets/pdf" });
   // Passthrough for Pagefind assets
