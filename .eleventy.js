@@ -29,6 +29,9 @@ dotenv.config();
 export default async function (eleventyConfig) {
   // Passthrough for static assets
   eleventyConfig.addPassthroughCopy({ "src/root": "/" });
+  eleventyConfig.addPassthroughCopy({
+    "src/assets/gifs": "assets/gifs",
+  });
   eleventyConfig.addPassthroughCopy({ "src/assets/css": "assets/css" });
   eleventyConfig.addPassthroughCopy({ "src/assets/static": "assets/static" });
   eleventyConfig.addPassthroughCopy({ "src/assets/js": "assets/js" });
@@ -388,7 +391,7 @@ export default async function (eleventyConfig) {
     const finalWidth = /[%|px|em|rem|vw]/.test(gifWidth)
       ? gifWidth
       : `${gifWidth}px`;
-    const basePath = "/assets/images/gifs/";
+    const basePath = "/assets/gifs/";
 
     return `
 <figure class="gif-frame" style="max-width: ${finalWidth};">
