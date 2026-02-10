@@ -248,18 +248,30 @@ export default async function (eleventyConfig) {
       });
   });
 
+  let gitWarningShown = false;
+
   eleventyConfig.addFilter("gitLastMod", (filePath) => {
-    if (!filePath) return new Date();
+    if (!filePath) return null;
+
     try {
       const cleanPath = filePath.replace(/^\.\//, "");
-      const result = execSync(`git log -1 --format=%at -- "${cleanPath}"`);
-      const timestamp = parseInt(result.toString().trim(), 10);
+      const result = execSync(`git log -1 --format=%at -- "${cleanPath}"`, {
+        stdio: ["ignore", "pipe", "ignore"],
+      });
 
-      if (isNaN(timestamp)) return new Date();
+      const timestamp = parseInt(result.toString().trim(), 10);
+      if (Number.isNaN(timestamp)) return null;
 
       return new Date(timestamp * 1000);
     } catch (e) {
-      return new Date();
+      if (!gitWarningShown) {
+        console.warn(
+          "[gitLastMod] git metadata unavailable. " +
+            "Check fetch-depth in CI or repository state.",
+        );
+        gitWarningShown = true;
+      }
+      return null;
     }
   });
 
