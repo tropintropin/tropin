@@ -10,7 +10,11 @@ permalink: /playbook/index.html
 
   <div id="progress-bar"></div>
 
-  <h1><code>/playbook</code></h1>
+  <h1>
+    <code>/playbook</code>
+  </h1>
+
+  {% include "partials/last-mode-git.njk" %}
 
   <p>Здесь будет микс из <a href="https://slashpages.net/#carry" target="_blank" rel="noopener">/carry</a>, <a href="https://slashpages.net/#style" target="_blank" rel="noopener">/style</a> и чего-то ещё. В общем, штуки, которые помогают мне работать, тренить, следить за здоровьем и не потеряться в лавине рабочих и личных встреч, дедлайнов и прочих «очень важных» дел.</p>
 
@@ -28,8 +32,7 @@ permalink: /playbook/index.html
     <iframe src="https://www.google.com/maps/d/embed?mid=12t75FBqOmMNPImsFDv6s9FBMURk&hl=ru&ehbc=2E312F"
     loading="lazy"
     fetchpriority="low"
-    title="Путеводитель по Петербургу от Валеры">
-    </iframe>
+    title="Путеводитель по Петербургу от Валеры"></iframe>
   </div>
 
   <h2 id="sash-windows-repo">Sash Windows from the Menshikov Palace in St. Petersburg, Russia</h2>
@@ -37,7 +40,7 @@ permalink: /playbook/index.html
   <p>У меня есть <a href="https://github.com/tropintropin/sash_windows" target="_blank" rel="noopener">репозиторий</a> с материалами, необходимыми для научной работы по исследованию подъёмных окон эпохи Петра Великого в Меншиковском дворце на Васильевском острове. Поскольку это git, я всегда могу вставить ссылку на диаграмму или иные данные, указав дату доступа и номер коммита, когда пишу статью или выступаю на конференции.</p>
 
   <a href="https://github.com/tropintropin/sash_windows/blob/main/TIMELINE_EARLY_SASH_WINDOWS.md" target="_blank" rel="noopener" title="См. актуальную версию на GitHub. Откроется в новом окне">
-  {% img {
+    {% img {
     url: "https://raw.githubusercontent.com/tropintropin/sash_windows/refs/heads/main/TIMELINE_EARLY_SASH_WINDOWS.svg",
     caption: "Репа нужна, в том числе, для таких вот визуализаций. Я пишу диаграмму в виде Mermaid-кода, который затем транслирую в SVG для публикаций."
   } %}
@@ -56,7 +59,7 @@ permalink: /playbook/index.html
   <p>Для расчётов я вношу возраст и толщину кожных складок, которые замеряю калипером на груди, животе и бедре. Затем ноушен считает их сумму:</p>
 
   <div class="code-frame">
-  {% highlight "js" %}
+    {% highlight "js" %}
 sum(prop("Chest"),prop("Abdomen"),prop("Thigh"))
 
   {% endhighlight %}
@@ -64,8 +67,8 @@ sum(prop("Chest"),prop("Abdomen"),prop("Thigh"))
 
   <p>На основе этой суммы вычисляется процент жира:</p>
 
-<div class="code-frame">
-{% highlight "js" %}
+  <div class="code-frame">
+    {% highlight "js" %}
 lets(
   sum, prop("Sum"),
   age, prop("Age"),
@@ -82,12 +85,13 @@ lets(
 )
 
 {% endhighlight %}
-</div>
+  </div>
 
-  <p>Формула берёт сумму складок и возраст, вычисляет плотность тела по трёхточечной <a href="https://doi.org/10.1079/bjn19780152" target="_blank" rel="noopener" title="Полный текст статьи — по кнопке Save PDF">формуле Джексона-Поллока для мужчин</a>, переводит её в процент жира по <a href="https://en.wikipedia.org/wiki/Body_fat_percentage#Body_average_density_measurement" target="_blank" rel="noopener" title="Приведена в параграфе Body average density measurement">формуле Сири</a> и округляет результат до одного знака. Для наглядности у меня есть отдельная колонка, где этот процент переводится в одну из категорий с <a href="https://sportwiki.to/Файл:Tablica-soderzhanija-zhira-u-muzhchin-.jpg" target="_blank" rel="noopener">цветовой маркировкой:</a></p>
+  <p>Формула берёт сумму складок и возраст, вычисляет плотность тела по трёхточечной <a href="https://doi.org/10.1079/bjn19780152" target="_blank" rel="noopener" title="Полный текст статьи — по кнопке Save PDF">формуле Джексона-Поллока для мужчин</a>, переводит её в процент жира по <a href="https://en.wikipedia.org/wiki/Body_fat_percentage#Body_average_density_measurement" target="_blank" rel="noopener" title="Приведена в параграфе Body average density measurement">формуле Сири</a> и округляет результат до одного знака. Для наглядности у меня есть отдельная колонка, где этот процент переводится в одну из категорий с <a href="https://sportwiki.to/Файл:Tablica-soderzhanija-zhira-u-muzhchin-.jpg" target="_blank" rel="noopener">цветовой маркировкой:</a>
+  </p>
 
   <div class="code-frame">
-  {% highlight "js" %}
+    {% highlight "js" %}
 let(
   fat,
   if(empty(prop("JP BodyFat")), prop("Body Fat"), prop("JP BodyFat")),
@@ -100,7 +104,7 @@ let(
 )
 
   {% endhighlight %}
-</div>
+  </div>
 
   <p>Ранее процент жира рассчитывался по другой формуле. Отсюда два столбца: по Джексону-Поллоку и старые данные — они нужны мне для истории измерений.</p>
 
@@ -116,43 +120,45 @@ let(
     caption: "Так это выглядит в Notion на винде"
   } %}
 
-  <p>Сначала рассчитываю <a href="https://en.wikipedia.org/wiki/Lean_body_mass" target="_blank" rel="noopener"><abbr title="Lean Body Mass">LBM</abbr></a> — сухую массу тела без жира:</p>
+  <p>Сначала рассчитываю <a href="https://en.wikipedia.org/wiki/Lean_body_mass" target="_blank" rel="noopener">
+      <abbr title="Lean Body Mass">LBM</abbr>
+    </a> — сухую массу тела без жира:</p>
 
-<div class="code-frame">
-{% highlight "js" %}
+  <div class="code-frame">
+    {% highlight "js" %}
 round(
   prop("Weight") * (100 - prop("Body Fat")) / 100,
   1
 )
 
 {% endhighlight %}
-</div>
+  </div>
 
   <p>На основе LBM рассчитываю базовый метаболизм (<abbr title="Basal Metabolic Rate">BMR</abbr>) по <a href="https://en.wikipedia.org/wiki/Basal_metabolic_rate#Equations_based_on_lean_body_mass" target="_blank" rel="noopener" title="См.: The Katch–McArdle formula (2006)">формуле Кетча-МакАрдла</a>. Округляю результат до целого числа:</p>
 
-<div class="code-frame">
-{% highlight "js" %}
+  <div class="code-frame">
+    {% highlight "js" %}
 round(370 + (21.6 * prop("LBM")))
 
 {% endhighlight %}
-</div>
+  </div>
 
   <p>И, наконец, рассчитываю <a href="https://en.wikipedia.org/wiki/Energy_expenditure" target="_blank" rel="noopener" title="Total Daily Energy Expenditure">TDEE</a> для дней отдыха, умножая BMR на коэффициент активности и прибавляя калорийный профицит. Обратите внимание, что я считаю не чистый TDEE, а, скорее, Target Calories с учётом профицита, поскольку моя цель — набирать мышечную массу, а не просто поддерживать текущий вес.</p>
 
-<div class="code-frame">
-{% highlight "js" %}
+  <div class="code-frame">
+    {% highlight "js" %}
 lets(
 	activity, 1.3,
 	calorieSurplus, 350,
 	round(prop("BMR") * activity + calorieSurplus)
 )
 {% endhighlight %}
-</div>
+  </div>
 
   <p>После этого я могу рассчитать целевые значения <abbr title="калории-белки-жиры-углеводы">КБЖУ</abbr> на день. Задаю норму белка в зависимости от сухой массы тела и жира — от своего общего веса:</p>
 
-<div class="code-frame">
-{% highlight "js" %}
+  <div class="code-frame">
+    {% highlight "js" %}
 lets(
   proteinPerKg, 2.0,
   fatPerKg, 1.0,
@@ -168,7 +174,7 @@ lets(
 )
 
 {% endhighlight %}
-</div>
+  </div>
 
   <p>Для тренировочных дней формулы те же, но коэффициент активности выше: 1.5, профицит калорий равен 450; белков на килограмм тела я беру 2.2 г, а жиров — 0.8.</p>
 
@@ -182,29 +188,32 @@ lets(
 
   <p>Максимум я рассчитываю по формуле Эпли. Их, на самом деле, довольно много, можете <a href="https://en.wikipedia.org/wiki/One-repetition_maximum#Estimating_1RM" target="_blank" rel="noopener">глянуть на вики</a> и выбрать ту, что подойдёт для вас. Многоповторкой я не увлекаюсь, а разброс всех формул начинается как раз после десятого повторения.</p>
 
-<div class="code-frame">
-{% highlight "js" %}
+  <div class="code-frame">
+    {% highlight "js" %}
 round(prop("Weight") * (1 + (prop("Repetitions") / 30)))
 
 {% endhighlight %}
-</div>
+  </div>
 
   <p>Зная свой теоретический максимум, я могу планировать нагрузку, а не гадать у стойки с гантелями при следующем походе в зал. Расчет процентов от 1RM помогает держать дисциплину и избегать недо- или перетренированности. Я разделяю нагрузку примерно так:</p>
 
   <ul>
-    <li><strong>50–70%</strong> — разминочные сеты;</li>
-    <li><strong>70–80%</strong> — основная рабочая зона на гипертрофию;</li>
-    <li><strong>90% и выше</strong> — редкая работа на силу и уход в осознанный отказ.</li>
+    <li>
+      <strong>50–70%</strong> — разминочные сеты;</li>
+    <li>
+      <strong>70–80%</strong> — основная рабочая зона на гипертрофию;</li>
+    <li>
+      <strong>90% и выше</strong> — редкая работа на силу и уход в осознанный отказ.</li>
   </ul>
 
   <p>Вот пример формулы для расчёта 50% от моего 1RM. Т.к. у меня в табличке прописаны и свободные веса, и тренажёры, и шаг везде разный, никаких ухищрений не делаю — просто округляю до ближайшего целого числа.</p>
 
-<div class="code-frame">
-{% highlight "js" %}
+  <div class="code-frame">
+    {% highlight "js" %}
 round(prop("1RM 100%") * 0.5)
 
 {% endhighlight %}
-</div>
+  </div>
 
   <p>Такие расчёты слишком часто делать бессмысленно, поэтому я обновляю данные в табличке где-то раз в месяц. Я ретроспективно пробегаю глазами записи тренировок в <a href="/setup#hevy">Hevy</a>, выбираю лучший результат и фиксирую его как новую точку отсчета.</p>
 
@@ -220,7 +229,8 @@ round(prop("1RM 100%") * 0.5)
 
   <p>Меня бесит выполнять однотипные действия вручную, поэтому при первой же возможности я стараюсь их автоматизировать. На маке с этим здорово помогает Raycast, с помощью которого я сначала заменил Spotlight для поиска и запуска программ, а затем начал постепенно выяснять, что этот комбайн ещё умеет. Фактически, я пользуюсь минимумом его возможностей, но мне хватает.</p>
 
-  <p>Сейчас у меня есть два скрипта, которыми я пользуюсь регулярно. Один деплоит этот сайт на GitHub Pages, а второй убивает процессы, заставляющие идти мой древний MacBook Air на интеле на взлёт (насколько я понял, это типичная проблема с маками на интеле, и ничего принципиально иного кроме покупки нового лэптопа тут не поможет). Запускаются они через <a href="https://github.com/raycast/script-commands" target="_blank" rel="noopener">Raycast Script Commands:</a></p>
+  <p>Сейчас у меня есть два скрипта, которыми я пользуюсь регулярно. Один деплоит этот сайт на GitHub Pages, а второй убивает процессы, заставляющие идти мой древний MacBook Air на интеле на взлёт (насколько я понял, это типичная проблема с маками на интеле, и ничего принципиально иного кроме покупки нового лэптопа тут не поможет). Запускаются они через <a href="https://github.com/raycast/script-commands" target="_blank" rel="noopener">Raycast Script Commands:</a>
+  </p>
 
   {% set raycastScripts = [
     { url: "/assets/images/playbook/raycast-script-deploy-00.png", alt: "Вызов команды в Raycast", caption: "Вызов команды в Raycast" },
@@ -231,8 +241,8 @@ round(prop("1RM 100%") * 0.5)
 
   <p>Скрипт позволяет задеплоить текущую версию этого сайта одной командой прямо из поисковой строки рейкаста. Он сам переключает ветки, подтягивает изменения, создает PR через GitHub CLI и мержит его в main. Единственное неудобство — Raycast не умеет показывать реальный прогресс выполнения команды, поэтому чтобы следить за ходом деплоя через <code>gh run watch</code> приходится всё-таки из терминала.</p>
 
-<div class="code-frame">
-{% highlight "shell" %}
+  <div class="code-frame">
+    {% highlight "shell" %}
 #!/bin/zsh -f
 
 # Required parameters:
@@ -267,7 +277,7 @@ gh pr merge --merge
 echo "✅ CI прошёл, за его ходом см.: gh run watch"
 
 {% endhighlight %}
-</div>
+  </div>
 
   <p>Все мои кастомные команды, алиасы для терминала и прочие конфиги живут в <a href="https://github.com/tropintropin/all_my_settings" target="_blank" rel="noopener">репозитории с дотфайлами</a> на гитхабе. Это позволяет не вспоминать каждый раз, как именно я настроил ту или иную утилиту, оболочку или окружение для питона.</p>
 

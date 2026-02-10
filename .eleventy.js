@@ -12,6 +12,7 @@ import calendarPlugin from "@codegouvfr/eleventy-plugin-calendar";
 
 // Other dependencies
 import { DateTime } from "luxon";
+import { execSync } from "child_process";
 import dotenv from "dotenv";
 import fetch from "node-fetch";
 import fs from "fs";
@@ -243,6 +244,21 @@ export default async function (eleventyConfig) {
           },
         };
       });
+  });
+
+  eleventyConfig.addFilter("gitLastMod", (filePath) => {
+    if (!filePath) return new Date();
+    try {
+      const cleanPath = filePath.replace(/^\.\//, "");
+      const result = execSync(`git log -1 --format=%at -- "${cleanPath}"`);
+      const timestamp = parseInt(result.toString().trim(), 10);
+
+      if (isNaN(timestamp)) return new Date();
+
+      return new Date(timestamp * 1000);
+    } catch (e) {
+      return new Date();
+    }
   });
 
   // Shortcodes & Global Data
