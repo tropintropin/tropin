@@ -12,6 +12,7 @@ import calendarPlugin from "@codegouvfr/eleventy-plugin-calendar";
 
 // Other dependencies
 import { DateTime } from "luxon";
+import { execSync } from "child_process";
 import dotenv from "dotenv";
 import fetch from "node-fetch";
 import fs from "fs";
@@ -28,9 +29,11 @@ dotenv.config();
 export default async function (eleventyConfig) {
   // Passthrough for static assets
   eleventyConfig.addPassthroughCopy({ "src/root": "/" });
-  eleventyConfig.addPassthroughCopy({ "src/assets/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({
+    "src/assets/gifs": "assets/gifs",
+  });
   eleventyConfig.addPassthroughCopy({ "src/assets/css": "assets/css" });
-  eleventyConfig.addPassthroughCopy({ "src/assets/images": "assets/images" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/static": "assets/static" });
   eleventyConfig.addPassthroughCopy({ "src/assets/js": "assets/js" });
   eleventyConfig.addPassthroughCopy({ "src/assets/pdf": "assets/pdf" });
   // Passthrough for Pagefind assets
@@ -245,6 +248,21 @@ export default async function (eleventyConfig) {
       });
   });
 
+  eleventyConfig.addFilter("gitLastMod", (filePath) => {
+    if (!filePath) return new Date();
+    try {
+      const cleanPath = filePath.replace(/^\.\//, "");
+      const result = execSync(`git log -1 --format=%at -- "${cleanPath}"`);
+      const timestamp = parseInt(result.toString().trim(), 10);
+
+      if (isNaN(timestamp)) return new Date();
+
+      return new Date(timestamp * 1000);
+    } catch (e) {
+      return new Date();
+    }
+  });
+
   // Shortcodes & Global Data
 
   eleventyConfig.addGlobalData(
@@ -373,7 +391,7 @@ export default async function (eleventyConfig) {
     const finalWidth = /[%|px|em|rem|vw]/.test(gifWidth)
       ? gifWidth
       : `${gifWidth}px`;
-    const basePath = "/assets/images/gifs/";
+    const basePath = "/assets/gifs/";
 
     return `
 <figure class="gif-frame" style="max-width: ${finalWidth};">

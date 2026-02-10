@@ -1,0 +1,5 @@
+{% set lastMod = page.inputPath | gitLastMod %}
+
+{% if lastMod %}
+  <span class="last-mod">Последняя правка: {{ lastMod | readableDate }}</span>
+{% endif %}

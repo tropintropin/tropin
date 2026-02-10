@@ -23,7 +23,9 @@ a {
   position: relative;
   text-decoration: none;
   color: var(--links-default);
-  transition: color 0.3s ease, transform 0.15s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.15s ease;
 
   // ==============================
   // #LINK-VISITED
@@ -49,7 +51,9 @@ a {
     width: 0;
     height: 2px;
     background-color: currentColor;
-    transition: width 0.3s ease, background-color 0.3s ease;
+    transition:
+      width 0.3s ease,
+      background-color 0.3s ease;
   }
 
   // ==============================
@@ -105,6 +109,11 @@ a {
 .stack {
   font-family: v.$font-mono;
   color: var(--neutral-200);
+  font-size: 0.9rem;
+}
+
+.last-mod {
+  color: var(--shadow);
   font-size: 0.9rem;
 }
 

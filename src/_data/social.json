@@ -38,7 +38,7 @@
     },
     {
       "title": "PGP Public Key",
-      "url": "/pgp-public-key.asc",
+      "url": "/assets/static/pgp-public-key.asc",
       "itemprop": "publicKey",
       "rel": "me",
       "download": true,
@@ -46,10 +46,10 @@
     }
   ],
   "qr": {
-  "image": "/assets/images/Visit_Card_QR.webp",
-  "alt": "QR-code for my business card",
-  "abbr": "Отсканируйте код камерой телефона",
-  "titleAttr": "Скачать визитку в формате vCard",
-  "vcard": "/assets/vcard_Tropin.vcf"
+    "image": "/assets/static/Visit_Card_QR.webp",
+    "alt": "QR-code for my business card",
+    "abbr": "Отсканируйте код камерой телефона",
+    "titleAttr": "Скачать визитку в формате vCard",
+    "vcard": "/assets/static/vcard_Tropin.vcf"
   }
 }
