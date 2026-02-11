@@ -9,7 +9,17 @@ layout: layouts/blog-post
 excerpt: ""
 
 topics:
+  - lets_sum_it_up
+  - articles
   - lytdybr
+  - txt
+  - museums
+  - expeditions
+  - travel
+  - maps
+  - workout
+  - setup
+  - playbook
 
 image:
   src: ""

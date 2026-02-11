@@ -5,7 +5,7 @@
 
 ## About
 
-This is my personal website where I share projects, experience, and blog posts. In 2025, I migrated it to Eleventy to make building and updating faster and simpler.
+This is my personal website where I share projects, experience, blog posts and some staff from my Digital Garden. In 2025, I migrated it to Eleventy to make building and updating faster and simpler.
 
 ## Project Timeline
 
@@ -20,16 +20,19 @@ Start the project                     :milestone,             crit, done, 2023.0
 Add index.html                        :done,          html0,              2023.03.05, 1d
 Add first CSS                         :done,          css0,               2023.08.13, 1d
 Migration to Eleventy                 :done,                  crit,       2025.08.12, 2025.09.02
+Add a simple CLI post generator       :done,                              2026.02.11, 1d
 
 section PRODUCTION
 Upload site to server                 :milestone,             crit, done, 2023.04.04, 0d
 Upload MVP site on Eleventy           :milestone,                   done, 2025.08.15, 0d
+Add first slashpages                  :milestone,                         2026.01.21, 0d
 ```
 
 ## Tech Stack
 
 - **Eleventy** – static site generator
 - **Nunjucks** – templating engine
+- **Leaflet** — map engine
 - **SCSS → CSS** – styles preprocessor
 - **JavaScript** – client-side interactivity
 - **Pagefind** – search indexing for static sites
@@ -41,6 +44,12 @@ Upload MVP site on Eleventy           :milestone,                   done, 2025.0
 - Eleventy builds output to `_site` folder
 
 ## NPM Scripts Overview
+
+- **new** – Create a new blog, event, project, or research post using a template and interactive prompts:
+
+  ```bash
+  npm run new
+  ```
 
 - **build:css** – Compile SCSS to CSS (compressed, no source maps):
 
@@ -96,14 +105,25 @@ Upload MVP site on Eleventy           :milestone,                   done, 2025.0
 
 ```
 .
+├── scripts/             # Utility scripts (e.g., webmentions)
+├── src/                 # Source files
+│   ├── _data/           # Global site data (JSON)
+│   ├── _includes/       # Layouts and Nunjucks partials
+│   │   ├── layouts/     # Page-level templates
+│   │   └── partials/    # Reusable UI components
+│   ├── _templates/      # Markdown & Nunjucks templates for new content
+│   ├── assets/          # Static assets
+│   │   ├── css/         # Compiled CSS
+│   │   ├── js/          # Client-side scripts
+│   │   ├── scss/        # Source styles (SCSS)
+│   │   └── images/      # Content images (blog, events, etc.)
+│   ├── blog/            # Blog posts
+│   ├── events/          # Events data
+│   ├── projects/        # Project showcase
+│   ├── research/        # Academic and research papers
+│   ├── root/            # Root-level files (CNAME, robots.txt, manifest)
+│   └── *.njk            # Top-level pages (index, setup, playbook, etc.)
 ├── .eleventy.js         # Eleventy configuration
-├── .github/workflows    # CI/CD scripts (deployment)
-├── package.json         # Project dependencies and scripts
-├── README.md            # Documentation
-└── src
-    ├── _data            # Site data (JSON, JS)
-    ├── _includes        # Templates and partial Nunjucks components
-    ├── assets           # Styles (CSS), scripts (JS), and images
-    ├── root             # Files for site root (CNAME, robots.txt, etc.)
-    └── index.njk        # Main page
+├── package.json         # Dependencies and scripts
+└── README.md
 ```

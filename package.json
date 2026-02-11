@@ -13,7 +13,8 @@
     "dev": "NODE_ENV=development npm-run-all -p watch:css start watch:pagefind",
     "send-webmentions": "node scripts/send-webmentions.js",
     "build": "npm run build:css && eleventy && npm run pagefind && npm run send-webmentions",
-    "clean": "rimraf _site"
+    "clean": "rimraf _site",
+    "new": "node scripts/create.js"
   },
   "keywords": [],
   "author": "",
