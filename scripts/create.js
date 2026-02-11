@@ -4,6 +4,10 @@ import { existsSync, readFileSync, mkdirSync, writeFileSync } from "fs";
 import { join, dirname } from "path";
 import { createInterface } from "readline";
 
+import matter from "gray-matter";
+
+import { slugify } from "./slugify.js";
+
 const CONFIG = {
   blog: { template: "blog.md", folder: "blog" },
   event: { template: "event.md", folder: "events" },
@@ -38,57 +42,6 @@ const isValidDate = (str) => /^\d{4}-\d{2}-\d{2}$/.test(str);
 const isValidTime = (str) => /^\d{2}:\d{2}$/.test(str);
 
 const iso = (date, time = "00:00") => `${date}T${time}:00${TIMEZONE}`;
-
-const slugify = (str) => {
-  const map = {
-    ё: "yo",
-    й: "j",
-    ц: "ts",
-    у: "u",
-    к: "k",
-    е: "e",
-    н: "n",
-    г: "g",
-    ш: "sh",
-    щ: "sch",
-    з: "z",
-    х: "h",
-    ъ: "",
-    ф: "f",
-    ы: "y",
-    в: "v",
-    а: "a",
-    п: "p",
-    р: "r",
-    о: "o",
-    л: "l",
-    д: "d",
-    ж: "zh",
-    э: "e",
-    я: "ya",
-    ч: "ch",
-    с: "s",
-    м: "m",
-    и: "i",
-    т: "t",
-    ь: "",
-    б: "b",
-    ю: "yu",
-  };
-
-  return str
-    .toLowerCase()
-    .split("")
-    .map((c) => map[c] || c)
-    .join("")
-    .replace(/[^a-z0-9-]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-};
-
-function replaceFrontmatterField(content, field, value) {
-  const regex = new RegExp(`^${field}: ".*?"`, "m");
-  return content.replace(regex, `${field}: "${value}"`);
-}
 
 /* ---------- main ---------- */
 
@@ -136,14 +89,15 @@ async function main() {
 
   if (type === "event" || type === "project") {
     const startInput =
-      (await ask("Время начала (HH:MM, Enter = 00:00): ")) || "00:00";
+      (await ask("Время начала (UTC+03) (HH:MM, Enter = 00:00): ")) || "00:00";
     if (!isValidTime(startInput)) {
       console.error("[Ошибка] Неверный формат времени.");
       process.exit(1);
     }
 
     const endInput =
-      (await ask("Время окончания (HH:MM, Enter = начало): ")) || startInput;
+      (await ask("Время окончания (UTC+03) (HH:MM, Enter = начало): ")) ||
+      startInput;
     if (!isValidTime(endInput)) {
       console.error("[Ошибка] Неверный формат времени.");
       process.exit(1);
@@ -157,7 +111,7 @@ async function main() {
     }
   }
 
-  const slug = slugify(title) || "untitled";
+  const slug = slugify(title);
   const filename = `${dateInput}-${slug}.md`;
 
   const templatePath = join("src/_templates", conf.template);
@@ -173,24 +127,20 @@ async function main() {
     process.exit(1);
   }
 
-  let content = readFileSync(templatePath, "utf8");
+  const raw = readFileSync(templatePath, "utf8");
 
-  content = replaceFrontmatterField(content, "title", title);
+  const file = matter(raw);
+
+  file.data.title = title;
 
   if (type === "blog" || type === "research") {
-    content = replaceFrontmatterField(
-      content,
-      "date",
-      iso(dateInput, startTime),
-    );
+    file.data.date = iso(dateInput, startTime);
   } else {
-    content = replaceFrontmatterField(
-      content,
-      "start",
-      iso(dateInput, startTime),
-    );
-    content = replaceFrontmatterField(content, "end", iso(dateInput, endTime));
+    file.data.start = iso(dateInput, startTime);
+    file.data.end = iso(dateInput, endTime);
   }
+
+  const content = matter.stringify(file.content, file.data);
 
   mkdirSync(dirname(targetPath), { recursive: true });
   writeFileSync(targetPath, content);
