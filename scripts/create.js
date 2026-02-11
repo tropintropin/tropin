@@ -54,7 +54,7 @@ async function main() {
   if (!type || !CONFIG[type]) {
     console.log("\nВыберите тип контента:");
     typeKeys.forEach((key, index) => {
-      console.log(`${index + 1}. ${key}`);
+      console.log(`[${index + 1}] ${key}`);
     });
 
     const choice = await ask("\nВведите номер или название: ");
@@ -77,7 +77,7 @@ async function main() {
   const title = await ask("Заголовок: ");
 
   let dateInput =
-    (await ask("Дата (YYYY-MM-DD, Enter = сегодня): ")) || today();
+    (await ask("Дата (YYYY-MM-DD; Enter = сегодня): ")) || today();
 
   if (!isValidDate(dateInput)) {
     console.error("[Ошибка] Дата должна быть в формате YYYY-MM-DD");
@@ -89,14 +89,14 @@ async function main() {
 
   if (type === "event" || type === "project") {
     const startInput =
-      (await ask("Время начала (UTC+03) (HH:MM, Enter = 00:00): ")) || "00:00";
+      (await ask("Время начала (UTC+03, HH:MM; Enter = 00:00): ")) || "00:00";
     if (!isValidTime(startInput)) {
       console.error("[Ошибка] Неверный формат времени.");
       process.exit(1);
     }
 
     const endInput =
-      (await ask("Время окончания (UTC+03) (HH:MM, Enter = начало): ")) ||
+      (await ask("Время окончания (UTC+03, HH:MM; Enter = начало): ")) ||
       startInput;
     if (!isValidTime(endInput)) {
       console.error("[Ошибка] Неверный формат времени.");
