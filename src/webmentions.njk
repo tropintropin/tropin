@@ -28,24 +28,33 @@ permalink: /webmentions/index.html
     Их можно встроить и на свой сайт — например, через сервис <a href="https://webmention.io" target="_blank" rel="noopener">webmention.io</a>.</p>
   </small>
 
-  {% set mentions = webmentions.children or[] %}
+  {% set mentions = webmentions | default([]) %}
 
   {% if mentions | length > 0 %}
     <ul>
       {% for mention in mentions %}
-        <li class="webmention {{ mention['wm-property'] }}">
-          <span class="owi {% if mention['wm-property'] == 'like-of' %}owi-heart{% elif mention['wm-property'] == 'repost-of' %}owi-repost{% else %}owi-comment{% endif %}"></span>
+        {% set type = mention['wm-property'] | default('mention-of') %}
+        <li class="webmention {{ type }}">
+          <span class="owi
+          {% if type == 'like-of' %}owi-heart
+          {% elif type == 'repost-of' %}owi-repost
+          {% elif type == 'in-reply-to' %}owi-comment
+          {% else %}owi-pin{% endif %}"></span>
+
           <div class="wm-author">
-            <a href="{{ mention.author.url or mention.url }}" target="_blank" rel="noopener">
-              {{ mention.author.name or mention.url }}
+            <a href="{{ mention.author.url | default(mention.url) }}" target="_blank" rel="noopener">
+              {{ mention.author.name | default(mention.url) }}
             </a>
           </div>
+
           <div class="wm-target">
-            Ссылка на страницу:
-            <a href="{{ mention['wm-target'] }}">{{ mention["wm-target"] }}</a>
+          Ссылка на страницу:
+          <a href="{{ mention['wm-target'] }}">{{ mention["wm-target"] }}</a>
           </div>
-          {% if mention.content and(mention.content.text or mention.content) %}
-            <div class="wm-content">{{ mention.content.text or mention.content | safe }}</div>
+
+          {% set text = mention.content.text | default(mention.content) %}
+          {% if text %}
+            <div class="wm-content">{{ text | safe }}</div>
           {% endif %}
         </li>
       {% endfor %}
