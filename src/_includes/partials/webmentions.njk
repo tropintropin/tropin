@@ -1,23 +1,68 @@
-{% set mentionsForPage = webmentions | selectattr("wm-target", "equalto", page.url) | list %}
+{# src/_includes/partials/webmentions.njk #}
+{% set allMentions = (webmentions or[]) | getMentionsForUrl(page.url) %}
 
-{% if mentionsForPage | length != 0 %}
-  <section class="webmentions">
-    <h3>Упоминания в сети</h3>
-    <ul>
-      {% for mention in mentionsForPage %}
-        {% set type = mention["wm-property"] or "mention-of" %}
-        <li class="webmention {{ type }}">
-          <span class="owi {% if type == 'like-of' %}owi-heart{% elif type == 'repost-of' %}owi-repost{% elif type == 'in-reply-to' %}owi-comment{% else %}owi-pin{% endif %}"></span>
-          <div class="wm-author">
-            <a href="{{ mention.url }}" target="_blank" rel="noopener">
-              {{ mention.author.name or mention.url }}
+{% if allMentions | length > 0 %}
+  {% set replies = allMentions | filterByProperty('wm-property', 'in-reply-to') %}
+  {% set mentions = allMentions | filterByProperty('wm-property', 'mention-of') %}
+  {% set allReplies = replies.concat(mentions) %}
+
+  {% set likes = allMentions | filterByProperty('wm-property', 'like-of') %}
+  {% set reposts = allMentions | filterByProperty('wm-property', 'repost-of') %}
+  {% set faces = likes.concat(reposts) %}
+
+  <section class="webmentions" id="webmentions">
+    <hr class="webmentions__divider">
+    <h2 class="webmentions__title">Реакции из сети</h2>
+
+    {# Блок лиц (лайки и репосты) #}
+    {% if faces | length > 0 %}
+      <div class="wm-faces">
+        <p class="wm-faces__count">
+          <strong>{{ faces | length }}</strong>
+          {{ 'реакция' if faces | length == 1 else 'реакций' }}
+        </p>
+        <div class="wm-faces__list">
+          {% for mention in faces %}
+            <a href="{{ mention.author.url }}" class="wm-faces__item" title="{{ mention.author.name }}" rel="nofollow noreferrer">
+              <img src="{{ mention.author.photo or '/assets/static/default-avatar.png' }}"
+                  alt="{{ mention.author.name }}"
+                  loading="lazy"
+                  class="wm-avatar">
             </a>
-          </div>
-          {% if mention.content.text %}
-            <div class="wm-content">{{ mention.content.text | safe }}</div>
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    {# Блок комментариев #}
+    {% if allReplies | length > 0 %}
+      <div class="wm-replies">
+        <h3 class="wm-replies__title">Комментарии и упоминания</h3>
+        <ul class="wm-replies__list">
+          {% for reply in allReplies %}
+            <li class="wm-reply">
+              <div class="wm-reply__meta">
+                <img src="{{ reply.author.photo or '/assets/static/default-avatar.png' }}" alt="" class="wm-avatar-small">
+                <div class="wm-reply__author-info">
+                  <a href="{{ reply.author.url }}" class="wm-reply__author-name" rel="nofollow noreferrer">
+                    {{ reply.author.name or "Аноним" }}
+                  </a>
+                  <time class="wm-reply__date" datetime="{{ reply.published }}">
+                    {{ reply.published | date("dd.MM.yyyy") }}
+                  </time>
+                </div>
+              </div>
+              <div class="wm-reply__content">
+                {% if reply.content %}
+                  {{ reply.content.html | safe if reply.content.html else reply.content.text }}
+                {% else %}
+                  <a href="{{ reply.url }}" class="wm-reply__link">Упоминание без текста</a>
+                {% endif %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
   </section>
 {% endif %}

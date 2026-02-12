@@ -1,74 +1,85 @@
-import fetch from "node-fetch";
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
-import { parseStringPromise } from "xml2js";
 import dotenv from "dotenv";
-import { prepareWebmentions } from "./prepare-webmentions.js";
-
+import fs from "fs";
+import path from "path";
 dotenv.config();
 
-const token = process.env.WEBMENTION_APP_TOKEN;
-const sitemapPath = "_site/sitemap.xml";
-const dataDir = "src/_data";
-const outputPath = `${dataDir}/webmentions.json`;
-const isDev = process.env.NODE_ENV === "development";
+const SITEMAP_PATH = path.join(process.cwd(), "_site/sitemap.xml");
+const TOKEN = process.env.WEBMENTION_APP_TOKEN;
 
-if (!token) {
-  console.error("Missing WEBMENTION_APP_TOKEN in .env");
-  process.exit(1);
-}
+async function run() {
+  if (!TOKEN) {
+    console.error("❌ Ошибка: WEBMENTION_APP_TOKEN не найден");
+    return;
+  }
 
-async function getUrlsFromSitemap(path) {
-  const xml = readFileSync(path, "utf8");
-  const parsed = await parseStringPromise(xml);
-  if (!parsed.urlset || !parsed.urlset.url) return [];
-  return parsed.urlset.url.map((u) => u.loc[0]);
-}
-
-async function sendWebmention(url) {
-  const api = `https://webmention.app/check?token=${token}&url=${encodeURIComponent(
-    url,
-  )}`;
   try {
-    const res = await fetch(api, { method: "POST" });
-    if (!res.ok) {
-      console.error(`Failed: ${url} →`, res.status, await res.text());
-      return [];
+    console.log(`🚀 Анализирую локальный sitemap...`);
+    const xml = fs.readFileSync(SITEMAP_PATH, "utf-8");
+
+    // Регулярка для вытаскивания блоков <url>...</url>
+    const urlBlockRegex = /<url>([\s\S]*?)<\/url>/g;
+    const today = new Date().toISOString().split("T")[0]; // ГГГГ-ММ-ДД
+
+    const urlsToProcess = [];
+    let match;
+
+    while ((match = urlBlockRegex.exec(xml)) !== null) {
+      const block = match[1];
+      const loc = block.match(/<loc>(.*?)<\/loc>/)?.[1];
+      const lastmod = block.match(/<lastmod>(.*?)<\/lastmod>/)?.[1];
+
+      if (loc && lastmod) {
+        // Проверяем, совпадает ли дата изменения с сегодняшней
+        if (lastmod.startsWith(today)) {
+          urlsToProcess.push(loc);
+        }
+      }
     }
-    const json = await res.json();
-    return json.urls || [];
-  } catch (err) {
-    console.error(`Error with ${url}:`, err);
-    return [];
+
+    if (urlsToProcess.length === 0) {
+      console.log(
+        "grey",
+        `☕️ Сегодня обновлений не найдено (${today}). Отдыхаем.`,
+      );
+      return;
+    }
+
+    console.log(
+      `🎯 Найдено обновленных страниц сегодня: ${urlsToProcess.length}`,
+    );
+
+    for (const source of urlsToProcess) {
+      console.log(`📡 Запрос на проверку: ${source}`);
+
+      try {
+        const response = await fetch("https://webmention.app/check", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${TOKEN}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ url: source }),
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+          console.log(
+            `  ✅ Готово. Ссылок обработано: ${data.links?.length || 0}`,
+          );
+        } else {
+          console.log(`  ⚠️ Ошибка API: ${data.error || response.statusText}`);
+        }
+      } catch (e) {
+        console.error(`  ❌ Ошибка сети для ${source}`);
+      }
+
+      await new Promise((resolve) => setTimeout(resolve, 300));
+    }
+
+    console.log("🏁 Рассылка завершена.");
+  } catch (error) {
+    console.error("❌ Ошибка скрипта:", error.message);
   }
 }
 
-function savePreparedWebmentions(allMentions) {
-  if (!existsSync(dataDir)) mkdirSync(dataDir, { recursive: true });
-  writeFileSync(outputPath, JSON.stringify(allMentions, null, 2), "utf8");
-  console.log(`Saved ${allMentions.length} webmentions to ${outputPath}`);
-}
-
-async function main() {
-  let allMentions = [];
-
-  if (!isDev) {
-    // На проде собираем реальные webmentions
-    const urls = await getUrlsFromSitemap(sitemapPath);
-    console.log(`Found ${urls.length} URLs in sitemap`);
-
-    for (const url of urls) {
-      const mentions = await sendWebmention(url);
-      allMentions.push(...mentions);
-    }
-  } else {
-    console.log("Development mode — using fake webmentions only");
-  }
-
-  // Подготовка данных с учётом dev/prod
-  const prepared = prepareWebmentions(allMentions);
-
-  savePreparedWebmentions(prepared);
-  console.log("Done sending webmentions");
-}
-
-main();
+run();

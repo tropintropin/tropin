@@ -10,7 +10,7 @@ permalink: /webmentions/index.html
 
   <div id="progress-bar"></div>
 
-  <h1>
+  <h1 class="page-title">
     <code>/webmentions</code>
   </h1>
 
@@ -18,49 +18,63 @@ permalink: /webmentions/index.html
 
   <small class="page-description">
     <p>Здесь собираются <site>webmentions</site> — упоминания этого сайта в сети.
-    Если кто-то написал о нём в блоге, на форуме или в соцсетях (поддерживающих <site>webmentions</site>) и добавил ссылку на сайт,
-    ниже появится отметка об этом.</p>
+  Если кто-то написал о нём в блоге, на форуме или в соцсетях (поддерживающих <site>webmentions</site>) и добавил ссылку на сайт,
+  ниже появится отметка об этом.</p>
 
     <p>Сообщить об упоминании можно и вручную через <a href="https://webmention.io/tropin.one/webmention" target="_blank" rel="noopener">эту форму</a>.</p>
 
     <p>
       <a href="https://www.w3.org/TR/webmention/" target="_blank" rel="noopener">Webmention</a> — это открытый веб-стандарт.
-    Их можно встроить и на свой сайт — например, через сервис <a href="https://webmention.io" target="_blank" rel="noopener">webmention.io</a>.</p>
+  Их можно встроить и на свой сайт — например, через сервис <a href="https://webmention.io" target="_blank" rel="noopener">webmention.io</a>.</p>
   </small>
 
-  {% set mentions = webmentions | default([]) %}
+  <section class="webmentions-archive">
 
-  {% if mentions | length > 0 %}
-    <ul>
-      {% for mention in mentions %}
-        {% set type = mention['wm-property'] | default('mention-of') %}
-        <li class="webmention {{ type }}">
-          <span class="owi
-          {% if type == 'like-of' %}owi-heart
-          {% elif type == 'repost-of' %}owi-repost
-          {% elif type == 'in-reply-to' %}owi-comment
-          {% else %}owi-pin{% endif %}"></span>
+    {# Берем ВСЕ вебменшены без фильтра по URL #}
+    {% set allMentions = webmentions | default([]) %}
 
-          <div class="wm-author">
-            <a href="{{ mention.author.url | default(mention.url) }}" target="_blank" rel="noopener">
-              {{ mention.author.name | default(mention.url) }}
-            </a>
-          </div>
+    {% if allMentions | length > 0 %}
+      <div class="wm-replies">
+        <ul class="wm-replies__list">
+          {% for reply in allMentions %}
+            <li class="wm-reply">
+              <div class="wm-reply__meta">
+                <img src="{{ reply.author.photo or '/assets/static/default-avatar.png' }}" alt="" class="wm-avatar-small">
+                <div class="wm-reply__author-info">
+                  <a href="{{ reply.author.url or reply.url }}" class="wm-reply__author-name" rel="nofollow noreferrer">
+                    {{ reply.author.name or "Аноним" }}
+                  </a>
+                  <time class="wm-reply__date" datetime="{{ reply.published }}">
+                    {{ reply.published | date("dd.MM.yyyy") }}
+                  </time>
+                </div>
+                {# Метка типа активности (лайк, репост или ответ) #}
+                <span class="wm-type-badge">
+                  {% if reply['wm-property'] == 'like-of' %}❤️ лайк
+                  {% elif reply['wm-property'] == 'repost-of' %}🔄 репост
+                  {% else %}💬 ответ{% endif %}
+                </span>
+              </div>
 
-          <div class="wm-target">
-          Ссылка на страницу:
-          <a href="{{ mention['wm-target'] }}">{{ mention["wm-target"] }}</a>
-          </div>
+              {# Ссылка на то, какую страницу вашего сайта упоминали #}
+              <div class="wm-reply__target-info">
+                <small>К странице: <a href="{{ reply['wm-target'] }}">{{ reply['wm-target'] | replace("https://" + (process.env.WEBMENTION_DOMAIN or "tropin.one"), "") }}</a>
+                </small>
+              </div>
 
-          {% set text = mention.content.text | default(mention.content) %}
-          {% if text %}
-            <div class="wm-content">{{ text | safe }}</div>
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>Пока нет упоминаний.</p>
-  {% endif %}
-
+              <div class="wm-reply__content">
+                {% if reply.content %}
+                  {{ reply.content.html | safe if reply.content.html else reply.content.text }}
+                {% else %}
+                  <a href="{{ reply.url }}" class="wm-reply__link">Источник</a>
+                {% endif %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% else %}
+      <p class="webmentions__empty">Упоминаний пока нет.</p>
+    {% endif %}
+  </section>
 {% endblock %}
