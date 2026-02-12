@@ -5,28 +5,7 @@
 
 ## About
 
-This is my personal website where I share projects, experience, blog posts and some staff from my Digital Garden. In 2025, I migrated it to Eleventy to make building and updating faster and simpler.
-
-## Project Timeline
-
-```mermaid
-gantt
-title       Timeline
-dateFormat  YYYY.MM.DD
-axisFormat  %Y.%m
-
-section DEVELOPMENT
-Start the project                     :milestone,             crit, done, 2023.02.28, 0d
-Add index.html                        :done,          html0,              2023.03.05, 1d
-Add first CSS                         :done,          css0,               2023.08.13, 1d
-Migration to Eleventy                 :done,                  crit,       2025.08.12, 2025.09.02
-Add a simple CLI post generator       :done,                              2026.02.11, 1d
-
-section PRODUCTION
-Upload site to server                 :milestone,             crit, done, 2023.04.04, 0d
-Upload MVP site on Eleventy           :milestone,                   done, 2025.08.15, 0d
-Add first slashpages                  :milestone,                         2026.01.21, 0d
-```
+This is my personal website where I share projects, experience, blog posts, and entries from my Digital Garden, including _IndieWeb_-inspired slashpages. In 2025, I migrated it to _Eleventy_ to make building and updating faster and simpler.
 
 ## Tech Stack
 
@@ -38,68 +17,100 @@ Add first slashpages                  :milestone,                         2026.0
 - **Pagefind** – search indexing for static sites
 - **GitHub Actions** – CI/CD automation
 
-## Deployment
+## Requirements
 
-- Automatically deployed via GitHub Actions to GitHub Pages
-- Eleventy builds output to `_site` folder
+- Node.js 22+
+- `npm`
+- Unix-like environment (macOS, Linux, or WSL)
 
-## NPM Scripts Overview
+## NPM Scripts
 
-- **new** – Create a new blog, event, project, or research post using a template and interactive prompts:
+### Core Workflow
+
+These are the commands used in normal development and deployment.
+
+- **`new`** – Create a new blog, event, project, or research entry using an interactive CLI generator:
 
   ```bash
   npm run new
   ```
 
-- **build:css** – Compile SCSS to CSS (compressed, no source maps):
+  Used during content creation.
 
-  ```bash
-  npm run build:css
-  ```
-
-- **watch:css** – Watch SCSS files for changes and recompile automatically:
-
-  ```bash
-  npm run watch:css
-  ```
-
-- **start** – Start Eleventy dev server with live reload:
-
-  ```bash
-  npm run start
-  ```
-
-- **pagefind** – Build Pagefind search index from `_site`:
-
-  ```bash
-  npm run pagefind
-  ```
-
-- **watch:pagefind** – Watch HTML files in \_site and rebuild search index on changes:
-
-  ```bash
-  npm run watch:pagefind
-  ```
-
-- **dev** – Development mode: watch SCSS, run Eleventy server, and auto-rebuild search index:
+- **`dev`** – Run the full development environment:
+  - Watch and compile SCSS
+  - Start Eleventy dev server with live reload
+  - Watch generated HTML and rebuild the Pagefind index
 
   ```bash
   npm run dev
   ```
 
-  _Note_: On the first run, `_site` is empty. Run `npm run pagefind` once before starting `dev` for search to work or just repeat `npm run dev` again (useful on WSL).
+  This is the main command used during development.
 
-- **build** – Full production build: CSS + Eleventy + Pagefind:
+  **Note**: On a completely clean project (empty `_site`), Pagefind may require one initial build before search works properly.
+
+- **`clean`** – Remove the generated `_site` directory:
+
+  ```bash
+  npm run clean
+  ```
+
+  Useful before a fresh production build or when troubleshooting.
+
+- **`build`** – Run the full production build pipeline:
+  - Compile CSS
+  - Build Eleventy site
+  - Generate the Pagefind search index
+  - Send webmentions
 
   ```bash
   npm run build
   ```
 
-- **clean** – Remove the `_site` folder:
+  This command is used in CI and GitHub Actions during deployment.
+
+### Low-Level / Helper Scripts
+
+These are individual steps used internally by `dev` or `build`.
+
+- **`build:css`** – Compile SCSS to compressed CSS (no source maps):
 
   ```bash
-  npm run clean
+  npm run build:css
   ```
+
+- **`watch:css`** – Watch SCSS files and recompile automatically:
+
+  ```bash
+  npm run watch:css
+  ```
+
+- **`start`** – Run Eleventy dev server only (no CSS watcher, no Pagefind watcher):
+
+  ```bash
+  npm run start
+  ```
+
+- **`pagefind`** – Generate the Pagefind search index from the `_site` directory:
+
+  ```bash
+  npm run pagefind
+  ```
+
+- **`watch:pagefind`** – Watch HTML files inside `_site` and rebuild search index on changes:
+
+  ```bash
+  npm run watch:pagefind
+  ```
+
+- **`send-webmentions`** — Send outgoing webmentions after a production build:
+
+  ```bash
+  npm run send-webmentions
+  ```
+
+  This is automatically executed as part of `npm run build`.
 
 ## Project Structure
 
@@ -126,4 +137,33 @@ Add first slashpages                  :milestone,                         2026.0
 ├── .eleventy.js         # Eleventy configuration
 ├── package.json         # Dependencies and scripts
 └── README.md
+```
+
+## Deployment
+
+- Automatically deployed to _GitHub Pages_ via _GitHub Actions_ on every push to `main`
+
+- Production build runs `npm run build`
+
+- Eleventy outputs generated files to `_site`
+
+## Project Timeline
+
+```mermaid
+gantt
+title       Timeline
+dateFormat  YYYY.MM.DD
+axisFormat  %Y.%m
+
+section DEVELOPMENT
+Start the project                     :milestone,             crit, done, 2023.02.28, 0d
+Add index.html                        :done,          html0,              2023.03.05, 1d
+Add first CSS                         :done,          css0,               2023.08.13, 1d
+Migration to Eleventy                 :done,                  crit,       2025.08.12, 2025.09.02
+Add a simple CLI post generator       :done,                              2026.02.11, 1d
+
+section PRODUCTION
+Upload site to server                 :milestone,             crit, done, 2023.04.04, 0d
+Upload MVP site on Eleventy           :milestone,                   done, 2025.08.15, 0d
+Add first slashpages                  :milestone,                         2026.01.21, 0d
 ```
