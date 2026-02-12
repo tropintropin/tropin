@@ -275,6 +275,29 @@ export default async function (eleventyConfig) {
     }
   });
 
+  eleventyConfig.addFilter("filterByProperty", (array, key, value) => {
+    return array.filter((item) => item[key] === value);
+  });
+
+  eleventyConfig.addFilter("getMentionsForUrl", (mentions, url) => {
+    // Если переменная окружения пуста, укажите ваш домен строкой как запасной вариант
+    const domain = process.env.WEBMENTION_DOMAIN || "tropin.one";
+
+    return mentions.filter((entry) => {
+      const target = entry["wm-target"];
+      if (!target) return false;
+
+      // Нормализуем оба URL: убираем протоколы и финальные слэши
+      const normalize = (link) =>
+        link
+          .replace(/^https?:\/\//, "") // убрать http/https
+          .replace(/\/$/, "") // убрать слэш в конце
+          .toLowerCase();
+
+      return normalize(target) === normalize(domain + url);
+    });
+  });
+
   // Shortcodes & Global Data
 
   eleventyConfig.addGlobalData(

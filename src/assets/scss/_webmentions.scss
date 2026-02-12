@@ -1,108 +1,167 @@
-// ==============================
-// #WEBMENTIONS
-// ==============================
-// Styles for displaying webmentions on posts and pages.
-// ==============================
-
-@use "sass:map";
-
+// src/assets/scss/_webmentions.scss
 @use "variables" as v;
 
-// ==============================
-// #WEBMENTIONS-CONTAINER
-// ==============================
-// Styles for the main webmentions container.
-// ==============================
-
 .webmentions {
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: var(--backgrounds-card);
-  border-left: 4px solid var(--primary);
-  border-radius: 4px;
-  font-size: 0.9rem;
+  margin-top: v.$spacing-section;
+  font-family: var(--font-body);
+
+  &__divider {
+    border: 0;
+    border-top: 1px solid var(--neutral-100);
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__empty {
+    font-style: italic;
+    color: var(--neutral-300);
+  }
 }
 
-.webmentions h3 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: var(--neutral-500);
+// Блок аватарок (лайки/репосты)
+.wm-faces {
+  margin-bottom: 2rem;
+
+  &__count {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    color: var(--neutral-400);
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__item {
+    display: block;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
 }
 
-.webmentions ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.wm-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--secondary);
+  background-color: var(--background-card);
+
+  &-small {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--secondary);
+  }
 }
 
-// ==============================
-// #WEBMENTION-ENTRY
-// ==============================
-// Styles for each individual webmention entry.
-// ==============================
+// Список ответов
+.wm-replies {
+  &__title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 
-.webmention {
-  margin-bottom: 0.75rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--primary);
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 
-.webmention:last-child {
-  border-bottom: none;
-}
-
-.webmention .owi {
-  font-size: 1rem;
-  flex-shrink: 0;
-  color: var(--neutral-400);
-}
-
-.webmention .wm-author a {
-  font-weight: bold;
-  text-decoration: none;
-  color: var(--neutral-200);
-}
-
-.webmention .wm-content {
-  margin-top: 0.25rem;
-  color: var(--neutral-300);
-}
-
-// ==============================
-// #WEBMENTIONS-ALL
-// ==============================
-// Styles for the section displaying all webmentions.
-// ==============================
-
-.webmentions-all {
-  padding: 2rem;
-  background: var(--backgrounds-card);
+.wm-reply {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--background-card);
   border-radius: 8px;
-  font-size: 0.9rem;
+  border-left: 4px solid var(--primary);
+  box-shadow: 0 2px 4px var(--shadow);
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__author-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  &__author-name {
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__date {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--neutral-300);
+  }
+
+  &__content {
+    line-height: 1.6;
+    color: var(--neutral-500);
+
+    // Стилизация ссылок внутри комментариев
+    a {
+      color: var(--links-default);
+      text-decoration: underline;
+      &:hover {
+        color: var(--links-hover);
+      }
+    }
+
+    // Стилизация цитат внутри комментариев
+    blockquote {
+      margin: 1rem 0;
+      padding-left: 1rem;
+      border-left: 2px solid var(--accent);
+      font-style: italic;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
-.webmentions-all ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.wm-type-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  background: var(--neutral-100);
+  border-radius: 12px;
+  margin-left: auto; // Прижмет бейдж к правому краю
 }
 
-.webmentions-all li.webmention {
-  border-bottom: 1px solid var(--primary);
-  padding: 0.5rem 0;
+.wm-reply__target-info {
   margin-bottom: 0.5rem;
-}
+  font-size: 0.8rem;
 
-.webmentions-all li.webmention:last-child {
-  border-bottom: none;
-}
-
-.webmention .wm-author a {
-  font-weight: bold;
-  color: var(--neutral-200);
-  text-decoration: none;
-}
-
-.webmention .wm-content {
-  margin-top: 0.25rem;
+  a {
+    color: var(--secondary);
+    font-family: var(--font-mono);
+  }
 }
