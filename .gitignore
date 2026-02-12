@@ -35,3 +35,6 @@ Thumbs.db
 # SCSS build artifacts
 /src/assets/css/main.css.map
 /src/assets/css/main.css
+
+# Webmenshions build artifacts
+src/_data/webmentions.json
