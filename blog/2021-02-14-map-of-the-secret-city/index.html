@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru-RU" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://tropin.one">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/static/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-title" content="Valery Tropin">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="author" content="Валерий Тропин">
+    
+    <meta name="description" content="Я люблю читать и рассматривать карты. Рисовать их я тоже люблю. Ещё люблю упорядочивать инфу и раскладывать всё по полочкам. Неудивительно, чтение цикла книг о …">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      
+        Карта Тайного Города | Valerio Tropin
+      
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+    <link rel="webmention" href="https://webmention.io/tropin.one/webmention">
+    <link rel="pingback" href="https://webmention.io/tropin.one/xmlrpc">
+
+    <link rel="me" href="https://web.brid.gy/r/https://tropin.one/">
+    <link rel="me" href="https://tech.lgbt/@GuyFromUberwald">
+    <link rel="me" href="https://bsky.app/profile/tropin.one">
+    <link rel="me" href="https://www.instagram.com/tropintropin/">
+
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("theme");
+          const prefersDark = window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .matches;
+          const isDark = saved === "dark" || (!saved && prefersDark);
+
+          if (isDark) {
+            document
+              .documentElement
+              .classList
+              .add("dark-theme");
+          } else {
+            document
+              .documentElement
+              .classList
+              .remove("dark-theme");
+          }
+        } catch (e) {
+          // если localStorage недоступен, просто оставляем default
+        }
+      })();
+    </script>
+
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <meta property="og:title" content="Карта Тайного Города">
+<meta property="og:type" content="article">
+<meta property="og:description" content="Музейный исследователь, автор туров по Петербургу и не только, разработчик телеграм-ботов">
+<meta property="og:image" content="[object Object]?v=">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+<meta property="og:image:alt" content="Valery Tropin">
+<meta property="og:url" content="/blog/2021-02-14-map-of-the-secret-city/">
+<meta property="og:site_name" content="Valerio Tropin">
+<meta property="og:locale" content="">
+
+  <meta property="og:locale:alternate" content="en_US">
+
+  <meta property="og:locale:alternate" content="en_GB">
+
+
+    <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Карта Тайного Города">
+<meta name="twitter:description" content="Музейный исследователь, автор туров по Петербургу и не только, разработчик телеграм-ботов">
+<meta name="twitter:image" content="[object Object]?v=">
+<meta name="twitter:image:alt" content="Valery Tropin">
+
+    
+  </head>
+  <body data-pagefind-body="">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.28 1.15-.28 2.35 0 3.5-.73 1.02-1.08 2.25-1 3.5 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+  </symbol>
+
+  <symbol id="icon-telegram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path>
+  </symbol>
+
+  <symbol id="icon-livelib" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
+    <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
+    <line x1="3" y1="6" x2="3" y2="19"></line>
+    <line x1="12" y1="6" x2="12" y2="19"></line>
+    <line x1="21" y1="6" x2="21" y2="19"></line>
+  </symbol>
+
+  <symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+    <line x1="16" y1="2" x2="16" y2="6"></line>
+    <line x1="8" y1="2" x2="8" y2="6"></line>
+    <line x1="3" y1="10" x2="21" y2="10"></line>
+  </symbol>
+
+  <symbol id="icon-rss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9"></path>
+    <path d="M4 4a16 16 0 0 1 16 16"></path>
+    <circle cx="5" cy="19" r="1"></circle>
+  </symbol>
+</svg>
+
+    <header>
+  <div class="print-info">
+    <picture><source type="image/webp" srcset="/img/hY-hPg7_9I-300.webp 300w, /img/hY-hPg7_9I-600.webp 600w, /img/hY-hPg7_9I-812.webp 812w, /img/hY-hPg7_9I-1200.webp 1200w" sizes="auto"><img loading="lazy" decoding="async" src="/img/hY-hPg7_9I-300.jpeg" alt="QR для печати" width="1200" height="1200" srcset="/img/hY-hPg7_9I-300.jpeg 300w, /img/hY-hPg7_9I-600.jpeg 600w, /img/hY-hPg7_9I-812.jpeg 812w, /img/hY-hPg7_9I-1200.jpeg 1200w" sizes="auto"></picture>
+    <div class="print-text">
+      <p>Версия для печати</p>
+      <p>Контакты:</p>
+      <p>tropin.tropin@gmail.com</p>
+      <p>+7 999 215-10-69</p>
+    </div>
+  </div>
+
+  <div class="header-inner">
+    <div class="title-row">
+      <button class="nav-toggle" aria-label="Открыть меню"></button>
+      <h1 class="site-title">
+        <a href="https://tropin.one">Valerio Tropin</a>
+      </h1>
+    </div>
+
+    <div class="nav-wrapper">
+      <nav class="main-nav" aria-label="Главное меню">
+        
+          <ul class="nav-list">
+            
+              
+                <li>
+                  <a href="/">Обо мне</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/blog/">Блог</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/projects/">Проекты</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/research/">Публикации и выступления</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/events/">События</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/map/">•</a>
+                </li>
+              
+            
+          </ul>
+        
+      </nav>
+
+      <div id="search"></div>
+    </div>
+  </div>
+</header>
+
+    <main>
+      
+
+  <div id="progress-bar"></div>
+
+  <article class="post-page">
+    
+      <figure class="post-cover">
+        <picture><source type="image/webp" srcset="/img/EXSolFgRyk-300.webp 300w, /img/EXSolFgRyk-600.webp 600w, /img/EXSolFgRyk-1200.webp 1200w, /img/EXSolFgRyk-1552.webp 1552w" sizes="auto"><img loading="lazy" decoding="async" src="/img/EXSolFgRyk-300.jpeg" alt="Карта Тайного Города" width="1552" height="911" srcset="/img/EXSolFgRyk-300.jpeg 300w, /img/EXSolFgRyk-600.jpeg 600w, /img/EXSolFgRyk-1200.jpeg 1200w, /img/EXSolFgRyk-1552.jpeg 1552w" sizes="auto"></picture>
+        
+          <figcaption>
+            Скриншот карты в посте про карту. Логично? Логично
+          </figcaption>
+        
+      </figure>
+    
+
+    <h1 id="post-title">Карта Тайного Города</h1>
+
+    <div class="post-meta-top">
+      <small class="reading-time">
+        1 минута чтения
+      </small>
+      
+        
+        
+        
+        
+          <span class="separator">·</span>
+          <small class="post-repost">
+        Этот пост впервые был опубликован  в
+        <a href="https://valeriuus.livejournal.com/391592.html">ЖЖ</a>
+            
+            
+              14.02.2021
+            
+          </small>
+        
+      
+    </div>
+
+    <div class="post-meta-bottom">
+      <p class="post-date">14.02.2021</p>
+    </div>
+
+    
+
+
+
+
+
+
+    <p class="drop-cap">
+В феврале я решил устроить себе что-то вроде мини-отпуска. Я никуда не поехал, просто засел дома с книжками. Сначала это были фанфики (гусары, молчать!), а позже я перешёл на тяжёлую артиллерию: вспомнил, что цикл Вадима Панова про Тайный Город, который я нежно люблю уже много лет, так мною и не дочитан. Ну и вот: время пришло.
+</p>
+<p>Подошёл я к этому академически, а потому читать и перечитывать все почти что 40 томов (если считать со сборниками соавторов) я начал с открытыми картами Москвы.</p>
+<p>Предварительный гуглёж принёс какие-то топографически не точные карты-схемы ТГ с <a href="https://t-grad.fandom.com/ru/wiki/%D0%A2%D0%B8%D0%B3%D1%80%D0%B0%D0%B4%D0%BA%D0%BE%D0%BC_%D0%B2%D0%B8%D0%BA%D0%B8">вики-сайта Тиградкома</a> да неплохую <a href="https://yandex.ru/maps/213/moscow/?ll=37.604208%2C55.737336&amp;mode=usermaps&amp;um=w6yNY58LyzMmBu4o2yGcJiok7ZY_v3y7&amp;z=10">яндекс-карту</a> из поста <a href="https://web.archive.org/web/20210209214023/https://bestiary-us.livejournal.com/15361.html">pan_dohva</a> от 2014 года.</p>
+<p>Я всё это постарался собрать воедино в своей карте. Она далеко не полная пока. Локации с неясным адресом я указываю отдельно. Если есть намёки на местоположение в текстах книг, я привожу цитаты с указанием названия книги (но без страниц — у меня электронные издания).</p>
+<p>Метки раскрашены в цвета великих домов:</p>
+<ul>
+<li>Навь — ⚫️ чёрный</li>
+<li>Чудь — 🔴 красный</li>
+<li>Людь — 🟢 зелёный</li>
+<li>Локации челов — 🔵 голубой</li>
+<li>Общие для ТГ локации — 🟠 оранжевый</li>
+</ul>
+<p><small>Всё написанное выше актуально на 2021.02.14. Сейчас я читаю пятую книгу. Метки могут переехать ещё десять раз, и переедут. Я пока не решил, стоит ли отмечать штаб-квартиры злодеев, если они фигурируют лишь в одном каком-то томе (резиденцию Вестника, например, или виллу «Каравеллу»).</small></p>
+<p><small>Если здесь окажутся такие же двинутые как и я, буду рад конструктивным замечаниям.</small></p>
+<p>Собственно, вот:</p>
+<div class="map-frame">
+<script type="text/javascript" charset="utf-8" async="" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A744bed27e0b8c7e8712c2223b86c192167e3fe2aa6fbe1146b18b5cd8a5342ec&amp;width=100%25&amp;height=512&amp;lang=ru_RU&amp;scroll=true"></script>
+</div>
+
+
+    <br>
+
+
+  <span class="last-mod">Последняя правка: 24.08.2025</span>
+
+
+
+    
+
+
+
+
+
+  </article>
+
+  <nav class="post-navigation">
+    <div class="nav-grid">
+      <div class="nav-item nav-next">
+        
+          <a href="/blog/2022-08-30-funny-pictures/">
+            <span class="arrow">←</span>
+            <span>весёлые картинки и обилие экранов</span>
+          </a>
+        
+      </div>
+
+      <div class="nav-item nav-all">
+        <a href="/blog/">
+          <span>Все посты</span></a>
+      </div>
+
+      <div class="nav-item nav-prev">
+        
+          <a href="/blog/2018-12-27-lets-sum-it-up/">
+            <span>Тропин. Итоги. 2018</span>
+            <span class="arrow">→</span>
+          </a>
+        
+      </div>
+    </div>
+  </nav>
+
+
+    </main>
+    <footer>
+  <p>
+    <button id="theme-toggle" class="theme-toggle">
+      <span class="icon">🌓</span>
+      <span class="label">Тема</span>
+    </button>
+  </p>
+
+  <div class="footer-inner">
+    <div>
+      
+        <a href="https://github.com/tropintropin" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-github"></use>
+          </svg>
+        </a>
+      
+        <a href="https://t.me/ozlik" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-telegram"></use>
+          </svg>
+        </a>
+      
+        <a href="https://www.livelib.ru/reader/valeriuus" target="_blank" rel="noopener noreferrer" aria-label="LiveLib" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-livelib"></use>
+          </svg>
+        </a>
+      
+        <a href="/calendar.ics" target="_blank" rel="noopener noreferrer" aria-label="Calendar" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-calendar"></use>
+          </svg>
+        </a>
+      
+        <a href="/feed.atom.xml" target="_blank" rel="noopener noreferrer" aria-label="RSS" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-rss"></use>
+          </svg>
+        </a>
+      
+    </div>
+
+    <small>
+      <a href="/wish" title="На случай, если вы думаете мне что-то подарить">Wish List
+      </a>
+      <span class="separator">·</span>
+      <a href="/calendar.ics" target="_blank" rel="me noopener noreferrer" title="Календарь событий">Events Calendar</a>
+      <span class="separator">·</span>
+      <a href="/feed.atom.xml" target="_blank" rel="me noopener noreferrer" title="Фид всех записей на сайте">RSS</a>
+      <span class="separator">·</span>
+      <a href="/legal" title="Legal notice and privacy policy">Legal & Privacy</a>
+        <span class="separator">·</span>
+      <a href="/map" title="Карта сайта">All pages</a>
+    </small>
+
+    <p class="footer-copy">
+      &copy;&nbsp;<time datetime="2023-2025">MMXXIII&nbsp;→&nbsp;MMXXVI</time>&nbsp;<a href="https://tropin.one">Valery Tropin</a>. This website is made with <a href="https://www.11ty.dev/">11ty</a> & hosted on <a href="https://docs.github.com/en/pages">GitHub Pages</a>.
+    </p>
+  </div>
+</footer>
+
+
+    <button id="scrollTop" class="scroll-top" aria-label="Наверх">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </svg>
+    </button>
+
+    
+    <script src="/pagefind/pagefind-ui.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        new PagefindUI({element: "#search", showSubResults: true});
+      });
+    </script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="/assets/js/nav-toggle.js"></script>
+    <script src="/assets/js/scrolltop.js" defer=""></script>
+    <script src="/assets/js/copy-code.js" defer=""></script>
+    <script src="/assets/js/theme-toggle.js" defer=""></script>
+    <script src="/assets/js/carousel.js" defer=""></script>
+  </body>
+</html>
