@@ -12,6 +12,7 @@ This is my personal website where I share projects, experience, blog posts, and 
 - **Eleventy** – static site generator
 - **Nunjucks** – templating engine
 - **Leaflet** — map engine
+- **Thunderforest** — map tiles provider
 - **SCSS → CSS** – styles preprocessor
 - **JavaScript** – client-side interactivity
 - **Pagefind** – search indexing for static sites
@@ -110,7 +111,7 @@ These are individual steps used internally by `dev` or `build`.
   npm run send-webmentions
   ```
 
-  This is automatically executed as part of `npm run build`.
+  This script is integrated into the production build pipeline and executed automatically during CI/CD.
 
 ## Project Structure
 
