@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru-RU" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://tropin.one">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/static/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-title" content="Valery Tropin">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="author" content="Валерий Тропин">
+    
+    <meta name="description" content="Итоги 2017-го: мне 27, я занимаюсь здоровьем, прихожу в себя после очень сложной осени 16-го года и много путешествую.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      
+        Тропин. Итоги. 2017 | Valerio Tropin
+      
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+    <link rel="webmention" href="https://webmention.io/tropin.one/webmention">
+    <link rel="pingback" href="https://webmention.io/tropin.one/xmlrpc">
+
+    <link rel="me" href="https://web.brid.gy/r/https://tropin.one/">
+    <link rel="me" href="https://tech.lgbt/@GuyFromUberwald">
+    <link rel="me" href="https://bsky.app/profile/tropin.one">
+    <link rel="me" href="https://www.instagram.com/tropintropin/">
+
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("theme");
+          const prefersDark = window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .matches;
+          const isDark = saved === "dark" || (!saved && prefersDark);
+
+          if (isDark) {
+            document
+              .documentElement
+              .classList
+              .add("dark-theme");
+          } else {
+            document
+              .documentElement
+              .classList
+              .remove("dark-theme");
+          }
+        } catch (e) {
+          // если localStorage недоступен, просто оставляем default
+        }
+      })();
+    </script>
+
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <meta property="og:title" content="Тропин. Итоги. 2017">
+<meta property="og:type" content="article">
+<meta property="og:description" content="Музейный исследователь, автор туров по Петербургу и не только, разработчик телеграм-ботов">
+<meta property="og:image" content="[object Object]?v=">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+<meta property="og:image:alt" content="Valery Tropin">
+<meta property="og:url" content="/blog/2018-01-08-lets-sum-it-up/">
+<meta property="og:site_name" content="Valerio Tropin">
+<meta property="og:locale" content="">
+
+  <meta property="og:locale:alternate" content="en_US">
+
+  <meta property="og:locale:alternate" content="en_GB">
+
+
+    <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Тропин. Итоги. 2017">
+<meta name="twitter:description" content="Музейный исследователь, автор туров по Петербургу и не только, разработчик телеграм-ботов">
+<meta name="twitter:image" content="[object Object]?v=">
+<meta name="twitter:image:alt" content="Valery Tropin">
+
+    
+  </head>
+  <body data-pagefind-body="">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.28 1.15-.28 2.35 0 3.5-.73 1.02-1.08 2.25-1 3.5 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+  </symbol>
+
+  <symbol id="icon-telegram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path>
+  </symbol>
+
+  <symbol id="icon-livelib" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
+    <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
+    <line x1="3" y1="6" x2="3" y2="19"></line>
+    <line x1="12" y1="6" x2="12" y2="19"></line>
+    <line x1="21" y1="6" x2="21" y2="19"></line>
+  </symbol>
+
+  <symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+    <line x1="16" y1="2" x2="16" y2="6"></line>
+    <line x1="8" y1="2" x2="8" y2="6"></line>
+    <line x1="3" y1="10" x2="21" y2="10"></line>
+  </symbol>
+
+  <symbol id="icon-rss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9"></path>
+    <path d="M4 4a16 16 0 0 1 16 16"></path>
+    <circle cx="5" cy="19" r="1"></circle>
+  </symbol>
+</svg>
+
+    <header>
+  <div class="print-info">
+    <picture><source type="image/webp" srcset="/img/hY-hPg7_9I-300.webp 300w, /img/hY-hPg7_9I-600.webp 600w, /img/hY-hPg7_9I-812.webp 812w, /img/hY-hPg7_9I-1200.webp 1200w" sizes="auto"><img loading="lazy" decoding="async" src="/img/hY-hPg7_9I-300.jpeg" alt="QR для печати" width="1200" height="1200" srcset="/img/hY-hPg7_9I-300.jpeg 300w, /img/hY-hPg7_9I-600.jpeg 600w, /img/hY-hPg7_9I-812.jpeg 812w, /img/hY-hPg7_9I-1200.jpeg 1200w" sizes="auto"></picture>
+    <div class="print-text">
+      <p>Версия для печати</p>
+      <p>Контакты:</p>
+      <p>tropin.tropin@gmail.com</p>
+      <p>+7 999 215-10-69</p>
+    </div>
+  </div>
+
+  <div class="header-inner">
+    <div class="title-row">
+      <button class="nav-toggle" aria-label="Открыть меню"></button>
+      <h1 class="site-title">
+        <a href="https://tropin.one">Valerio Tropin</a>
+      </h1>
+    </div>
+
+    <div class="nav-wrapper">
+      <nav class="main-nav" aria-label="Главное меню">
+        
+          <ul class="nav-list">
+            
+              
+                <li>
+                  <a href="/">Обо мне</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/blog/">Блог</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/projects/">Проекты</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/research/">Публикации и выступления</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/events/">События</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/map/">•</a>
+                </li>
+              
+            
+          </ul>
+        
+      </nav>
+
+      <div id="search"></div>
+    </div>
+  </div>
+</header>
+
+    <main>
+      
+
+  <div id="progress-bar"></div>
+
+  <article class="post-page">
+    
+
+    <h1 id="post-title">Тропин. Итоги. 2017</h1>
+
+    <div class="post-meta-top">
+      <small class="reading-time">
+        3 минуты чтения
+      </small>
+      
+        
+        
+        
+        
+          <span class="separator">·</span>
+          <small class="post-repost">
+        Этот пост впервые был опубликован  в
+        личном дневнике
+            
+            
+          </small>
+        
+      
+    </div>
+
+    <div class="post-meta-bottom">
+      <p class="post-date">08.01.2018</p>
+    </div>
+
+    
+
+
+
+
+
+
+    <h3>Ещё итоги</h3>
+<ol>
+<li><a href="/blog/2014-01-15-lets-sum-it-up-02/">2013 — 02</a></li>
+<li><a href="/blog/2013-12-12-lets-sum-it-up-01/">2013 — 01</a></li>
+<li><a href="/blog/2012-12-20-lets-sum-it-up/">2012</a></li>
+<li><a href="/blog/2011-12-30-lets-sum-it-up/">2011</a></li>
+<li><a href="/blog/2010-12-25-lets-sum-it-up/">2010</a></li>
+</ol>
+<p class="drop-cap">
+Главным итогом 2017-го для меня стало то, что он в тысячу раз лучше предыдущего года. В 16-м я почти готов был вскрыться из-за кромешного пиздеца, которым стала моя жизнь. Хорошо помню ту новогоднюю ночь: мы с мамой поднимаем бокалы, а брат ложится на спину от усталости после нескольких суток на работе и забивает на бой курантов. Этот год мы встретили тем же составом, но было весело, и мы даже жгли бенгальские огни.
+</p>
+<p>Я всё время прокручиваю в голове то, как мне следует действовать в тех или иных ситуациях. Во время питерского теракта это мне пригодилось. Маленький плюсик себе за порядок и скорость действий. Очень неожиданно было затем анализировать, кому из родных и друзей я позвонил или написал, а кто даже не пришёл на ум.</p>
+<p>Возможно, косвенным следствием этого открытия стало то, что я прекратил одну старую дружбу. Здесь ещё замешана, как ни странно, одна толстая книжка, которую все читали в минувшем году. Это был эгоистичный поступок, но я больше не мог выносить эти токсичные отношения + окончательно понял, что ничем не могу помочь человеку, который сам себе не может помочь. Это в корне расходится с представлением о том, что долг окружающих помогать человеку в депрессии. Наверное, это так, но у меня у самого не было на это ни сил, ни желания: если человек постоянно говорит, что не хочет жить, при этом требует твоего участия, но отказывается идти к врачу, и это происходит не в первый раз; плюс, дополнительное условие: ты уже видел этого человека при смерти после автокатастрофы, которая произошла у тебя на глазах, и поэтому не можешь из его уст слышать шуток о смерти и разговоров о смерти… В общем, единственным выходом из этого для меня стало дистанцироваться от человека. Это было сложно, но это надо было сделать.</p>
+<p>Я горжусь тем, как довёл до конца двухлетнюю эпопею с военкоматом. Бумажные формальности ещё потреплют мне нервы в начале этого года, но это совершенные мелочи. Я не заплатил ни копейки чиновникам, зато успел отремонтировать ногу и использовал это в диалоге с бюрократической машиной, которая всё-таки не смогла меня сожрать (в этот раз; русский левиафан довольно беспощаден).</p>
+<p>К слову, о ноге. После операции я снова могу ходить, и это едва ли не самое большое счастье в моей жизни. Я задумался об этом четыре года назад, когда впервые не смог спуститься по лестнице, а затем был вынужден прервать на середине путешествие и вернуться домой из-за боли.</p>
+<p>Осенью с моих зубов сняли брекеты. После пяти лет с колючей проволокой во рту приятным открытием стало то, что зубы могут не болеть. Это ещё не конец, конечно, и я ввязался в очередную кредитную историю с коронками, имплантами и экспериментом по выращиванию новой кости в челюсти, но это того стоит.</p>
+<p>Ещё в этом году было много приятных импульсивных путешествий. Окончательно убедился в том, что деньги для этого совершенно не нужны. Я выспался в февральской Нарве, влюбился в Тарту, Стамбул и Берлин, пришёл в ужас от Амстердама, в котором не смог укуриться, но теперь хочу в него вернуться, великолепно выспался в Харлеме, крохотном городке, в котором на ресепшене моего хостела работает Ума Турман, а бутерброд с селёдкой мне продавал Жан Рено, ничего не ожидал, а потому влюбился в Гданьск, а затем охерел от Калининграда, шок от которого компенсировало море Раушена; наконец, влюбился в Котку, прогулялся по Хамине и показал маме вечерний Хельсинки. Вишенкой на торте стала поездка в Таллин за прекрасным пивом с ночёвкой в ставшей уже родной советской Нарве.</p>
+<p>Самое крутое, что я ни строчки не написал о работе, хотя там произошло море всего. Начать с того, что я получил повышение и ловлю огромный кайф от того, чем занимаюсь. Пожалуй, на этом и закончу.</p>
+<p>Единственное, что я так и не смог сделать в 2017-м — это влюбиться. Немного грустно, конечно, но это пренебрежимая мелочь в сравнении со всем остальным.</p>
+<p>Хороший был год.</p>
+
+
+    <br>
+
+
+  <span class="last-mod">Последняя правка: 27.12.2025</span>
+
+
+
+    
+
+
+
+
+
+  </article>
+
+  <nav class="post-navigation">
+    <div class="nav-grid">
+      <div class="nav-item nav-next">
+        
+          <a href="/blog/2018-12-27-lets-sum-it-up/">
+            <span class="arrow">←</span>
+            <span>Тропин. Итоги. 2018</span>
+          </a>
+        
+      </div>
+
+      <div class="nav-item nav-all">
+        <a href="/blog/">
+          <span>Все посты</span></a>
+      </div>
+
+      <div class="nav-item nav-prev">
+        
+          <a href="/blog/2016-10-05-childrens-dreams/">
+            <span>Детские сны</span>
+            <span class="arrow">→</span>
+          </a>
+        
+      </div>
+    </div>
+  </nav>
+
+
+    </main>
+    <footer>
+  <p>
+    <button id="theme-toggle" class="theme-toggle">
+      <span class="icon">🌓</span>
+      <span class="label">Тема</span>
+    </button>
+  </p>
+
+  <div class="footer-inner">
+    <div>
+      
+        <a href="https://github.com/tropintropin" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-github"></use>
+          </svg>
+        </a>
+      
+        <a href="https://t.me/ozlik" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-telegram"></use>
+          </svg>
+        </a>
+      
+        <a href="https://www.livelib.ru/reader/valeriuus" target="_blank" rel="noopener noreferrer" aria-label="LiveLib" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-livelib"></use>
+          </svg>
+        </a>
+      
+        <a href="/calendar.ics" target="_blank" rel="noopener noreferrer" aria-label="Calendar" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-calendar"></use>
+          </svg>
+        </a>
+      
+        <a href="/feed.atom.xml" target="_blank" rel="noopener noreferrer" aria-label="RSS" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-rss"></use>
+          </svg>
+        </a>
+      
+    </div>
+
+    <small>
+      <a href="/wish" title="На случай, если вы думаете мне что-то подарить">Wish List
+      </a>
+      <span class="separator">·</span>
+      <a href="/calendar.ics" target="_blank" rel="me noopener noreferrer" title="Календарь событий">Events Calendar</a>
+      <span class="separator">·</span>
+      <a href="/feed.atom.xml" target="_blank" rel="me noopener noreferrer" title="Фид всех записей на сайте">RSS</a>
+      <span class="separator">·</span>
+      <a href="/legal" title="Legal notice and privacy policy">Legal & Privacy</a>
+        <span class="separator">·</span>
+      <a href="/map" title="Карта сайта">All pages</a>
+    </small>
+
+    <p class="footer-copy">
+      &copy;&nbsp;<time datetime="2023-2025">MMXXIII&nbsp;→&nbsp;MMXXVI</time>&nbsp;<a href="https://tropin.one">Valery Tropin</a>. This website is made with <a href="https://www.11ty.dev/">11ty</a> & hosted on <a href="https://docs.github.com/en/pages">GitHub Pages</a>.
+    </p>
+  </div>
+</footer>
+
+
+    <button id="scrollTop" class="scroll-top" aria-label="Наверх">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </svg>
+    </button>
+
+    
+    <script src="/pagefind/pagefind-ui.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        new PagefindUI({element: "#search", showSubResults: true});
+      });
+    </script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="/assets/js/nav-toggle.js"></script>
+    <script src="/assets/js/scrolltop.js" defer=""></script>
+    <script src="/assets/js/copy-code.js" defer=""></script>
+    <script src="/assets/js/theme-toggle.js" defer=""></script>
+    <script src="/assets/js/carousel.js" defer=""></script>
+  </body>
+</html>

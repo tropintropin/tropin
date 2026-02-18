@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ru-RU" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://tropin.one">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/static/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-title" content="Valery Tropin">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="author" content="Валерий Тропин">
+    
+    <meta name="description" content="The wish page">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      
+        /wish | Valerio Tropin
+      
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+    <link rel="webmention" href="https://webmention.io/tropin.one/webmention">
+    <link rel="pingback" href="https://webmention.io/tropin.one/xmlrpc">
+
+    <link rel="me" href="https://web.brid.gy/r/https://tropin.one/">
+    <link rel="me" href="https://tech.lgbt/@GuyFromUberwald">
+    <link rel="me" href="https://bsky.app/profile/tropin.one">
+    <link rel="me" href="https://www.instagram.com/tropintropin/">
+
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("theme");
+          const prefersDark = window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .matches;
+          const isDark = saved === "dark" || (!saved && prefersDark);
+
+          if (isDark) {
+            document
+              .documentElement
+              .classList
+              .add("dark-theme");
+          } else {
+            document
+              .documentElement
+              .classList
+              .remove("dark-theme");
+          }
+        } catch (e) {
+          // если localStorage недоступен, просто оставляем default
+        }
+      })();
+    </script>
+
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <meta property="og:title" content="/wish">
+<meta property="og:type" content="article">
+<meta property="og:description" content="The wish page">
+<meta property="og:image" content="/assets/static/default-image.jpg?v=">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+<meta property="og:image:alt" content="Valery Tropin">
+<meta property="og:url" content="/wish/">
+<meta property="og:site_name" content="Valerio Tropin">
+<meta property="og:locale" content="">
+
+  <meta property="og:locale:alternate" content="en_US">
+
+  <meta property="og:locale:alternate" content="en_GB">
+
+
+    <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="/wish">
+<meta name="twitter:description" content="The wish page">
+<meta name="twitter:image" content="/assets/static/default-image.jpg?v=">
+<meta name="twitter:image:alt" content="Valery Tropin">
+
+    
+  </head>
+  <body data-pagefind-body="">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.28 1.15-.28 2.35 0 3.5-.73 1.02-1.08 2.25-1 3.5 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+  </symbol>
+
+  <symbol id="icon-telegram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path>
+  </symbol>
+
+  <symbol id="icon-livelib" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
+    <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
+    <line x1="3" y1="6" x2="3" y2="19"></line>
+    <line x1="12" y1="6" x2="12" y2="19"></line>
+    <line x1="21" y1="6" x2="21" y2="19"></line>
+  </symbol>
+
+  <symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+    <line x1="16" y1="2" x2="16" y2="6"></line>
+    <line x1="8" y1="2" x2="8" y2="6"></line>
+    <line x1="3" y1="10" x2="21" y2="10"></line>
+  </symbol>
+
+  <symbol id="icon-rss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9"></path>
+    <path d="M4 4a16 16 0 0 1 16 16"></path>
+    <circle cx="5" cy="19" r="1"></circle>
+  </symbol>
+</svg>
+
+    <header>
+  <div class="print-info">
+    <picture><source type="image/webp" srcset="/img/hY-hPg7_9I-300.webp 300w, /img/hY-hPg7_9I-600.webp 600w, /img/hY-hPg7_9I-812.webp 812w, /img/hY-hPg7_9I-1200.webp 1200w" sizes="auto"><img loading="lazy" decoding="async" src="/img/hY-hPg7_9I-300.jpeg" alt="QR для печати" width="1200" height="1200" srcset="/img/hY-hPg7_9I-300.jpeg 300w, /img/hY-hPg7_9I-600.jpeg 600w, /img/hY-hPg7_9I-812.jpeg 812w, /img/hY-hPg7_9I-1200.jpeg 1200w" sizes="auto"></picture>
+    <div class="print-text">
+      <p>Версия для печати</p>
+      <p>Контакты:</p>
+      <p>tropin.tropin@gmail.com</p>
+      <p>+7 999 215-10-69</p>
+    </div>
+  </div>
+
+  <div class="header-inner">
+    <div class="title-row">
+      <button class="nav-toggle" aria-label="Открыть меню"></button>
+      <h1 class="site-title">
+        <a href="https://tropin.one">Valerio Tropin</a>
+      </h1>
+    </div>
+
+    <div class="nav-wrapper">
+      <nav class="main-nav" aria-label="Главное меню">
+        
+          <ul class="nav-list">
+            
+              
+                <li>
+                  <a href="/">Обо мне</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/blog/">Блог</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/projects/">Проекты</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/research/">Публикации и выступления</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/events/">События</a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/map/">•</a>
+                </li>
+              
+            
+          </ul>
+        
+      </nav>
+
+      <div id="search"></div>
+    </div>
+  </div>
+</header>
+
+    <main>
+      
+
+  <div id="progress-bar"></div>
+
+  <h1>
+    <code>/wish</code>
+  </h1>
+
+  
+
+
+  <span class="last-mod">Последняя правка: 18.02.2026</span>
+
+
+
+  <p>Список хотелок. Здесь собрано то, что я намерен купить себе сам в обозримом будущем, и то, чему буду искренне рад в качестве подарка. Если мы знакомы, есть повод, и вы размышляете над тем, что мне подарить, то можете вдохновиться чем-то отсюда. Идею подсмотрел <a href="https://taylor.town/wish-manifesto" target="_blank" rel="noopener">вот здесь</a>.</p>
+
+  <figure class="gif-frame" style="max-width: 480px;">
+  <video autoplay="" loop="" muted="" playsinline="" poster="/assets/gifs/if-i-had-one-wish-steve-martin-poster.webp" preload="none" style="width: 100%; height: auto; display: block; border-radius: inherit;" aria-label="Стив Мартин знает толк в желаниях">
+      <source src="/assets/gifs/if-i-had-one-wish-steve-martin.webm" type="video/webm">
+      <source src="/assets/gifs/if-i-had-one-wish-steve-martin.mp4" type="video/mp4">
+  </video>
+  <figcaption>Стив Мартин знает толк в желаниях</figcaption>
+</figure>
+
+  <p>Пожалуйста, не дарите мне ничего ароматизированного: свечи, мыло, диффузоры, косметику, чай, кофе и прочее. Скорее всего, я это выкину или отдам кому-то другому. Исключение — строго определённый <a href="#perfume">парфюм.</a>
+  </p>
+
+  <ul class="wish-list">
+    <li data-price="$$$">MacBook с M-процессором. Потому что мой <a href="/setup#macbook-air">нынешний</a> лэптоп несколько устарел.</li>
+    <li data-price="$$">Механическая клавиатура (80%/TKL; Hot-swap):
+      <ul>
+        <li data-price="$$">
+          <cite>WOBKEY</cite>
+          <a href="https://www.wobkey.com/products/rainy75?variant=45523411173611" target="_blank" rel="noopener">Rainy 75 Electro White Pro</a>
+        </li>
+        <li data-price="$$">
+          <cite>LUMINKEY</cite>
+          <a href="https://www.luminkey.com/products/lumino75-75-layout-hot-swappable-custom-mechanical-keyboard?variant=48882200412436" target="_blank" rel="noopener">LUMINO75 Retro Charm</a>
+        </li>
+      </ul>
+    </li>
+    <li data-price="$$">Штуки для Home Lab:
+    <ul>
+        <li data-price="$$">UPS (USB / NUT support)</li>
+        <li data-price="$$">Bare-metal DIY NAS (4+ bays, low-TDP x86)</li>
+        <li data-price="$$">Media-station (4K QuickSync)</li>
+        <li data-price="$$">Smart Home Hub (Zigbee/Thread/Matter)</li>
+      </ul>
+    </li>
+    <li data-price="$$">Внешние SSD/HDD или флешка. Потому что их много не бывает.</li>
+    <li data-price="$$">Экран для проектора 90" с подвесом сверху.</li>
+    <br>
+    <li data-price="$$">Мультитул из высококачественной стали:
+    <ul>
+        <li data-price="$$">
+          <a href="https://www.victorinox.com/en/Products/Swiss-Army-Knife%E2%84%A2-and-Tools/c/SAK/" target="_blank" rel="noopener">Victorinox</a>
+        </li>
+        <li data-price="$$">
+          <a href="https://www.leatherman.com/collections/multi-tools" target="_blank" rel="noopener">Leatherman</a>
+        </li>
+      </ul>
+    </li>
+    <li data-price="$$">Набор прецизионных отвёрток с битами из качественной стали с вращающимся затыльником:
+    <ul>
+        <li data-price="$$">
+          <a href="https://gross-instrument.ru/product/otvertka-s-naborom-bit-i-torcevyh-golovok-dlja-tochnyh-rabot-uibkij-privod-48-shtuk-crmo-gross-11599/" target="_blank" rel="noopener">Gross 11599</a>
+        </li>
+        <li data-price="$$">
+          <a href="https://www.mi.com/ru/product/mi-precision-screwdriver-kit/" target="_blank" rel="noopener">Mi Precision Screwdriver Kit</a>
+        </li>
+        <li data-price="$$">
+          <a href="https://www.mi.com/ru/product/xiaomi-electric-precision-screwdriver/" target="_blank" rel="noopener">Xiaomi Electric Precision Screwdriver</a>
+        </li>
+      </ul>
+    </li>
+    <li data-price="$$">Мультиметр:
+    <ul>
+        <li data-price="$$">
+          <a href="https://ali.click/eqfxz8" target="_blank" rel="noopener">FNIRSI DMT-99</a>
+        </li>
+      </ul>
+    </li>
+    <li data-price="$$">Строительный фен</li>
+    <li data-price="$$">Аккумуляторный перфоратор с бесщёточным двигателем и тремя режимами работы</li>
+    <li data-price="$$">Электролобзик</li>
+    <li data-price="$$">Лазерный уровень</li>
+    <li data-price="$">Лазерный дальномер:
+      <ul>
+        <li data-price="$">
+          <a href="https://ali.click/6kbxzl" target="_blank" rel="noopener">Mileseey X5</a>, <a href="https://ali.click/jxcxzh" target="_blank" rel="noopener">Mileseey X5/S6/LV56</a>
+        </li>
+        <li data-price="$">
+          <a href="https://ali.click/pugxz1" target="_blank" rel="noopener">FNIRSI IR40</a>
+        </li>
+      </ul>
+    </li>
+    <li data-price="$$">Цифровой штангенциркуль:
+      <ul>
+        <li data-price="$$">
+          <a href="https://ali.click/owdxzj" target="_blank" rel="noopener">KETOTEK 150 mm</a>
+        </li>
+        <li data-price="$$">
+          <a href="https://ali.click/08exzp" target="_blank" rel="noopener">KETOTEK 300 mm</a>
+        </li>
+      </ul>
+    </li>
+    <br>
+    <li data-price="$$">Струйный принтер для фотопечати</li>
+    <li data-price="₽">Цветная фотоплёнка (ISO 200, 400)</li>
+    <li data-price="$">Компактный аккумуляторный ручной и/или налобный фонарь с usb-c, предпочтительно в металлическом корпусе и устойчивый к холоду:
+    <ul>
+        <li data-price="$">
+          <a href="https://www.wubenlight.com/products/wuben-pl01-flashlight?variant=47711918686448" target="_blank" rel="noopener">WUBEN PL01</a>
+        </li>
+        <li data-price="$$">
+          <a href="https://www.wubenlight.com/products/wuben-x1-small-and-powerful-ecl-flashlight-12000-lumens" target="_blank" rel="noopener">Lightok X1</a>
+        </li>
+        <li data-price="$">
+          <a href="https://www.wubenlight.com/products/wuben-g5-edc-light?variant=47599612723440" target="_blank" rel="noopener">WUBEN G5</a>
+        </li>
+      </ul>
+    </li>
+    <li data-price="₽">Аккумуляторные батарейки с низким саморазрядом форматов AA и AAA. Например, <a href="https://ozon.ru/t/1EW5Djd" target="_blank" rel="noopener">такие.</a>
+    </li><li data-price="$">GaN-адаптер питания на 100W с Type-C портами и кабелем от 2 м</li>
+    <br>
+    <li data-price="$">Билеты в театр: <a href="https://teatrvo.ru/" target="_blank" rel="noopener">Театр на Васильевском</a>, <a href="https://bdt.spb.ru/" target="_blank" rel="noopener">БДТ</a>, <a href="https://mikhailovsky.ru/" target="_blank" rel="noopener">Михайловский</a>, <a href="https://www.mariinsky.ru/" target="_blank" rel="noopener">Мариинка</a>
+    </li>
+    <li data-price="₽">Сертификаты: <a href="https://www.ozon.ru/landing/giftcertificates/" target="_blank" rel="noopener">Ozon</a>, <a href="https://goldapple.ru/cards#gift-cards?step=0&from=share" target="_blank" rel="noopener">Золотое яблоко</a>, <a href="https://www.sportmaster.ru/giftcard/" target="_blank" rel="noopener">Спортмастер</a>, в хорошую оптику.</li>
+    <br>
+    <li id="perfume" data-price="$$">Парфюм (ТОЛЬКО из этого списка):
+    <ul>
+        <li data-price="$$">
+          <cite>Davidoff</cite> Cool Water:
+          <a href="https://www.zinodavidoff.com/fragrances/cool-water-eau-de-toilette-200-ml" target="_blank" rel="noopener">Eau de Toilette</a>, <a href="https://www.zinodavidoff.com/fragrances/cool-water-parfum-100-ml" target="_blank" rel="noopener">Parfum</a>
+        </li>
+        <li data-price="$$">
+          <cite>Hermès</cite>
+          <a href="https://www.hermes.com/uk/en/product/terre-d-hermes-parfum-V107758V0/" target="_blank" rel="noopener">Terre d'Hermès</a>
+        </li>
+        <li data-price="$$">
+          <cite>Demeter</cite>
+          <a href="https://demeterfragrance.com/products/zombie-for-him-cologne-spray" target="_blank" rel="noopener">Zombie for Him</a>
+        </li>
+      </ul>
+    </li>
+    <li data-price="$$$">Механические часы:
+    <ul>
+        <li data-price="$$$">
+          <cite>MeisterSinger</cite>: <a href="https://meistersinger.com/en/product/archao-dlc-black/" target="_blank" rel="noopener">Archao DLC</a>, <a href="https://meistersinger.com/en/product/edition-anton-bruckner-en/" target="_blank" rel="noopener">Edition Anton Bruckner</a>, <a href="https://meistersinger.com/en/product/edition-passage/" target="_blank" rel="noopener">Edition Passage</a>, <a href="https://meistersinger.com/en/product/pangaea-day-date-365-white/" target="_blank" rel="noopener">Pangaea Day Date 365 — White</a>
+        </li>
+        <li data-price="$$$">
+          <cite>BOTTA</cite>: <a href="https://www.botta-design.de/en/products/uno-24-hour-automatic-watch-anniversary-edition-15a?variant=44939254563081" target="_blank" rel="noopener">UNO 24 Edition-15</a>
+        </li>
+        <li data-price="$$$">
+          <cite>NOMOS Glashütte</cite>: <a href="https://nomos-glashuette.com/en/tangente/tangente-neomatik-41-update-180" target="_blank" rel="noopener">Tangente neomatik 41 Update. Ref. 180</a>, <a href="https://nomos-glashuette.com/en/metro/metro-date-power-reserve-1101" target="_blank" rel="noopener">Metro date power reserve. Ref. 1101</a>
+        </li>
+        <li data-price="$$$">
+          <cite>Junghans</cite>: <a href="https://junghans.de/en/shop/watches-en/form-en/form-a-chronoscope-en/form-a-chronoscope-date-english-13/" target="_blank" rel="noopener">FORM A Chronoscope</a>
+        </li>
+        <li data-price="$$$">
+          <cite>Tissot</cite>: <a href="https://www.tissotwatches.com/en-en/T1379079720100.html" target="_blank" rel="noopener">PRX Carbon</a>, <a href="https://www.tissotwatches.com/en-en/T1424641606200.html" target="_blank" rel="noopener">Heritage 1938</a>
+        </li>
+        <li data-price="$$">
+          <cite>Луч</cite>: <a href="https://luch.by/kollektsii/obratnyy-khod/72087646/" target="_blank" rel="noopener">Обратный ход: Солнечное затмение</a>
+        </li>
+        <li data-price="$$$">
+          <cite>Ракета</cite>: <a href="https://world.raketa.com/ru/product/baykonur-0325" target="_blank" rel="noopener">Байконур</a>, <a href="https://world.raketa.com/ru/product/avangard-0292" target="_blank" rel="noopener">Авангард</a>
+        </li>
+      </ul>
+    </li>
+    <li data-price="₽">Трубочный табак без ароматизаторов:</li>
+    <ul>
+      <li data-price="₽">
+        <a href="https://mac-baren.com/product/mac-baren-pure-tobacco/" target="_blank" rel="noopener">Mac Baren Pure Tobacco</a>
+      </li>
+      <li data-price="₽">
+        <a href="https://pccf.ru/tabak-trubochnyy-iz-pogara-virdzhiniya-40-gr/" target="_blank" rel="noopener">Табак трубочный из Погара «Вирджиния»</a>
+      </li>
+      <li data-price="₽">
+        <a href="https://www.gawithhoggarth.ltd/sg-full-virginia-flake-50g-1244" target="_blank" rel="noopener">Samuel Gawith Full Virginia Flake (FVF)</a>
+      </li>
+      <li data-price="₽">
+        <a href="https://mac-baren.com/three-nuns-capstan/" target="_blank" rel="noopener">Capstan Original Navy Cut</a> (синяя или золотая банка)
+      </li>
+    </ul>
+    <br>
+    <li data-price="₽">Любые <a href="https://www.travelers-company.com/products/trnote/refill-regular" target="_blank" rel="noopener">рефиллы, запасные тетради</a> для <cite>Traveler's Notebook</cite> (размер Standard/Regular 21×11):
+    <ul>
+        <li data-price="$">
+          <cite>Sun Play House</cite>: тетради <a href="https://ozon.ru/t/GcNzHqD" target="_blank" rel="noopener">в точку</a>, <a href="https://ozon.ru/t/rljSBvp" target="_blank" rel="noopener">тоже в точку</a> или <a href="https://ozon.ru/t/howpTzL" target="_blank" rel="noopener">без разлиновки</a>, блокнот <a href="https://ozon.ru/t/DuLWSIg" target="_blank" rel="noopener">с синей обложкой</a>
+        </li>
+        <li data-price="₽">«Дом Старцевых»: тетради <a href="https://ozon.ru/t/b2prrOG" target="_blank" rel="noopener">в точку</a> или <a href="https://ozon.ru/t/howpaKl" target="_blank" rel="noopener">с недельными разворотами</a>
+        </li>
+        <li data-price="$">
+          <cite>Kulikov Craft</cite>: <a href="https://ozon.ru/t/1EWmCYM" target="_blank" rel="noopener">блокнот с органайзером</a>
+        </li>
+        <li data-price="₽">
+          <cite>Fromtenon</cite>: <a href="https://ali.click/57hpyr" target="_blank" rel="noopener">крафт-карман</a>, <a href="https://ozon.ru/t/mO8QdKn" target="_blank" rel="noopener">тетрадь путешественника</a> или <a href="https://ozon.ru/t/zMDoA0S" target="_blank" rel="noopener">оливковый блокнот</a>
+        </li>
+      </ul>
+    </li>
+    <br>
+    <li data-price="$$">Штоф для напитков из хрусталя:
+    <ul>
+        <li data-price="$$">Гусевский хрустальный завод: <a href="https://www.goose-crystal.ru/catalog/predmety_servirovki/grafiny_bar/khrustalnyy_shtof_gleb_bol_v_1000_ml_ris_medovyy_spas_bestsvetnyy_.html" target="_blank" rel="noopener">штоф «Глеб»</a>
+        </li>
+      </ul>
+    </li>
+    <li data-price="$">Набор классических хрустальных гранёных лафитников на 25 мл:
+    <ul>
+        <li data-price="$">«Бахметевъ1764»: <a href="https://bahmetev.com/index.php?route=product/product&path=80_60&product_id=374" target="_blank" rel="noopener">набор лафитников</a>
+        </li>
+      </ul>
+    </li>
+    <br>
+    <li data-price="$">Книги из <a href="https://www.livelib.ru/reader/valeriuus/wish" target="_blank" rel="noopener">моего вишлиста на Лайвлибе</a>
+    </li>
+    <li data-price="$">Всё что угодно из <a href="https://ozlik.notion.site/Valera-s-Wish-List-487d6d07f26d4edcb2f240459513b9ab" target="_blank" rel="noopener">моего большого вишлиста в Notion</a>
+    </li>
+    <br>
+    <li data-price="$">Бутылка хорошего сухого вина уместна всегда (я предпочитаю мальбек и пинотаж)</li>
+  </ul>
+
+  <script type="text/javascript" async="" src="https://tenor.com/embed.js"></script>
+
+
+    </main>
+    <footer>
+  <p>
+    <button id="theme-toggle" class="theme-toggle">
+      <span class="icon">🌓</span>
+      <span class="label">Тема</span>
+    </button>
+  </p>
+
+  <div class="footer-inner">
+    <div>
+      
+        <a href="https://github.com/tropintropin" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-github"></use>
+          </svg>
+        </a>
+      
+        <a href="https://t.me/ozlik" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-telegram"></use>
+          </svg>
+        </a>
+      
+        <a href="https://www.livelib.ru/reader/valeriuus" target="_blank" rel="noopener noreferrer" aria-label="LiveLib" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-livelib"></use>
+          </svg>
+        </a>
+      
+        <a href="/calendar.ics" target="_blank" rel="noopener noreferrer" aria-label="Calendar" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-calendar"></use>
+          </svg>
+        </a>
+      
+        <a href="/feed.atom.xml" target="_blank" rel="noopener noreferrer" aria-label="RSS" class="icon-link">
+          <svg width="24" height="24" class="footer-icon">
+            <use xlink:href="#icon-rss"></use>
+          </svg>
+        </a>
+      
+    </div>
+
+    <small>
+      <a href="/wish" title="На случай, если вы думаете мне что-то подарить">Wish List
+      </a>
+      <span class="separator">·</span>
+      <a href="/calendar.ics" target="_blank" rel="me noopener noreferrer" title="Календарь событий">Events Calendar</a>
+      <span class="separator">·</span>
+      <a href="/feed.atom.xml" target="_blank" rel="me noopener noreferrer" title="Фид всех записей на сайте">RSS</a>
+      <span class="separator">·</span>
+      <a href="/legal" title="Legal notice and privacy policy">Legal & Privacy</a>
+        <span class="separator">·</span>
+      <a href="/map" title="Карта сайта">All pages</a>
+    </small>
+
+    <p class="footer-copy">
+      &copy;&nbsp;<time datetime="2023-2025">MMXXIII&nbsp;→&nbsp;MMXXVI</time>&nbsp;<a href="https://tropin.one">Valery Tropin</a>. This website is made with <a href="https://www.11ty.dev/">11ty</a> & hosted on <a href="https://docs.github.com/en/pages">GitHub Pages</a>.
+    </p>
+  </div>
+</footer>
+
+
+    <button id="scrollTop" class="scroll-top" aria-label="Наверх">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </svg>
+    </button>
+
+    
+    <script src="/pagefind/pagefind-ui.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        new PagefindUI({element: "#search", showSubResults: true});
+      });
+    </script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="/assets/js/nav-toggle.js"></script>
+    <script src="/assets/js/scrolltop.js" defer=""></script>
+    <script src="/assets/js/copy-code.js" defer=""></script>
+    <script src="/assets/js/theme-toggle.js" defer=""></script>
+    <script src="/assets/js/carousel.js" defer=""></script>
+  </body>
+</html>
