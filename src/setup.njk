@@ -18,9 +18,11 @@ permalink: /setup/index.html
 
   <p>Здесь будет что-то вроде <a href="https://uses.tech/" target="_blank" rel="noopener">/uses</a>: набор софта, техники и чего угодно ещё, чем я пользуюсь на работе и в жизни. За набором практик для жизни можете заглянуть в мой <a href="/playbook/">/playbook</a>.</p>
 
+  <p>Тут всего три раздела — <a href="#hardware">Хардвер</a>, <a href="#software">Софтвер</a> и <a href="#analogue">Аналоговое</a>, — внутри которых некоторая логика присутствует, но я вам о ней не скажу.</p>
+
   {% gif "yes-britney-spears", "ACHTUNG! UWAGA! You Are Now Entering the Nerd Zone!" %}
 
-  <h2>Хардвер</h2>
+  <h2 id="hardware">Хардвер</h2>
 
   <p id="macbook-air">
     <strong>
@@ -77,7 +79,7 @@ permalink: /setup/index.html
       <a href="https://www.ikea.com/se/en/search/?q=FORSA" target="_blank" rel="noopener">IKEA FORSÅ</a>
     </strong> — лучшая настольная лампа в мире. У меня коричневая.</p>
 
-  <h2>Софтвер</h2>
+  <h2 id="software">Софтвер</h2>
 
   <p>
     <strong>VS Code</strong> [<a href="https://github.com/tonsky/vscode-theme-alabaster" target="_blank" rel="noopener">Alabaster Theme</a> + <a href="https://github.com/tonsky/FiraCode" target="_blank" rel="noopener">Fira Code</a>] — основной редактор на маке и винде. На последней работаю с репами через <a href="#wsl2">WSL</a>.</p>
@@ -145,7 +147,9 @@ permalink: /setup/index.html
       <strong>Obsidian</strong> — ещё одна база, но на сей раз для визуализации связей между записями в виде <a href="https://help.obsidian.md/plugins/graph" target="_blank" rel="noopener">графов</a>.</p>
 
     <p>
-      <strong>Zotero</strong> [<a href="https://github.com/bwiernik/zotero-shortdoi" target="_blank" rel="noopener">DOI Manager</a> + <a href="https://github.com/windingwind/zotero-better-notes" target="_blank" rel="noopener">Better Notes</a> + <a href="https://retorque.re/zotero-better-bibtex/" target="_blank" rel="noopener">Better BibTeX</a>] — цитатный менеджер.</p>
+      <strong>
+        <a href="https://www.zotero.org/" target="_blank" rel="noopener">Zotero</a>
+      </strong> [<a href="https://github.com/bwiernik/zotero-shortdoi" target="_blank" rel="noopener">DOI Manager</a> + <a href="https://github.com/windingwind/zotero-better-notes" target="_blank" rel="noopener">Better Notes</a> + <a href="https://retorque.re/zotero-better-bibtex/" target="_blank" rel="noopener">Better BibTeX</a>] — цитатный менеджер.</p>
 
     <p>
       <strong>Google Calendar</strong> — календари (у меня их шесть штук) + задачи.</p>
@@ -153,12 +157,17 @@ permalink: /setup/index.html
     <p id="raycast">
       <strong>
         <a href="https://www.raycast.com/" target="_blank" rel="noopener">Raycast</a>
-      </strong> — швейцарский нож для всего. <a href="/playbook/#raycast">Вот тут рассказал</a>, как им пользуюсь.</p>
+      </strong> — швейцарский нож для всего. Запускается по <kbd>Opt + Space</kbd>. <a href="/playbook/#raycast">Вот тут рассказал</a>, как им пользуюсь.</p>
 
     <p>
       <strong>
         <a href="https://learn.microsoft.com/en-gb/windows/powertoys/" target="_blank" rel="noopener">Microsoft PowerToys</a>
-      </strong> [Advanced Paste + Peek + PowerToys Run] — почти как <a href="#raycast">Raycast</a>, только на винде.</p>
+      </strong> [Advanced Paste + Peek + PowerToys Run] — почти как <a href="#raycast">Raycast</a>, только на винде. Запускается по <kbd>Ctrl + Space</kbd>.</p>
+
+    <p>
+      <strong>
+        <a href="https://maccy.app/" target="_blank" rel="noopener">Maccy</a>
+      </strong> — буфер обмена на macOS. Вызывается несколько странной комбинацией <kbd>Shift + Cmd + C</kbd>, зато внутри можно быстро выбрать нужный кусок по комбинации <kbd>Cmd + n</kbd>. На винде пользуюсь плагином для PowerToys, который открывает буфер по <kbd>Win + V</kbd>.</p>
 
     <p id="netnewswire">
       <strong>
@@ -192,7 +201,9 @@ permalink: /setup/index.html
       </strong> — тренить.</p>
 
     <p>
-      <strong>Bitwarden</strong> — забыть про пароли.</p>
+      <strong>
+        <a href="https://bitwarden.com/" target="_blank" rel="noopener">Bitwarden</a>
+      </strong> — забыть про пароли.</p>
 
     <p>
       <strong>
@@ -203,6 +214,11 @@ permalink: /setup/index.html
       <strong>
         <a href="https://www.pdf24.org/en/" target="_blank" rel="noopener">PDF24 Creator</a>
       </strong> — работать с PDF на винде.</p>
+
+    <p>
+      <strong>
+        <a href="https://numi.app/" target="_blank" rel="noopener">Numi</a>
+      </strong> — текстовый калькулятор на маке. Понимает текст, переменные, конвертирует что угодно во что угодно. Я обычно имперские юниты в человеческие граммы и километры в нём перевожу. Есть подробная <a href="https://github.com/nikolaeu/numi/wiki" target="_blank" rel="noopener ">дока</a>.</p>
 
     <p>
       <strong>
@@ -222,7 +238,10 @@ permalink: /setup/index.html
         <a href="https://aiogram.dev/" target="_blank" rel="noopener">aiogram</a>
       </strong> — делать ботов.</p>
 
-    <h2>Аналоговое</h2>
+    <p>
+      <strong>ChatGPT, Google Gemini, Claude</strong> — AI. Приложения на телефоне и PWA на компах. Чаще всего ИИ у меня работает в режиме <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging" target="_blank" rel="noopener">резиновой уточки</a> и универсального справочника по всем вопросам. Во всех остальных приложениях вырубаю этот ИИ нахуй, потому что — субъективно — с ним работается дольше чем без него.</p>
+
+    <h2 id="analogue">Аналоговое</h2>
 
     <p id="caliper">
       <strong>
