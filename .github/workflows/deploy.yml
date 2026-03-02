@@ -1,4 +1,4 @@
-name: Build and Deploy 11ty site
+name: Deploy site V2
 
 on:
   push:
