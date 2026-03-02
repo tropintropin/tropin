@@ -255,7 +255,7 @@ export default async function (eleventyConfig) {
 
     try {
       const cleanPath = filePath.replace(/^\.\//, "");
-      const result = execSync(`git log -1 --no-merges --follow --format=%at -- "${cleanPath}"`, {
+      const result = execSync(`git log -1 --all --remotes --no-merges --format=%at -- "${cleanPath}"`, {
         stdio: ["ignore", "pipe", "ignore"],
       });
 
