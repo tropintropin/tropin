@@ -251,47 +251,41 @@ export default async function (eleventyConfig) {
   let gitWarningShown = false;
 
   eleventyConfig.addFilter("gitLastMod", (filePath) => {
-    if (!filePath) return null;
+  if (!filePath) return null;
 
-    try {
-      const cleanPath = filePath.replace(/^\.\//, "");
-      const result = execSync(`git log -1 --all --remotes --no-merges --format=%at -- "${cleanPath}"`, {
-        stdio: ["ignore", "pipe", "ignore"],
-      });
+  try {
+    const cleanPath = filePath.replace(/^\.\//, "");
 
-      const timestamp = parseInt(result.toString().trim(), 10);
-      if (Number.isNaN(timestamp)) return null;
+    const command = `git rev-list -1 --no-merges --all --remotes HEAD -- "${cleanPath}" | xargs -I {} git show -s --format=%at {}`;
 
-      return new Date(timestamp * 1000);
-    } catch (e) {
-      if (!gitWarningShown) {
-        console.warn(
-          "[gitLastMod] git metadata unavailable. " +
-            "Check fetch-depth in CI or repository state.",
-        );
-        gitWarningShown = true;
-      }
-      return null;
-    }
-  });
+    const result = execSync(command, {
+      stdio: ["ignore", "pipe", "ignore"],
+    }).toString().trim();
+
+    const timestamp = parseInt(result, 10);
+    if (Number.isNaN(timestamp) || !timestamp) return null;
+
+    return new Date(timestamp * 1000);
+  } catch (e) {
+    return null;
+  }
+});
 
   eleventyConfig.addFilter("filterByProperty", (array, key, value) => {
     return array.filter((item) => item[key] === value);
   });
 
   eleventyConfig.addFilter("getMentionsForUrl", (mentions, url) => {
-    // Если переменная окружения пуста, укажите ваш домен строкой как запасной вариант
     const domain = process.env.WEBMENTION_DOMAIN || "tropin.one";
 
     return mentions.filter((entry) => {
       const target = entry["wm-target"];
       if (!target) return false;
 
-      // Нормализуем оба URL: убираем протоколы и финальные слэши
       const normalize = (link) =>
         link
-          .replace(/^https?:\/\//, "") // убрать http/https
-          .replace(/\/$/, "") // убрать слэш в конце
+          .replace(/^https?:\/\//, "")
+          .replace(/\/$/, "")
           .toLowerCase();
 
       return normalize(target) === normalize(domain + url);
