@@ -1,11 +1,10 @@
 # tropin.one
 
 [![wakatime](https://wakatime.com/badge/github/tropintropin/tropin.svg)](https://wakatime.com/badge/github/tropintropin/tropin)
-![Deploy Status](https://github.com/tropintropin/tropin/actions/workflows/deploy.yml/badge.svg?branch=main)
 
 ## About
 
-This is my personal website where I share projects, experience, blog posts, and entries from my Digital Garden, including _IndieWeb_-inspired slashpages. In 2025, I migrated it to _Eleventy_ to make building and updating faster and simpler.
+This is my personal website [https://tropin.one](https://tropin.one) where I share projects, experience, blog posts, and entries from my Digital Garden, including _IndieWeb_-inspired slashpages. In 2025, I migrated it to _Eleventy_ to make building and updating faster and simpler. In 2026, I moved deployment from _GitHub_ to _GitLab_ and _Cloudflare Pages_ to improve reliability and reduce dependency on a single platform.
 
 ## Tech Stack
 
@@ -16,7 +15,8 @@ This is my personal website where I share projects, experience, blog posts, and 
 - **SCSS → CSS** – styles preprocessor
 - **JavaScript** – client-side interactivity
 - **Pagefind** – search indexing for static sites
-- **GitHub Actions** – CI/CD automation
+- **GitLab + Cloudflare Pages** — CI/CD automation
+- ~~**GitHub Actions** – CI/CD automation~~
 
 ## Requirements
 
@@ -69,7 +69,7 @@ These are the commands used in normal development and deployment.
   npm run build
   ```
 
-  This command is used in CI and GitHub Actions during deployment.
+  This command is used in CI and Cloudflare Pages during deployment.
 
 ### Low-Level / Helper Scripts
 
@@ -142,7 +142,9 @@ These are individual steps used internally by `dev` or `build`.
 
 ## Deployment
 
-- Automatically deployed to _GitHub Pages_ via _GitHub Actions_ on every push to `main`
+- Automatically deployed to _Cloudflare Pages_ from _GitLab_ on every push to `main`
+
+- Repository is mirrored to _GitHub_ as a backup
 
 - Production build runs `npm run build`
 
@@ -167,4 +169,5 @@ section PRODUCTION
 Upload site to server                 :milestone,             crit, done, 2023.04.04, 0d
 Upload MVP site on Eleventy           :milestone,                   done, 2025.08.15, 0d
 Add first slashpages                  :milestone,                         2026.01.21, 0d
+Migration to GitLab & Cloudflare Pages  :milestone,           crit, done, 2026.03.02, 1d
 ```
