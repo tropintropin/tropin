@@ -82,6 +82,11 @@ permalink: /setup/index.html
   <h2 id="software">Софтвер</h2>
 
   <p>
+    <strong>
+      <a href="https://ilyabirman.ru/typography-layout/" target="_blank" rel="noopener">Типографская раскладка Ильи Бирмана</a>
+    </strong> — потому что —, – и - разные вещи, и я знаю какой из знаков где использовать. И ещё кавычки-ёлочки, да. Ставлю эту раскладку на каждую новую машину за которой работаю.</p>
+
+  <p>
     <strong>VS Code</strong> [<a href="https://github.com/tonsky/vscode-theme-alabaster" target="_blank" rel="noopener">Alabaster Theme</a> + <a href="https://github.com/tonsky/FiraCode" target="_blank" rel="noopener">Fira Code</a>] — основной редактор на маке и винде. На последней работаю с репами через <a href="#wsl2">WSL</a>.</p>
 
   <p>
@@ -113,6 +118,11 @@ permalink: /setup/index.html
 
   <p>
     <strong>
+      <a href="https://mosh.org/" target="_blank" rel="noopener">Mosh</a>
+    </strong> — вместо SSH. Настраиваю её на каждом сервере, с которым работаю.</p>
+
+  <p>
+    <strong>
       <a href="https://github.com/tropintropin/all_my_settings" target="_blank" rel="noopener">all_my_settings repo</strong> — репозиторий с моими конфигами, который хранится на GitHub. С его помощью я могу быстро настроить новую машину под себя.</p>
 
     <figure class="figure-content">
@@ -129,6 +139,16 @@ permalink: /setup/index.html
 
     <p>
       <strong>Postman</strong> — тестировать API.</p>
+
+    <p>
+      <strong>
+        <a href="https://github.com/sharkdp/bat" target="_blank" rel="noopener">bat</a>
+      </strong> — смотреть файлы в терминале с подсветкой синтаксиса. Умеет читать из <code>stdin</code>, что позволяет, к примеру, быстро просмотреть разметку этого сайта:
+      <div class="code-frame">
+        {% highlight "bash" %}
+        curl -s https://tropin.one | bat
+      {% endhighlight %}</div>
+    </p>
 
     <p>
       <strong>
