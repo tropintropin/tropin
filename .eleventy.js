@@ -294,6 +294,10 @@ export default async function (eleventyConfig) {
 
   // Shortcodes & Global Data
 
+  eleventyConfig.addGlobalData("isMirror", process.env.SITE_MIRROR === "true");
+
+  eleventyConfig.addGlobalData("siteUrl", process.env.SITE_URL || "https://tropin.one");
+
   eleventyConfig.addGlobalData(
     "thunderforestKey",
     process.env.THUNDERFOREST_KEY,
