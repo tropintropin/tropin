@@ -2,7 +2,12 @@
 <html lang="{{ site.lang }}" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="utf-8"/>
-    <link rel="canonical" href="{{ site.url }}"/>
+    {% if isMirror %}
+      <meta name="robots" content="noindex, nofollow">
+      <link rel="canonical" href="{{ siteUrl }}{{ page.url }}">
+    {% else %}
+      <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    {% endif %}
 
     <link
       rel="apple-touch-icon"
